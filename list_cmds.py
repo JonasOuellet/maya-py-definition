@@ -33,5 +33,5 @@ def build_cmds_data():
 
 
 def write_cmds_to_json():
-    with open(os.path.join(os.path.dirname(__file__), 'cmds.json'), mode='w') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'working', 'cmds.json'), mode='w') as f:
         json.dump(build_cmds_data(), f, indent=4)

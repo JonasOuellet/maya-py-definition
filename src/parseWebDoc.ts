@@ -1,47 +1,49 @@
 import * as request from "request";
 import { JSDOM } from "jsdom";
-import { writeFile } from "fs";
+
+import { resolve } from "path";
+import { writeFileSync, readFileSync } from "fs";
 
 import * as core from "./core";
 
 
+interface IUrlInfo {
+    host: string;
+    path: string;
+}
+
 /**
  * Return web adress information to pass to the http request.
  */
-function getMayaHelpWebInfo() {
+function getMayaHelpWebInfo(url: string): IUrlInfo {
     let reg = /(^.*.com)(.+?)(\/$|$|\/.\w*.html)/g;
-    let match = reg.exec(core.settings.mayaHelp);
+    let match = reg.exec(url);
     if (match){
         return {
             host: match[1],
             path: match[2] + '/'
-        }
+        };
     }
     throw new Error("Invalid maya help web site.");
+}
 
+function getMayaHelpUrlForCmd(urlInfo: IUrlInfo, cmdName: string): string{
+    return urlInfo.host + urlInfo.path + cmdName + '.html';
 }
 
 
-let mMayaWebInfo = getMayaHelpWebInfo();
-
-
-function getUrlForCmd(cmdName: string): string{
-    return mMayaWebInfo.host + mMayaWebInfo.path + cmdName + '.html';
-}
-
-
-async function getJSDOM(cmdName: string) : Promise<JSDOM> {
+async function getJSDOM(urlInfo: IUrlInfo, cmdName: string) : Promise<JSDOM> {
     let prom = new Promise<JSDOM>((resolve, reject) => {
-        request.get(getUrlForCmd(cmdName), (error, response, body) => {
+        request.get(getMayaHelpUrlForCmd(urlInfo, cmdName), (error, response, body) => {
             if (error) {
                 reject(error);
                 return;
             }
-            if (response.statusCode != 200){
+            if (response.statusCode !== 200){
                 reject(`Status code: ${response.statusCode}`);
                 return;
             }
-            resolve(new JSDOM(body))
+            resolve(new JSDOM(body));
         });
     });
     return prom;
@@ -49,15 +51,19 @@ async function getJSDOM(cmdName: string) : Promise<JSDOM> {
 
 
 function fixHTMLinnerElem(text: string, space=true) : string {
-    let out = text.replace(/(<i>|<\/i>|<p>|<\/p>|<dd>|<\/dd>|<dl>|<\/dl>)/g, "");
+    let out = text.replace(/(<i>|<\/i>|<p>|<\/p>|<dd>|<\/dd>|<dl>|<\/dl>|<b>|<\/b>|<\/li>)/g, "");
     out = out.replace(/&lt;/g, "<");
-    out = out.replace(/&gt;/g, ">");
     out = out.replace(/&gt;/g, ">");
     out = out.replace(/<code><b>/g, "<code>");
     out = out.replace(/<\/b><\/code>/g, "</code>");
     if (space){
-        out = out.replace(/(\n|\r|\t|^ *)/g, " ");
-        out = out.replace(/(^ *| {2,})/g, "");
+        out = out.replace(/( *\n *| *\r *| *\t *)/g, " ");
+        // out = out.replace(/( {3,})/g, " ");
+        out = out.replace(/( +)/g, " ");
+        out = out.replace(/(\. +)/g, "  ");
+        out = out.replace(/( *<li> *)/g, "\n    - ");
+    } else {
+        out = out.replace(/(<li> *)/g, "- ");
     }
 
     return out;
@@ -71,6 +77,7 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
     let queryable = false;
     let editable = false;
     let args : core.Args[] = [];
+    let cmdReturn = undefined;
 
     let synopsisP = dom.window.document.querySelector("#synopsis");
     if (synopsisP && synopsisP.nextElementSibling) {
@@ -82,15 +89,68 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
             queryable = text.includes("queryable");
             editable = text.includes("editable");
         }
-        let next = sibling.nextSibling
-        if (next && next.textContent){
-            desc = fixHTMLinnerElem(next.textContent);
+        // Description ----------------------------
+        let next = sibling.nextSibling;
+        // let stop when text content is empty to avoid getting to many description information
+        while (next && next.textContent && next.nodeName !== "H2"){
+            desc += fixHTMLinnerElem(next.textContent);
+            // if ((<any>next).innerHTML){
+            //     desc += fixHTMLinnerElem((<any>next).innerHTML);
+            // } else {
+            //     desc += fixHTMLinnerElem(next.textContent);
+            // }
+            
+            next = next.nextSibling;
+        }
+        // remove start and end spaces.
+        desc = desc.replace(/(^ +| +$)/gm, "");
+    }
+
+    // return type and info
+    let returnElems = dom.window.document.querySelectorAll("h2");
+    for (let x = 0; x < returnElems.length; x++) {
+        let cur = returnElems.item(x);
+        
+        if (cur.textContent && cur.textContent.toLowerCase() === 'return value'){
+
+            let elem = <any>cur;
+            // find next tag that containt return information
+            while (elem && elem.nodeName !== "P" && elem.nodeName !== "TABLE") {
+                elem = elem.nextSibling;
+            }
+
+            if (elem && elem.nodeName === "P"){
+                if (elem.textContent){
+                    cmdReturn = {
+                        type: elem.textContent,
+                        info: ""
+                    };
+                }
+            } else if (elem) {
+                // this is a table
+                let tableBody = elem.firstChild;
+                if (tableBody){
+                    let tableRow = tableBody.firstChild;
+                    if (tableRow && tableRow.childNodes.length >= 2){
+                        if (tableRow.childNodes[0].textContent && tableRow.childNodes[1].textContent){
+                            cmdReturn = {
+                                type: tableRow.childNodes[0].textContent,
+                                info: tableRow.childNodes[1].textContent
+                            };
+                        }
+                    }
+                }
+            }
+            break;
         }
     }
 
-    let pre = dom.window.document.querySelector("pre");
-    if (pre && pre.textContent){
-        example = pre.textContent;
+    let pre = dom.window.document.querySelectorAll("pre");
+    if (pre && pre.length > 0){
+        let exElem = pre.item(pre.length - 1);
+        if (exElem. textContent){
+            example = exElem.textContent;
+        }
     }
     
     let argTable = dom.window.document.body.querySelectorAll(":scope > table");
@@ -111,9 +171,9 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
                 let arg = new core.Args();
 
                 let column1 = row1.querySelectorAll("td");
-                if (column1.length == 3){
+                if (column1.length === 3){
                     let code = row1.querySelectorAll("code");
-                    if (code.length == 2){
+                    if (code.length === 2){
                         if (code[0].textContent){
                             let name = fixHTMLinnerElem(code[0].textContent);
                             let names = name.match(/(\w+)\((\w+)\)/);
@@ -147,7 +207,7 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
                 if (arg.isValid()){
                     args.push(arg);
                 }
-            };
+            }
         }
     }
     return {
@@ -158,18 +218,19 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
         undoable: undoable,
         queryable: queryable,
         editable: editable,
-        args: args
-    }
+        args: args,
+        return: cmdReturn
+    };
 }
 
 
-export async function getCmdInfoForCommand(commandName: string): Promise<core.ICmdInfo> {
+async function _getCmdInfo(urlInfo: IUrlInfo, commandName: string): Promise<core.ICmdInfo> {
     let t = core.MayaCmds.cmds[commandName];
     
     return new Promise(async (resolve, reject) => {
         if (t === core.CmdType.command){
             // load web page and parse it
-            await getJSDOM(commandName).then( (dom) => {
+            await getJSDOM(urlInfo, commandName).then( (dom) => {
                 let cmdInfo = parseDom(commandName, t, dom);
                 resolve(cmdInfo);
             }).catch( (err) => {
@@ -184,34 +245,71 @@ export async function getCmdInfoForCommand(commandName: string): Promise<core.IC
             undoable: false,
             queryable: false,
             editable: false,
-            args: []
+            args: [],
+            return: undefined
         });
     });
 }
 
+/**
+ * Get command info for all the command or specified one.
+ * @param url Maya python command help url.
+ * @param commandName list of command name to retrieve information. If none specified, parse all the commands.
+ */
+export async function getCommandInfo(url: string, commandName?: [string]): Promise<core.ICmdInfoObject> {
+    let urlInfo = getMayaHelpWebInfo(url);
 
-export async function getInfoForAllCmds(): Promise<core.ICmdInfoObject> {
+    let commandList: any = {};
+    if (commandName){
+        for (let name of commandName){
+            commandList[name] = core.MayaCmds.cmds[name];
+        }
+    } else {
+        commandList = core.MayaCmds.cmds;
+    }
+
     return new Promise( async (resolve, reject) => {
         let out: core.ICmdInfoObject = {};
-        for (let cmd in core.MayaCmds.cmds){
-            console.log(`Parsing "${cmd}":`);
-            await getCmdInfoForCommand(cmd).then((info)=> {
+        let x = 1;
+        let cmdCount = Object.keys(commandList).length;
+        for (let cmd in commandList){
+            console.log(`Parsing "${cmd}" ${x.toString().padStart(4)}/${cmdCount}`);
+            await _getCmdInfo(urlInfo, cmd).then((info)=> {
                 out[info.name] = info;
             }).catch( (reason) => {
-                console.log(reason)
+                console.log(reason);
             });
+            x += 1 ;
         }
         resolve(out);
     });
 }
 
 
-export async function parseAndSaveInfo(){
-    getInfoForAllCmds().then( (infoArr) => { 
-        writeFile(core.cmdsInfoPath, JSON.stringify(infoArr, undefined, 4), { encoding: "utf8" }, (err) => {
-            console.log(err);
-        });
-    }).catch((err) => {
-        console.error(err);
-    });
+export async function parseCommandDoc(url: string | any, commandName: any, outputToFile: any, override: any, filepath: any){
+    let info = await getCommandInfo(url, commandName);
+
+    if (outputToFile){
+
+        let _filepath = core.cmdsInfoPath;
+        if (filepath){
+            _filepath = resolve(process.cwd(), filepath);
+        }
+
+        let jsonObject = {};
+
+        if (!override){
+            jsonObject = JSON.parse(readFileSync(_filepath, {encoding: "utf8"}));
+        }
+
+        Object.assign(jsonObject, info);
+
+        writeFileSync(_filepath, JSON.stringify(jsonObject, undefined, 4), { encoding: "utf8" });
+
+        console.log(`Command info successfully written to "${_filepath}".`);
+
+    } else {
+        // param to print everything ??
+        console.log(info);
+    }
 }

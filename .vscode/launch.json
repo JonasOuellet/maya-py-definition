@@ -7,9 +7,22 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Parse Cmd",
             "program": "${workspaceFolder}\\lib\\index.js",
-            "preLaunchTask": "npm: watch"
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "args": [
+                "parse-cmds",
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Write Cmd",
+            "program": "${workspaceFolder}\\lib\\index.js",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "args": [
+                "write-def"
+            ]
         },
         {
             "type": "node",
