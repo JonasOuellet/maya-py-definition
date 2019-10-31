@@ -3,7 +3,7 @@ import { join, resolve } from "path";
 export let MayaCmds = require("../working/cmds.json");
 
 export let cmdsInfoPath = resolve(join(__dirname, '..', "working", "cmdsInfo.json"));
-export let cmdsDefPath = resolve(join(__dirname, '..', "out", "cmds.py"));
+export let cmdsDefPath = resolve(join(__dirname, '..', "out", "cmds", "__init__.py"));
 
 
 /**
@@ -29,6 +29,14 @@ export class Args {
     query: boolean = false;
     create: boolean = false;
     multiuse: boolean = false;
+
+    constructor (fullname='', shortname='', type='any', description='', defaultValue=''){
+        this.fullname = fullname;
+        this.shortname = shortname;
+        this.type = type;
+        this.description = description;
+        this.defaultValue = defaultValue;
+    }
 
     public isValid(): boolean {
         return this.fullname !== "" && this.shortname !== "" && this.type !== "";
@@ -57,6 +65,40 @@ export class Args {
         out = "(" + out +")";
         return out;
     }
+
+    public getDefaultValue(): string {
+        if (this.defaultValue) { return this.defaultValue; }
+
+        let test = /(?:default is|default:|default).*?([0-9]+(\.[0-9]+)*|".*?"|[a-z]+)/gim.exec(this.description);
+        if (test){
+            let lower = test[1].toLowerCase();
+            if (lower === 'false') {return 'False';}
+            if (lower === 'true') {return 'True';}
+
+            if ((this.type === 'int' || this.type === 'float') && Number.isNaN(parseFloat(test[1]))){
+                // invalid number
+            } else if (this.type === 'boolean'){
+                // we should already have returned
+            } else if (this.type ==='string' && ((test[1].indexOf('"') !== 0 && test[1].lastIndexOf('"')!==test[1].length-1) || test[1].indexOf(' ') >= 0)) {
+                // invalid string
+                // when spaces and doesnt start with "
+            } else {
+                return test[1];
+            }
+
+        }
+
+        if (this.type === 'int'){return '0';}
+        if (this.type === 'float'){return '0.0';}
+
+        if (this.type === 'boolean'){return 'True';}
+
+        if (this.type === 'string'){
+            return '""';
+        }
+
+        return 'None';
+    }
 }
 
 
@@ -76,6 +118,24 @@ export interface ICmdInfo {
     editable: boolean;
     args: Args[];
     return: ICmdReturn | undefined;
+}
+
+export function getCmdArgs(cmd: ICmdInfo) : Args[] {
+    if (cmd.editable || cmd.queryable){
+        let args = [...cmd.args];
+
+        if (cmd.editable){
+            args.push(new Args('edit', 'e', 'boolean', 'Edit flag', 'True'));
+        }
+
+        if (cmd.queryable){
+            args.push(new Args('query', 'q', 'boolean', 'Query flags', 'True'));
+        }
+
+        return args;
+    }
+
+    return cmd.args;
 }
 
 

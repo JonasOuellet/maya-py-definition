@@ -59,7 +59,7 @@ const argv = yargs.command(
                 default: 95
             },
             s: {
-                alias: "no-short",
+                alias: "noshort",
                 describe: "Do not write short keywords arg in the definition",
                 boolean: true,
             },
@@ -79,6 +79,27 @@ const argv = yargs.command(
                 alias: "show-option",
                 describe: "Show possible option for docstring and interface type",
                 boolean: true
+            },
+            no_desc: {
+                alias: "no-desc",
+                describe: "Do not write Description",
+                boolean: true
+            },
+            desc_length: {
+                alias: "desc-length",
+                describe: "Max character length for description",
+                type: 'number',
+                default: -1
+            },
+            example: {
+                describe: "Write Example",
+                boolean: true
+            },
+            arg_length: {
+                alias: "arg-length",
+                describe: "Max character length for arg description",
+                type: 'number',
+                default: -1
             }
             }
         );
@@ -91,7 +112,8 @@ const argv = yargs.command(
             console.log("Interface: ");
             console.log(getDefinitionType());
         } else {
-            writeDefFile(argv.command, !argv.noshort, argv.docstring, argv.interface, argv.linelength, argv.file);
+            writeDefFile(argv.command, !argv.noshort, argv.docstring, argv.interface, argv.lineLength, argv.file,
+                !argv.no_desc, argv.desc_length, argv.example, argv.arg_length);
         }
     }
 ).demandCommand(1, "Specify at least one command").help().recommendCommands().argv;

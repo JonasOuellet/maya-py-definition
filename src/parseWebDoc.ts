@@ -54,8 +54,8 @@ function fixHTMLinnerElem(text: string, space=true) : string {
     let out = text.replace(/(<i>|<\/i>|<p>|<\/p>|<dd>|<\/dd>|<dl>|<\/dl>|<b>|<\/b>|<\/li>)/g, "");
     out = out.replace(/&lt;/g, "<");
     out = out.replace(/&gt;/g, ">");
-    out = out.replace(/<code><b>/g, "<code>");
-    out = out.replace(/<\/b><\/code>/g, "</code>");
+    out = out.replace(/<code>/g, "");
+    out = out.replace(/<\/code>/g, "");
     if (space){
         out = out.replace(/( *\n *| *\r *| *\t *)/g, " ");
         // out = out.replace(/( {3,})/g, " ");
@@ -85,9 +85,9 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
         if (sibling.textContent)
         {
             let text = sibling.textContent.toLowerCase();
-            undoable = text.includes("undoable");
-            queryable = text.includes("queryable");
-            editable = text.includes("editable");
+            undoable = text.includes("undoable") && !text.includes("not undoable");
+            queryable = text.includes("queryable") && !text.includes("not queryable");
+            editable = text.includes("editable") && !text.includes("not editable");
         }
         // Description ----------------------------
         let next = sibling.nextSibling;
@@ -185,6 +185,8 @@ function parseDom(name: string, t: number, dom: JSDOM): core.ICmdInfo {
 
                         if (code[1].textContent){
                             let varType = fixHTMLinnerElem(code[1].textContent);
+                            varType = varType.replace(/(angle|linear)/g, 'float');
+                            varType = varType.replace(/uint/g, 'int');
                             arg.type = varType;
                         }
                     }

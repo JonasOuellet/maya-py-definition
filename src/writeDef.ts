@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { resolve } from "path";
+import { resolve, extname } from "path";
 import * as core from "./core";
 
 let cmdInfo = require("../working/cmdsInfo.json");
@@ -65,7 +65,7 @@ function _setLineMaxCharLength(line: string, maxChar=70, newLineSpaces=0, minCha
  * @param cmd Command info object
  * @param maxLineLength max char line length
  */
-function _getDescription(cmd: core.ICmdInfo, maxLineLength=70) : string {
+function _getDescription(cmd: core.ICmdInfo, maxLineLength=70, maxLen=-1) : string {
     let out = "";
     if (cmd.description !== "") {
         let lines = cmd.description.split('\n');
@@ -75,7 +75,11 @@ function _getDescription(cmd: core.ICmdInfo, maxLineLength=70) : string {
                 if (x > 0){
                     out += '\n';
                 }
+                
                 out += _setLineMaxCharLength(line, maxLineLength);
+                if (maxLen > 0 && out.length > maxLen){
+                    return out.substring(0, maxLen);
+                }
             }
         }
         
@@ -84,7 +88,7 @@ function _getDescription(cmd: core.ICmdInfo, maxLineLength=70) : string {
 }
 
 
-function _getExemple(cmd: core.ICmdInfo): string {
+function _getExample(cmd: core.ICmdInfo): string {
     let out = "";
     if (cmd.example !== "") {
         for (let ex of cmd.example.split('\n')){
@@ -108,7 +112,8 @@ function _getExemple(cmd: core.ICmdInfo): string {
  * @param maxLineLength 
  * @param shortKwargs 
  */
-function _restDocString(cmd: core.ICmdInfo, maxLineLength: number, shortKwargs=true) : string {
+function _restDocString(cmd: core.ICmdInfo, maxLineLength: number, shortKwargs=true, description: boolean, 
+    maxDescLen: number, example: boolean, maxArgLen: number, writeType=true) : string {
 
     let out = "";
 
@@ -118,43 +123,59 @@ function _restDocString(cmd: core.ICmdInfo, maxLineLength: number, shortKwargs=t
         }
     };
 
-    // let def = _getDescription(cmd, maxLineLength);
-    // if (def){
-    //     out += def;
-    // }
+    if (description){
+        let def = _getDescription(cmd, maxLineLength, maxDescLen);
+        if (def){
+            out += def;
+        }
+    }
 
     addBr();
     for (let arg of cmd.args){
         if (shortKwargs && arg.shortname !== arg.fullname){
             out += `:param ${arg.shortname}: (${arg.fullname})\n`;
         }
-        let argLine = `:param ${arg.fullname}: ${core.Args.prototype.argMod.call(arg)} ${arg.description}`;
+        let arg_desc = arg.description;
+        if (maxArgLen > 0) {
+            arg_desc = arg_desc.substring(0, maxArgLen);
+        }
+        arg_desc = arg_desc.trim();
+
+        let argLine = `:param ${arg.fullname}: ${core.Args.prototype.argMod.call(arg)} ${arg_desc}\n`;
 
         out += _setLineMaxCharLength(argLine, maxLineLength, 0, (maxLineLength * 0.7));
         
-        out += `\n:type ${arg.fullname}: ${arg.type}\n`;
+        if (writeType){
+            out += `:type ${arg.fullname}: ${arg.type}\n`;
+        }
     }
 
     if (cmd.return){
         addBr('\n');
         let ret = `:returns: ${cmd.return.info}`;
         out += _setLineMaxCharLength(ret, maxLineLength);
-        out += `\n:rtype: ${cmd.return.type}`;
+
+        if (writeType){
+            out += `\n:rtype: ${cmd.return.type}`;
+        }
     }
 
-    // let ex = _getExemple(cmd);
-    // if (ex){
-    //     addBr();
-    //     out += ":Exemple:\n\n";
-    //     out += ex;
-    // }
+    if (example){
+        let ex = _getExample(cmd);
+        if (ex){
+            addBr();
+            out += ":Exemple:\n\n";
+            out += ex;
+        }
+    }
 
     return out;
 }
 
 
 interface IDocstring {
-    [key: string]: (cmd: core.ICmdInfo, maxLineLength: number, shortKwargs: boolean) => string;
+    [key: string]: (cmd: core.ICmdInfo, maxLineLength: number, shortKwargs: boolean, description: boolean,
+        maxDescLen: number, example: boolean, maxArgLen: number, writeType: boolean) => string;
 }
 
 
@@ -167,7 +188,6 @@ export function getDocstringType(): string[] {
     return Object.keys(DocStrings);
 }
 
-
 function _pyDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : string {
     let def = `def ${cmd.name}(`;
 
@@ -178,9 +198,9 @@ function _pyDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : stri
         }
         
         if (shortKwargs && arg.fullname !== arg.shortname) {
-            def += `${arg.shortname}=None, `;
+            def += `${arg.shortname}=${core.Args.prototype.getDefaultValue.call(arg)}, `;
         }
-        def += `${arg.fullname}=None`;
+        def += `${arg.fullname}=${core.Args.prototype.getDefaultValue.call(arg)}`;
 
         x += 1;
     }
@@ -188,8 +208,102 @@ function _pyDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : stri
     if (x > 0){
         def += ', ';
     }
+
+    if (cmd.queryable){
+        def += 'q=True, query=True, ';
+    }
+    if (cmd.editable){
+        def += 'e=True, edit=True, ';
+    }
+
     def += "*args, **kwargs):";
     return def;
+}
+
+function _getValidPyiType(type: string): string {
+    let lower = type.toLowerCase();
+    if (lower === 'none'){
+        return 'None';
+    }
+    if (lower === 'boolean'){
+        return 'bool';
+    }
+
+    lower = lower.replace(/string/g, 'AnyStr');
+
+    if (lower.indexOf('[') >= 0){
+        lower = lower.replace(/(\[|\])/g, '');
+        let items = lower.split(',');
+        lower = '';
+        for (let i of items){
+            i = i.trim();
+            if (i) {
+                if (lower){
+                    lower += ', ';
+                }
+                lower += i;
+            }
+        }
+        lower = `List[${lower}]`;
+    }
+
+    return lower;
+}
+
+function _pyiDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : string {
+    let def = `def ${cmd.name}(`;
+
+    let x = 0;
+    for(let arg of cmd.args){
+        if (x > 0){
+            def += ', ';
+        }
+
+        let argtypes = [_getValidPyiType(arg.type)];
+        if (arg.multiuse){
+            argtypes.push(`List[${argtypes[0]}]`);
+        }
+        if (arg.query && argtypes[0].indexOf("bool") < 0){
+            argtypes.push('bool');
+        }
+        let argtype = '';
+        if (argtypes.length > 1){
+            argtype = `Union[${argtypes.join(', ')}]`;
+        } else {
+            argtype = argtypes[0];
+        }
+
+        let defaultarg = core.Args.prototype.getDefaultValue.call(arg);
+
+        if (shortKwargs && arg.fullname !== arg.shortname) {
+            def += `${arg.shortname}: ${argtype}=${defaultarg}, `;
+        }
+        def += `${arg.fullname}: ${argtype}=${defaultarg}`;
+
+        x += 1;
+    }
+
+    if (x > 0){
+        def += ', ';
+    }
+
+    if (cmd.queryable){
+        def += 'q=True, query=True, ';
+    }
+    if (cmd.editable){
+        def += 'e=True, edit=True, ';
+    }
+
+    let retType = 'None';
+    if (cmd.return){
+        retType = _getValidPyiType(cmd.return.type);
+    }
+    if (cmd.queryable){
+        retType = `Union[${retType}, Any]`;
+    }
+
+    def += `*args, **kwargs)->${retType}:`;
+return def;
 }
 
 
@@ -200,6 +314,7 @@ interface IDefinitionInterface {
 
 let DefinitionInterface: IDefinitionInterface = {
     py: _pyDefinitionInterface,
+    pyi: _pyiDefinitionInterface
 };
 
 
@@ -208,13 +323,29 @@ export function getDefinitionType(): string[] {
 }
 
 
+function pyiFileHeader(): string {
+    return "from typing import Union, List, Any, AnyStr";
+}
+
+interface IFileHeader {
+    [key: string]: () => string;
+}
+
+
+let FileHeader: IFileHeader = {
+    py: () => {return '';},
+    pyi: pyiFileHeader
+};
+
+
 /**
  * Return function definition for the given 
  * @param info Command to get the function definition from
  * @param docstring (rest, google, etc) docstring format
  * @param defInterface (py, pyi) definition interface, base python or typed python.
  */
-function _getDefinition(info: core.ICmdInfo, shortKwarg=true, docstring="rest", defInterface="py", maxLineLength=70): string {
+function _getDefinition(info: core.ICmdInfo, shortKwarg=true, docstring="rest", defInterface="py", maxLineLength=70,
+description: boolean, maxDescLen: number, example: boolean, maxArgLen: number): string {
     let def = DefinitionInterface[defInterface](info, shortKwarg);
 
     // make sure it respect the line lenght and newline start where the first paranthesis is
@@ -227,7 +358,7 @@ function _getDefinition(info: core.ICmdInfo, shortKwarg=true, docstring="rest", 
     let desc = "";
     if (info.type === core.CmdType.command){
         // remove 4 char for the endent
-        desc = DocStrings[docstring](info, maxLineLength - _tab.length, shortKwarg);
+        desc = DocStrings[docstring](info, maxLineLength - _tab.length, shortKwarg, description, maxDescLen, example, maxArgLen, defInterface==='py');
     }else{
         desc = core.CmdType[info.type];
     }
@@ -255,12 +386,14 @@ function _getCommandsList(commandName: string | string[]){
 }
 
 
-export function getDefinition(commandName: any, shortKwarg=true, docstring="rest", defInterface="py", maxLineLength=70): string {
+export function getDefinition(commandName: any, shortKwarg=true, docstring="rest", defInterface="py", maxLineLength=70,
+description: boolean, maxDescLen: number, example: boolean, maxArgLen: number): string {
     let commandList = _getCommandsList(commandName);
 
     let out = "";
     for (let cmd in commandList){
-        out += _getDefinition(commandList[cmd], shortKwarg, docstring, defInterface, maxLineLength);
+        out += _getDefinition(commandList[cmd], shortKwarg, docstring, defInterface, maxLineLength,
+            description, maxDescLen, example, maxArgLen);
         out += _definitionInbetween;
     }
     return out;
@@ -268,12 +401,13 @@ export function getDefinition(commandName: any, shortKwarg=true, docstring="rest
 
 
 export  function writeDefFile(commandName: any, shortKwarg: any, docstring: any, defInterface:any, maxLineLength: any,
-                                      filepath: any)
+                                      filepath: any, description: any, maxDescLen: any, example: any, maxArgLen: any)
 {
     let _filepath = core.cmdsDefPath;
     if (filepath){
         _filepath = resolve(process.cwd(), filepath);
     }
+    _filepath = _filepath.replace(extname(_filepath), `.${defInterface}`);
 
     let fd = fs.openSync(_filepath, 'w');
     if (!fd) {
@@ -282,12 +416,22 @@ export  function writeDefFile(commandName: any, shortKwarg: any, docstring: any,
     }
 
     let _inb = Buffer.from(_definitionInbetween);
+
+    let header = FileHeader[defInterface]();
+    if (header){
+        header = header.trimRight() + '\n';
+        let buff = Buffer.from(header, "utf-8");
+        fs.writeSync(fd, buff);
+        fs.writeSync(fd, _inb);
+    }
+
     let commandList = _getCommandsList(commandName);
     let x = 1;
     let cmdCount = Object.keys(commandList).length;
     for (let cmd in commandList){
         console.log(`Writing "${cmd}" ${x.toString().padStart(4)}/${cmdCount}`);
-        let test = _getDefinition(cmdInfo[cmd], shortKwarg, docstring, defInterface, maxLineLength);
+        let test = _getDefinition(cmdInfo[cmd], shortKwarg, docstring, defInterface, maxLineLength,
+            description, maxDescLen, example, maxArgLen);
         let buffer = Buffer.from(test, "utf-8");
 
         fs.writeSync(fd, buffer);

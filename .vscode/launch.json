@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}\\lib\\index.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "args": [
-                "parse-cmds",
+                "parse-cmds"
             ]
         },
         {
@@ -21,7 +21,11 @@
             "program": "${workspaceFolder}\\lib\\index.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "args": [
-                "write-def"
+                "write-def",
+                "--desc-length", "650",
+                "--arg-length", "350",
+                "--noshort", "--interface", "pyi",
+                "-c", "polyGeoSampler"
             ]
         },
         {

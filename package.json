@@ -7,7 +7,9 @@
     "watch": "tsc -watch -p ./",
     "debug": "node --nolazy --inspect-brk=9229 lib/index.js",
     "build": "tsc --build tsconfig.json",
-    "parseCmds": "node . parse-cmds"
+    "parseCmds": "node . parse-cmds",
+    "writeDef": "node . write-def --desc-length 750 --arg-length 350 --noshort",
+    "writeDefPyi": "node . write-def --desc-length 750 --arg-length 350 --noshort --interface pyi"
   },
   "keywords": [],
   "author": "",
