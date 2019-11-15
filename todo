@@ -1,0 +1,5 @@
+- check if default value are fine
+- parse positional
+    1. Parse positional argument
+    2. Replace *args with valid positional argument ?
+        Note it might not be good to do so since the positional can be used or not

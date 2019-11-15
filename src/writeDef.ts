@@ -228,10 +228,15 @@ function _getValidPyiType(type: string): string {
     if (lower === 'boolean'){
         return 'bool';
     }
-
-    lower = lower.replace(/string/g, 'AnyStr');
+    if (lower === 'string'){
+        return 'AnyStr';
+    }
+    if (lower === 'script'){
+        return 'Script';
+    }
 
     if (lower.indexOf('[') >= 0){
+        lower = type.replace(/string/g, 'AnyStr');
         lower = lower.replace(/(\[|\])/g, '');
         let items = lower.split(',');
         lower = '';
@@ -241,17 +246,18 @@ function _getValidPyiType(type: string): string {
                 if (lower){
                     lower += ', ';
                 }
-                lower += i;
+                lower += _getValidPyiType(i);
             }
         }
         lower = `List[${lower}]`;
+        return lower;
     }
 
-    return lower;
+    return type;
 }
 
 function _pyiDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : string {
-    let def = `def ${cmd.name}(`;
+    let def = `def ${cmd.name}(*args, `;
 
     let x = 0;
     for(let arg of cmd.args){
@@ -302,7 +308,7 @@ function _pyiDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : str
         retType = `Union[${retType}, Any]`;
     }
 
-    def += `*args, **kwargs)->${retType}:`;
+    def += `**kwargs)->${retType}:`;
 return def;
 }
 
@@ -324,7 +330,7 @@ export function getDefinitionType(): string[] {
 
 
 function pyiFileHeader(): string {
-    return "from typing import Union, List, Any, AnyStr";
+    return "from typing import Union, List, Any, AnyStr, Callable\n\n\nScript = Union[AnyStr, Callable[..., Any]]";
 }
 
 interface IFileHeader {

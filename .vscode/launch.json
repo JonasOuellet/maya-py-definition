@@ -25,8 +25,19 @@
                 "--desc-length", "650",
                 "--arg-length", "350",
                 "--noshort", "--interface", "pyi",
-                "-c", "polyGeoSampler"
+                "-c", "treeLister"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Tests",
+            "program": "${workspaceFolder}\\node_modules\\mocha\\bin\\mocha",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "${workspaceFolder}\\lib\\test",
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json"
         },
         {
             "type": "node",

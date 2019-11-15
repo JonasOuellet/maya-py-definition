@@ -74,18 +74,20 @@ export class Args {
             let lower = test[1].toLowerCase();
             if (lower === 'false') {return 'False';}
             if (lower === 'true') {return 'True';}
-
-            if ((this.type === 'int' || this.type === 'float') && Number.isNaN(parseFloat(test[1]))){
-                // invalid number
-            } else if (this.type === 'boolean'){
-                // we should already have returned
-            } else if (this.type ==='string' && ((test[1].indexOf('"') !== 0 && test[1].lastIndexOf('"')!==test[1].length-1) || test[1].indexOf(' ') >= 0)) {
-                // invalid string
-                // when spaces and doesnt start with "
-            } else {
-                return test[1];
-            }
-
+            
+            let value = test[1];
+            if ((this.type === 'int' || this.type === 'float') && !Number.isNaN(parseFloat(value))){
+                return value;
+            } 
+            if (this.type ==='string' && ((value.indexOf('"') === 0))) {
+                if (value.lastIndexOf('"') === value.length-1) {
+                    if (value.indexOf(' ') === -1){
+                        console.log("***************************************************");
+                        console.log(value);
+                        return value;
+                    }
+                }
+            } 
         }
 
         if (this.type === 'int'){return '0';}

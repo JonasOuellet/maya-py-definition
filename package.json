@@ -8,17 +8,20 @@
     "debug": "node --nolazy --inspect-brk=9229 lib/index.js",
     "build": "tsc --build tsconfig.json",
     "parseCmds": "node . parse-cmds",
-    "writeDef": "node . write-def --desc-length 750 --arg-length 350 --noshort",
-    "writeDefPyi": "node . write-def --desc-length 750 --arg-length 350 --noshort --interface pyi"
+    "writeDef": "node . write-def --desc-length 350 --arg-length 150 --noshort",
+    "writeDefPyi": "node . write-def --desc-length 350 --arg-length 150 --noshort --interface pyi",
+    "test": "npm run build && node ./node_modules/mocha/bin/mocha lib/test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/jsdom": "^12.2.4",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.8",
     "@types/request": "^2.48.2",
     "@types/yargs": "^13.0.3",
+    "mocha": "^6.2.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
