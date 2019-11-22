@@ -17,6 +17,7 @@ If you are using **Pycharm** you can use [out/cmds/\_\_init\_\_.pyi](https://raw
 Delete or rename the old `__init__.py` file.  
 
 *Note:* Since this is a big file, Pycharm will probably ask you to increase the available memory.
+In **Pycharm** go to: **Help -> Edit Custom Properties...**, add this line to the file: `idea.max.intellisense.filesize=999999` save and restart Pycharm.
 
 ### Example of function definition:
 
