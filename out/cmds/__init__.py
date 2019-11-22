@@ -40,7 +40,7 @@ def NodeEditorRestoreLastClosedTab(*args, **kwargs):
     pass
 
 
-def lookThru(farClip=0.0, nearClip=0.0, q=True, query=True, *args, **kwargs):
+def lookThru(*args, farClip=0.0, nearClip=0.0, q=True, query=True, **kwargs):
     """
     This command sets a particular camera to look through in a view  This command may also be
     used to view the negative z axis of lights or other DAG objects  The standard camera tools
@@ -137,8 +137,8 @@ def SubstituteGeometryOptions(*args, **kwargs):
     pass
 
 
-def colorAtPoint(coordU=0.0, coordV=0.0, maxU=1.0, maxV=1.0, minU=0.0, minV=0.0, output="",
-                 samplesU=1, samplesV=1, *args, **kwargs):
+def colorAtPoint(*args, coordU=0.0, coordV=0.0, maxU=1.0, maxV=1.0, minU=0.0, minV=0.0,
+                 output="", samplesU=1, samplesV=1, **kwargs):
     """
     The colorAtPoint command is used to query textures or ocean shaders at passed in uv
     coordinates  (For ocean shaders uv is x and z in worldspace )  The return value is a
@@ -179,7 +179,7 @@ def blendCtx(*args, **kwargs):
     pass
 
 
-def clearCache(allNodes=True, computed=True, dirty=True, *args, **kwargs):
+def clearCache(*args, allNodes=True, computed=True, dirty=True, **kwargs):
     """
     Even though dependency graph values are computed or dirty they may still occupy space
     temporarily within the nodes  This command goes in to all of the data that can be
@@ -215,13 +215,12 @@ def sbs_IsSubstanceRelocalized(*args, **kwargs):
     pass
 
 
-def textureDeformer(after=True, afterReference=True, before=True, deformerTools=True,
+def textureDeformer(*args, after=True, afterReference=True, before=True, deformerTools=True,
                     direction="", envelope=0.0, exclusive="", frontOfChain=True, geometry="",
                     geometryIndices=True, ignoreSelected=True, includeHiddenSelections=False,
                     name="", offset=0.0, parallel=True, pointSpace="", prune=True, remove=True,
                     split=True, strength=0.0, vectorOffset=None, vectorSpace="",
-                    vectorStrength=None, q=True, query=True, e=True, edit=True, *args,
-                    **kwargs):
+                    vectorStrength=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a texture deformer for the object  The selected objects are the input
     geometry objects  The deformer node name will be returned
@@ -321,8 +320,8 @@ def XgCreateIgSplineEditor(*args, **kwargs):
     pass
 
 
-def polyDelVertex(caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def polyDelVertex(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+                  query=True, e=True, edit=True, **kwargs):
     """
     Deletes vertices  Joins two edges which have a common vertex  The vertices must be
     connected to exactly two edges (so-called "winged")
@@ -353,9 +352,9 @@ def NodeEditorDeleteNodes(*args, **kwargs):
     pass
 
 
-def subdEditUV(angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0, rotation=True,
-               scale=True, scaleU=0.0, scaleV=0.0, uValue=0.0, uvSetName="", vValue=0.0, q=True,
-               query=True, *args, **kwargs):
+def subdEditUV(*args, angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0,
+               rotation=True, scale=True, scaleU=0.0, scaleV=0.0, uValue=0.0, uvSetName="",
+               vValue=0.0, q=True, query=True, **kwargs):
     """
     Command edits uvs on subdivision surfaces  When used with the query flag, it returns the uv
     values associated with the specified components
@@ -407,7 +406,7 @@ def OutlinerToggleTimeEditor(*args, **kwargs):
     pass
 
 
-def timerX(startTime=0.0, *args, **kwargs):
+def timerX(*args, startTime=0.0, **kwargs):
     """
     Used to calculate elapsed time  This command returns sub-second accurate time values  It is
     useful from scripts for timing the length of operations  Call this command before and after
@@ -429,10 +428,10 @@ def timerX(startTime=0.0, *args, **kwargs):
     pass
 
 
-def pointLight(decayRate=0, discRadius=0.0, exclusive=True, intensity=0.0, name="",
+def pointLight(*args, decayRate=0, discRadius=0.0, exclusive=True, intensity=0.0, name="",
                position=None, rgb=None, rotation=None, shadowColor=None, shadowDither=0.0,
                shadowSamples=0, softShadow=True, useRayTraceShadows=True, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+               e=True, edit=True, **kwargs):
     """
     The pointLight command is used to edit the parameters of existing pointLights, or to create
     new ones  The default behaviour is to create a new pointlight
@@ -471,8 +470,8 @@ def pointLight(decayRate=0, discRadius=0.0, exclusive=True, intensity=0.0, name=
     pass
 
 
-def polyMergeFacet(caching=True, constructionHistory=True, firstFacet=0, mergeMode=0, name="",
-                   nodeState=0, secondFacet=0, q=True, query=True, e=True, edit=True, *args,
+def polyMergeFacet(*args, caching=True, constructionHistory=True, firstFacet=0, mergeMode=0,
+                   name="", nodeState=0, secondFacet=0, q=True, query=True, e=True, edit=True,
                    **kwargs):
     """
     The second face becomes a hole in the first face.
@@ -510,9 +509,9 @@ def XgPreview(*args, **kwargs):
     pass
 
 
-def polyBoolOp(faceAreaThreshold=0.0001, operation=0, preserveColor=False, useThresholds=False,
-               vertexDistanceThreshold=0.001, caching=True, mergeUVSets=0, nodeState=0, q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+def polyBoolOp(*args, faceAreaThreshold=0.0001, operation=0, preserveColor=False,
+               useThresholds=False, vertexDistanceThreshold=0.001, caching=True, mergeUVSets=0,
+               nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new poly as the result of a boolean operation on input polys : union,
     intersection, difference
@@ -586,8 +585,8 @@ def UVCameraBasedProjection(*args, **kwargs):
     pass
 
 
-def xformConstraint(alongNormal=0, live=True, type="", q=True, query=True, e=True, edit=True,
-                    *args, **kwargs):
+def xformConstraint(*args, alongNormal=0, live=True, type="", q=True, query=True, e=True,
+                    edit=True, **kwargs):
     """
     This command allows you to change the transform constraint used by the transform tools
     during component transforms
@@ -608,10 +607,9 @@ def xformConstraint(alongNormal=0, live=True, type="", q=True, query=True, e=Tru
     pass
 
 
-def copyKey(animLayer="", animation="keysOrObjects.", attribute="", clipboard="",
+def copyKey(*args, animLayer="", animation="keysOrObjects.", attribute="", clipboard="",
             controlPoints=False, float=None, forceIndependentEulerAngles=True, hierarchy="",
-            includeUpperBound=True, index=0, option="", shape=True, time=None, *args,
-            **kwargs):
+            includeUpperBound=True, index=0, option="", shape=True, time=None, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -670,7 +668,7 @@ def CopySkinWeightsOptions(*args, **kwargs):
     pass
 
 
-def vectorize(browserView=True, byFrame=0.0, camera="", combineFillsEdges=True,
+def vectorize(*args, browserView=True, byFrame=0.0, camera="", combineFillsEdges=True,
               currentFrame=True, curveTolerance=0.0, customExtension="", detailLevel=0,
               edgeColor=None, edgeDetail=True, edgeStyle="", edgeWeight=0.0, endFrame=0.0,
               filenameFormat="", fillStyle="", flashVersion=0, frameRate=0, height=0,
@@ -679,7 +677,7 @@ def vectorize(browserView=True, byFrame=0.0, camera="", combineFillsEdges=True,
               pixelAspectRatio=0.0, reflectionDepth=0, reflections=True, renderLayers=True,
               renderOptimization="", renderView=True, secondaryCurveFitting=True, shadows=True,
               showBackFaces=True, startFrame=0.0, svgAnimation="", svgCompression=True, width=0,
-              *args, **kwargs):
+              **kwargs):
     """
     This command renders Maya scenes to various vector and raster formats using the Maya Vector
     renderer
@@ -811,10 +809,10 @@ def ProfilerToolCpuView(*args, **kwargs):
     pass
 
 
-def polyInfo(edgeToFace=True, edgeToVertex=True, faceNormals=True, faceToEdge=True,
+def polyInfo(*args, edgeToFace=True, edgeToVertex=True, faceNormals=True, faceToEdge=True,
              faceToVertex=True, invalidEdges=True, invalidVertices=True, laminaFaces=True,
              nonManifoldEdges=True, nonManifoldUVEdges=True, nonManifoldUVs=True,
-             nonManifoldVertices=True, vertexToEdge=True, vertexToFace=True, *args, **kwargs):
+             nonManifoldVertices=True, vertexToEdge=True, vertexToFace=True, **kwargs):
     """
     Command queries topological information on polygonal objects and components  So, the
     command will require the following to be specified: - selection list to query
@@ -889,7 +887,7 @@ def dR_moveTweakTool(*args, **kwargs):
     pass
 
 
-def floatSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def floatSliderGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                    adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                    backgroundColor=None, changeCommand=None, columnAlign=None,
                    columnAlign2=None, columnAlign3=None, columnAlign4=None, columnAlign5=None,
@@ -907,7 +905,7 @@ def floatSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                    parent="", popupMenuArray=True, precision=0, preventOverride=True,
                    rowAttach=None, sliderStep=0.0, statusBarMessage="", step=0.0,
                    useTemplate="", value=0.0, visible=True, visibleChangeCommand=None, width=0,
-                   q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   q=True, query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -1302,9 +1300,9 @@ def CreatePond(*args, **kwargs):
     pass
 
 
-def bevelPlus(bevelInside=False, capSides=4, constructionHistory=True, innerStyle=0,
+def bevelPlus(*args, bevelInside=False, capSides=4, constructionHistory=True, innerStyle=0,
               joinSurfaces=True, name="", normalsOutwards=True, numberOfSides=4, outerStyle=0,
-              polygon=0, range=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+              polygon=0, range=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The bevelPlus command creates a new bevel surface for the specified curves using a given
     style curve  The first curve should be the "outside" curve, and the (optional) rest of them
@@ -1377,7 +1375,7 @@ def ScaleConstraintOptions(*args, **kwargs):
     pass
 
 
-def iconTextStaticLabel(align="", annotation="", backgroundColor=None, defineTemplate="",
+def iconTextStaticLabel(*args, align="", annotation="", backgroundColor=None, defineTemplate="",
                         disabledImage="", docTag="", dragCallback=None, dropCallback=None,
                         enable=True, enableBackground=True, enableKeyboardFocus=True,
                         exists=True, flipX=True, flipY=True, font="", fullPathName=True,
@@ -1389,7 +1387,7 @@ def iconTextStaticLabel(align="", annotation="", backgroundColor=None, defineTem
                         preventOverride=True, rotation=0.0, statusBarMessage="", style="",
                         useAlpha=True, useTemplate="", version="", visible=True,
                         visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                        edit=True, *args, **kwargs):
+                        edit=True, **kwargs):
     """
     This control supports up to 3 icon images and 4 different display styles  The icon image
     displayed is the one that best fits the current size of the control given its current style
@@ -1576,14 +1574,14 @@ def HideCameraManipulators(*args, **kwargs):
     pass
 
 
-def cmdShell(annotation="", backgroundColor=None, clear=True, command="", defineTemplate="",
-             docTag="", dragCallback=None, dropCallback=None, enable=True,
+def cmdShell(*args, annotation="", backgroundColor=None, clear=True, command="",
+             defineTemplate="", docTag="", dragCallback=None, dropCallback=None, enable=True,
              enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
              height=0, highlightColor=None, isObscured=True, manage=True, noBackground=True,
              numberOfHistoryLines=0, numberOfPopupMenus=True, numberOfSavedLines=0, parent="",
              popupMenuArray=True, preventOverride=True, prompt="", statusBarMessage="",
              useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+             query=True, e=True, edit=True, **kwargs):
     """
     This command creates a scrolling field that behaves similar to a unix shell for entering
     user input  You may specify the number of lines that will be remembered by the field with
@@ -1706,9 +1704,9 @@ def OpenScene(*args, **kwargs):
     pass
 
 
-def duplicate(inputConnections=True, instanceLeaf=True, name="", parentOnly=True,
+def duplicate(*args, inputConnections=True, instanceLeaf=True, name="", parentOnly=True,
               renameChildren=True, returnRootsOnly=True, smartTransform=True,
-              transformsOnly=True, upstreamNodes=True, *args, **kwargs):
+              transformsOnly=True, upstreamNodes=True, **kwargs):
     """
     This command duplicates the given objects  If no objects are given, then the selected list
     is duplicated   The smart transform feature allows duplicate to transform newly duplicated
@@ -1773,7 +1771,7 @@ def StitchEdgesToolOptions(*args, **kwargs):
     pass
 
 
-def allNodeTypes(includeAbstract=True, *args, **kwargs):
+def allNodeTypes(*args, includeAbstract=True, **kwargs):
     """
     This command returns a list containing the type names of every kind of creatable node
     registered with the system  Note that some node types are abstract and cannot be created 
@@ -1804,7 +1802,7 @@ def GoalOptions(*args, **kwargs):
     pass
 
 
-def nurbsUVSet(create=True, useExplicit=True, q=True, query=True, e=True, edit=True, *args,
+def nurbsUVSet(*args, create=True, useExplicit=True, q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     Allows user to toggle between implicit and explicit UVs on a NURBS object  Also provides a
@@ -1846,10 +1844,10 @@ def CreateEmitter(*args, **kwargs):
     pass
 
 
-def polyPipe(axis=None, caching=True, constructionHistory=True, createUVs=True, height=2.0,
-             name="", nodeState=0, object=True, radius=1.0, roundCap=False, subdivisionsAxis=20,
-             subdivisionsCaps=1, subdivisionsHeight=1, texture=True, thickness=0.5, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+def polyPipe(*args, axis=None, caching=True, constructionHistory=True, createUVs=True,
+             height=2.0, name="", nodeState=0, object=True, radius=1.0, roundCap=False,
+             subdivisionsAxis=20, subdivisionsCaps=1, subdivisionsHeight=1, texture=True,
+             thickness=0.5, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The polyPipe command creates a new polygonal pipe
     
@@ -1918,9 +1916,9 @@ def AddKeysToolOptions(*args, **kwargs):
     pass
 
 
-def duplicateSurface(caching=True, constructionHistory=True, faceCountU=1, faceCountV=1,
+def duplicateSurface(*args, caching=True, constructionHistory=True, faceCountU=1, faceCountV=1,
                      firstFaceU=0, firstFaceV=0, local=True, mergeItems=True, name="",
-                     nodeState=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                     nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The duplicateSurface command takes a surface patch (face) and and returns the 3D surface 
     Connected patches are returned as a single surface
@@ -2034,7 +2032,7 @@ def NodeEditorPickWalkUp(*args, **kwargs):
     pass
 
 
-def colorInputWidgetGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def colorInputWidgetGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                         adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                         annotation="", backgroundColor=None, changeCommand=None,
                         columnAlign=None, columnAlign2=None, columnAlign3=None,
@@ -2053,7 +2051,7 @@ def colorInputWidgetGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColum
                         popupMenuArray=True, preventOverride=True, rgbValue=None,
                         rowAttach=None, statusBarMessage="", useTemplate="", visible=True,
                         visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                        edit=True, *args, **kwargs):
+                        edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -2244,7 +2242,7 @@ def colorInputWidgetGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColum
     pass
 
 
-def scaleComponents(pivot=None, rotation=None, *args, **kwargs):
+def scaleComponents(*args, pivot=None, rotation=None, **kwargs):
     """
     This is a limited version of the scale command  First, it only works on selected components
      You provide a pivot in world space, and you can provide a rotation  This rotation affects
@@ -2276,7 +2274,7 @@ def ThreeBottomSplitViewArrangement(*args, **kwargs):
     pass
 
 
-def attrFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def attrFieldGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                  attribute="", backgroundColor=None, changeCommand=None, columnAlign=None,
                  columnAlign2=None, columnAlign3=None, columnAlign4=None, columnAlign5=None,
@@ -2294,7 +2292,7 @@ def attrFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  parent="", popupMenuArray=True, precision=0, preventOverride=True,
                  rowAttach=None, statusBarMessage="", step=0.0, useTemplate="", visible=True,
                  visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -2546,7 +2544,7 @@ def particleExists(*args, **kwargs):
     pass
 
 
-def tolerance(angular=0.0, linear=0.0, q=True, query=True, *args, **kwargs):
+def tolerance(*args, angular=0.0, linear=0.0, q=True, query=True, **kwargs):
     """
     This command sets tolerances used by modelling operations that require a tolerance, such as
     surface fillet  Linear tolerance is also known as "positional" tolerance  Angular tolerance
@@ -2591,8 +2589,8 @@ def ProjectTangent(*args, **kwargs):
     pass
 
 
-def curveOnSurface(append=True, degree=3, knot=0.0, name="", periodic=True, positionUV=None,
-                   replace=True, *args, **kwargs):
+def curveOnSurface(*args, append=True, degree=3, knot=0.0, name="", periodic=True,
+                   positionUV=None, replace=True, **kwargs):
     """
     The curve command creates a new curve from a list of control vertices (CVs)  A string is
     returned containing the pathname to the newly created curve  You can create a curve from
@@ -2673,10 +2671,10 @@ def Group(*args, **kwargs):
     pass
 
 
-def internalVar(userAppDir=True, userBitmapsDir=True, userHotkeyDir=True,
+def internalVar(*args, userAppDir=True, userBitmapsDir=True, userHotkeyDir=True,
                 userMarkingMenuDir=True, userPrefDir=True, userPresetsDir=True,
                 userScriptDir=True, userShelfDir=True, userTmpDir=True, userWorkspaceDir=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command returns the values of internal variables  No modification of these variables
     is supported
@@ -2724,12 +2722,12 @@ def hikCharacterToolWidget(*args, **kwargs):
     pass
 
 
-def shapePanel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def shapePanel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
                editString=True, exists=True, init=True, isUnique=True, label="",
                menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
                popupMenuProcedure=None, replacePanel="", shapeEditor=True, tearOff=True,
                tearOffCopy="", tearOffRestore=True, unParent=True, useTemplate="", q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     This command creates a panel that derives from the base panel class that houses a
     shapeEditor
@@ -2815,13 +2813,13 @@ def GetFBIKExample(*args, **kwargs):
     pass
 
 
-def jointLattice(after=True, afterReference=True, before=True, creasing=0.0, deformerTools=True,
-                 exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
-                 ignoreSelected=True, includeHiddenSelections=False, joint="", lengthIn=0.0,
-                 lengthOut=0.0, lowerBindSkin="", lowerTransform="", name="", parallel=True,
-                 prune=True, remove=True, rounding=0.0, split=True, upperBindSkin="",
-                 upperTransform="", widthLeft=0.0, widthRight=0.0, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+def jointLattice(*args, after=True, afterReference=True, before=True, creasing=0.0,
+                 deformerTools=True, exclusive="", frontOfChain=True, geometry="",
+                 geometryIndices=True, ignoreSelected=True, includeHiddenSelections=False,
+                 joint="", lengthIn=0.0, lengthOut=0.0, lowerBindSkin="", lowerTransform="",
+                 name="", parallel=True, prune=True, remove=True, rounding=0.0, split=True,
+                 upperBindSkin="", upperTransform="", widthLeft=0.0, widthRight=0.0, q=True,
+                 query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a jointLattice deformer  The name of the created/edited
     object is returned  Usually you would make use of this functionality through the higher
@@ -2973,13 +2971,14 @@ def ParticleToolOptions(*args, **kwargs):
     pass
 
 
-def particleInstancer(addObject=True, aimAxis="", aimDirection="", aimPosition="", aimUpAxis="",
-                      aimWorldUp="", attributeMapping=True, cycle="none", cycleStartObject="",
-                      cycleStep=0.0, cycleStepUnits="frames", index=0, instanceId="",
-                      levelOfDetail="geometry", name="", object="", objectIndex="",
-                      particleAge="", position="worldPosition", removeObject=True, rotation="",
-                      rotationOrder="", rotationType="", rotationUnits="", scale="", shear="",
-                      visibility="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def particleInstancer(*args, addObject=True, aimAxis="", aimDirection="", aimPosition="",
+                      aimUpAxis="", aimWorldUp="", attributeMapping=True, cycle="none",
+                      cycleStartObject="", cycleStep=0.0, cycleStepUnits="frames", index=0,
+                      instanceId="", levelOfDetail="geometry", name="", object="",
+                      objectIndex="", particleAge="", position="worldPosition",
+                      removeObject=True, rotation="", rotationOrder="", rotationType="",
+                      rotationUnits="", scale="", shear="", visibility="", q=True, query=True,
+                      e=True, edit=True, **kwargs):
     """
     This command is used to create a particle instancer node and set the proper attributes in
     the particle shape and in the instancer node  It will also create the connections needed
@@ -3092,7 +3091,7 @@ def AttachCurve(*args, **kwargs):
     pass
 
 
-def radioButton(align="", annotation="", backgroundColor=None, changeCommand=None,
+def radioButton(*args, align="", annotation="", backgroundColor=None, changeCommand=None,
                 collection="", data=0, defineTemplate="", docTag="", dragCallback=None,
                 dropCallback=None, editable=True, enable=True, enableBackground=True,
                 enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
@@ -3100,7 +3099,7 @@ def radioButton(align="", annotation="", backgroundColor=None, changeCommand=Non
                 numberOfPopupMenus=True, offCommand=None, onCommand=None, parent="",
                 popupMenuArray=True, preventOverride=True, recomputeSize=True, select=True,
                 statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-                width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a radio button that is added to the most recently created radio
     collection if the -cl/collection flag is not used
@@ -3224,8 +3223,8 @@ def adskSceneMetadataCmd(*args, **kwargs):
     pass
 
 
-def addMetadata(channelName="", channelType="", indexType="", scene=True, streamName="",
-                structure="", q=True, query=True, *args, **kwargs):
+def addMetadata(*args, channelName="", channelType="", indexType="", scene=True, streamName="",
+                structure="", q=True, query=True, **kwargs):
     """
     Defines the attachment of a metadata structure to one or more selected objects  This
     creates a placeholder with an empty metadata Stream for later population through the
@@ -3279,7 +3278,7 @@ def CurveUtilitiesMarkingMenuPopDown(*args, **kwargs):
     pass
 
 
-def displayCull(backFaceCulling=True, q=True, query=True, *args, **kwargs):
+def displayCull(*args, backFaceCulling=True, q=True, query=True, **kwargs):
     """
     This command is responsible for setting the display culling property of back faces of
     surfaces
@@ -3314,7 +3313,7 @@ def HypershadeMoveTabUp(*args, **kwargs):
     pass
 
 
-def buttonManip(icon="", *args, **kwargs):
+def buttonManip(*args, icon="", **kwargs):
     """
     This creates a button manipulator  This manipulator has a position in space and a triad
     manip for positioning  When you click on the top part of the manip, the command defined by
@@ -3398,9 +3397,9 @@ def nurbsCurveToBezier(*args, **kwargs):
     pass
 
 
-def polyCopyUV(caching=True, constructionHistory=True, createNewMap=True, name="", nodeState=0,
-               uvSetName="", uvSetNameInput="", worldSpace=True, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+def polyCopyUV(*args, caching=True, constructionHistory=True, createNewMap=True, name="",
+               nodeState=0, uvSetName="", uvSetNameInput="", worldSpace=True, q=True,
+               query=True, e=True, edit=True, **kwargs):
     """
     Copy some UVs from a UV set into another
     
@@ -3469,7 +3468,7 @@ def dR_rotateRelease(*args, **kwargs):
     pass
 
 
-def art3dPaintCtx(accopacity=False, afterStrokeCmd="", alphablendmode="", assigntxt=True,
+def art3dPaintCtx(*args, accopacity=False, afterStrokeCmd="", alphablendmode="", assigntxt=True,
                   attrnames="", beforeStrokeCmd="", brushalignment=True, brushdepth=0.0,
                   brushfeedback=True, brushtype="", clear=True, commonattr="", dragSlider="",
                   dynclonemode=True, exists=True, expandfilename=True, exportaspectratio=0.0,
@@ -3495,7 +3494,7 @@ def art3dPaintCtx(accopacity=False, afterStrokeCmd="", alphablendmode="", assign
                   stampProfile="", stampSpacing=1.0, strokesmooth="",
                   surfaceConformedBrushVertices=True, tablet=True, tangentOutline=True,
                   textureFilenames=True, updateEraseTex=True, usepressure=False,
-                  worldRadius=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  worldRadius=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This is a tool context command for 3d Paint tool
     
@@ -3774,8 +3773,8 @@ def PolygonHardenEdge(*args, **kwargs):
     pass
 
 
-def perCameraVisibility(camera=None, exclusive=True, hide=True, remove=True, removeAll=True,
-                        removeCamera=True, q=True, query=True, *args, **kwargs):
+def perCameraVisibility(*args, camera=None, exclusive=True, hide=True, remove=True,
+                        removeAll=True, removeCamera=True, q=True, query=True, **kwargs):
     """
     The perCameraVisibility command creates, queries and removes visibility relationships
     between DAG objects and cameras  These relationships are applied in any viewport that uses
@@ -3822,9 +3821,9 @@ def TranslateToolWithSnapMarkingMenuPopDown(*args, **kwargs):
     pass
 
 
-def deleteUI(collection=True, control=True, editor=True, layout=True, menu=True, menuItem=True,
-             panel=True, panelConfig=True, radioMenuItemCollection=True, toolContext=True,
-             uiTemplate=True, window=True, *args, **kwargs):
+def deleteUI(*args, collection=True, control=True, editor=True, layout=True, menu=True,
+             menuItem=True, panel=True, panelConfig=True, radioMenuItemCollection=True,
+             toolContext=True, uiTemplate=True, window=True, **kwargs):
     """
     This command deletes UI objects such as windows and controls  Deleting a layout or window
     will also delete all of its children  If a flag is used then all objects being deleted must
@@ -3863,13 +3862,12 @@ def deleteUI(collection=True, control=True, editor=True, layout=True, menu=True,
     pass
 
 
-def characterize(activatePivot=True, addAuxEffector=True, addFloorContactPlane=True,
+def characterize(*args, activatePivot=True, addAuxEffector=True, addFloorContactPlane=True,
                  addMissingEffectors=True, attributeFromHIKProperty="",
                  attributeFromHIKPropertyMode="", autoActivateBodyPart=True,
                  changePivotPlacement=True, effectors="", fkSkeleton="", name="",
                  pinHandFeet=True, placeNewPivot=True, posture="biped", sourceSkeleton="",
-                 stancePose="", type="name", q=True, query=True, e=True, edit=True, *args,
-                 **kwargs):
+                 stancePose="", type="name", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to scan a joint hierarchy for predefined joint names or labels  If the
     required joints are found, human IK effectors will be created to control the skeleton using
@@ -3950,8 +3948,8 @@ def DeleteAllClusters(*args, **kwargs):
     pass
 
 
-def saveFluid(currentTime=0, endTime=0, startTime=0, q=True, query=True, e=True, edit=True,
-              *args, **kwargs):
+def saveFluid(*args, currentTime=0, endTime=0, startTime=0, q=True, query=True, e=True,
+              edit=True, **kwargs):
     """
     A command to save the current state of the fluid to the initial state cache  The grids to
     be saved are determined by the cache attributes: cacheDensity, cacheVelocity, etc  These
@@ -4020,7 +4018,7 @@ def CreatePolygonCylinderOptions(*args, **kwargs):
     pass
 
 
-def polyUVOverlap(nonOverlappingComponents=True, overlappingComponents=True, *args, **kwargs):
+def polyUVOverlap(*args, nonOverlappingComponents=True, overlappingComponents=True, **kwargs):
     """
     Return the required result on the specified components
     
@@ -4121,7 +4119,7 @@ def STRSTweakModeOn(*args, **kwargs):
     pass
 
 
-def listInputDevices(free=True, primary=True, secondary=True, *args, **kwargs):
+def listInputDevices(*args, free=True, primary=True, secondary=True, **kwargs):
     """
     This command lists all input devices that maya knows about
     
@@ -4173,8 +4171,8 @@ def RigidBindSkinOptions(*args, **kwargs):
     pass
 
 
-def polyColorDel(caching=True, colorSetName="", constructionHistory=True, name="", nodeState=0,
-                 q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyColorDel(*args, caching=True, colorSetName="", constructionHistory=True, name="",
+                 nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Deletes color from selected components
     
@@ -4248,8 +4246,8 @@ def hikManip(*args, **kwargs):
     pass
 
 
-def polyCollapseEdge(caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                     query=True, e=True, edit=True, *args, **kwargs):
+def polyCollapseEdge(*args, caching=True, constructionHistory=True, name="", nodeState=0,
+                     q=True, query=True, e=True, edit=True, **kwargs):
     """
     Turns each selected edge into a point
     
@@ -4300,12 +4298,13 @@ def TangentsFlat(*args, **kwargs):
     pass
 
 
-def timeEditorTracks(activeClipWeight=None, activeClipWeightId=None, addTrack=0, allClips=True,
-                     allTracks=True, allTracksRecursive=True, composition=True, path="",
-                     plugIndex=0, removeTrack=0, removeTrackByPath="", reorderTrack=None,
-                     resetMute=True, resetSolo=True, selectedTracks=True, trackGhost=True,
-                     trackIndex=0, trackMuted=True, trackName="", trackSolo=True, trackType=1,
-                     q=True, query=True, e=True, edit=True, *args, **kwargs):
+def timeEditorTracks(*args, activeClipWeight=None, activeClipWeightId=None, addTrack=0,
+                     allClips=True, allTracks=True, allTracksRecursive=True, composition=True,
+                     path="", plugIndex=0, removeTrack=0, removeTrackByPath="",
+                     reorderTrack=None, resetMute=True, resetSolo=True, selectedTracks=True,
+                     trackGhost=True, trackIndex=0, trackMuted=True, trackName="",
+                     trackSolo=True, trackType=1, q=True, query=True, e=True, edit=True,
+                     **kwargs):
     """
     Time Editor tracks commands
     
@@ -4383,9 +4382,9 @@ def AnimLayerRelationshipEditor(*args, **kwargs):
     pass
 
 
-def hotkeyCtx(addClient="", clientArray=True, currentClient="", insertTypeAt=None,
+def hotkeyCtx(*args, addClient="", clientArray=True, currentClient="", insertTypeAt=None,
               removeAllClients=True, removeClient="", removeType="", type="", typeArray=True,
-              typeExists="", q=True, query=True, *args, **kwargs):
+              typeExists="", q=True, query=True, **kwargs):
     """
     This command sets the hotkey context for the entire application
     
@@ -4451,9 +4450,8 @@ def loadPrefObjects(*args, **kwargs):
     pass
 
 
-def polyCompare(colorSetIndices=True, colorSets=True, edges=True, faceDesc=True,
-                userNormals=True, uvSetIndices=True, uvSets=True, vertices=True, *args,
-                **kwargs):
+def polyCompare(*args, colorSetIndices=True, colorSets=True, edges=True, faceDesc=True,
+                userNormals=True, uvSetIndices=True, uvSets=True, vertices=True, **kwargs):
     """
     Compares two Polygonal Geometry objects with a fine control on what to compare
     
@@ -4497,14 +4495,14 @@ def polyCompare(colorSetIndices=True, colorSets=True, edges=True, faceDesc=True,
     pass
 
 
-def softMod(after=True, afterReference=True, before=True, bindState=True, curveInterpolation=0,
-            curvePoint=0.0, curveValue=0.0, deformerTools=True, envelope=1.0, exclusive="",
-            falloffAroundSelection=True, falloffBasedOnX=True, falloffBasedOnY=True,
-            falloffBasedOnZ=True, falloffCenter=None, falloffMasking=True, falloffMode=0,
-            falloffRadius=0.0, frontOfChain=True, geometry="", geometryIndices=True,
-            ignoreSelected=True, includeHiddenSelections=False, name="", parallel=True,
-            prune=True, relative=True, remove=True, resetGeometry=True, split=True,
-            weightedNode=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def softMod(*args, after=True, afterReference=True, before=True, bindState=True,
+            curveInterpolation=0, curvePoint=0.0, curveValue=0.0, deformerTools=True,
+            envelope=1.0, exclusive="", falloffAroundSelection=True, falloffBasedOnX=True,
+            falloffBasedOnY=True, falloffBasedOnZ=True, falloffCenter=None, falloffMasking=True,
+            falloffMode=0, falloffRadius=0.0, frontOfChain=True, geometry="",
+            geometryIndices=True, ignoreSelected=True, includeHiddenSelections=False, name="",
+            parallel=True, prune=True, relative=True, remove=True, resetGeometry=True,
+            split=True, weightedNode=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The softMod command creates a softMod or edits the membership of an existing softMod  The
     command returns the name of the softMod node upon creation of a new softMod
@@ -4636,9 +4634,9 @@ def XgmSetWidthBrushToolOption(*args, **kwargs):
     pass
 
 
-def snapTogetherCtx(clearSelection=True, exists=True, history=True, image1="", image2="",
+def snapTogetherCtx(*args, clearSelection=True, exists=True, history=True, image1="", image2="",
                     image3="", name="", setOrientation=True, snapPolygonFace=False, q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+                    query=True, e=True, edit=True, **kwargs):
     """
     The snapTogetherCtx command creates a tool for snapping surfaces together
     
@@ -4675,9 +4673,9 @@ def snapTogetherCtx(clearSelection=True, exists=True, history=True, image1="", i
     pass
 
 
-def stringArrayIntersector(allowDuplicates=False, defineTemplate="", exists=True,
+def stringArrayIntersector(*args, allowDuplicates=False, defineTemplate="", exists=True,
                            intersect=None, reset=True, useTemplate="", q=True, query=True,
-                           e=True, edit=True, *args, **kwargs):
+                           e=True, edit=True, **kwargs):
     """
     The stringArrayIntersector command creates and edits an object which is able to efficiently
     intersect large string arrays  The intersector object maintains a sense of "the
@@ -4744,12 +4742,12 @@ def NonSacredTool(*args, **kwargs):
     pass
 
 
-def sets(addElement=None, afterFilters=True, clear=None, color=0, copy=None, edges=True,
+def sets(*args, addElement=None, afterFilters=True, clear=None, color=0, copy=None, edges=True,
          editPoints=True, empty=True, facets=True, flatten=None, forceElement=None,
          include=None, intersection=None, isIntersecting=None, isMember=None, layer=True,
          name="", noSurfaceShader=True, noWarnings=True, nodesOnly=True, remove=None,
          renderable=True, size=True, split=None, subtract=None, text="", union=None,
-         vertices=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+         vertices=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to create a set, query some state of a set, or perform operations to
     update the membership of a set  A set is a logical grouping of an arbitrary collection of
@@ -4884,14 +4882,14 @@ def ProfilerToolReset(*args, **kwargs):
     pass
 
 
-def stitchSurfacePoints(bias=1.0, caching=True, cvIthIndex=1, cvJthIndex=1, fixBoundary=False,
-                        nodeState=0, parameterU=10000, parameterV=10000,
+def stitchSurfacePoints(*args, bias=1.0, caching=True, cvIthIndex=1, cvJthIndex=1,
+                        fixBoundary=False, nodeState=0, parameterU=10000, parameterV=10000,
                         positionalContinuity=True, stepCount=20, tangentialContinuity=False,
                         togglePointNormals=False, togglePointPosition=True,
                         toggleTolerance=False, tolerance=0.1, cascade=False,
                         constructionHistory=True, equalWeight=True, keepG0Continuity=True,
                         keepG1Continuity=False, name="", object=True, replaceOriginal=True,
-                        q=True, query=True, e=True, edit=True, *args, **kwargs):
+                        q=True, query=True, e=True, edit=True, **kwargs):
     """
     The stitchSurfacePoints command aligns two or more surface points along the boundaries
     together to a single point  In the process, a node to average the points is created  The
@@ -4975,9 +4973,9 @@ def PolyExtrudeFaces(*args, **kwargs):
     pass
 
 
-def trackCtx(alternateContext=True, exists=True, history=True, image1="", image2="", image3="",
-             name="", toolName="", trackGeometry=True, trackScale=0.0, q=True, query=True,
-             e=True, edit=True, *args, **kwargs):
+def trackCtx(*args, alternateContext=True, exists=True, history=True, image1="", image2="",
+             image3="", name="", toolName="", trackGeometry=True, trackScale=0.0, q=True,
+             query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create a track context
     
@@ -5055,10 +5053,10 @@ def undo(*args, **kwargs):
     pass
 
 
-def subdLayoutUV(caching=True, nodeState=0, constructionHistory=True, flipReversed=True,
+def subdLayoutUV(*args, caching=True, nodeState=0, constructionHistory=True, flipReversed=True,
                  layout=0, layoutMethod=0, name="", percentageSpace=0.0, rotateForBestFit=0,
                  scale=0, separate=0, worldSpace=True, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     Move UVs in the texture plane to avoid overlaps
     
@@ -5236,8 +5234,8 @@ def HypershadeOpenBrowserWindow(*args, **kwargs):
     pass
 
 
-def polyDelEdge(caching=True, cleanVertices=True, constructionHistory=True, name="",
-                nodeState=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyDelEdge(*args, caching=True, cleanVertices=True, constructionHistory=True, name="",
+                nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Deletes selected edges, and merges neighboring faces  If deletion leaves winged vertices,
     they may be deleted as well
@@ -5271,7 +5269,7 @@ def ProfilerToolShowSelectedRepetition(*args, **kwargs):
     pass
 
 
-def clipMatching(clipDst=None, clipSrc=None, matchRotation=0, matchTranslation=0, *args,
+def clipMatching(*args, clipDst=None, clipSrc=None, matchRotation=0, matchTranslation=0,
                  **kwargs):
     """
     This command is used to compute an offset to apply on a source clip in order to
@@ -5311,8 +5309,8 @@ def NormalizeUVsOptions(*args, **kwargs):
     pass
 
 
-def condition(delete=True, dependency="", initialize=True, script="", state=True, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+def condition(*args, delete=True, dependency="", initialize=True, script="", state=True, q=True,
+              query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new named condition object whose true/false value is calculated by
     running a mel script  This new condition can then be used for dimming, or controlling other
@@ -5352,7 +5350,7 @@ def GrowPolygonSelectionRegion(*args, **kwargs):
     pass
 
 
-def makeLive(none=True, *args, **kwargs):
+def makeLive(*args, none=True, **kwargs):
     """
     This commmand makes an object live  A live object defines the surface on which to create
     objects and to move object relative to  Only construction planes, nurbs surfaces and
@@ -5377,13 +5375,12 @@ def fluidDeleteCacheFrames(*args, **kwargs):
     pass
 
 
-def blendShapeEditor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def blendShapeEditor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                      forceMainConnection="", highlightConnection="", lockMainConnection=True,
                      mainListConnection="", panel="", parent="", selectionConnection="",
                      stateString=True, targetControlList=True, targetList=True, unParent=True,
                      unlockMainConnection=True, updateMainConnection=True, useTemplate="",
-                     verticalSliders=True, q=True, query=True, e=True, edit=True, *args,
-                     **kwargs):
+                     verticalSliders=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates an editor that derives from the base editor class that has controls
     for blendShape, control nodes
@@ -5484,7 +5481,7 @@ def CutCurve(*args, **kwargs):
     pass
 
 
-def matchTransform(pivots=True, position=True, rotation=True, scale=True, *args, **kwargs):
+def matchTransform(*args, pivots=True, position=True, rotation=True, scale=True, **kwargs):
     """
     This command modifies the source object's transform to match the target object's transform 
      If no flags are specified then the command will match position, rotation and scaling
@@ -5512,9 +5509,9 @@ def DeleteAttribute(*args, **kwargs):
     pass
 
 
-def polySplitCtx(enablesnap=True, exists=True, image1="", image2="", image3="", magnetsnap=0,
-                 precsnap=0.0, smoothingangle=0.0, snaptoedge=True, subdivision=1, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+def polySplitCtx(*args, enablesnap=True, exists=True, image1="", image2="", image3="",
+                 magnetsnap=0, precsnap=0.0, smoothingangle=0.0, snaptoedge=True, subdivision=1,
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a new context to split facets on polygonal objects
     
@@ -5562,11 +5559,11 @@ def HypergraphIncreaseDepth(*args, **kwargs):
     pass
 
 
-def polyCube(axis=None, caching=True, constructionHistory=True, createUVs=3, depth=1.0,
+def polyCube(*args, axis=None, caching=True, constructionHistory=True, createUVs=3, depth=1.0,
              height=1.0, name="", nodeState=0, object=True, subdivisionsDepth=1,
              subdivisionsHeight=1, subdivisionsWidth=1, subdivisionsX=1, subdivisionsY=1,
              subdivisionsZ=1, texture=1, width=1.0, q=True, query=True, e=True, edit=True,
-             *args, **kwargs):
+             **kwargs):
     """
     The cube command creates a new polygonal cube
     
@@ -5622,18 +5619,18 @@ def polyCube(axis=None, caching=True, constructionHistory=True, createUVs=3, dep
     pass
 
 
-def gradientControl(adaptiveScaling=True, annotation="", attribute=None, backgroundColor=None,
-                    defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
-                    enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
-                    fullPathName=True, height=0, highlightColor=None, isObscured=True,
-                    manage=True, noBackground=True, numberOfControls=0, numberOfPopupMenus=True,
-                    parent="", popupMenuArray=True, preventOverride=True, refreshOnRelease=0,
-                    selectedColorControl="", selectedInterpControl="",
-                    selectedPositionControl="", staticNumberOfControls=False,
-                    staticPositions=False, statusBarMessage="", upperLimitControl="",
-                    useTemplate="", verticalLayout=False, visible=True,
+def gradientControl(*args, adaptiveScaling=True, annotation="", attribute=None,
+                    backgroundColor=None, defineTemplate="", docTag="", dragCallback=None,
+                    dropCallback=None, enable=True, enableBackground=True,
+                    enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                    highlightColor=None, isObscured=True, manage=True, noBackground=True,
+                    numberOfControls=0, numberOfPopupMenus=True, parent="", popupMenuArray=True,
+                    preventOverride=True, refreshOnRelease=0, selectedColorControl="",
+                    selectedInterpControl="", selectedPositionControl="",
+                    staticNumberOfControls=False, staticPositions=False, statusBarMessage="",
+                    upperLimitControl="", useTemplate="", verticalLayout=False, visible=True,
                     visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                    *args, **kwargs):
+                    **kwargs):
     """
     This command creates a control that displays the gradient attribute specified  The gradient
     attribute must be of the correct form and naming  It should be a multi attribute with each
@@ -5762,13 +5759,13 @@ def FrameSelected(*args, **kwargs):
     pass
 
 
-def viewManip(bottomLeft=True, bottomRight=True, compassAngle=0.0, dragSnap=True,
+def viewManip(*args, bottomLeft=True, bottomRight=True, compassAngle=0.0, dragSnap=True,
               drawCompass=True, fitToView=True, frontParameters="", goDefault=True, goHome=True,
               homeParameters="", levelCamera=True, minOpacity=0.0, namespace="", postCommand="",
               preCommand="", preserveSceneUp=True, resetFront=True, resetHome=True,
               restoreCenter=True, selectionLockParameters="", setFront=True, setHome=True,
               size="", toggleSelectionLock=True, topLeft=True, topRight=True, visible=True,
-              zoomToFitScene=True, q=True, query=True, *args, **kwargs):
+              zoomToFitScene=True, q=True, query=True, **kwargs):
     """
     Mel access to the view cube manipulator
     
@@ -5875,9 +5872,9 @@ def ModifyPaintValuePress(*args, **kwargs):
     pass
 
 
-def confirmDialog(annotation="", backgroundColor=None, button="", cancelButton="",
+def confirmDialog(*args, annotation="", backgroundColor=None, button="", cancelButton="",
                   defaultButton="", dismissString="", icon="", message="", messageAlign="",
-                  parent="", title="", *args, **kwargs):
+                  parent="", title="", **kwargs):
     """
     The confirmDialog command creates a modal dialog with a message to the user and a variable
     number of buttons to dismiss the dialog  The dialog is dismissed when the user presses any
@@ -5952,11 +5949,11 @@ def AddBifrostCamera(*args, **kwargs):
     pass
 
 
-def scaleKey(animation="keysOrObjects.", attribute="", controlPoints=False, float=None,
+def scaleKey(*args, animation="keysOrObjects.", attribute="", controlPoints=False, float=None,
              floatPivot=0.0, floatScale=0.0, hierarchy="", includeUpperBound=True, index=0,
              newEndFloat=0.0, newEndTime=None, newStartFloat=0.0, newStartTime=None,
              scaleSpecifiedKeys=True, shape=True, time=None, timePivot=None, timeScale=0.0,
-             valuePivot=0.0, valueScale=0.0, *args, **kwargs):
+             valuePivot=0.0, valueScale=0.0, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -6036,7 +6033,7 @@ def nClothCacheOpt(*args, **kwargs):
     pass
 
 
-def deleteAttr(attribute="", name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def deleteAttr(*args, attribute="", name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to delete a dynamic attribute from a node or nodes  The attribute can
     be specified by using either the long or short name  Only one dynamic attribute can be
@@ -6054,8 +6051,9 @@ def deleteAttr(attribute="", name="", q=True, query=True, e=True, edit=True, *ar
     pass
 
 
-def polyNormal(caching=True, constructionHistory=True, name="", nodeState=0, normalMode=0,
-               userNormalMode=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyNormal(*args, caching=True, constructionHistory=True, name="", nodeState=0,
+               normalMode=0, userNormalMode=True, q=True, query=True, e=True, edit=True,
+               **kwargs):
     """
     Control the normals of an object  This command works on faces or polygonal objects
     
@@ -6112,11 +6110,11 @@ def XgmSetPartBrushTool(*args, **kwargs):
     pass
 
 
-def pathAnimation(bank=False, bankScale=1.0, bankThreshold=90, curve="", endTimeU=None,
+def pathAnimation(*args, bank=False, bankScale=1.0, bankThreshold=90, curve="", endTimeU=None,
                   endU=0.0, follow=False, followAxis="", fractionMode=False, inverseFront=False,
                   inverseUp=False, name="", startTimeU=None, startU=0.0, upAxis="",
                   useNormal=True, worldUpObject=None, worldUpType="", worldUpVector=None,
-                  q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     The pathAnimation command constructs the necessary graph nodes and their interconnections
     for a motion path animation  Motion path animation requires a curve and one or more other
@@ -6231,12 +6229,12 @@ def ShatterOptions(*args, **kwargs):
     pass
 
 
-def polyProjection(constructionHistory=True, createNewMap=True, imageCenterX=0.5,
+def polyProjection(*args, constructionHistory=True, createNewMap=True, imageCenterX=0.5,
                    imageCenterY=0.5, imageScaleU=1, imageScaleV=1, insertBeforeDeformers=True,
                    keepImageRatio=True, mapDirection="", projectionCenterX=0.0,
                    projectionCenterY=0.0, projectionCenterZ=0.0, projectionScaleU=0.0,
                    projectionScaleV=0.0, rotateX=0.0, rotateY=0.0, rotateZ=0.0, rotationAngle=0,
-                   seamCorrect=True, smartFit=True, type="", uvSetName="", *args, **kwargs):
+                   seamCorrect=True, smartFit=True, type="", uvSetName="", **kwargs):
     """
     Creates a mapping on the selected polygonal faces  When construction history is created,
     the name of the new node is returned  In other cases, the command returns nothing
@@ -6305,9 +6303,9 @@ def polyProjection(constructionHistory=True, createNewMap=True, imageCenterX=0.5
     pass
 
 
-def snapshotBeadCtx(exists=True, history=True, image1="", image2="", image3="", inTangent=True,
-                    name="", outTangent=True, q=True, query=True, e=True, edit=True, *args,
-                    **kwargs):
+def snapshotBeadCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                    inTangent=True, name="", outTangent=True, q=True, query=True, e=True,
+                    edit=True, **kwargs):
     """
     Creates a context for manipulating in and/or out tangent beads on the motion trail
     
@@ -6411,7 +6409,7 @@ def ShowShadingGroupAttributeEditor(*args, **kwargs):
     pass
 
 
-def readTake(angle="", device="", frequency=0.0, linear="", noTime=True, take="", *args,
+def readTake(*args, angle="", device="", frequency=0.0, linear="", noTime=True, take="",
              **kwargs):
     """
     This action reads a take (.mov) file to a defined device
@@ -6455,7 +6453,7 @@ def HypershadePinSelected(*args, **kwargs):
     pass
 
 
-def renderThumbnailUpdate(forceUpdate="", q=True, query=True, *args, **kwargs):
+def renderThumbnailUpdate(*args, forceUpdate="", q=True, query=True, **kwargs):
     """
     Toggle the updating of object thumbnails  These are visible in tools like the Attribute
     Editor and Hypershade  All thumbnails everywhere will not update to reflect changes to the
@@ -6527,10 +6525,10 @@ def TransferAttributeValuesOptions(*args, **kwargs):
     pass
 
 
-def polyListComponentConversion(border=True, fromEdge=True, fromFace=True, fromUV=True,
+def polyListComponentConversion(*args, border=True, fromEdge=True, fromFace=True, fromUV=True,
                                 fromVertex=True, fromVertexFace=True, internal=True,
                                 toEdge=True, toFace=True, toUV=True, toVertex=True,
-                                toVertexFace=True, uvShell=True, vertexFaceAllEdges=True, *args,
+                                toVertexFace=True, uvShell=True, vertexFaceAllEdges=True,
                                 **kwargs):
     """
     This command converts poly components from one or more types to another one or more types,
@@ -6605,8 +6603,8 @@ def TransformNoSelectOffTool(*args, **kwargs):
     pass
 
 
-def insertKeyCtx(breakdown=True, exists=True, history=True, image1="", image2="", image3="",
-                 name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def insertKeyCtx(*args, breakdown=True, exists=True, history=True, image1="", image2="",
+                 image3="", name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to insert keys within the graph editor
     
@@ -6685,7 +6683,7 @@ def AddPondDynamicBuoy(*args, **kwargs):
     pass
 
 
-def dgeval(src=True, verbose=True, *args, **kwargs):
+def dgeval(*args, src=True, verbose=True, **kwargs):
     """
     The dgeval command is used to force a dependency graph evaluate of a node or plug  Used for
     debugging to find propagation problems   Normally the selection list is used to determine
@@ -6760,8 +6758,8 @@ def OutTangentAuto(*args, **kwargs):
     pass
 
 
-def scaleKeyCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                scaleSpecifiedKeys=True, type="", q=True, query=True, e=True, edit=True, *args,
+def scaleKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                scaleSpecifiedKeys=True, type="", q=True, query=True, e=True, edit=True,
                 **kwargs):
     """
     This command creates a context which may be used to scale keyframes within the graph editor
@@ -6803,14 +6801,15 @@ def softSelectOptionsCtx(*args, **kwargs):
     pass
 
 
-def floatSlider(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
-                docTag="", dragCallback=None, dragCommand=None, dropCallback=None, enable=True,
-                enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
-                height=0, highlightColor=None, horizontal=True, isObscured=True, manage=True,
-                maxValue=0.0, minValue=0.0, noBackground=True, numberOfPopupMenus=True,
-                parent="", popupMenuArray=True, preventOverride=True, statusBarMessage="",
-                step=0.0, useTemplate="", value=0.0, visible=True, visibleChangeCommand=None,
-                width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def floatSlider(*args, annotation="", backgroundColor=None, changeCommand=None,
+                defineTemplate="", docTag="", dragCallback=None, dragCommand=None,
+                dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
+                exists=True, fullPathName=True, height=0, highlightColor=None, horizontal=True,
+                isObscured=True, manage=True, maxValue=0.0, minValue=0.0, noBackground=True,
+                numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
+                statusBarMessage="", step=0.0, useTemplate="", value=0.0, visible=True,
+                visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
+                **kwargs):
     """
     Create a slider control that accepts only float values and is bound by a minimum and
     maximum value  The slider displays a marker indicating the current value of the slider
@@ -6915,7 +6914,7 @@ def floatSlider(annotation="", backgroundColor=None, changeCommand=None, defineT
     pass
 
 
-def addExtension(nodeType="", attributeType="", binaryTag="", cachedInternally=True,
+def addExtension(*args, nodeType="", attributeType="", binaryTag="", cachedInternally=True,
                  category="", dataType="", defaultValue=0.0, disconnectBehaviour=0, enumName="",
                  exists=True, fromPlugin=True, hasMaxValue=True, hasMinValue=True,
                  hasSoftMaxValue=True, hasSoftMinValue=True, hidden=True, indexMatters=True,
@@ -6923,7 +6922,7 @@ def addExtension(nodeType="", attributeType="", binaryTag="", cachedInternally=T
                  multi=True, niceName="", numberOfChildren=0, parent="", proxy="",
                  readable=True, shortName="", softMaxValue=0.0, softMinValue=0.0, storable=True,
                  usedAsColor=True, usedAsFilename=True, usedAsProxy=True, writable=True, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+                 query=True, e=True, edit=True, **kwargs):
     """
     This command is used to add an extension attribute to a node type  Either the longName or
     the shortName or both must be specified  If neither a dataType nor an attributeType is
@@ -7070,9 +7069,9 @@ def CreateNURBSCubeOptions(*args, **kwargs):
     pass
 
 
-def planarSrf(caching=True, degree=3, keepOutside=False, nodeState=0, tolerance=0.01,
+def planarSrf(*args, caching=True, degree=3, keepOutside=False, nodeState=0, tolerance=0.01,
               constructionHistory=True, name="", object=True, polygon=0, range=True, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     This command computes a planar trimmed surface given planar boundary curves that form a
     closed region
@@ -7111,8 +7110,8 @@ def planarSrf(caching=True, degree=3, keepOutside=False, nodeState=0, tolerance=
     pass
 
 
-def connectDynamic(addScriptHandler=None, collisions="", delete=True, emitters="", fields="",
-                   removeScriptHandler=0, *args, **kwargs):
+def connectDynamic(*args, addScriptHandler=None, collisions="", delete=True, emitters="",
+                   fields="", removeScriptHandler=0, **kwargs):
     """
     Dynamic connection specifies that the force fields, emitters, or collisions of an object
     affect another dynamic object  The dynamic object that is connected to a field, emitter, or
@@ -7141,9 +7140,9 @@ def connectDynamic(addScriptHandler=None, collisions="", delete=True, emitters="
     pass
 
 
-def polyMergeEdge(caching=True, constructionHistory=True, firstEdge=0, mergeMode=1,
+def polyMergeEdge(*args, caching=True, constructionHistory=True, firstEdge=0, mergeMode=1,
                   mergeTexture=False, name="", nodeState=0, secondEdge=0, q=True, query=True,
-                  e=True, edit=True, *args, **kwargs):
+                  e=True, edit=True, **kwargs):
     """
     Sews two border edges together.
     
@@ -7178,10 +7177,10 @@ def polyMergeEdge(caching=True, constructionHistory=True, firstEdge=0, mergeMode
     pass
 
 
-def movieInfo(counter=True, dropFrame=True, frameCount=True, frameDuration=True, height=True,
-              movieTexture=True, negTimesOK=True, numFrames=True, quickTime=True, timeCode=True,
-              timeCodeTrack=True, timeScale=True, twentyFourHourMax=True, width=True, *args,
-              **kwargs):
+def movieInfo(*args, counter=True, dropFrame=True, frameCount=True, frameDuration=True,
+              height=True, movieTexture=True, negTimesOK=True, numFrames=True, quickTime=True,
+              timeCode=True, timeCodeTrack=True, timeScale=True, twentyFourHourMax=True,
+              width=True, **kwargs):
     """
     movieInfo provides a mechanism for querying information about movie files
     
@@ -7272,9 +7271,9 @@ def ConvertInstanceToObject(*args, **kwargs):
     pass
 
 
-def nurbsBoolean(caching=True, nodeState=0, operation=0, tolerance=0.01,
+def nurbsBoolean(*args, caching=True, nodeState=0, operation=0, tolerance=0.01,
                  constructionHistory=True, name="", nsrfsInFirstShell=0, object=True,
-                 smartConnection=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 smartConnection=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command performs a boolean operation
     
@@ -7321,7 +7320,7 @@ def CreateConstraintClipOptions(*args, **kwargs):
     pass
 
 
-def ctxTraverse(down=True, left=True, right=True, up=True, *args, **kwargs):
+def ctxTraverse(*args, down=True, left=True, right=True, up=True, **kwargs):
     """
     This command tells the current context to do a traversal   Some contexts will ignore this
     command  Individual contexts determine what up/down left/right mean
@@ -7348,7 +7347,7 @@ def ToggleCullingVertices(*args, **kwargs):
     pass
 
 
-def editDisplayLayerMembers(fullNames=True, noRecurse=True, q=True, query=True, *args,
+def editDisplayLayerMembers(*args, fullNames=True, noRecurse=True, q=True, query=True,
                             **kwargs):
     """
     This command is used to query and edit membership of display layers  No equivalent 'remove'
@@ -7396,9 +7395,9 @@ def dR_connectTool(*args, **kwargs):
     pass
 
 
-def ikSystem(allowRotation=True, autoPriority=True, autoPriorityMC=True, autoPrioritySC=True,
-             list=None, snap=True, solve=True, solverTypes=True, q=True, query=True, e=True,
-             edit=True, *args, **kwargs):
+def ikSystem(*args, allowRotation=True, autoPriority=True, autoPriorityMC=True,
+             autoPrioritySC=True, list=None, snap=True, solve=True, solverTypes=True, q=True,
+             query=True, e=True, edit=True, **kwargs):
     """
     The ikSystem command is used to set the global snapping flag for handles and set the global
     solve flag for solvers  The standard edit (-e) and query (-q) flags are used for edit and
@@ -7443,12 +7442,12 @@ def ShowCameraManipulators(*args, **kwargs):
     pass
 
 
-def scriptedPanel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def scriptedPanel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
                   editString=True, exists=True, init=True, isUnique=True, label="",
                   menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
                   popupMenuProcedure=None, replacePanel="", tearOff=True, tearOffCopy="",
                   tearOffRestore=True, type="", unParent=True, useTemplate="", q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+                  query=True, e=True, edit=True, **kwargs):
     """
     This command will create an instance of the specified scriptedPanelType  A panel is a
     collection of UI objects (buttons, fields, graphical views) that are grouped together  A
@@ -7528,11 +7527,10 @@ def SmoothingLevelIncrease(*args, **kwargs):
     pass
 
 
-def doubleProfileBirailSurface(blendFactor=0.5, caching=True, nodeState=0,
+def doubleProfileBirailSurface(*args, blendFactor=0.5, caching=True, nodeState=0,
                                tangentContinuityProfile1=False, tangentContinuityProfile2=False,
                                transformMode=0, constructionHistory=True, name="", object=True,
-                               polygon=0, q=True, query=True, e=True, edit=True, *args,
-                               **kwargs):
+                               polygon=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The arguments are 4 cuves called "profile1" "profile2" "rail1" "rail2"   This command
     builds a railed surface by sweeping profile "profile1" along the two given rail curves
@@ -7575,7 +7573,7 @@ def doubleProfileBirailSurface(blendFactor=0.5, caching=True, nodeState=0,
     pass
 
 
-def filter(name="", type="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def filter(*args, name="", type="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates or modifies a filter node  Filter nodes are used by applyTake to modify recorded
     device data before assigning it to the param curves for the attached attributes
@@ -7655,9 +7653,9 @@ def AddDynamicBuoy(*args, **kwargs):
     pass
 
 
-def isolateSelect(addDagObject=None, addSelected=True, addSelectedObjects=True,
+def isolateSelect(*args, addDagObject=None, addSelected=True, addSelectedObjects=True,
                   loadSelected=True, removeDagObject=None, removeSelected=True, state=True,
-                  update=True, viewObjects=True, q=True, query=True, *args, **kwargs):
+                  update=True, viewObjects=True, q=True, query=True, **kwargs):
     """
     This command turns on/off isolate select mode in a specified modeling view, specified as
     the argument  Isolate select mode is a display mode where the currently selected objects
@@ -7697,8 +7695,8 @@ def isolateSelect(addDagObject=None, addSelected=True, addSelectedObjects=True,
     pass
 
 
-def skeletonEmbed(mergedMesh=True, segmentationMethod=0, segmentationResolution=256, q=True,
-                  query=True, *args, **kwargs):
+def skeletonEmbed(*args, mergedMesh=True, segmentationMethod=0, segmentationResolution=256,
+                  q=True, query=True, **kwargs):
     """
     This command is used to embed a skeleton inside meshes
     
@@ -7753,7 +7751,7 @@ def UpdateReferenceSurface(*args, **kwargs):
     pass
 
 
-def reorderDeformers(name="", *args, **kwargs):
+def reorderDeformers(*args, name="", **kwargs):
     """
     This command changes the order in which 2 deformation nodes affect the output geometry  The
     first string argument is the name of deformer1, the second is deformer2, followed by the
@@ -7846,7 +7844,7 @@ def MoveSewUVs(*args, **kwargs):
     pass
 
 
-def polyAutoProjection(layoutMethod=0, pivot=None, pivotX=0.0, pivotY=0.0, pivotZ=0.0,
+def polyAutoProjection(*args, layoutMethod=0, pivot=None, pivotX=0.0, pivotY=0.0, pivotZ=0.0,
                        rotate=None, rotateX=0.0, rotateY=0.0, rotateZ=0.0, scale=None,
                        scaleX=1.0, scaleY=1.0, scaleZ=1.0, translate=None, translateX=0.0,
                        translateY=0.0, translateZ=0.0, caching=True, constructionHistory=True,
@@ -7854,7 +7852,7 @@ def polyAutoProjection(layoutMethod=0, pivot=None, pivotX=0.0, pivotY=0.0, pivot
                        nodeState=0, optimize=0, percentageSpace=0.0, planes=6,
                        projectBothDirections=True, scaleMode=0, skipIntersect=True,
                        uvSetName="", worldSpace=True, q=True, query=True, e=True, edit=True,
-                       *args, **kwargs):
+                       **kwargs):
     """
     Projects a map onto an object, using several orthogonal projections simultaneously
     
@@ -8045,9 +8043,9 @@ def AddAttribute(*args, **kwargs):
     pass
 
 
-def angleBetween(caching=True, constructionHistory=True, euler=True, nodeState=0, vector1=None,
-                 vector1X=0.0, vector1Y=0.0, vector1Z=0.0, vector2=None, vector2X=0.0,
-                 vector2Y=0.0, vector2Z=0.0, *args, **kwargs):
+def angleBetween(*args, caching=True, constructionHistory=True, euler=True, nodeState=0,
+                 vector1=None, vector1X=0.0, vector1Y=0.0, vector1Z=0.0, vector2=None,
+                 vector2X=0.0, vector2Y=0.0, vector2Z=0.0, **kwargs):
     """
     Returns the axis and angle required to rotate one vector onto another  If the construction
     history (ch) flag is ON, then the name of the new dependency node is returned
@@ -8112,7 +8110,7 @@ def dR_meshColorOverrideTGL(*args, **kwargs):
     pass
 
 
-def getParticleAttr(array=True, attribute="", object="", *args, **kwargs):
+def getParticleAttr(*args, array=True, attribute="", object="", **kwargs):
     """
     This action will return either an array of values, or the average value and maximum offset,
     for a specied per-particle attribute of a particle object or component  If a particle
@@ -8184,9 +8182,9 @@ def xgmSplineSelect(*args, **kwargs):
     pass
 
 
-def texMoveUVShellContext(exists=True, image1="", image2="", image3="", iterations=0, mask=True,
-                          position=True, shellBorder=0.0, q=True, query=True, e=True, edit=True,
-                          *args, **kwargs):
+def texMoveUVShellContext(*args, exists=True, image1="", image2="", image3="", iterations=0,
+                          mask=True, position=True, shellBorder=0.0, q=True, query=True, e=True,
+                          edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a texture editor move manip context 
     Note that the above flags control the global behaviour of all texture editor move manip
@@ -8220,7 +8218,7 @@ def texMoveUVShellContext(exists=True, image1="", image2="", image3="", iteratio
     pass
 
 
-def attrEnumOptionMenuGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def attrEnumOptionMenuGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                           adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                           annotation="", attribute=None, backgroundColor=None, columnAlign=None,
                           columnAlign2=None, columnAlign3=None, columnAlign4=None,
@@ -8238,7 +8236,7 @@ def attrEnumOptionMenuGrp(adjustableColumn=0, adjustableColumn2=0, adjustableCol
                           numberOfPopupMenus=True, parent="", popupMenuArray=True,
                           preventOverride=True, rowAttach=None, statusBarMessage="",
                           useTemplate="", visible=True, visibleChangeCommand=None, width=0,
-                          q=True, query=True, e=True, edit=True, *args, **kwargs):
+                          q=True, query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -8434,9 +8432,9 @@ def GetHIKMatrixDecomposition(*args, **kwargs):
     pass
 
 
-def nurbsEditUV(angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0,
+def nurbsEditUV(*args, angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0,
                 rotation=True, scale=True, scaleU=0.0, scaleV=0.0, uValue=0.0, vValue=0.0,
-                q=True, query=True, *args, **kwargs):
+                q=True, query=True, **kwargs):
     """
     Command Edits UVs on NURBS objects  When used with the query flag, it returns the UV values
     associated with the specified components
@@ -8541,9 +8539,9 @@ def DuplicateFaceOptions(*args, **kwargs):
     pass
 
 
-def offsetSurface(caching=True, distance=1.0, method=0, nodeState=0, constructionHistory=True,
-                  name="", object=True, q=True, query=True, e=True, edit=True, *args,
-                  **kwargs):
+def offsetSurface(*args, caching=True, distance=1.0, method=0, nodeState=0,
+                  constructionHistory=True, name="", object=True, q=True, query=True, e=True,
+                  edit=True, **kwargs):
     """
     The offset command creates new offset surfaces from the selected surfaces  The default
     method is a surface offset, which offsets relative to the surface itself  The CV offset
@@ -8581,8 +8579,8 @@ def paintPointsContext(*args, **kwargs):
     pass
 
 
-def twoPointArcCtx(degree=0, exists=True, history=True, image1="", image2="", image3="",
-                   name="", spans=4, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def twoPointArcCtx(*args, degree=0, exists=True, history=True, image1="", image2="", image3="",
+                   name="", spans=4, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The twoPointArcCtx command creates a new context for creating two point circular arcs
     
@@ -8632,8 +8630,8 @@ def toggleDisplacement(*args, **kwargs):
     pass
 
 
-def mayaDpiSetting(mode=0, realScaleValue=True, scaleValue=0.0, systemDpi=True, q=True,
-                   query=True, *args, **kwargs):
+def mayaDpiSetting(*args, mode=0, realScaleValue=True, scaleValue=0.0, systemDpi=True, q=True,
+                   query=True, **kwargs):
     """
     Provide Maya interface scaling based on system DPI or custom scale setting or no scaling 
     Please note that the change will only take effect after relaunching Maya
@@ -8657,7 +8655,7 @@ def mayaDpiSetting(mode=0, realScaleValue=True, scaleValue=0.0, systemDpi=True, 
     pass
 
 
-def workspaceControl(checksPlugins=True, close=True, closeCommand=None, collapse=True,
+def workspaceControl(*args, checksPlugins=True, close=True, closeCommand=None, collapse=True,
                      defineTemplate="", dockToControl=None, dockToMainWindow=None,
                      dockToPanel=None, duplicatable=True, exists=True, floating=True,
                      height=True, heightProperty="", horizontal=True, initCallback="",
@@ -8666,7 +8664,7 @@ def workspaceControl(checksPlugins=True, close=True, closeCommand=None, collapse
                      requiredPlugin="", resizeHeight=0, resizeWidth=0, restore=True,
                      retain=True, stateString="", tabPosition=None, tabToControl=None,
                      uiScript=None, useTemplate="", visible=True, visibleChangeCommand=None,
-                     width=True, widthProperty="", q=True, query=True, e=True, edit=True, *args,
+                     width=True, widthProperty="", q=True, query=True, e=True, edit=True,
                      **kwargs):
     """
     Creates and manages the widget used to host windows in a layout that enables docking and
@@ -8785,10 +8783,10 @@ def workspaceControl(checksPlugins=True, close=True, closeCommand=None, collapse
     pass
 
 
-def tangentConstraint(aimVector=None, layer="", name="", remove=True, targetList=True,
+def tangentConstraint(*args, aimVector=None, layer="", name="", remove=True, targetList=True,
                       upVector=None, weight=0.0, weightAliasList=True, worldUpObject=None,
                       worldUpType="", worldUpVector=None, q=True, query=True, e=True, edit=True,
-                      *args, **kwargs):
+                      **kwargs):
     """
     Constrain an object's orientation based on the tangent of the target curve[s] at the
     closest point[s] to the object   A tangentConstraint takes as input one or more NURBS
@@ -8892,9 +8890,9 @@ def UnitizeUVs(*args, **kwargs):
     pass
 
 
-def shadingLightRelCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                       offCommand="", onCommand="", shadingCentric=True, q=True, query=True,
-                       e=True, edit=True, *args, **kwargs):
+def shadingLightRelCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                       name="", offCommand="", onCommand="", shadingCentric=True, q=True,
+                       query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context that can be used for associating lights to shading groups 
     You can put the context into shading-centric mode by using the -shadingCentric flag and
@@ -9008,8 +9006,8 @@ def geometryCache(*args, **kwargs):
     pass
 
 
-def editDisplayLayerGlobals(baseId=0, currentDisplayLayer=None, mergeType=0, useCurrent=True,
-                            q=True, query=True, *args, **kwargs):
+def editDisplayLayerGlobals(*args, baseId=0, currentDisplayLayer=None, mergeType=0,
+                            useCurrent=True, q=True, query=True, **kwargs):
     """
     Edit the parameter values common to all display layers  Some of these paremeters, eg 
     baseId and mergeType, are stored as preferences and some, eg  currentDisplayLayer, are
@@ -9076,8 +9074,8 @@ def HypershadeConvertToFileTextureOptionBox(*args, **kwargs):
     pass
 
 
-def editRenderLayerMembers(fullNames=True, noRecurse=True, remove=True, q=True, query=True,
-                           *args, **kwargs):
+def editRenderLayerMembers(*args, fullNames=True, noRecurse=True, remove=True, q=True,
+                           query=True, **kwargs):
     """
     This command is used to query and edit memberships to render layers  Only transform and
     geometry nodes may be members  At render time, all descendants of the members of a render
@@ -9098,7 +9096,7 @@ def editRenderLayerMembers(fullNames=True, noRecurse=True, remove=True, q=True, 
     pass
 
 
-def preferredRenderer(fallback="", makeCurrent=True, q=True, query=True, *args, **kwargs):
+def preferredRenderer(*args, fallback="", makeCurrent=True, q=True, query=True, **kwargs):
     """
     Command to set the preferred renderer  This command can be used to query the preferred
     renderer and to set the current renderer as the preferred one  It also allows users to
@@ -9115,8 +9113,8 @@ def preferredRenderer(fallback="", makeCurrent=True, q=True, query=True, *args, 
     pass
 
 
-def setParticleAttr(attribute="", floatValue=0.0, object="", randomFloat=0.0, randomVector=None,
-                    relative=False, vectorValue=None, *args, **kwargs):
+def setParticleAttr(*args, attribute="", floatValue=0.0, object="", randomFloat=0.0,
+                    randomVector=None, relative=False, vectorValue=None, **kwargs):
     """
     This action will set the value of the chosen attribute for every particle or selected
     component in the selected or passed particle object  Components should not be passed to the
@@ -9176,7 +9174,7 @@ def ikSpringSolverCallbacks(*args, **kwargs):
     pass
 
 
-def unknownNode(plugin=True, realClassName=True, realClassTag=True, q=True, query=True, *args,
+def unknownNode(*args, plugin=True, realClassName=True, realClassTag=True, q=True, query=True,
                 **kwargs):
     """
     Allows querying of the data stored for unknown nodes (nodes that are defined by a plug-in
@@ -9210,9 +9208,10 @@ def PaintGrid(*args, **kwargs):
     pass
 
 
-def translator(defaultFileRule=True, defaultOptions="", extension=True, fileCompression="",
-               filter=True, list=True, loaded=True, objectType=True, optionsScript=True,
-               readSupport=True, writeSupport=True, q=True, query=True, *args, **kwargs):
+def translator(*args, defaultFileRule=True, defaultOptions="", extension=True,
+               fileCompression="", filter=True, list=True, loaded=True, objectType=True,
+               optionsScript=True, readSupport=True, writeSupport=True, q=True, query=True,
+               **kwargs):
     """
     Set or query parameters associated with the file translators specified in as the argument
     
@@ -9248,7 +9247,7 @@ def translator(defaultFileRule=True, defaultOptions="", extension=True, fileComp
     pass
 
 
-def quit(abort=True, exitCode=0, force=True, *args, **kwargs):
+def quit(*args, abort=True, exitCode=0, force=True, **kwargs):
     """
     This command is used to exit the application
     
@@ -9296,8 +9295,8 @@ def DetachSurfacesOptions(*args, **kwargs):
     pass
 
 
-def hide(allObjects=True, clearLastHidden=True, clearSelection=True, invertComponents=True,
-         returnHidden=True, testVisibility=True, *args, **kwargs):
+def hide(*args, allObjects=True, clearLastHidden=True, clearSelection=True,
+         invertComponents=True, returnHidden=True, testVisibility=True, **kwargs):
     """
     The hide command is used to make objects invisible  If no flags are used, the objects
     specified, or the active objects if none are specified, will be made invisible
@@ -9336,7 +9335,7 @@ def ShowMeshAmplifyToolOptions(*args, **kwargs):
     pass
 
 
-def itemFilterType(text="", type=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def itemFilterType(*args, text="", type=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command queries a named itemFilter object  This object can be attached to
     selectionConnection objects, or to editors, in order to filter the item lists going through
@@ -9361,7 +9360,7 @@ def ParticleFill(*args, **kwargs):
     pass
 
 
-def listCameras(orthographic=True, perspective=True, *args, **kwargs):
+def listCameras(*args, orthographic=True, perspective=True, **kwargs):
     """
     Command to list all cameras  If no flags are given, both perspective and orthographic
     cameras will be displayed  This command returns an array of camera names  When the
@@ -9379,8 +9378,9 @@ def listCameras(orthographic=True, perspective=True, *args, **kwargs):
     pass
 
 
-def threePointArcCtx(degree=0, exists=True, history=True, image1="", image2="", image3="",
-                     name="", spans=8, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def threePointArcCtx(*args, degree=0, exists=True, history=True, image1="", image2="",
+                     image3="", name="", spans=8, q=True, query=True, e=True, edit=True,
+                     **kwargs):
     """
     The threePointArcCtx command creates a new context for creating 3 point arcs
     
@@ -9412,8 +9412,8 @@ def threePointArcCtx(degree=0, exists=True, history=True, image1="", image2="", 
     pass
 
 
-def subdMapCut(caching=True, constructionHistory=True, name="", nodeState=0, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+def subdMapCut(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+               query=True, e=True, edit=True, **kwargs):
     """
     Cut along edges of the texture mapping  The cut edges become map borders
     
@@ -9456,8 +9456,8 @@ def SubdivSurfaceHierarchyMode(*args, **kwargs):
     pass
 
 
-def partition(addSet=None, name="", removeSet=None, render=False, q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+def partition(*args, addSet=None, name="", removeSet=None, render=False, q=True, query=True,
+              e=True, edit=True, **kwargs):
     """
     This command is used to create, query or add/remove sets to a partition  If a partition
     name needs to be specified, it is the first argument, other arguments represent the set
@@ -9480,8 +9480,8 @@ def partition(addSet=None, name="", removeSet=None, render=False, q=True, query=
     pass
 
 
-def flow(divisions=None, localCompute=True, localDivisions=None, objectCentered=True, q=True,
-         query=True, e=True, edit=True, *args, **kwargs):
+def flow(*args, divisions=None, localCompute=True, localDivisions=None, objectCentered=True,
+         q=True, query=True, e=True, edit=True, **kwargs):
     """
     The flow command creates a deformation lattice to `bend' the object that is animated along
     a curve of a motion path animation  The motion path animation has to have the follow option
@@ -9542,10 +9542,10 @@ def xgmSetArchiveSize(*args, **kwargs):
     pass
 
 
-def polyBlendColor(baseColorName="", blendFunc=0, blendWeightA=0.0, blendWeightB=0.0,
+def polyBlendColor(*args, baseColorName="", blendFunc=0, blendWeightA=0.0, blendWeightB=0.0,
                    blendWeightC=0.0, blendWeightD=0.0, caching=True, constructionHistory=True,
                    dstColorName="", name="", nodeState=0, srcColorName="", q=True, query=True,
-                   e=True, edit=True, *args, **kwargs):
+                   e=True, edit=True, **kwargs):
     """
     Takes two color sets and blends them together into a third specified color set
     
@@ -9624,8 +9624,8 @@ def encodeString(*args, **kwargs):
     pass
 
 
-def hotkeySet(current=True, delete=True, exists=True, export="", hotkeySetArray=True, ip="",
-              rename="", source="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def hotkeySet(*args, current=True, delete=True, exists=True, export="", hotkeySetArray=True,
+              ip="", rename="", source="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Manages hotkey sets in Maya  A hotkey set holds hotkey to command mapping information 
     Default hotkey sets are hotkey sets that are shipped together with Maya  They are locked
@@ -9718,10 +9718,10 @@ def RestoreUIElements(*args, **kwargs):
     pass
 
 
-def circularFillet(caching=True, nodeState=0, positionTolerance=0.01, primaryRadius=1.0,
+def circularFillet(*args, caching=True, nodeState=0, positionTolerance=0.01, primaryRadius=1.0,
                    secondaryRadius=1.0, tangentTolerance=0.01, constructionHistory=True,
                    curveOnSurface=True, name="", object=True, q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+                   edit=True, **kwargs):
     """
     The cmd is used to compute the rolling ball surface fillet ( circular fillet ) between two
     given NURBS surfaces  To generate trim curves on the surfaces, use -cos true
@@ -9782,8 +9782,8 @@ def CycleBackgroundColor(*args, **kwargs):
     pass
 
 
-def spaceLocator(absolute=True, name="", position=None, relative=True, q=True, query=True,
-                 e=True, edit=True, *args, **kwargs):
+def spaceLocator(*args, absolute=True, name="", position=None, relative=True, q=True,
+                 query=True, e=True, edit=True, **kwargs):
     """
     The command creates a locator at the specified position in space  By default it is created
     at (0,0,0)
@@ -9818,7 +9818,7 @@ def ShowMeshFillToolOptions(*args, **kwargs):
     pass
 
 
-def ikSystemInfo(globalSnapHandle=True, q=True, query=True, *args, **kwargs):
+def ikSystemInfo(*args, globalSnapHandle=True, q=True, query=True, **kwargs):
     """
     This action modifies and queries the current ikSystem controls
     
@@ -9831,13 +9831,13 @@ def ikSystemInfo(globalSnapHandle=True, q=True, query=True, *args, **kwargs):
     pass
 
 
-def layout(annotation="", backgroundColor=None, childArray=True, defineTemplate="", docTag="",
-           dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
+def layout(*args, annotation="", backgroundColor=None, childArray=True, defineTemplate="",
+           docTag="", dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
            enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
            highlightColor=None, isObscured=True, manage=True, noBackground=True,
            numberOfChildren=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
            preventOverride=True, statusBarMessage="", useTemplate="", visible=True,
-           visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+           visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
            **kwargs):
     """
     This command allows you to edit or query the properties of any layout  The argument is the
@@ -9943,7 +9943,7 @@ def DeleteAllImagePlanes(*args, **kwargs):
     pass
 
 
-def window(backgroundColor=None, closeCommand=None, defineTemplate="", docTag="",
+def window(*args, backgroundColor=None, closeCommand=None, defineTemplate="", docTag="",
            dockCorner=None, dockStation=True, dockingLayout="", exists=True, frontWindow=True,
            height=0, iconName="", iconify=True, interactivePlacement=True, leftEdge=0,
            mainMenuBar=True, mainWindow=True, maximizeButton=True, menuArray=True, menuBar=True,
@@ -9952,7 +9952,7 @@ def window(backgroundColor=None, closeCommand=None, defineTemplate="", docTag=""
            numberOfMenus=True, parent="", resizeToFitChildren=True, restoreCommand=None,
            retain=True, sizeable=True, state="", title="", titleBar=True, titleBarMenu=True,
            toolbox=True, topEdge=0, topLeftCorner=None, useTemplate="", visible=True, width=0,
-           widthHeight=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+           widthHeight=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new window but leaves it invisible  It is most efficient to add the
     window's elements and then make it visible with the showWindow command  The window can have
@@ -10113,9 +10113,9 @@ def AddPondBoatLocatorOptions(*args, **kwargs):
     pass
 
 
-def binMembership(addToBin="", exists="", inheritBinsFromNodes=None, isValidBinName="",
+def binMembership(*args, addToBin="", exists="", inheritBinsFromNodes=None, isValidBinName="",
                   listBins=True, makeExclusive="", notifyChanged=True, removeFromBin="", q=True,
-                  query=True, *args, **kwargs):
+                  query=True, **kwargs):
     """
     Command to assign nodes to bins
     
@@ -10180,10 +10180,10 @@ def NodeEditorPickWalkLeft(*args, **kwargs):
     pass
 
 
-def shelfTabLayout(annotation="", backgroundColor=None, borderStyle="", changeCommand=None,
-                   childArray=True, childResizable=True, defineTemplate="", docTag="",
-                   doubleClickCommand=None, dragCallback=None, dropCallback=None, enable=True,
-                   enableBackground=True, enableKeyboardFocus=True, exists=True,
+def shelfTabLayout(*args, annotation="", backgroundColor=None, borderStyle="",
+                   changeCommand=None, childArray=True, childResizable=True, defineTemplate="",
+                   docTag="", doubleClickCommand=None, dragCallback=None, dropCallback=None,
+                   enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
                    fullPathName=True, height=0, highlightColor=None,
                    horizontalScrollBarThickness=0, image="", imageVisible=True,
                    innerMarginHeight=0, innerMarginWidth=0, isObscured=True, manage=True,
@@ -10195,7 +10195,7 @@ def shelfTabLayout(annotation="", backgroundColor=None, borderStyle="", changeCo
                    tabLabelIndex=None, tabPosition="", tabTooltip=None, tabTooltipIndex=None,
                    tabsClosable=True, tabsVisible=True, useTemplate="",
                    verticalScrollBarThickness=0, visible=True, visibleChangeCommand=None,
-                   width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a shelf tab group which is essentially a normal
     tabLayout with some drop behaviour in the tab bar  A garbage can icon can appear in the top
@@ -10386,10 +10386,10 @@ def memoryDiag(*args, **kwargs):
     pass
 
 
-def newton(attenuation=0.0, magnitude=0.0, maxDistance=0.0, minDistance=0.0, name="",
+def newton(*args, attenuation=0.0, magnitude=0.0, maxDistance=0.0, minDistance=0.0, name="",
            perVertex=True, position=None, torusSectionRadius=0.0, volumeExclusion=True,
            volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True, query=True, e=True,
-           edit=True, *args, **kwargs):
+           edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -10532,12 +10532,12 @@ def NextSkinPaintMode(*args, **kwargs):
     pass
 
 
-def polyGeoSampler(alphaBlend="", averageColor=True, clampAlphaMax=0.0, clampAlphaMin=0.0,
-                   clampRGBMax=None, clampRGBMin=None, colorBlend="", colorDisplayOption=True,
-                   computeShadows=True, displaceGeometry=True, flatShading=True,
-                   ignoreDoubleSided=True, lightingOnly=True, reuseShadows=True,
-                   sampleByFace=True, scaleFactor=0.0, shareUV=True, useLightShadows=True,
-                   e=True, edit=True, *args, **kwargs):
+def polyGeoSampler(*args, alphaBlend="", averageColor=True, clampAlphaMax=0.0,
+                   clampAlphaMin=0.0, clampRGBMax=None, clampRGBMin=None, colorBlend="",
+                   colorDisplayOption=True, computeShadows=True, displaceGeometry=True,
+                   flatShading=True, ignoreDoubleSided=True, lightingOnly=True,
+                   reuseShadows=True, sampleByFace=True, scaleFactor=0.0, shareUV=True,
+                   useLightShadows=True, e=True, edit=True, **kwargs):
     """
     This command performs a render sampling of surface color and transparency for each selected
     vertex or face and stores the sampled data as either the color value, or uses the sampled
@@ -10612,10 +10612,9 @@ def ToggleMeshEdges(*args, **kwargs):
     pass
 
 
-def uvSnapshot(antiAliased=True, blueColor=255, entireUVRange=True, fileFormat="",
+def uvSnapshot(*args, antiAliased=True, blueColor=255, entireUVRange=True, fileFormat="",
                greenColor=255, name="", overwrite=True, redColor=255, uMax=0.0, uMin=0.0,
-               uvSetName="", vMax=0.0, vMin=0.0, xResolution=512, yResolution=512, *args,
-               **kwargs):
+               uvSetName="", vMax=0.0, vMin=0.0, xResolution=512, yResolution=512, **kwargs):
     """
     Builds an image containg the UVs of the selected objects
     
@@ -10680,7 +10679,7 @@ def HideObjectGeometry(*args, **kwargs):
     pass
 
 
-def formLayout(annotation="", attachControl=None, attachForm=None, attachNone=None,
+def formLayout(*args, annotation="", attachControl=None, attachForm=None, attachNone=None,
                attachOppositeControl=None, attachOppositeForm=None, attachPosition=None,
                backgroundColor=None, childArray=True, defineTemplate="", docTag="",
                dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
@@ -10689,7 +10688,7 @@ def formLayout(annotation="", attachControl=None, attachForm=None, attachNone=No
                numberOfChildren=True, numberOfDivisions=0, numberOfPopupMenus=True, parent="",
                popupMenuArray=True, preventOverride=True, statusBarMessage="", useTemplate="",
                visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     This command creates a form layout control  A form layout allows absolute and relative
     positioning of the controls that are its immediate children   Controls have four edges: top,
@@ -10855,8 +10854,8 @@ def CreateSubdivPlane(*args, **kwargs):
     pass
 
 
-def dirmap(convertDirectory="", enable=True, getAllMappings=True, getMappedDirectory="",
-           mapDirectory=None, unmapDirectory="", q=True, query=True, *args, **kwargs):
+def dirmap(*args, convertDirectory="", enable=True, getAllMappings=True, getMappedDirectory="",
+           mapDirectory=None, unmapDirectory="", q=True, query=True, **kwargs):
     """
     Use this command to map a directory to another directory  The first argument is the
     directory to map, and the second is the destination directory to map to   Directories must
@@ -10916,9 +10915,9 @@ def FlipTriangleEdge(*args, **kwargs):
     pass
 
 
-def polyAverageVertex(caching=True, constructionHistory=True, iterations=0, name="",
+def polyAverageVertex(*args, caching=True, constructionHistory=True, iterations=0, name="",
                       nodeState=0, worldSpace=True, q=True, query=True, e=True, edit=True,
-                      *args, **kwargs):
+                      **kwargs):
     """
     Moves the selected vertices of a polygonal object to round its shape  Translate, move,
     rotate or scale vertices
@@ -10962,10 +10961,9 @@ def ScaleCurvatureOptions(*args, **kwargs):
     pass
 
 
-def polyNormalPerVertex(allLocked=True, deformable=True, freezeNormal=True, normalX=0.0,
+def polyNormalPerVertex(*args, allLocked=True, deformable=True, freezeNormal=True, normalX=0.0,
                         normalXYZ=None, normalY=0.0, normalZ=0.0, relative=True,
-                        unFreezeNormal=True, q=True, query=True, e=True, edit=True, *args,
-                        **kwargs):
+                        unFreezeNormal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command associates normal(x, y, z) with vertices on polygonal objects  When used with the
     query flag, it returns the normal associated with the specified components  However, when
@@ -11010,7 +11008,7 @@ def HypershadeGraphRemoveUpstream(*args, **kwargs):
     pass
 
 
-def dbmessage(file="", list=True, monitor=True, type="", *args, **kwargs):
+def dbmessage(*args, file="", list=True, monitor=True, type="", **kwargs):
     """
     The dbmessage command is used to install monitors for certain message types, dumping debug
     information as they are sent so that the flow of messages can be examined
@@ -11131,12 +11129,12 @@ def dR_lockSelTGL(*args, **kwargs):
     pass
 
 
-def blendShapePanel(blendShapeEditor=True, control=True, copy="", createString=True,
+def blendShapePanel(*args, blendShapeEditor=True, control=True, copy="", createString=True,
                     defineTemplate="", docTag="", editString=True, exists=True, init=True,
                     isUnique=True, label="", menuBarRepeatLast=True, menuBarVisible=True,
                     needsInit=True, parent="", popupMenuProcedure=None, replacePanel="",
                     tearOff=True, tearOffCopy="", tearOffRestore=True, unParent=True,
-                    useTemplate="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                    useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a panel that derives from the base panel class that houses a
     blendShapeEditor
@@ -11229,10 +11227,11 @@ def HideStrokePathCurves(*args, **kwargs):
     pass
 
 
-def globalStitch(caching=True, lockSurface=False, maxSeparation=0.1, modificationResistance=1,
-                 nodeState=0, sampling=1, stitchCorners=1, stitchEdges=1,
-                 stitchPartialEdges=False, stitchSmoothness=0, constructionHistory=True,
-                 name="", object=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def globalStitch(*args, caching=True, lockSurface=False, maxSeparation=0.1,
+                 modificationResistance=1, nodeState=0, sampling=1, stitchCorners=1,
+                 stitchEdges=1, stitchPartialEdges=False, stitchSmoothness=0,
+                 constructionHistory=True, name="", object=True, q=True, query=True, e=True,
+                 edit=True, **kwargs):
     """
     This command computes a globalStitch of NURBS surfaces  There should be at least one NURBS
     surface  The NURBS surface(s) should be untrimmed
@@ -11318,8 +11317,8 @@ def SelectNone(*args, **kwargs):
     pass
 
 
-def clipEditor(allTrackHeights=0, autoFit="", autoFitTime="", clipDropCmd="", clipStyle=2,
-               control=True, defineTemplate="", deleteCmd="", deselectAll=True,
+def clipEditor(*args, allTrackHeights=0, autoFit="", autoFitTime="", clipDropCmd="",
+               clipStyle=2, control=True, defineTemplate="", deleteCmd="", deselectAll=True,
                displayActiveKeyTangents="", displayActiveKeys="", displayInfinities="",
                displayKeys="", displayTangents="", displayValues="", docTag="", exists=True,
                filter="", forceMainConnection="", frameAll=True, frameRange=None,
@@ -11329,7 +11328,7 @@ def clipEditor(allTrackHeights=0, autoFit="", autoFitTime="", clipDropCmd="", cl
                menuContext="", panel="", parent="", selectBlend=None, selectClip=None,
                selectionConnection="", snapTime="", snapValue="", stateString=True,
                unParent=True, unlockMainConnection=True, updateMainConnection=True,
-               useTemplate="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+               useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a clip editor with the given name
     
@@ -11458,7 +11457,7 @@ def clipEditor(allTrackHeights=0, autoFit="", autoFitTime="", clipDropCmd="", cl
     pass
 
 
-def falloffCurve(addControlVertex="", annotation="", asString="", backgroundColor=None,
+def falloffCurve(*args, addControlVertex="", annotation="", asString="", backgroundColor=None,
                  changeCommand=None, currentKey=0, currentKeyValue=None, customCurveWidget=True,
                  defineTemplate="", deleteControlVertex=0, docTag="", dragCallback=None,
                  dropCallback=None, enable=True, enableBackground=True,
@@ -11467,7 +11466,7 @@ def falloffCurve(addControlVertex="", annotation="", asString="", backgroundColo
                  numberOfPopupMenus=True, optionVar="", parent="", popupMenuArray=True,
                  preventOverride=True, readOnly=True, snapToGrid=True, statusBarMessage="",
                  useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+                 query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control for editing a 2D control curve  The control attaches to an
     optionVar used to store and retrieve the encoded control points stored in a string
@@ -11607,9 +11606,9 @@ def SaveCurrentWorkspace(*args, **kwargs):
     pass
 
 
-def unfold(applyToShell=True, areaWeight=0.0, globalBlend=0.0, globalMethodBlend=0.0,
+def unfold(*args, applyToShell=True, areaWeight=0.0, globalBlend=0.0, globalMethodBlend=0.0,
            iterations=0, optimizeAxis=0, pinSelected=True, pinUvBorder=True, scale=0.0,
-           stoppingThreshold=0.0, useScale=True, *args, **kwargs):
+           stoppingThreshold=0.0, useScale=True, **kwargs):
     """
     None
     
@@ -11761,10 +11760,10 @@ def ToggleCurrentFrame(*args, **kwargs):
     pass
 
 
-def aimConstraint(aimVector=None, layer="", maintainOffset=True, name="", offset=None,
+def aimConstraint(*args, aimVector=None, layer="", maintainOffset=True, name="", offset=None,
                   remove=True, skip="", targetList=True, upVector=None, weight=0.0,
                   weightAliasList=True, worldUpObject=None, worldUpType="", worldUpVector=None,
-                  q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     Constrain an object's orientation to point at a target object or at the average position of
     a number of targets   An aimConstraint takes as input one or more "target" DAG transform
@@ -11819,9 +11818,9 @@ def aimConstraint(aimVector=None, layer="", maintainOffset=True, name="", offset
     pass
 
 
-def scrollLayout(annotation="", backgroundColor=None, borderVisible=True, childArray=True,
-                 childResizable=True, defineTemplate="", docTag="", dragCallback=None,
-                 dropCallback=None, enable=True, enableBackground=True,
+def scrollLayout(*args, annotation="", backgroundColor=None, borderVisible=True,
+                 childArray=True, childResizable=True, defineTemplate="", docTag="",
+                 dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                  enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                  highlightColor=None, horizontalScrollBarThickness=0, isObscured=True,
                  manage=True, minChildWidth=0, noBackground=True, numberOfChildren=True,
@@ -11830,7 +11829,7 @@ def scrollLayout(annotation="", backgroundColor=None, borderVisible=True, childA
                  scrollAreaValue=True, scrollAreaWidth=True, scrollByPixel=None, scrollPage="",
                  statusBarMessage="", useTemplate="", verticalScrollBarAlwaysVisible=True,
                  verticalScrollBarThickness=0, visible=True, visibleChangeCommand=None, width=0,
-                 q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a scroll layout  A scroll layout is useful for when you have a number
     of controls which cannot all be visible at a time  This layout will display a horizontal
@@ -11974,9 +11973,9 @@ def CreateNSoftBody(*args, **kwargs):
     pass
 
 
-def reverseSurface(caching=True, direction=0, nodeState=0, constructionHistory=True, name="",
-                   object=True, replaceOriginal=True, q=True, query=True, e=True, edit=True,
-                   *args, **kwargs):
+def reverseSurface(*args, caching=True, direction=0, nodeState=0, constructionHistory=True,
+                   name="", object=True, replaceOriginal=True, q=True, query=True, e=True,
+                   edit=True, **kwargs):
     """
     The reverseSurface command reverses one or both directions of a surface or can be used to
     "swap" the U and V directions (this creates the effect of reversing the surface normal) 
@@ -12015,8 +12014,9 @@ def SymmetrizeSelection(*args, **kwargs):
     pass
 
 
-def directKeyCtx(exists=True, history=True, image1="", image2="", image3="", name="", option="",
-                 selectedOnly=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def directKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                 option="", selectedOnly=True, q=True, query=True, e=True, edit=True,
+                 **kwargs):
     """
     This command creates a context which may be used to directly manipulate keyframes within
     the graph editor
@@ -12058,14 +12058,14 @@ def HideBoundingBox(*args, **kwargs):
     pass
 
 
-def switchTable(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def switchTable(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                 dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                 enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                 highlightColor=None, isObscured=True, label1="", label2="", manage=True,
                 noBackground=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
                 preventOverride=True, selectedRow=True, statusBarMessage="", switchNode=None,
                 underPointerRow=True, useTemplate="", visible=True, visibleChangeCommand=None,
-                width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries the switch table control   The optional argument is the
     name of the control
@@ -12216,7 +12216,7 @@ def dR_showOptions(*args, **kwargs):
     pass
 
 
-def isConnected(ignoreUnitConversion=True, *args, **kwargs):
+def isConnected(*args, ignoreUnitConversion=True, **kwargs):
     """
     The isConnected command is used to check if two plugs are connected in the dependency graph
      The return value is false if they are not and true if they are   The first string
@@ -12268,9 +12268,9 @@ def TogglePolygonFaceTriangles(*args, **kwargs):
     pass
 
 
-def polyQuad(angle=30, caching=True, constructionHistory=True, keepGroupBorder=True,
+def polyQuad(*args, angle=30, caching=True, constructionHistory=True, keepGroupBorder=True,
              keepHardEdges=True, keepTextureBorders=True, name="", nodeState=0, worldSpace=True,
-             q=True, query=True, e=True, edit=True, *args, **kwargs):
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     Merges selected triangles of a polygonal object into four-sided faces
     
@@ -12324,12 +12324,12 @@ def attachCache(*args, **kwargs):
     pass
 
 
-def preloadRefEd(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def preloadRefEd(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                  forceMainConnection="", highlightConnection="", lockMainConnection=True,
                  mainListConnection="", panel="", parent="", selectCommand=None,
                  selectFileNode=True, selectionConnection="", stateString=True, unParent=True,
                  unlockMainConnection=True, updateMainConnection=True, useTemplate="", q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+                 query=True, e=True, edit=True, **kwargs):
     """
     This creates an editor for managing which references will be read in (loaded) and which
     deferred (unloaded) upon opening a file
@@ -12455,7 +12455,7 @@ def isTrue(*args, **kwargs):
     pass
 
 
-def deformerEvaluator(chains=True, meshes=True, q=True, query=True, *args, **kwargs):
+def deformerEvaluator(*args, chains=True, meshes=True, q=True, query=True, **kwargs):
     """
     Print debug information about deformer evaluator status  In query mode the debug
     information is returned as a string[], otherwise the information is displayed in the script
@@ -12507,7 +12507,7 @@ def UVSnapTogetherOptions(*args, **kwargs):
     pass
 
 
-def polyPlanarProjection(projectionHorizontalSweep=0.0, seamCorrect=True, caching=True,
+def polyPlanarProjection(*args, projectionHorizontalSweep=0.0, seamCorrect=True, caching=True,
                          constructionHistory=True, createNewMap=True, imageCenter=None,
                          imageCenterX=0.0, imageCenterY=0.0, imageScale=None, imageScaleU=0.0,
                          imageScaleV=0.0, insertBeforeDeformers=True, keepImageRatio=True,
@@ -12516,7 +12516,7 @@ def polyPlanarProjection(projectionHorizontalSweep=0.0, seamCorrect=True, cachin
                          projectionCenterZ=0.0, projectionHeight=0.0, projectionScale=None,
                          rotate=None, rotateX=0.0, rotateY=0.0, rotateZ=0.0, rotationAngle=0.0,
                          smartFit=True, worldSpace=True, q=True, query=True, e=True, edit=True,
-                         *args, **kwargs):
+                         **kwargs):
     """
     TpolyProjCmdBase is a base class for the command to create a mapping on the selected
     polygonal faces  Projects a map onto an object, using an orthogonal projection  The piece
@@ -12649,10 +12649,10 @@ def ArtPaintAttrTool(*args, **kwargs):
     pass
 
 
-def loft(autoReverse=True, caching=True, close=False, createCusp=False, degree=3, nodeState=0,
-         reverse=False, reverseSurfaceNormals=False, sectionSpans=1, uniform=False,
+def loft(*args, autoReverse=True, caching=True, close=False, createCusp=False, degree=3,
+         nodeState=0, reverse=False, reverseSurfaceNormals=False, sectionSpans=1, uniform=False,
          constructionHistory=True, name="", object=True, polygon=0, range=True, rebuild=True,
-         q=True, query=True, e=True, edit=True, *args, **kwargs):
+         q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command computes a skinned (lofted) surface passing through a number of NURBS curves 
     There must be at least two curves present  The NURBS curves may be surface isoparms, curve
@@ -12726,8 +12726,8 @@ def DeleteAllSculptObjects(*args, **kwargs):
     pass
 
 
-def polyMapCut(caching=True, constructionHistory=True, moveratio=0.0, name="", nodeState=0,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyMapCut(*args, caching=True, constructionHistory=True, moveratio=0.0, name="",
+               nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Cut along edges of the texture mapping  The cut edges become map borders
     
@@ -12780,9 +12780,9 @@ def meshReorder(*args, **kwargs):
     pass
 
 
-def curveIntersect(caching=True, constructionHistory=True, direction=None, directionX=0.0,
-                   directionY=0.0, directionZ=0.0, nodeState=0, tolerance=0.001,
-                   useDirection=False, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def curveIntersect(*args, caching=True, constructionHistory=True, direction=None,
+                   directionX=0.0, directionY=0.0, directionZ=0.0, nodeState=0, tolerance=0.001,
+                   useDirection=False, q=True, query=True, e=True, edit=True, **kwargs):
     """
     You must specify two curves to intersect   This command either returns the parameter values
     at which the given pair of curves intersect, or returns a dependency node that provides the
@@ -12823,8 +12823,8 @@ def curveIntersect(caching=True, constructionHistory=True, direction=None, direc
     pass
 
 
-def runup(cache=True, fromPreviousFrame=True, fromStartFrame=True, maxFrame=None, state=True,
-          *args, **kwargs):
+def runup(*args, cache=True, fromPreviousFrame=True, fromStartFrame=True, maxFrame=None,
+          state=True, **kwargs):
     """
     runup plays the scene through a frame of frames, forcing dynamic objects to evaluate as it
     does so  If no max frame is specified, runup runs up to the current time
@@ -12849,18 +12849,18 @@ def runup(cache=True, fromPreviousFrame=True, fromStartFrame=True, maxFrame=None
     pass
 
 
-def gradientControlNoAttr(annotation="", asString="", backgroundColor=None, changeCommand=None,
-                          currentKey=0, currentKeyChanged=None, currentKeyColorValue=None,
-                          currentKeyCurveValue=True, currentKeyInterpValue=0, defineTemplate="",
-                          docTag="", dragCallback=None, dragCommand=None, dropCallback=None,
-                          enable=True, enableBackground=True, enableKeyboardFocus=True,
-                          exists=True, fullPathName=True, height=0, highlightColor=None,
-                          isObscured=True, manage=True, noBackground=True,
-                          numberOfPopupMenus=True, optionVar="", parent="", popupMenuArray=True,
-                          preventOverride=True, rampAsColor=True, statusBarMessage="",
-                          useTemplate="", valueAtPoint=0.0, visible=True,
-                          visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                          edit=True, *args, **kwargs):
+def gradientControlNoAttr(*args, annotation="", asString="", backgroundColor=None,
+                          changeCommand=None, currentKey=0, currentKeyChanged=None,
+                          currentKeyColorValue=None, currentKeyCurveValue=True,
+                          currentKeyInterpValue=0, defineTemplate="", docTag="",
+                          dragCallback=None, dragCommand=None, dropCallback=None, enable=True,
+                          enableBackground=True, enableKeyboardFocus=True, exists=True,
+                          fullPathName=True, height=0, highlightColor=None, isObscured=True,
+                          manage=True, noBackground=True, numberOfPopupMenus=True, optionVar="",
+                          parent="", popupMenuArray=True, preventOverride=True,
+                          rampAsColor=True, statusBarMessage="", useTemplate="",
+                          valueAtPoint=0.0, visible=True, visibleChangeCommand=None, width=0,
+                          q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control for editing a ramp (2D control curve)  The control attaches
     to an optionVar used to store and retrieve the encoded gradient control points stored in a
@@ -12998,12 +12998,12 @@ def OutTangentFlat(*args, **kwargs):
     pass
 
 
-def sculpt(after=True, afterReference=True, before=True, deformerTools=True,
+def sculpt(*args, after=True, afterReference=True, before=True, deformerTools=True,
            dropoffDistance=1.0, dropoffType="", exclusive="", frontOfChain=True, geometry="",
            geometryIndices=True, groupWithLocator=True, ignoreSelected=True,
            includeHiddenSelections=False, insideMode="", maxDisplacement=1.0, mode="", name="",
            objectCentered=True, parallel=True, prune=True, remove=True, sculptTool="",
-           split=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+           split=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a sculpt object deformer  By default for creation mode
     an implicit sphere will be used as the sculpting object if no sculpt tool is specified  The
@@ -13106,8 +13106,8 @@ def NodeEditorHideAttributes(*args, **kwargs):
     pass
 
 
-def polyEditEdgeFlow(adjustEdgeFlow=1.0, caching=True, constructionHistory=True, edgeFlow=True,
-                     name="", nodeState=0, q=True, query=True, e=True, edit=True, *args,
+def polyEditEdgeFlow(*args, adjustEdgeFlow=1.0, caching=True, constructionHistory=True,
+                     edgeFlow=True, name="", nodeState=0, q=True, query=True, e=True, edit=True,
                      **kwargs):
     """
     Edit edges of a polygonal object to respect surface curvature
@@ -13144,12 +13144,12 @@ def dR_viewLightsTGL(*args, **kwargs):
     pass
 
 
-def air(attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0, enableSpread=True,
-        fanSetup=True, inheritRotation=True, inheritVelocity=0.0, magnitude=0.0,
-        maxDistance=0.0, name="", perVertex=True, position=None, speed=0.0, spread=0.0,
-        torusSectionRadius=0.0, velocityComponentOnly=True, volumeExclusion=True,
+def air(*args, attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0,
+        enableSpread=True, fanSetup=True, inheritRotation=True, inheritVelocity=0.0,
+        magnitude=0.0, maxDistance=0.0, name="", perVertex=True, position=None, speed=0.0,
+        spread=0.0, torusSectionRadius=0.0, velocityComponentOnly=True, volumeExclusion=True,
         volumeOffset=None, volumeShape="", volumeSweep=0.0, wakeSetup=True, windSetup=True,
-        q=True, query=True, e=True, edit=True, *args, **kwargs):
+        q=True, query=True, e=True, edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -13242,8 +13242,8 @@ def PointOnCurveOptions(*args, **kwargs):
     pass
 
 
-def projectionContext(exists=True, history=True, image1="", image2="", image3="", name="",
-                      q=True, query=True, e=True, edit=True, *args, **kwargs):
+def projectionContext(*args, exists=True, history=True, image1="", image2="", image3="",
+                      name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Set the context for projection manips
     
@@ -13292,7 +13292,7 @@ def SetNormalAngle(*args, **kwargs):
     pass
 
 
-def intSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def intSliderGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                  backgroundColor=None, changeCommand=None, columnAlign=None, columnAlign2=None,
                  columnAlign3=None, columnAlign4=None, columnAlign5=None, columnAlign6=None,
@@ -13309,7 +13309,7 @@ def intSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  popupMenuArray=True, preventOverride=True, rowAttach=None, sliderStep=0,
                  statusBarMessage="", step=0, useTemplate="", value=0, visible=True,
                  visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -13531,8 +13531,8 @@ def NodeEditorPinByDefault(*args, **kwargs):
     pass
 
 
-def polySoftEdge(angle=30, caching=True, constructionHistory=True, name="", nodeState=0,
-                 worldSpace=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polySoftEdge(*args, angle=30, caching=True, constructionHistory=True, name="", nodeState=0,
+                 worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Selectively makes edges soft or hard   An edge will be made hard if the angle between two
     owning faces is sharper (larger) than the smoothing angle  An edge wil be made soft if the
@@ -13592,10 +13592,10 @@ def OneClickMenuExecute(*args, **kwargs):
     pass
 
 
-def cylinder(axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, nodeState=0,
+def cylinder(*args, axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, nodeState=0,
              pivot=None, radius=1.0, sections=8, spans=1, startSweep=0, tolerance=0.01,
              useTolerance=False, constructionHistory=True, name="", object=True, polygon=0,
-             q=True, query=True, e=True, edit=True, *args, **kwargs):
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     The cylinder command creates a new cylinder and/or a dependency node that creates one, and
     returns their names
@@ -13666,7 +13666,7 @@ def GetHIKEffectorName(*args, **kwargs):
     pass
 
 
-def surfaceShaderList(add=None, remove=None, q=True, query=True, e=True, edit=True, *args,
+def surfaceShaderList(*args, add=None, remove=None, q=True, query=True, e=True, edit=True,
                       **kwargs):
     """
     Add/Remove a relationship between an object and the current shading group
@@ -13682,15 +13682,15 @@ def surfaceShaderList(add=None, remove=None, q=True, query=True, e=True, edit=Tr
     pass
 
 
-def defaultLightListCheckBox(annotation="", backgroundColor=None, defineTemplate="", docTag="",
-                             dragCallback=None, dropCallback=None, enable=True,
+def defaultLightListCheckBox(*args, annotation="", backgroundColor=None, defineTemplate="",
+                             docTag="", dragCallback=None, dropCallback=None, enable=True,
                              enableBackground=True, enableKeyboardFocus=True, exists=True,
                              fullPathName=True, height=0, highlightColor=None, isObscured=True,
                              label="", manage=True, noBackground=True, numberOfPopupMenus=True,
                              parent="", popupMenuArray=True, preventOverride=True,
                              shadingGroup=None, statusBarMessage="", useTemplate="",
                              visible=True, visibleChangeCommand=None, width=0, q=True,
-                             query=True, e=True, edit=True, *args, **kwargs):
+                             query=True, e=True, edit=True, **kwargs):
     """
     This command creates a checkBox that controls whether a shadingGroup is
     connected/disconnected from the defaultLightList
@@ -13787,8 +13787,8 @@ def dR_selectSimilar(*args, **kwargs):
     pass
 
 
-def getFluidAttr(attribute="", lowerFace=True, xIndex=0, xvalue=True, yIndex=0, yvalue=True,
-                 zIndex=0, zvalue=True, *args, **kwargs):
+def getFluidAttr(*args, attribute="", lowerFace=True, xIndex=0, xvalue=True, yIndex=0,
+                 yvalue=True, zIndex=0, zvalue=True, **kwargs):
     """
     Returns values of built-in fluid attributes such as density, velocity, etc., for individual
     grid cells or for all cells in the grid
@@ -13828,11 +13828,11 @@ def SoloMaterial(*args, **kwargs):
     pass
 
 
-def polyBevel(angleTolerance=20.0, autoFit=True, caching=True, constructionHistory=True,
+def polyBevel(*args, angleTolerance=20.0, autoFit=True, caching=True, constructionHistory=True,
               mergeVertexTolerance=0.0, mergeVertices=False, miteringAngle=0.0, name="",
               nodeState=0, offset=0.2, offsetAsFraction=False, roundness=0.5, segments=1,
               smoothingAngle=0.0, subdivideNgons=False, useLegacyBevelAlgorithm=False,
-              uvAssignment=0, worldSpace=True, q=True, query=True, e=True, edit=True, *args,
+              uvAssignment=0, worldSpace=True, q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     Bevel edges
@@ -13908,7 +13908,7 @@ def DisplayUVWireframe(*args, **kwargs):
     pass
 
 
-def linearPrecision(q=True, query=True, *args, **kwargs):
+def linearPrecision(*args, q=True, query=True, **kwargs):
     """
     This command controls the display of linear strings in the interface  (See the linearField
     command)  Setting this affects any linear strings displayed afterwards, formatting them so
@@ -13922,8 +13922,8 @@ def linearPrecision(q=True, query=True, *args, **kwargs):
     pass
 
 
-def softModCtx(dragSlider="", exists=True, falseColor=True, image1="", image2="", image3="",
-               reset=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def softModCtx(*args, dragSlider="", exists=True, falseColor=True, image1="", image2="",
+               image3="", reset=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Controls the softMod context
     
@@ -13973,8 +13973,8 @@ def ConvertSelectionToVertexFaces(*args, **kwargs):
     pass
 
 
-def mouse(enableScrollWheel=True, mouseButtonTracking=0, mouseButtonTrackingStatus=True,
-          scrollWheelStatus=True, *args, **kwargs):
+def mouse(*args, enableScrollWheel=True, mouseButtonTracking=0, mouseButtonTrackingStatus=True,
+          scrollWheelStatus=True, **kwargs):
     """
     This command allows to configure mouse
     
@@ -14005,8 +14005,8 @@ def webViewCmd(*args, **kwargs):
     pass
 
 
-def colorManagementPrefs(cmConfigFileEnabled=True, cmEnabled=True, colorManageAllNodes=True,
-                         colorManagePots=True, colorManagedNodes=True,
+def colorManagementPrefs(*args, cmConfigFileEnabled=True, cmEnabled=True,
+                         colorManageAllNodes=True, colorManagePots=True, colorManagedNodes=True,
                          colorManagementSDKVersion="", configFilePath="",
                          defaultInputSpaceName="", equalsToPolicyFile="", exportPolicy="",
                          inhibitEvents=True, inputSpaceNames=True, loadPolicy="",
@@ -14018,7 +14018,7 @@ def colorManagementPrefs(cmConfigFileEnabled=True, cmEnabled=True, colorManageAl
                          outputUseViewTransform=True, policyFileName="", popupOnError=True,
                          refresh=True, renderingSpaceName="", renderingSpaceNames=True,
                          restoreDefaults=True, viewTransformName="", viewTransformNames=True,
-                         q=True, query=True, e=True, edit=True, *args, **kwargs):
+                         q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command allows querying and editing the color management global data in a scene  It
     also allows for setting the view transform and rendering space which automatically
@@ -14157,10 +14157,10 @@ def PaintEffectPanelActivate(*args, **kwargs):
     pass
 
 
-def copySkinWeights(destinationSkin="", influenceAssociation="", mirrorInverse=True,
+def copySkinWeights(*args, destinationSkin="", influenceAssociation="", mirrorInverse=True,
                     mirrorMode="", noBlendWeight=True, noMirror=True, normalize=True,
                     sampleSpace=0, smooth=True, sourceSkin="", surfaceAssociation="",
-                    uvSpace=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                    uvSpace=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to copy or mirror the skinCluster weights accross one of the three major axes  The
     command can be used to mirror weights either from one surface to another or within the same
@@ -14271,8 +14271,8 @@ def XgBatchExportArchive(*args, **kwargs):
     pass
 
 
-def poleVectorConstraint(layer="", name="", remove=True, targetList=True, weight=0.0,
-                         weightAliasList=True, q=True, query=True, e=True, edit=True, *args,
+def poleVectorConstraint(*args, layer="", name="", remove=True, targetList=True, weight=0.0,
+                         weightAliasList=True, q=True, query=True, e=True, edit=True,
                          **kwargs):
     """
     Constrains the poleVector of an ikRPsolve handle to point at a target object or at the
@@ -14331,9 +14331,9 @@ def dR_loadRecentFile4(*args, **kwargs):
     pass
 
 
-def setAttr(alteredValue=True, caching=True, capacityHint=0, channelBox=True, clamp=True,
+def setAttr(*args, alteredValue=True, caching=True, capacityHint=0, channelBox=True, clamp=True,
             keyable=True, lock=True, size=0, type="", q=True, query=True, e=True, edit=True,
-            *args, **kwargs):
+            **kwargs):
     """
     Sets the value of a dependency node attribute  No value for the the attribute is needed
     when the -l/-k/-s flags are used  The -type flag is only required when setting a
@@ -14387,7 +14387,7 @@ def createNurbsCylinderCtx(*args, **kwargs):
     pass
 
 
-def polySlideEdge(absolute=True, direction=0, edgeDirection=0.0, symmetry=True, *args,
+def polySlideEdge(*args, absolute=True, direction=0, edgeDirection=0.0, symmetry=True,
                   **kwargs):
     """
     Moves an edge loop selection along the edges connected to the sides of its vertices
@@ -14418,9 +14418,8 @@ def polyTestPop(*args, **kwargs):
     pass
 
 
-def setInfinity(attribute="", controlPoints=False, hierarchy="", postInfinite="",
-                preInfinite="", shape=True, q=True, query=True, e=True, edit=True, *args,
-                **kwargs):
+def setInfinity(*args, attribute="", controlPoints=False, hierarchy="", postInfinite="",
+                preInfinite="", shape=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Set the infinity type before (after) a paramCurve's first (last) keyframe
     
@@ -14463,11 +14462,10 @@ def journal(*args, **kwargs):
     pass
 
 
-def projectTangent(caching=True, curvature=False, curvatureScale=0.0, ignoreEdges=False,
+def projectTangent(*args, caching=True, curvature=False, curvatureScale=0.0, ignoreEdges=False,
                    nodeState=0, reverseTangent=False, rotate=0.0, tangentDirection=1,
                    tangentScale=1.0, constructionHistory=True, name="", object=True,
-                   replaceOriginal=True, q=True, query=True, e=True, edit=True, *args,
-                   **kwargs):
+                   replaceOriginal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The project tangent command is used to align (for tangents) a curve to two other curves or
     a surface  A surface isoparm may be selected to define the direction (U or V) to align to 
@@ -14568,7 +14566,7 @@ def SubdivSurfaceMatchTopology(*args, **kwargs):
     pass
 
 
-def pause(seconds=0, *args, **kwargs):
+def pause(*args, seconds=0, **kwargs):
     """
     Pause for a specified number of seconds for canned demos or for test scripts to allow user
     to view results
@@ -14638,15 +14636,15 @@ def xgmSetGuideCVCount(*args, **kwargs):
     pass
 
 
-def hudSliderButton(allowOverlap=True, block=0, blockAlignment="", blockSize="", buttonLabel="",
-                    buttonLabelFontSize="", buttonPressCommand=None, buttonReleaseCommand=None,
-                    buttonShape="", buttonWidth=0, decimalPrecision=0, internalPadding=0,
-                    maxValue=0.0, minValue=0.0, padding=0, section=0, sliderDragCommand=None,
-                    sliderIncrement=0.0, sliderLabel="", sliderLabelFontSize="",
-                    sliderLabelWidth=0, sliderLength=0, sliderPressCommand=None,
-                    sliderReleaseCommand=None, type="", value=0.0, valueAlignment="",
-                    valueFontSize="", valueWidth=0, visible=True, q=True, query=True, e=True,
-                    edit=True, *args, **kwargs):
+def hudSliderButton(*args, allowOverlap=True, block=0, blockAlignment="", blockSize="",
+                    buttonLabel="", buttonLabelFontSize="", buttonPressCommand=None,
+                    buttonReleaseCommand=None, buttonShape="", buttonWidth=0,
+                    decimalPrecision=0, internalPadding=0, maxValue=0.0, minValue=0.0,
+                    padding=0, section=0, sliderDragCommand=None, sliderIncrement=0.0,
+                    sliderLabel="", sliderLabelFontSize="", sliderLabelWidth=0, sliderLength=0,
+                    sliderPressCommand=None, sliderReleaseCommand=None, type="", value=0.0,
+                    valueAlignment="", valueFontSize="", valueWidth=0, visible=True, q=True,
+                    query=True, e=True, edit=True, **kwargs):
     """
     This command creates a Heads-up Display (HUD) slider button control which is placed in a 2D
     inactive overlay plane on the 3D viewport  It is to be used to provide hands-on interaction
@@ -14769,7 +14767,7 @@ def AssignOfflineFile(*args, **kwargs):
     pass
 
 
-def hyperGraph(addBookmark=True, addDependGraph=None, addDependNode=None,
+def hyperGraph(*args, addBookmark=True, addDependGraph=None, addDependNode=None,
                animateTransition=True, attributeEditor="", backward=True, bookmarkName=True,
                breakConnectionCommand="", clear=True, collapseContainer=True,
                connectionDrawStyle="center", control=True, currentEdge="", currentNode="",
@@ -14804,7 +14802,7 @@ def hyperGraph(addBookmark=True, addDependGraph=None, addDependNode=None,
                updateMainConnection=True, updateNodeAdded=True, updateSelection=True,
                upstream=True, useDrawOverrideColor=True, useFeedbackList=True, useTemplate="",
                viewOption="", visibility=True, zoom=0.0, q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+               **kwargs):
     """
     The following is an overview of the basic features of the hypergraph  A more detailed
     description is given in the user manuals   The hypergraph provides the user with the
@@ -15152,9 +15150,10 @@ def hyperGraph(addBookmark=True, addDependGraph=None, addDependNode=None,
     pass
 
 
-def setFluidAttr(addValue=True, attribute="", clear=True, floatRandom=0.0, floatValue=0.0,
-                 lowerFace=True, reset=True, vectorRandom=None, vectorValue=None, xIndex=0,
-                 xvalue=True, yIndex=0, yvalue=True, zIndex=0, zvalue=True, *args, **kwargs):
+def setFluidAttr(*args, addValue=True, attribute="", clear=True, floatRandom=0.0,
+                 floatValue=0.0, lowerFace=True, reset=True, vectorRandom=None,
+                 vectorValue=None, xIndex=0, xvalue=True, yIndex=0, yvalue=True, zIndex=0,
+                 zvalue=True, **kwargs):
     """
     Sets values of built-in fluid attributes such as density, velocity, etc., for individual
     grid cells or for all cells in the grid
@@ -15210,7 +15209,7 @@ def xgmCache(*args, **kwargs):
     pass
 
 
-def convertTessellation(allCameras=True, camera=None, *args, **kwargs):
+def convertTessellation(*args, allCameras=True, camera=None, **kwargs):
     """
     Command to translate the basic tessellation attributes to advanced  If a camera flag is
     specified the translation will be based on the distance the surface is from the camera  The
@@ -15237,10 +15236,10 @@ def LockNormals(*args, **kwargs):
     pass
 
 
-def hwReflectionMap(backTextureName="", bottomTextureName="", cubeMap=False, decalMode=False,
-                    enable=False, frontTextureName="", leftTextureName="", rightTextureName="",
-                    sphereMapTextureName="", topTextureName="", q=True, query=True, e=True,
-                    edit=True, *args, **kwargs):
+def hwReflectionMap(*args, backTextureName="", bottomTextureName="", cubeMap=False,
+                    decalMode=False, enable=False, frontTextureName="", leftTextureName="",
+                    rightTextureName="", sphereMapTextureName="", topTextureName="", q=True,
+                    query=True, e=True, edit=True, **kwargs):
     """
     This command creates a hwReflectionMap node for having reflection on textured surfaces that
     currently have their boolean attribute displayHWEnvironment set to true
@@ -15303,10 +15302,10 @@ def LoadHIKEffectorSetState(*args, **kwargs):
     pass
 
 
-def gravity(attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0, magnitude=0.0,
-            maxDistance=0.0, name="", perVertex=True, position=None, torusSectionRadius=0.0,
-            volumeExclusion=True, volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True,
-            query=True, e=True, edit=True, *args, **kwargs):
+def gravity(*args, attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0,
+            magnitude=0.0, maxDistance=0.0, name="", perVertex=True, position=None,
+            torusSectionRadius=0.0, volumeExclusion=True, volumeOffset=None, volumeShape="",
+            volumeSweep=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -15384,13 +15383,12 @@ def HypershadeCloseActiveTab(*args, **kwargs):
     pass
 
 
-def glRenderEditor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def glRenderEditor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                    forceMainConnection="", highlightConnection="", lockMainConnection=True,
                    lookThru="", mainListConnection="", panel="", parent="",
                    selectionConnection="", stateString=True, unParent=True,
                    unlockMainConnection=True, updateMainConnection=True, useTemplate="",
-                   viewCameraName=True, q=True, query=True, e=True, edit=True, *args,
-                   **kwargs):
+                   viewCameraName=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a glRender view  This is a special view used for hardware rendering  This command is
     used to create and reparent the view as needed to support panels  See the glRender command
@@ -15463,7 +15461,7 @@ def glRenderEditor(control=True, defineTemplate="", docTag="", exists=True, filt
     pass
 
 
-def loadUI(listTypes=True, uiFile="", uiString="", verbose=True, workingDirectory="", *args,
+def loadUI(*args, listTypes=True, uiFile="", uiString="", verbose=True, workingDirectory="",
            **kwargs):
     """
     loadUI command allows loading of a user interface created in Trolltech Qt Designer
@@ -15501,8 +15499,8 @@ def GraphDelete(*args, **kwargs):
     pass
 
 
-def setInputDeviceMapping(absolute=True, axis="", device="", offset=0.0, relative=True,
-                          scale=0.0, view=True, world=True, *args, **kwargs):
+def setInputDeviceMapping(*args, absolute=True, axis="", device="", offset=0.0, relative=True,
+                          scale=0.0, view=True, world=True, **kwargs):
     """
     The command sets a scale and offset for all attachments made to a specified device axis 
     Any attachment made to a mapped device axis will have the scale and offset applied to its
@@ -15582,8 +15580,8 @@ def XgmSplineCacheEnableSelectedCache(*args, **kwargs):
     pass
 
 
-def textureWindow(activeSelectionOnTop=True, axesColor=None, backFacingColor=None, capture="",
-                  captureSequenceNumber=0, changeCommand=None, checkerColor1=None,
+def textureWindow(*args, activeSelectionOnTop=True, axesColor=None, backFacingColor=None,
+                  capture="", captureSequenceNumber=0, changeCommand=None, checkerColor1=None,
                   checkerColor2=None, checkerColorMode=0, checkerDensity=0,
                   checkerDrawTileLabels=True, checkerGradient1=None, checkerGradient2=None,
                   checkerGradientOverlay=True, checkerTileLabelColor=None, clearImage=True,
@@ -15618,7 +15616,7 @@ def textureWindow(activeSelectionOnTop=True, axesColor=None, backFacingColor=Non
                   unlockMainConnection=True, updateMainConnection=True, useFaceGroup=True,
                   useTemplate="", usedPercentageHUDRange=None, uvSets=True, viewPortImage=True,
                   viewTransformName="", wireframeComponentColor=None, wireframeObjectColor=None,
-                  writeImage="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  writeImage="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to create a UV Editor and to query or edit the texture editor settings
       The UV Editor displays texture mapped polygon objects in 2D texture space  Only active
@@ -15958,10 +15956,10 @@ def textureWindow(activeSelectionOnTop=True, axesColor=None, backFacingColor=Non
     pass
 
 
-def getMetadata(dataType=True, listChannelNames=True, listMemberNames=True,
+def getMetadata(*args, dataType=True, listChannelNames=True, listMemberNames=True,
                 listStreamNames=True, memberName="", channelName="", channelType="",
                 endIndex="", index="", indexType="", scene=True, startIndex="", streamName="",
-                *args, **kwargs):
+                **kwargs):
     """
     This command is used to retrieve the values of metadata elements from a node or scene  It
     is restricted to returning a single structure member at a time  For convenience the detail
@@ -16022,8 +16020,8 @@ def ShowLastHidden(*args, **kwargs):
     pass
 
 
-def dragAttrContext(connectTo=None, exists=True, history=True, image1="", image2="", image3="",
-                    name="", reset=True, q=True, query=True, e=True, edit=True, *args,
+def dragAttrContext(*args, connectTo=None, exists=True, history=True, image1="", image2="",
+                    image3="", name="", reset=True, q=True, query=True, e=True, edit=True,
                     **kwargs):
     """
     The dragAttrContext allows a user to manipulate the attributes of an object by using a
@@ -16060,7 +16058,7 @@ def dragAttrContext(connectTo=None, exists=True, history=True, image1="", image2
     pass
 
 
-def findType(deep=True, exact=True, forward=True, type="", *args, **kwargs):
+def findType(*args, deep=True, exact=True, forward=True, type="", **kwargs):
     """
     The findType command is used to search through a dependency subgraph on a certain node to
     find all nodes of the given type  The search can go either upstream (input connections) or
@@ -16090,7 +16088,7 @@ def DuplicateCurve(*args, **kwargs):
     pass
 
 
-def bezierAnchorState(even=True, smooth=True, *args, **kwargs):
+def bezierAnchorState(*args, even=True, smooth=True, **kwargs):
     """
     The bezierAnchorState command provides an easy interface to modify anchor states:  -
     Smooth/Broken anchor tangents - Even/Uneven weighted anchor tangents
@@ -16115,13 +16113,13 @@ def dR_connectPress(*args, **kwargs):
     pass
 
 
-def helpLine(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def helpLine(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
              dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
              enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
              highlightColor=None, isObscured=True, manage=True, noBackground=True,
              numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
              statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-             width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+             width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a help line where tool help/hints are shown
     
@@ -16240,7 +16238,7 @@ def HypershadeTestTextureOptions(*args, **kwargs):
     pass
 
 
-def removeMultiInstance(allChildren=True, b=True, *args, **kwargs):
+def removeMultiInstance(*args, allChildren=True, b=True, **kwargs):
     """
     Removes a particular instance of a multiElement  This is only useful for input attributes
     since outputs will get regenerated the next time the node gets executed  This command will
@@ -16282,9 +16280,9 @@ def TimeEditorCreateAudioTracksAtEnd(*args, **kwargs):
     pass
 
 
-def callbacks(addCallback=None, clearAllCallbacks=True, clearCallbacks=True, describeHooks=True,
-              dumpCallbacks=True, executeCallbacks=True, hook="", listCallbacks=True, owner="",
-              removeCallback=None, *args, **kwargs):
+def callbacks(*args, addCallback=None, clearAllCallbacks=True, clearCallbacks=True,
+              describeHooks=True, dumpCallbacks=True, executeCallbacks=True, hook="",
+              listCallbacks=True, owner="", removeCallback=None, **kwargs):
     """
     This command allows you to add callbacks at key times during UI creation so that the Maya
     UI can be extended  The list of standard Maya hooks, as well as the arguments which will be
@@ -16357,9 +16355,9 @@ def PasteKeys(*args, **kwargs):
     pass
 
 
-def polyProjectCurve(addUnderTransform=True, caching=True, direction=None, directionX=0.0,
-                     directionY=0.0, directionZ=0.0, nodeState=0, tolerance=0.0, q=True,
-                     query=True, e=True, edit=True, *args, **kwargs):
+def polyProjectCurve(*args, addUnderTransform=True, caching=True, direction=None,
+                     directionX=0.0, directionY=0.0, directionZ=0.0, nodeState=0, tolerance=0.0,
+                     q=True, query=True, e=True, edit=True, **kwargs):
     """
     The polyProjectCurve command creates curves by projecting a selected curve onto a selected
     poly mesh  The direction of projection will be the current view direction unless the
@@ -16398,8 +16396,8 @@ def PaintEffectPanelDeactivate(*args, **kwargs):
     pass
 
 
-def moveVertexAlongDirection(direction=None, magnitude=0.0, normalDirection=0.0, uDirection=0.0,
-                             uvNormalDirection=None, vDirection=0.0, *args, **kwargs):
+def moveVertexAlongDirection(*args, direction=None, magnitude=0.0, normalDirection=0.0,
+                             uDirection=0.0, uvNormalDirection=None, vDirection=0.0, **kwargs):
     """
     The command moves the selected vertex ( control vertex ) in the specified unit direction by
     the given magnitude  The vertex(ices) may also be moved in the direction of unit normal (
@@ -16455,7 +16453,7 @@ def XgGuideTool(*args, **kwargs):
     pass
 
 
-def subdToBlind(absolutePosition=True, includeCreases=False, includeZeroOffsets=False, *args,
+def subdToBlind(*args, absolutePosition=True, includeCreases=False, includeZeroOffsets=False,
                 **kwargs):
     """
     The subdivision surface hierarchical edits will get copied into blind data on the given
@@ -16542,7 +16540,7 @@ def TimeEditorFbxExportAll(*args, **kwargs):
     pass
 
 
-def intFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def intFieldGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                 adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                 backgroundColor=None, changeCommand=None, columnAlign=None, columnAlign2=None,
                 columnAlign3=None, columnAlign4=None, columnAlign5=None, columnAlign6=None,
@@ -16559,7 +16557,7 @@ def intFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                 popupMenuArray=True, preventOverride=True, rowAttach=None, statusBarMessage="",
                 useTemplate="", value=None, value1=0, value2=0, value3=0, value4=0,
                 visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                edit=True, *args, **kwargs):
+                edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -16773,8 +16771,8 @@ def intFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
     pass
 
 
-def pluginDisplayFilter(classification="", deregister=True, exists=True, label="",
-                        listFilters=True, register=True, q=True, query=True, *args, **kwargs):
+def pluginDisplayFilter(*args, classification="", deregister=True, exists=True, label="",
+                        listFilters=True, register=True, q=True, query=True, **kwargs):
     """
     Register, deregister or query a plugin display filter  Plug-ins can use this command to
     register their own display filters which will appear in the 'Show' menus on Maya's model
@@ -16831,7 +16829,7 @@ def CombinePolygonsOptions(*args, **kwargs):
     pass
 
 
-def paramLocator(position=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def paramLocator(*args, position=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The command creates a locator in the underworld of a NURBS curve or NURBS surface at the
     specified parameter value  If no object is specified, then a locator will be created on the
@@ -16874,7 +16872,7 @@ def ToggleAutoActivateBodyPart(*args, **kwargs):
     pass
 
 
-def affectedNet(name="", type="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def affectedNet(*args, name="", type="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command gets the list of attributes on a node or node type and creates nodes of type
     TdnAffect, one for each attribute, that are connected iff the source node's attribute
@@ -16933,9 +16931,9 @@ def polyWarpImage(*args, **kwargs):
     pass
 
 
-def curveEditorCtx(direction=0, exists=True, history=True, image1="", image2="", image3="",
-                   name="", relativeTangentSize=4, title="", q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+def curveEditorCtx(*args, direction=0, exists=True, history=True, image1="", image2="",
+                   image3="", name="", relativeTangentSize=4, title="", q=True, query=True,
+                   e=True, edit=True, **kwargs):
     """
     The curveEditorCtx command creates a new NURBS editor context, which is used to edit a
     NURBS curve or surface
@@ -17022,8 +17020,8 @@ def DeleteAllFluids(*args, **kwargs):
     pass
 
 
-def nodePreset(attributes="", custom="", delete=None, exists=None, isValidName="", list=None,
-               load=None, save=None, *args, **kwargs):
+def nodePreset(*args, attributes="", custom="", delete=None, exists=None, isValidName="",
+               list=None, load=None, save=None, **kwargs):
     """
     Command to save and load preset settings for a node  This command allows you to take a
     snapshot of the values of all attributes of a node and save it to disk as a preset with
@@ -17061,8 +17059,8 @@ def nodePreset(attributes="", custom="", delete=None, exists=None, isValidName="
     pass
 
 
-def animDisplay(modelUpdate="", refAnimCurvesEditable=True, timeCode="", timeCodeOffset="",
-                q=True, query=True, e=True, edit=True, *args, **kwargs):
+def animDisplay(*args, modelUpdate="", refAnimCurvesEditable=True, timeCode="",
+                timeCodeOffset="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command changes certain display options used by animation windows
     
@@ -17093,7 +17091,7 @@ def HideLights(*args, **kwargs):
     pass
 
 
-def clipSchedulerOutliner(annotation="", backgroundColor=None, clipScheduler="",
+def clipSchedulerOutliner(*args, annotation="", backgroundColor=None, clipScheduler="",
                           defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
                           enable=True, enableBackground=True, enableKeyboardFocus=True,
                           exists=True, fullPathName=True, height=0, highlightColor=None,
@@ -17101,7 +17099,7 @@ def clipSchedulerOutliner(annotation="", backgroundColor=None, clipScheduler="",
                           numberOfPopupMenus=True, parent="", popupMenuArray=True,
                           preventOverride=True, statusBarMessage="", useTemplate="",
                           visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                          e=True, edit=True, *args, **kwargs):
+                          e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a clip scheduler outliner control
     
@@ -17222,10 +17220,10 @@ def cMuscleCompIndex(*args, **kwargs):
     pass
 
 
-def nurbsSquare(caching=True, center=None, centerX=0, centerY=0, centerZ=0, degree=3,
+def nurbsSquare(*args, caching=True, center=None, centerX=0, centerY=0, centerZ=0, degree=3,
                 nodeState=0, normal=None, normalX=0, normalY=0, normalZ=1, sideLength1=1.0,
                 sideLength2=1.0, spansPerSide=1, constructionHistory=True, name="", object=True,
-                q=True, query=True, e=True, edit=True, *args, **kwargs):
+                q=True, query=True, e=True, edit=True, **kwargs):
     """
     The nurbsSquare command creates a square
     
@@ -17331,8 +17329,8 @@ def UVSphericalProjection(*args, **kwargs):
     pass
 
 
-def polyDelFacet(caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+def polyDelFacet(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+                 query=True, e=True, edit=True, **kwargs):
     """
     Deletes faces  If the result is split into disconnected pieces, the pieces (so-called
     shells) are still considered to be one object
@@ -17370,9 +17368,10 @@ def Flare(*args, **kwargs):
     pass
 
 
-def pointOnPolyConstraint(layer="", maintainOffset=True, name="", offset=None, remove=True,
-                          skip="", targetList=True, weight=0.0, weightAliasList=True, q=True,
-                          query=True, e=True, edit=True, *args, **kwargs):
+def pointOnPolyConstraint(*args, layer="", maintainOffset=True, name="", offset=None,
+                          remove=True, skip="", targetList=True, weight=0.0,
+                          weightAliasList=True, q=True, query=True, e=True, edit=True,
+                          **kwargs):
     """
     Constrain an object's position to the position of the target object or to the average
     position of a number of targets   A pointOnPolyConstraint takes as input one or more
@@ -17432,8 +17431,8 @@ def reroot(*args, **kwargs):
     pass
 
 
-def displayString(delete=True, exists=True, keys=True, replace=True, value="", q=True,
-                  query=True, *args, **kwargs):
+def displayString(*args, delete=True, exists=True, keys=True, replace=True, value="", q=True,
+                  query=True, **kwargs):
     """
     Assign a string value to a string identifier  Allows you define a string in one location
     and then refer to it by its identifier in many other locations  Formatted strings are also
@@ -17462,7 +17461,7 @@ def displayString(delete=True, exists=True, keys=True, replace=True, value="", q
     pass
 
 
-def selectPref(affectsActive=True, allowHiliteSelection=True, autoSelectContainer=True,
+def selectPref(*args, affectsActive=True, allowHiliteSelection=True, autoSelectContainer=True,
                autoUseDepth=True, clickBoxSize=0, clickDrag=True,
                containerCentricSelection=True, disableComponentPopups=True,
                expandPopupList=True, ignoreSelectionPriority=True, manipClickBoxSize=0,
@@ -17471,7 +17470,7 @@ def selectPref(affectsActive=True, allowHiliteSelection=True, autoSelectContaine
                preSelectHilite=True, preSelectHiliteSize=0.0, preSelectTweakDeadSpace=0,
                selectTypeChangeAffectsActive=True, selectionChildHighlightMode=0,
                singleBoxSelection=True, straightLineDistance=True, trackSelectionOrder=True,
-               useDepth=True, xformNoSelect=True, q=True, query=True, *args, **kwargs):
+               useDepth=True, xformNoSelect=True, q=True, query=True, **kwargs):
     """
     This command controls state variables used to selection UI behavior
     
@@ -17577,10 +17576,10 @@ def FBXGetTakeIndex(*args, **kwargs):
     pass
 
 
-def cone(axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, nodeState=0,
+def cone(*args, axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, nodeState=0,
          pivot=None, radius=1.0, sections=8, spans=1, startSweep=0, tolerance=0.01,
          useOldInitBehaviour=False, useTolerance=False, constructionHistory=True, name="",
-         object=True, polygon=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+         object=True, polygon=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The cone command creates a new cone and/or a dependency node that creates one, and returns
     their names
@@ -17661,16 +17660,16 @@ def AddSelectionAsTargetShape(*args, **kwargs):
     pass
 
 
-def menuItem(allowOptionBoxes=True, annotation="", boldFont=False, checkBox=True, collection="",
-             command=None, data=0, defineTemplate="", divider=True, dividerLabel="", docTag="",
-             dragDoubleClickCommand=None, dragMenuCommand=None, echoCommand=True, enable=True,
-             enableCommandRepeat=True, exists=True, familyImage="", image="",
-             imageOverlayLabel="", insertAfter="", isCheckBox=True, isOptionBox=True,
-             isRadioButton=True, italicized=False, label="", longDivider=True, ltVersion="",
-             optionBox=True, optionBoxIcon="", parent="", postMenuCommand=None,
+def menuItem(*args, allowOptionBoxes=True, annotation="", boldFont=False, checkBox=True,
+             collection="", command=None, data=0, defineTemplate="", divider=True,
+             dividerLabel="", docTag="", dragDoubleClickCommand=None, dragMenuCommand=None,
+             echoCommand=True, enable=True, enableCommandRepeat=True, exists=True,
+             familyImage="", image="", imageOverlayLabel="", insertAfter="", isCheckBox=True,
+             isOptionBox=True, isRadioButton=True, italicized=False, label="", longDivider=True,
+             ltVersion="", optionBox=True, optionBoxIcon="", parent="", postMenuCommand=None,
              postMenuCommandOnce=True, radialPosition="", radioButton=True, runTimeCommand="",
              sourceType="", subMenu=True, tearOff=True, useTemplate="", version="",
-             visible=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+             visible=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries menu items
     
@@ -17815,8 +17814,8 @@ def ToggleIsolateSelect(*args, **kwargs):
     pass
 
 
-def polyCloseBorder(caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+def polyCloseBorder(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+                    query=True, e=True, edit=True, **kwargs):
     """
     Closes open borders of objects  For each border edge given, a face is created to fill the
     hole the edge lies on
@@ -17861,10 +17860,10 @@ def FrameSelectedInAllViews(*args, **kwargs):
     pass
 
 
-def grid(default=True, displayAxes=True, displayAxesBold=True, displayDivisionLines=True,
+def grid(*args, default=True, displayAxes=True, displayAxesBold=True, displayDivisionLines=True,
          displayGridLines=True, displayOrthographicLabels=True, displayPerspectiveLabels=True,
          divisions=5, orthographicLabelPosition="", perspectiveLabelPosition="", reset=True,
-         size=12, spacing=5, style=0, toggle=True, q=True, query=True, *args, **kwargs):
+         size=12, spacing=5, style=0, toggle=True, q=True, query=True, **kwargs):
     """
     This command changes the size and spacing of lines on the ground plane displayed in the
     perspective and orthographic views   This command lets you reset the ground plane, change
@@ -17979,7 +17978,7 @@ def SelectLinesMask(*args, **kwargs):
     pass
 
 
-def sculptMeshCacheCtx(adjustSize=True, adjustStrength=True, affectAllLayers=True,
+def sculptMeshCacheCtx(*args, adjustSize=True, adjustStrength=True, affectAllLayers=True,
                        brushDirection=0, brushSize=0.0, brushStrength=0.0, buildUpRate=0.0,
                        cloneHideSource=True, cloneMethod=0, cloneShapeSource="",
                        cloneTargetSource="", constrainToSurface=True, direction=0,
@@ -17998,7 +17997,7 @@ def sculptMeshCacheCtx(adjustSize=True, adjustStrength=True, affectAllLayers=Tru
                        strength=0.0, updatePlane=True, useGlobalSize=True, useScreenSpace=True,
                        useStampDistance=True, useStampImage=True, useSteadyStroke=True,
                        wholeStroke=True, wireframeAlpha=0.0, wireframeColor=None, q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     This is a tool context command for mesh cache sculpting tool
     
@@ -18244,7 +18243,7 @@ def TimeEditorClipTrimEnd(*args, **kwargs):
     pass
 
 
-def iconTextCheckBox(align="", annotation="", backgroundColor=None, changeCommand=None,
+def iconTextCheckBox(*args, align="", annotation="", backgroundColor=None, changeCommand=None,
                      defineTemplate="", disabledImage="", docTag="", dragCallback=None,
                      dropCallback=None, enable=True, enableBackground=True,
                      enableKeyboardFocus=True, exists=True, flat=True, flipX=True, flipY=True,
@@ -18258,7 +18257,7 @@ def iconTextCheckBox(align="", annotation="", backgroundColor=None, changeComman
                      selectionHighlightImage="", selectionImage="", statusBarMessage="",
                      style="", useAlpha=True, useTemplate="", value=True, version="",
                      visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                     e=True, edit=True, *args, **kwargs):
+                     e=True, edit=True, **kwargs):
     """
     This control supports up to 3 icon images and 4 different display styles  The icon image
     displayed is the one that best fits the current size of the control given its current style
@@ -18433,10 +18432,10 @@ def MatchPivots(*args, **kwargs):
     pass
 
 
-def polyColorSet(allColorSets=True, clamped=True, colorSet="", copy=True, create=True,
+def polyColorSet(*args, allColorSets=True, clamped=True, colorSet="", copy=True, create=True,
                  currentColorSet=True, currentPerInstanceSet=True, delete=True, newColorSet="",
                  perInstance=True, rename=True, representation="", shareInstances=True,
-                 unshared=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 unshared=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to do the following to color sets: - delete an existing color set  - rename an
     existing color set  - create a new empty color set  - set the current color set to a
@@ -18502,7 +18501,7 @@ def SetIKFKKeyframe(*args, **kwargs):
     pass
 
 
-def falloffCurveAttr(addControlVertex="", annotation="", asString="", attribute=None,
+def falloffCurveAttr(*args, addControlVertex="", annotation="", asString="", attribute=None,
                      backgroundColor=None, changeCommand=None, currentKey=0,
                      currentKeyValue=None, customCurveWidget=0, defineTemplate="",
                      deleteControlVertex=0, docTag="", dragCallback=None, dropCallback=None,
@@ -18513,7 +18512,7 @@ def falloffCurveAttr(addControlVertex="", annotation="", asString="", attribute=
                      selectedPositionControl="", selectedValueControl="", snapToGrid=0,
                      statusBarMessage="", useTemplate="", visible=True,
                      visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                     *args, **kwargs):
+                     **kwargs):
     """
     This command creates a control for editing a 2D control curve  This control attaches to a
     curve attribute, which must be a multi attribute where each entry is a compound composed
@@ -18639,9 +18638,9 @@ def DeltaMushOptions(*args, **kwargs):
     pass
 
 
-def reverseCurve(caching=True, nodeState=0, constructionHistory=True, curveOnSurface=True,
-                 name="", object=True, range=True, replaceOriginal=True, q=True, query=True,
-                 e=True, edit=True, *args, **kwargs):
+def reverseCurve(*args, caching=True, nodeState=0, constructionHistory=True,
+                 curveOnSurface=True, name="", object=True, range=True, replaceOriginal=True,
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     The reverseCurve command reverses the direction of a curve or curve-on-surface  A string is
     returned containing the pathname of the newly reversed curve and the name of the resulting
@@ -18708,11 +18707,10 @@ def xgmSplineBaseDensityScaleChangeCmd(*args, **kwargs):
     pass
 
 
-def pointOnCurve(caching=True, constructionHistory=True, curvatureCenter=True,
+def pointOnCurve(*args, caching=True, constructionHistory=True, curvatureCenter=True,
                  curvatureRadius=True, nodeState=0, normal=True, normalizedNormal=True,
                  normalizedTangent=True, parameter=0.0, position=True, tangent=True,
-                 turnOnPercentage=False, q=True, query=True, e=True, edit=True, *args,
-                 **kwargs):
+                 turnOnPercentage=False, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command returns information for a point on a NURBS curve  If no flag is specified, it
     assumes p/position by default
@@ -18783,7 +18781,7 @@ def U3DBrushSizeOff(*args, **kwargs):
     pass
 
 
-def ls(absoluteName=True, allPaths=True, assemblies=True, cameras=True, containerType="",
+def ls(*args, absoluteName=True, allPaths=True, assemblies=True, cameras=True, containerType="",
        containers=True, dagObjects=True, defaultNodes=True, dependencyNodes=True, exactType="",
        excludeType="", flatten=True, geometry=True, ghost=True, head=0, hilite=True,
        intermediateObjects=True, invisible=True, leaf=True, lights=True, live=True,
@@ -18794,7 +18792,7 @@ def ls(absoluteName=True, allPaths=True, assemblies=True, cameras=True, containe
        renderResolutions=True, renderSetups=True, selection=True, sets=True, shapes=True,
        shortNames=True, showNamespace=True, showType=True, tail=0, templated=True,
        textures=True, transforms=True, type="", undeletable=True, untemplated=True, uuid=True,
-       visible=True, *args, **kwargs):
+       visible=True, **kwargs):
     """
     The ls command returns the names (and optionally the type names) of objects in the scene  
     The most common use of ls is to filter or match objects based on their name (using
@@ -18946,10 +18944,9 @@ def ls(absoluteName=True, allPaths=True, assemblies=True, cameras=True, containe
     pass
 
 
-def symmetricModelling(about="", allowPartial=True, axis="", preserveSeam=0, reset=True,
+def symmetricModelling(*args, about="", allowPartial=True, axis="", preserveSeam=0, reset=True,
                        seamFalloffCurve="", seamTolerance=0.0, symmetry=0, tolerance=0.0,
-                       topoSymmetry=True, q=True, query=True, e=True, edit=True, *args,
-                       **kwargs):
+                       topoSymmetry=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command allows you to change the symmetric modelling options   Symmetric modelling is
     an option that allows for reflection of basic manipulator actions such as move, rotate, and
@@ -19007,11 +19004,11 @@ def TimeEditorClipLoopToggle(*args, **kwargs):
     pass
 
 
-def editor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def editor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
            forceMainConnection="", highlightConnection="", lockMainConnection=True,
            mainListConnection="", panel="", parent="", selectionConnection="", stateString=True,
            unParent=True, unlockMainConnection=True, updateMainConnection=True, useTemplate="",
-           q=True, query=True, e=True, edit=True, *args, **kwargs):
+           q=True, query=True, e=True, edit=True, **kwargs):
     """
     Edit the characteristic of an editor
     
@@ -19084,12 +19081,12 @@ def RenderSetupWindow(*args, **kwargs):
     pass
 
 
-def spring(addSprings=True, allPoints=False, count=True, damping=0.2, dampingPS=0.2,
+def spring(*args, addSprings=True, allPoints=False, count=True, damping=0.2, dampingPS=0.2,
            endForceWeight=1.0, exclusive=False, length=0.0, maxDistance=0.0, minDistance=0.0,
            minMax=False, name="", noDuplicate=False, restLength=0.0, restLengthPS=0.0,
            startForceWeight=1.0, stiffness=1.0, stiffnessPS=1.0, useDampingPS=False,
            useRestLengthPS=False, useStiffnessPS=False, walkLength=0, wireframe=False, q=True,
-           query=True, e=True, edit=True, *args, **kwargs):
+           query=True, e=True, edit=True, **kwargs):
     """
     The spring command can do any of the following: * create a new spring object (shape plus
     transform)  The shape contains springs between the points (particles, cvs, etc.) of the
@@ -19172,7 +19169,7 @@ def spring(addSprings=True, allPoints=False, count=True, damping=0.2, dampingPS=
     pass
 
 
-def transformCompare(root=True, *args, **kwargs):
+def transformCompare(*args, root=True, **kwargs):
     """
     Compares two transforms passed as arguments  If they are the same, returns 0  If they are
     different, returns 1  If no transforms are specified in the command line, then the
@@ -19215,10 +19212,10 @@ def ShowMeshRepeatToolOptions(*args, **kwargs):
     pass
 
 
-def polySplit(adjustEdgeFlow=0.0, detachEdges=True, edgepoint=None, facepoint=None,
+def polySplit(*args, adjustEdgeFlow=0.0, detachEdges=True, edgepoint=None, facepoint=None,
               insertWithEdgeFlow=True, insertpoint=None, projectedCurve=None,
               projectedCurveTolerance=0.0, smoothingangle=0.0, subdivision=1,
-              constructionHistory=True, name="", q=True, query=True, e=True, edit=True, *args,
+              constructionHistory=True, name="", q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     Split facets/edges of a polygonal object   The first and last arguments must be edges 
@@ -19287,8 +19284,8 @@ def CurveEditTool(*args, **kwargs):
     pass
 
 
-def keyframeRegionDollyCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                           q=True, query=True, e=True, edit=True, *args, **kwargs):
+def keyframeRegionDollyCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                           name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create a dolly context for the dope sheet editor
     
@@ -19323,15 +19320,15 @@ def BrushPresetBlendShapeOff(*args, **kwargs):
     pass
 
 
-def polyColorBlindData(aboveMaxColorBlue=0.0, aboveMaxColorGreen=0.0, aboveMaxColorRed=0.0,
-                       attrName="", belowMinColorBlue=0.0, belowMinColorGreen=0.0,
-                       belowMinColorRed=0.0, clashColorBlue=0.0, clashColorGreen=0.0,
-                       clashColorRed=0.0, colorBlue=0.0, colorGreen=0.0, colorRed=0.0,
-                       dataType="", enableFalseColor=True, maxColorBlue=0.0, maxColorGreen=0.0,
-                       maxColorRed=0.0, maxValue=0.0, minColorBlue=0.0, minColorGreen=0.0,
-                       minColorRed=0.0, minValue=0.0, mode=0, noColorBlue=0.0, noColorGreen=0.0,
-                       noColorRed=0.0, numIdTypes=0, queryMode=True, typeId=0, useMax=True,
-                       useMin=True, value="", *args, **kwargs):
+def polyColorBlindData(*args, aboveMaxColorBlue=0.0, aboveMaxColorGreen=0.0,
+                       aboveMaxColorRed=0.0, attrName="", belowMinColorBlue=0.0,
+                       belowMinColorGreen=0.0, belowMinColorRed=0.0, clashColorBlue=0.0,
+                       clashColorGreen=0.0, clashColorRed=0.0, colorBlue=0.0, colorGreen=0.0,
+                       colorRed=0.0, dataType="", enableFalseColor=True, maxColorBlue=0.0,
+                       maxColorGreen=0.0, maxColorRed=0.0, maxValue=0.0, minColorBlue=0.0,
+                       minColorGreen=0.0, minColorRed=0.0, minValue=0.0, mode=0,
+                       noColorBlue=0.0, noColorGreen=0.0, noColorRed=0.0, numIdTypes=0,
+                       queryMode=True, typeId=0, useMax=True, useMin=True, value="", **kwargs):
     """
     This command applies false color to the selected polygonal components and objects,
     depending on whether or not blind data exists for the selected components (or, in the case
@@ -19490,7 +19487,7 @@ def ExportSkinWeightMaps(*args, **kwargs):
     pass
 
 
-def polyMoveEdge(caching=True, constructionHistory=True, gain=1.0, localCenter=0,
+def polyMoveEdge(*args, caching=True, constructionHistory=True, gain=1.0, localCenter=0,
                  localDirection=None, localDirectionX=0.0, localDirectionY=0.0,
                  localDirectionZ=0.0, localRotate=None, localRotateX=0.0, localRotateY=0.0,
                  localRotateZ=0.0, localScale=None, localScaleX=0.0, localScaleY=0.0,
@@ -19499,7 +19496,7 @@ def polyMoveEdge(caching=True, constructionHistory=True, gain=1.0, localCenter=0
                  pivotZ=0.0, random=0.0, rotate=None, rotateX=0.0, rotateY=0.0, rotateZ=0.0,
                  scale=None, scaleX=0.0, scaleY=0.0, scaleZ=0.0, translate=None, translateX=0.0,
                  translateY=0.0, translateZ=0.0, worldSpace=True, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+                 edit=True, **kwargs):
     """
     Modifies edges of a polygonal object  Translate, move, rotate or scale edges
     
@@ -19600,7 +19597,7 @@ def polyMoveEdge(caching=True, constructionHistory=True, gain=1.0, localCenter=0
     pass
 
 
-def lightList(add=None, remove=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def lightList(*args, add=None, remove=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Add/Remove a relationship between an object and the current light  Soon to be replaced by
     the connect-attribute command
@@ -19616,7 +19613,7 @@ def lightList(add=None, remove=None, q=True, query=True, e=True, edit=True, *arg
     pass
 
 
-def distanceDimension(endPoint=None, startPoint=None, *args, **kwargs):
+def distanceDimension(*args, endPoint=None, startPoint=None, **kwargs):
     """
     This command is used to create a distance dimension to display the distance between two
     specified points
@@ -19674,8 +19671,8 @@ def SetAsCombinationTarget(*args, **kwargs):
     pass
 
 
-def makebot(checkdepends=True, checkres=0, input="", nooverwrite=True, output="", verbose=True,
-            *args, **kwargs):
+def makebot(*args, checkdepends=True, checkres=0, input="", nooverwrite=True, output="",
+            verbose=True, **kwargs):
     """
     The makebot command takes an image file and produces a block ordered texture (BOT) file, to
     be used for texture caching  If a relative pathname is specified for the input image file,
@@ -19725,7 +19722,7 @@ def SelectAllDynamicConstraints(*args, **kwargs):
     pass
 
 
-def resourceManager(nameFilter="", saveAs=None, *args, **kwargs):
+def resourceManager(*args, nameFilter="", saveAs=None, **kwargs):
     """
     List resources matching certain properties
     
@@ -19784,7 +19781,7 @@ def dR_setRelaxAffectsAuto(*args, **kwargs):
     pass
 
 
-def artAttrTool(exists="", remove="", q=True, query=True, *args, **kwargs):
+def artAttrTool(*args, exists="", remove="", q=True, query=True, **kwargs):
     """
     The artAttrTool command manages the list of tool types which are used for attribute
     painting  This command supports querying the list contents as well as adding new tools to
@@ -19811,7 +19808,7 @@ def PaintOperationMarkingMenuRelease(*args, **kwargs):
     pass
 
 
-def emit(attribute="", floatValue=0.0, object="", position=None, vectorValue=None, *args,
+def emit(*args, attribute="", floatValue=0.0, object="", position=None, vectorValue=None,
          **kwargs):
     """
     The emit action allows users to add particles to an existing particle object without the
@@ -19851,9 +19848,9 @@ def SmoothProxy(*args, **kwargs):
     pass
 
 
-def trim(caching=True, locatorU=0.5, locatorV=0.5, nodeState=0, selected=0, shrink=False,
+def trim(*args, caching=True, locatorU=0.5, locatorV=0.5, nodeState=0, selected=0, shrink=False,
          tolerance=0.001, constructionHistory=True, name="", object=True, q=True, query=True,
-         e=True, edit=True, *args, **kwargs):
+         e=True, edit=True, **kwargs):
     """
     This command trims a surface to its curves on surface by first splitting the surface and
     then selecting which regions to keep or discard
@@ -19891,7 +19888,7 @@ def trim(caching=True, locatorU=0.5, locatorV=0.5, nodeState=0, selected=0, shri
     pass
 
 
-def loadModule(allModules=True, load="", scan=True, *args, **kwargs):
+def loadModule(*args, allModules=True, load="", scan=True, **kwargs):
     """
     Maya plug-ins may be installed individually within one of Maya's standard plug-in
     directories, or they may be packaged up with other resources in a "module"  Each module
@@ -19921,8 +19918,8 @@ def ExportDeformerWeights(*args, **kwargs):
     pass
 
 
-def graphSelectContext(exists=True, image1="", image2="", image3="", q=True, query=True, e=True,
-                       edit=True, *args, **kwargs):
+def graphSelectContext(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                       e=True, edit=True, **kwargs):
     """
     This command can be used to create a selection context for the hypergraph editor
     
@@ -19966,9 +19963,9 @@ def NodeEditorGraphClearGraph(*args, **kwargs):
     pass
 
 
-def polyMapSewMove(caching=True, constructionHistory=True, limitPieceSize=True, name="",
+def polyMapSewMove(*args, caching=True, constructionHistory=True, limitPieceSize=True, name="",
                    nodeState=0, numberFaces=0, uvSetName="", worldSpace=True, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to Move and Sew together separate UV pieces along geometric edges 
     UV pieces that correspond to the same geometric edge, are merged together by moving the
@@ -20012,8 +20009,8 @@ def BrushPresetReplaceShading(*args, **kwargs):
     pass
 
 
-def viewClipPlane(autoClipPlane=True, farClipPlane=0.0, nearClipPlane=0.0, surfacesOnly=True,
-                  q=True, query=True, *args, **kwargs):
+def viewClipPlane(*args, autoClipPlane=True, farClipPlane=0.0, nearClipPlane=0.0,
+                  surfacesOnly=True, q=True, query=True, **kwargs):
     """
     The viewClipPlane command can be used to query or set a camera's clip planes  If a camera
     is not specified, the camera in the active view will be used  The near and far clip plane
@@ -20071,7 +20068,7 @@ def HypershadeOpenUVEditorWindow(*args, **kwargs):
     pass
 
 
-def iconTextButton(align="", annotation="", backgroundColor=None, command=None,
+def iconTextButton(*args, align="", annotation="", backgroundColor=None, command=None,
                    commandRepeatable=True, defineTemplate="", disabledImage="", docTag="",
                    doubleClickCommand=None, dragCallback=None, dropCallback=None, enable=True,
                    enableBackground=True, enableKeyboardFocus=True, exists=True, flat=True,
@@ -20085,7 +20082,7 @@ def iconTextButton(align="", annotation="", backgroundColor=None, command=None,
                    rotation=0.0, scaleIcon=True, selectionImage="", sourceType="",
                    statusBarMessage="", style="", useAlpha=True, useTemplate="", version="",
                    visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+                   edit=True, **kwargs):
     """
     This control supports up to 3 icon images and 4 different display styles  The icon image
     displayed is the one that best fits the current size of the control given its current style
@@ -20263,9 +20260,9 @@ def iconTextButton(align="", annotation="", backgroundColor=None, command=None,
     pass
 
 
-def polyPlatonicSolid(axis=None, caching=True, constructionHistory=True, createUVs=4, name="",
-                      nodeState=0, object=True, radius=1.0, sideLength=1.0, solidType=0,
-                      texture=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyPlatonicSolid(*args, axis=None, caching=True, constructionHistory=True, createUVs=4,
+                      name="", nodeState=0, object=True, radius=1.0, sideLength=1.0,
+                      solidType=0, texture=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The polyPlatonicSolid command creates a new polygonal platonic solid
     
@@ -20323,7 +20320,7 @@ def insertJoint(*args, **kwargs):
     pass
 
 
-def changeSubdivComponentDisplayLevel(level=0, relative=True, q=True, query=True, *args,
+def changeSubdivComponentDisplayLevel(*args, level=0, relative=True, q=True, query=True,
                                       **kwargs):
     """
     Explicitly forces the subdivision surface to display components at a particular level of
@@ -20347,7 +20344,7 @@ def SculptMeshDeactivateBrushStrength(*args, **kwargs):
     pass
 
 
-def nodeEditor(activeTab=0, addNewNodes=True, addNode="", additiveGraphingMode=True,
+def nodeEditor(*args, activeTab=0, addNewNodes=True, addNode="", additiveGraphingMode=True,
                allAttributes=True, allNodes=True, allowNewTabs=True, allowTabTearoff=True,
                autoSizeNodes=True, beginCreateNode=True, beginNewConnection="",
                breakSelectedConnections=True, closeAllTabs=True, closeTab=0,
@@ -20381,7 +20378,7 @@ def nodeEditor(activeTab=0, addNewNodes=True, addNode="", additiveGraphingMode=T
                toggleAttrFilter=True, toggleSelectedPins=True, toggleSwatchSize="",
                toolTipCommand=None, traversalDepthLimit=0, unParent=True,
                unlockMainConnection=True, updateMainConnection=True, upstream=True,
-               useAssets=True, useTemplate="", q=True, query=True, e=True, edit=True, *args,
+               useAssets=True, useTemplate="", q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     This command creates/edits/queries a nodeEditor editor  The optional argument is the name
@@ -20776,11 +20773,11 @@ def PasteVertexSkinWeights(*args, **kwargs):
     pass
 
 
-def artAttrCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="", alphaclamp="none",
-               alphaclamplower=0.0, alphaclampupper=1.0, attrSelected="", beforeStrokeCmd="",
-               brushalignment=True, brushfeedback=True, clamp="none", clamplower=0.0,
-               clampupper=1.0, clear=True, colorAlphaValue=0.0, colorRGBAValue=None,
-               colorRGBValue=None, colorRamp="", colorfeedback=False,
+def artAttrCtx(*args, accopacity=False, activeListChangedProc="", afterStrokeCmd="",
+               alphaclamp="none", alphaclamplower=0.0, alphaclampupper=1.0, attrSelected="",
+               beforeStrokeCmd="", brushalignment=True, brushfeedback=True, clamp="none",
+               clamplower=0.0, clampupper=1.0, clear=True, colorAlphaValue=0.0,
+               colorRGBAValue=None, colorRGBValue=None, colorRamp="", colorfeedback=False,
                colorfeedbackOverride=False, colorrangelower=0.0, colorrangeupper=1.0,
                dataTypeIndex=0, disablelighting=False, dragSlider="", duringStrokeCmd="",
                dynclonemode=True, exists=True, expandfilename=True, exportaspectratio=0.0,
@@ -20800,7 +20797,7 @@ def artAttrCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="", al
                strokesmooth="", surfaceConformedBrushVertices=True, tablet=True,
                tangentOutline=True, toolOffProc="", toolOnProc="", useColorRamp=True,
                useMaxMinColor=True, usepressure=False, value=0.0, whichTool="", worldRadius=0.0,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     This is a context command to set the flags on the artAttrContext, which is the base context
     for attribute painting operations  All commands require the name of the context as the last
@@ -21074,8 +21071,8 @@ def artAttrCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="", al
     pass
 
 
-def snapshot(constructionHistory=True, endTime=None, increment=None, motionTrail=False, name="",
-             startTime=None, update="always", q=True, query=True, e=True, edit=True, *args,
+def snapshot(*args, constructionHistory=True, endTime=None, increment=None, motionTrail=False,
+             name="", startTime=None, update="always", q=True, query=True, e=True, edit=True,
              **kwargs):
     """
     This command can be used to create either a series of surfaces evaluated at the times
@@ -21127,8 +21124,8 @@ def TimeEditorClipScaleEnd(*args, **kwargs):
     pass
 
 
-def setAttrMapping(absolute=True, attribute="", axis="", clutch="", device="", offset=0.0,
-                   relative=True, scale=0.0, selection=True, q=True, query=True, *args,
+def setAttrMapping(*args, absolute=True, attribute="", axis="", clutch="", device="",
+                   offset=0.0, relative=True, scale=0.0, selection=True, q=True, query=True,
                    **kwargs):
     """
     This command applies an offset and scale to a specified device attachment  This command is
@@ -21161,8 +21158,8 @@ def setAttrMapping(absolute=True, attribute="", axis="", clutch="", device="", o
     pass
 
 
-def pairBlend(attribute="", input1=True, input2=True, node="", q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+def pairBlend(*args, attribute="", input1=True, input2=True, node="", q=True, query=True,
+              e=True, edit=True, **kwargs):
     """
     The pairBlend node allows a weighted combinations of 2 inputs to be blended together  It is
     created automatically when keying or constraining an attribute which is already connected.
@@ -21186,11 +21183,11 @@ def pairBlend(attribute="", input1=True, input2=True, node="", q=True, query=Tru
     pass
 
 
-def inViewMessage(alpha=0.0, assistMessage="", backColor=0, clear="", clickKill=True,
+def inViewMessage(*args, alpha=0.0, assistMessage="", backColor=0, clear="", clickKill=True,
                   dragKill=True, fade=True, fadeInTime=0, fadeOutTime=0, fadeStayTime=0,
                   font="", fontSize=0, frameOffset=0, hide=True, message="", minimize=True,
                   position="", restore=True, show=True, statusMessage="", textAlpha=0.0,
-                  textOffset=0, uvEditor=True, *args, **kwargs):
+                  textOffset=0, uvEditor=True, **kwargs):
     """
     Used for displaying in-view messages   Note: On Linux, the alpha and textAlpha flags for
     inViewMessage are only supported when running a window manager that supports compositing
@@ -21291,7 +21288,7 @@ def ExportProxyContainer(*args, **kwargs):
     pass
 
 
-def fileDialog(application=True, defaultFileName="", directoryMask="", mode=0, title="", *args,
+def fileDialog(*args, application=True, defaultFileName="", directoryMask="", mode=0, title="",
                **kwargs):
     """
     The fileBrowserDialog and fileDialog commands have now been deprecated  Both commands are
@@ -21384,10 +21381,10 @@ def HypershadeOpenCreateWindow(*args, **kwargs):
     pass
 
 
-def combinationShape(addDriver=True, allDrivers=True, blendShape="", combinationTargetIndex=0,
-                     combinationTargetName="", combineMethod=0, driverTargetIndex=0,
-                     driverTargetName="", exist=True, removeDriver=True, q=True, query=True,
-                     e=True, edit=True, *args, **kwargs):
+def combinationShape(*args, addDriver=True, allDrivers=True, blendShape="",
+                     combinationTargetIndex=0, combinationTargetName="", combineMethod=0,
+                     driverTargetIndex=0, driverTargetName="", exist=True, removeDriver=True,
+                     q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to create or edit drive relationship of blend shape targets
     
@@ -21429,7 +21426,7 @@ def sbs_GetBakeFormat(*args, **kwargs):
     pass
 
 
-def melOptions(duplicateVariableWarnings=True, q=True, query=True, *args, **kwargs):
+def melOptions(*args, duplicateVariableWarnings=True, q=True, query=True, **kwargs):
     """
     Set and query options that affect the behavior of Maya's Embedded Language (MEL)
     
@@ -21451,7 +21448,7 @@ def xgmExport(*args, **kwargs):
     pass
 
 
-def polySphericalProjection(imageCenter=None, imageCenterX=0.5, imageCenterY=0.5,
+def polySphericalProjection(*args, imageCenter=None, imageCenterX=0.5, imageCenterY=0.5,
                             imageScale=None, imageScaleU=1.0, imageScaleV=1.0,
                             projectionCenter=None, projectionCenterX=0.0, projectionCenterY=0.0,
                             projectionCenterZ=0.0, projectionHorizontalSweep=0.0,
@@ -21461,8 +21458,7 @@ def polySphericalProjection(imageCenter=None, imageCenterX=0.5, imageCenterY=0.5
                             constructionHistory=True, createNewMap=True,
                             insertBeforeDeformers=True, keepImageRatio=True, mapDirection="",
                             name="", nodeState=0, perInstance=True, smartFit=True,
-                            worldSpace=True, q=True, query=True, e=True, edit=True, *args,
-                            **kwargs):
+                            worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     TpolyProjCmdBase is a base class for the command to create a mapping on the selected
     polygonal faces  Projects a spherical map onto an object
@@ -21583,7 +21579,7 @@ def objExists(*args, **kwargs):
     pass
 
 
-def currentTime(update=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def currentTime(*args, update=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     When given a time argument (with or without the -edit flag) this command sets the current
     global time  The model updates and displays at the new time, unless "-update off" is
@@ -21613,7 +21609,7 @@ def dpBirailCtx(*args, **kwargs):
     pass
 
 
-def connectJoint(connectMode=True, parentMode=True, *args, **kwargs):
+def connectJoint(*args, connectMode=True, parentMode=True, **kwargs):
     """
     This command will connect two skeletons based on the two selected joints  The first
     selected joint can be made a child of the parent of the second selected joint or a child of
@@ -21633,7 +21629,7 @@ def connectJoint(connectMode=True, parentMode=True, *args, **kwargs):
     pass
 
 
-def shadingConnection(connectionState=True, q=True, query=True, e=True, edit=True, *args,
+def shadingConnection(*args, connectionState=True, q=True, query=True, e=True, edit=True,
                       **kwargs):
     """
     Sets the connection state of a connection between nodes that are used in shading  Specify
@@ -21656,13 +21652,13 @@ def hikRigSync(*args, **kwargs):
     pass
 
 
-def stitchSurface(bias=1.0, caching=True, cvIthIndex=1, cvJthIndex=1, fixBoundary=False,
+def stitchSurface(*args, bias=1.0, caching=True, cvIthIndex=1, cvJthIndex=1, fixBoundary=False,
                   nodeState=0, parameterU=10000, parameterV=10000, positionalContinuity=True,
                   stepCount=20, tangentialContinuity=False, togglePointNormals=False,
                   togglePointPosition=True, toggleTolerance=False, tolerance=0.1, cascade=False,
                   constructionHistory=True, keepG0Continuity=True, keepG1Continuity=False,
                   name="", numberOfSamples=20, object=True, replaceOriginal=True, weight0=0.5,
-                  weight1=0.5, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  weight1=0.5, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The stitchSurface command aligns two surfaces together to be G(0) and/or G(1) continuous by
     ajusting only the Control Vertices of the surfaces  The two surfaces can be stitched by
@@ -21746,7 +21742,7 @@ def CreateShrinkWrapOptions(*args, **kwargs):
     pass
 
 
-def attributeQuery(affectsAppearance=True, affectsWorldspace=True, attributeType=True,
+def attributeQuery(*args, affectsAppearance=True, affectsWorldspace=True, attributeType=True,
                    cachedInternally=True, categories=True, channelBox=True, connectable=True,
                    enum=True, exists=True, hidden=True, indeterminant=True, indexMatters=True,
                    internal=True, internalGet=True, internalSet=True, keyable=True,
@@ -21757,7 +21753,7 @@ def attributeQuery(affectsAppearance=True, affectsWorldspace=True, attributeType
                    renderSource=True, shortName=True, softMax=True, softMaxExists=True,
                    softMin=True, softMinExists=True, softRange=True, softRangeExists=True,
                    storable=True, type="", typeExact="", usedAsColor=True, usedAsFilename=True,
-                   usesMultiBuilder=True, worldspace=True, writable=True, *args, **kwargs):
+                   usesMultiBuilder=True, worldspace=True, writable=True, **kwargs):
     """
     attributeQuery returns information about the configuration of an attribute  It handles both
     boolean flags, returning true or false, as well as other return values  Specifying more
@@ -21889,14 +21885,14 @@ def attributeQuery(affectsAppearance=True, affectsWorldspace=True, attributeType
     pass
 
 
-def text(align="", annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def text(*args, align="", annotation="", backgroundColor=None, defineTemplate="", docTag="",
          dragCallback=None, dropCallback=None, dropRectCallback=None, enable=True,
          enableBackground=True, enableKeyboardFocus=True, exists=True, font="",
          fullPathName=True, height=0, highlightColor=None, hyperlink=True, isObscured=True,
          label="", manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
          popupMenuArray=True, preventOverride=True, recomputeSize=True, statusBarMessage="",
          useTemplate="", visible=True, visibleChangeCommand=None, width=0, wordWrap=True,
-         q=True, query=True, e=True, edit=True, *args, **kwargs):
+         q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a simple text label control
     
@@ -22001,12 +21997,12 @@ def text(align="", annotation="", backgroundColor=None, defineTemplate="", docTa
     pass
 
 
-def nParticle(attribute="", cache=True, conserve=0.0, count=True, deleteCache=True,
+def nParticle(*args, attribute="", cache=True, conserve=0.0, count=True, deleteCache=True,
               dynamicAttrList=True, floatValue=0.0, gridSpacing=0.0, inherit=0.0,
               jitterBasePoint=None, jitterRadius=0.0, lowerLeft=None, name="", numJitters=0,
               order=0, particleId=0, perParticleDouble=True, perParticleVector=True,
               position=None, shapeName="", upperRight=None, vectorValue=None, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     The nParticle command creates a new nParticle object from a list of world space points  If
     an nParticle object is created, the command returns the names of the new particle shape and
@@ -22096,13 +22092,13 @@ def SculptPolygonsTool(*args, **kwargs):
     pass
 
 
-def toolBar(allowedArea="all", annotation="", area="", backgroundColor=None, content="",
+def toolBar(*args, allowedArea="all", annotation="", area="", backgroundColor=None, content="",
             defineTemplate="", docTag="", dragCallback=None, dropCallback=None, enable=True,
             enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
             height=0, highlightColor=None, isObscured=True, label="", manage=True,
             noBackground=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
             preventOverride=True, statusBarMessage="", useTemplate="", visible=True,
-            visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+            visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
             **kwargs):
     """
     Create a toolbar  Tool bars are movable panel that contains a set of controls  They are
@@ -22235,11 +22231,11 @@ def CurveUtilitiesMarkingMenu(*args, **kwargs):
     pass
 
 
-def polyMirrorFace(axis=0, axisDirection=1, caching=True, constructionHistory=True, direction=0,
-                   mergeMode=1, mergeThreshold=0.001, mergeThresholdType=0, mirrorAxis=2,
-                   mirrorPosition=0.0, name="", nodeState=0, pivot=None, pivotX=0.0, pivotY=0.0,
-                   pivotZ=0.0, worldSpace=True, q=True, query=True, e=True, edit=True, *args,
-                   **kwargs):
+def polyMirrorFace(*args, axis=0, axisDirection=1, caching=True, constructionHistory=True,
+                   direction=0, mergeMode=1, mergeThreshold=0.001, mergeThresholdType=0,
+                   mirrorAxis=2, mirrorPosition=0.0, name="", nodeState=0, pivot=None,
+                   pivotX=0.0, pivotY=0.0, pivotZ=0.0, worldSpace=True, q=True, query=True,
+                   e=True, edit=True, **kwargs):
     """
     Mirror all the faces of the selected object
     
@@ -22305,7 +22301,7 @@ def SendToUnrealSetProject(*args, **kwargs):
     pass
 
 
-def nodeOutliner(addCommand=None, addObject=None, annotation="", attrAlphaOrder="",
+def nodeOutliner(*args, addCommand=None, addObject=None, annotation="", attrAlphaOrder="",
                  backgroundColor=None, connectivity=None, currentSelection=True,
                  defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
                  enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
@@ -22320,7 +22316,7 @@ def nodeOutliner(addCommand=None, addObject=None, annotation="", attrAlphaOrder=
                  showNonConnectable=True, showNonKeyable=True, showOutputs=True,
                  showPublished=True, showReadOnly=True, statusBarMessage="", useTemplate="",
                  visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+                 edit=True, **kwargs):
     """
     The nodeOutliner command creates, edits and queries an outline control that shows
     dependency nodes and their attributes  Compound attributes are further expandable to show
@@ -22490,11 +22486,11 @@ def createPolySoccerBallCtx(*args, **kwargs):
     pass
 
 
-def extendCurve(caching=True, distance=1, extendMethod=0, extensionType=0, inputPoint=None,
-                join=True, nodeState=0, pointX=0, pointY=0, pointZ=0, removeMultipleKnots=False,
-                start=1, constructionHistory=True, curveOnSurface=True, name="", noChanges=True,
-                object=True, range=True, replaceOriginal=True, q=True, query=True, e=True,
-                edit=True, *args, **kwargs):
+def extendCurve(*args, caching=True, distance=1, extendMethod=0, extensionType=0,
+                inputPoint=None, join=True, nodeState=0, pointX=0, pointY=0, pointZ=0,
+                removeMultipleKnots=False, start=1, constructionHistory=True,
+                curveOnSurface=True, name="", noChanges=True, object=True, range=True,
+                replaceOriginal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command extends a curve or creates a new curve as an extension
     
@@ -22573,14 +22569,14 @@ def AnimationTurntable(*args, **kwargs):
     pass
 
 
-def polySplitRing(adjustEdgeFlow=1.0, caching=True, constructionHistory=True, direction=True,
-                  divisions=2, enableProfileCurve=True, fixQuads=False,
+def polySplitRing(*args, adjustEdgeFlow=1.0, caching=True, constructionHistory=True,
+                  direction=True, divisions=2, enableProfileCurve=True, fixQuads=False,
                   insertWithEdgeFlow=False, name="", nodeState=0, profileCurveInputOffset=0.0,
                   profileCurveInputScale=1.0, profileCurve_FloatValue=0.0,
                   profileCurve_Interp=0, profileCurve_Position=0.0, rootEdge=1,
                   smoothingAngle=0.0, splitType=0, useEqualMultiplier=True,
                   useFaceNormalsAtEnds=True, weight=0.5, worldSpace=True, q=True, query=True,
-                  e=True, edit=True, *args, **kwargs):
+                  e=True, edit=True, **kwargs):
     """
     Splits a series of ring edges of connected quads and inserts connecting edges between them
     
@@ -22663,7 +22659,7 @@ def SculptMeshActivateBrushStrength(*args, **kwargs):
     pass
 
 
-def inheritTransform(off=True, on=True, preserve=True, toggle=True, q=True, query=True, *args,
+def inheritTransform(*args, off=True, on=True, preserve=True, toggle=True, q=True, query=True,
                      **kwargs):
     """
     This command toggles the inherit state of an object  If this flag is off the object will
@@ -22688,7 +22684,7 @@ def inheritTransform(off=True, on=True, preserve=True, toggle=True, q=True, quer
     pass
 
 
-def manipMoveContext(activeHandle=0, activeHandleNormal=3, alignAlong=None,
+def manipMoveContext(*args, activeHandle=0, activeHandleNormal=3, alignAlong=None,
                      constrainAlongNormal=True, currentActiveHandle=0, editPivotMode=True,
                      editPivotPosition=True, exists=True, image1="", image2="", image3="",
                      interactiveUpdate=True, lastMode=0, manipVisible=True, mode=3,
@@ -22701,7 +22697,7 @@ def manipMoveContext(activeHandle=0, activeHandleNormal=3, alignAlong=None,
                      snapComponentsRelative=True, snapLiveFaceCenter=True, snapLivePoint=True,
                      snapPivotOri=True, snapPivotPos=True, snapRelative=True, snapValue=0.0,
                      translate=None, tweakMode=True, xformConstraint="", q=True, query=True,
-                     e=True, edit=True, *args, **kwargs):
+                     e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a move manip context  Note that the
     flags -s, -sv, -sr, -scr, -slp, -slf control the global behaviour of all move manip context
@@ -22844,7 +22840,7 @@ def manipMoveContext(activeHandle=0, activeHandleNormal=3, alignAlong=None,
     pass
 
 
-def constructionHistory(toggle=True, q=True, query=True, *args, **kwargs):
+def constructionHistory(*args, toggle=True, q=True, query=True, **kwargs):
     """
     This command turns construction history on or off
     
@@ -22871,8 +22867,8 @@ def ScaleToolWithSnapMarkingMenuPopDown(*args, **kwargs):
     pass
 
 
-def polyAppend(append=None, constructionHistory=True, edge=0, hole=True, name="", point=None,
-               subdivision=1, texture=0, q=True, query=True, e=True, edit=True, *args,
+def polyAppend(*args, append=None, constructionHistory=True, edge=0, hole=True, name="",
+               point=None, subdivision=1, texture=0, q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     Appends a new face to the selected polygonal object  The first argument must be a border
@@ -22937,7 +22933,7 @@ def AddBifrostEmissionRegion(*args, **kwargs):
     pass
 
 
-def disconnectAttr(nextAvailable=True, *args, **kwargs):
+def disconnectAttr(*args, nextAvailable=True, **kwargs):
     """
     Disconnects two connected attributes  First argument is the source attribute, second is the
     destination
@@ -22952,8 +22948,8 @@ def disconnectAttr(nextAvailable=True, *args, **kwargs):
     pass
 
 
-def manipMoveLimitsCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                       q=True, query=True, e=True, edit=True, *args, **kwargs):
+def manipMoveLimitsCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                       name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a context for the translate limits manipulator
     
@@ -23016,7 +23012,7 @@ def TimeEditorOpenContentBrowser(*args, **kwargs):
     pass
 
 
-def toggleAxis(origin=True, view=True, q=True, query=True, *args, **kwargs):
+def toggleAxis(*args, origin=True, view=True, q=True, query=True, **kwargs):
     """
     Toggles the state of the display axis   Note: the display of the axis in the bottom left
     corner has been rendered obsolete by the headsUpDisplay command
@@ -23096,13 +23092,14 @@ def CreatePartition(*args, **kwargs):
     pass
 
 
-def performanceOptions(clusterResolution=0.0, disableStitch="", disableTrimBoundaryDisplay="",
-                       disableTrimDisplay="", latticeResolution=0.0,
-                       passThroughBindSkinAndFlexors="", passThroughBlendShape="",
-                       passThroughCluster="", passThroughDeltaMush="", passThroughFlexors="",
-                       passThroughLattice="", passThroughPaintEffects="", passThroughSculpt="",
-                       passThroughWire="", skipHierarchyTraversal=True, useClusterResolution="",
-                       useLatticeResolution="", q=True, query=True, *args, **kwargs):
+def performanceOptions(*args, clusterResolution=0.0, disableStitch="",
+                       disableTrimBoundaryDisplay="", disableTrimDisplay="",
+                       latticeResolution=0.0, passThroughBindSkinAndFlexors="",
+                       passThroughBlendShape="", passThroughCluster="", passThroughDeltaMush="",
+                       passThroughFlexors="", passThroughLattice="", passThroughPaintEffects="",
+                       passThroughSculpt="", passThroughWire="", skipHierarchyTraversal=True,
+                       useClusterResolution="", useLatticeResolution="", q=True, query=True,
+                       **kwargs):
     """
     Sets the global performance options for the application  The options allow the disabling of
     features such as stitch surfaces or deformers to cut down on computation time in the scene 
@@ -23211,7 +23208,7 @@ def TangentsStepped(*args, **kwargs):
     pass
 
 
-def manipScaleContext(activeHandle=0, alignAlong=None, constrainAlongNormal=True,
+def manipScaleContext(*args, activeHandle=0, alignAlong=None, constrainAlongNormal=True,
                       currentActiveHandle=0, editPivotMode=True, editPivotPosition=True,
                       exists=True, image1="", image2="", image3="", lastMode=0,
                       manipVisible=True, mode=3, orientAxes=None, orientObject="",
@@ -23222,8 +23219,7 @@ def manipScaleContext(activeHandle=0, alignAlong=None, constrainAlongNormal=True
                       reflectionAxis=0, reflectionTolerance=0.0, scale=None, snap=True,
                       snapPivotOri=True, snapPivotPos=True, snapRelative=True, snapValue=0.0,
                       tweakMode=True, useManipPivot=True, useObjectPivot=True,
-                      xformConstraint="", q=True, query=True, e=True, edit=True, *args,
-                      **kwargs):
+                      xformConstraint="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a scale manip context
     
@@ -23374,8 +23370,8 @@ def TimeEditorToggleMuteSelectedTracks(*args, **kwargs):
     pass
 
 
-def nBase(clearCachedTextureMap="", clearStart=True, stuffStart=True, textureToVertex="",
-          q=True, query=True, e=True, edit=True, *args, **kwargs):
+def nBase(*args, clearCachedTextureMap="", clearStart=True, stuffStart=True, textureToVertex="",
+          q=True, query=True, e=True, edit=True, **kwargs):
     """
     Edits one or more nBase objects  Note that nBase objects include nCloth, nRigid and
     nParticle objects, but the options on this command do not currently apply to nParticle
@@ -23432,8 +23428,8 @@ def toggleWindowVisibility(*args, **kwargs):
     pass
 
 
-def filterExpand(expand=True, fullPath=False, selectionMask=0, symActive=True, symNegative=True,
-                 symPositive=True, symSeam=True, *args, **kwargs):
+def filterExpand(*args, expand=True, fullPath=False, selectionMask=0, symActive=True,
+                 symNegative=True, symPositive=True, symSeam=True, **kwargs):
     """
     Based on selected components (or components specified on the command line), the command
     filters and/or expands the list given the options  Returns a string array containing all
@@ -23506,10 +23502,10 @@ def AddDivisionsOptions(*args, **kwargs):
     pass
 
 
-def colorManagementCatalog(addTransform="", editUserTransformPath="",
+def colorManagementCatalog(*args, addTransform="", editUserTransformPath="",
                            listSupportedExtensions=True, listTransformConnections=True, path="",
                            queryUserTransformPath=True, removeTransform="",
-                           transformConnection="", type="", *args, **kwargs):
+                           transformConnection="", type="", **kwargs):
     """
     This non-undoable action performs additions and removals of custom color transforms from
     the Autodesk native color transform catalog  Once a custom color transform has been added
@@ -23571,13 +23567,13 @@ def U3DBrushSizeOn(*args, **kwargs):
     pass
 
 
-def polyCut(caching=True, constructionHistory=True, cutPlaneCenter=None, cutPlaneCenterX=0.0,
-            cutPlaneCenterY=0.0, cutPlaneCenterZ=0.0, cutPlaneHeight=0.0, cutPlaneRotate=None,
-            cutPlaneRotateX=0.0, cutPlaneRotateY=0.0, cutPlaneRotateZ=0.0, cutPlaneSize=None,
-            cutPlaneWidth=0.0, cuttingDirection="", deleteFaces=False, extractFaces=False,
-            extractOffset=None, extractOffsetX=0.0, extractOffsetY=0.0, extractOffsetZ=0.0,
-            name="", nodeState=0, onObject=True, worldSpace=True, q=True, query=True, e=True,
-            edit=True, *args, **kwargs):
+def polyCut(*args, caching=True, constructionHistory=True, cutPlaneCenter=None,
+            cutPlaneCenterX=0.0, cutPlaneCenterY=0.0, cutPlaneCenterZ=0.0, cutPlaneHeight=0.0,
+            cutPlaneRotate=None, cutPlaneRotateX=0.0, cutPlaneRotateY=0.0, cutPlaneRotateZ=0.0,
+            cutPlaneSize=None, cutPlaneWidth=0.0, cuttingDirection="", deleteFaces=False,
+            extractFaces=False, extractOffset=None, extractOffsetX=0.0, extractOffsetY=0.0,
+            extractOffsetZ=0.0, name="", nodeState=0, onObject=True, worldSpace=True, q=True,
+            query=True, e=True, edit=True, **kwargs):
     """
     This command splits a mesh, or a set of poly faces, along a plane  The position and
     orientation of the plane can be adjusted using the appropriate flags listed above  In
@@ -23659,9 +23655,9 @@ def vnnPaste(*args, **kwargs):
     pass
 
 
-def retimeKeyCtx(exists=True, history=True, image1="", image2="", image3="", moveByFrame=0,
-                 name="", snapOnFrame=True, q=True, query=True, e=True, edit=True, *args,
-                 **kwargs):
+def retimeKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                 moveByFrame=0, name="", snapOnFrame=True, q=True, query=True, e=True,
+                 edit=True, **kwargs):
     """
     This command creates a context which may be used to scale keyframes within the graph editor
     using the retime tool
@@ -23709,12 +23705,12 @@ def HypershadeImport(*args, **kwargs):
     pass
 
 
-def listAttr(array=True, caching=True, category="", changedSinceFileOpen=True, channelBox=True,
-             connectable=True, extension=True, fromPlugin=True, hasData=True, hasNullData=True,
-             inUse=True, keyable=True, leaf=True, locked=True, multi=True, output=True,
-             ramp=True, read=True, readOnly=True, scalar=True, scalarAndArray=True,
+def listAttr(*args, array=True, caching=True, category="", changedSinceFileOpen=True,
+             channelBox=True, connectable=True, extension=True, fromPlugin=True, hasData=True,
+             hasNullData=True, inUse=True, keyable=True, leaf=True, locked=True, multi=True,
+             output=True, ramp=True, read=True, readOnly=True, scalar=True, scalarAndArray=True,
              settable=True, shortNames=True, string="", unlocked=True, usedAsFilename=True,
-             userDefined=True, visible=True, write=True, *args, **kwargs):
+             userDefined=True, visible=True, write=True, **kwargs):
     """
     This command lists the attributes of a node  If no flags are specified all attributes are
     listed
@@ -23872,8 +23868,8 @@ def HypershadeOpenRenderViewWindow(*args, **kwargs):
     pass
 
 
-def curveRGBColor(hueSaturationValue=True, list=True, listNames=True, remove=True,
-                  resetToFactory=True, resetToSaved=True, q=True, query=True, *args, **kwargs):
+def curveRGBColor(*args, hueSaturationValue=True, list=True, listNames=True, remove=True,
+                  resetToFactory=True, resetToSaved=True, q=True, query=True, **kwargs):
     """
     This command creates, changes or removes custom curve colors, which are used to draw the
     curves in the Graph Editor  The custom curve names may contain the wildcards "?", which
@@ -23899,14 +23895,14 @@ def curveRGBColor(hueSaturationValue=True, list=True, listNames=True, remove=Tru
     pass
 
 
-def symbolButton(annotation="", backgroundColor=None, command=None, defineTemplate="",
+def symbolButton(*args, annotation="", backgroundColor=None, command=None, defineTemplate="",
                  docTag="", dragCallback=None, dropCallback=None, enable=True,
                  enableBackground=True, enableKeyboardFocus=True, exists=True,
                  fullPathName=True, height=0, highlightColor=None, image="", isObscured=True,
                  manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
                  popupMenuArray=True, preventOverride=True, statusBarMessage="", useTemplate="",
                  visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+                 edit=True, **kwargs):
     """
     This command creates a symbol button  A symbol button behaves like a regular button, the
     only difference is a symbol button displays an image rather that a text label  A command
@@ -23996,8 +23992,8 @@ def symbolButton(annotation="", backgroundColor=None, command=None, defineTempla
     pass
 
 
-def dgdirty(allPlugs=True, clean=True, implicit=True, list="", propagation=True,
-            showTiming=True, verbose=True, q=True, query=True, *args, **kwargs):
+def dgdirty(*args, allPlugs=True, clean=True, implicit=True, list="", propagation=True,
+            showTiming=True, verbose=True, q=True, query=True, **kwargs):
     """
     The dgdirty command is used to force a dependency graph dirty message on a node or plug 
     Used for debugging to find evaluation problems  If no nodes are specified then the current
@@ -24073,7 +24069,7 @@ def SetFluidAttrFromCurve(*args, **kwargs):
     pass
 
 
-def subdMatchTopology(frontOfChain=True, *args, **kwargs):
+def subdMatchTopology(*args, frontOfChain=True, **kwargs):
     """
     Command matches topology across multiple subdiv surfaces - at all levels
     
@@ -24094,10 +24090,10 @@ def XgExportArchive(*args, **kwargs):
     pass
 
 
-def uniform(attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0, magnitude=0.0,
-            maxDistance=0.0, name="", perVertex=True, position=None, torusSectionRadius=0.0,
-            volumeExclusion=True, volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True,
-            query=True, e=True, edit=True, *args, **kwargs):
+def uniform(*args, attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0,
+            magnitude=0.0, maxDistance=0.0, name="", perVertex=True, position=None,
+            torusSectionRadius=0.0, volumeExclusion=True, volumeOffset=None, volumeShape="",
+            volumeSweep=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -24196,12 +24192,12 @@ def SelectPolygonToolMarkingMenuPopDown(*args, **kwargs):
     pass
 
 
-def blend2(autoAnchor=True, autoNormal=True, caching=True, flipLeftNormal=False,
+def blend2(*args, autoAnchor=True, autoNormal=True, caching=True, flipLeftNormal=False,
            flipRightNormal=False, leftAnchor=0.0, leftEnd=1.0, leftStart=0.0,
            multipleKnots=True, nodeState=0, positionTolerance=0.1, reverseLeft=False,
            reverseRight=False, rightAnchor=0.0, rightEnd=1.0, rightStart=0.0,
            tangentTolerance=0.1, constructionHistory=True, crvsInFirstRail=0, name="",
-           object=True, polygon=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+           object=True, polygon=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a surface by blending between given curves  This is an enhancement
     (more user control) compared to blend which is now obsolete
@@ -24283,7 +24279,7 @@ def HypershadeAddOnNodeCreate(*args, **kwargs):
     pass
 
 
-def pose(allPoses=True, apply=True, name="", q=True, query=True, e=True, edit=True, *args,
+def pose(*args, allPoses=True, apply=True, name="", q=True, query=True, e=True, edit=True,
          **kwargs):
     """
     This command is used to create character poses
@@ -24378,14 +24374,15 @@ def AddFaceDivisionsOptions(*args, **kwargs):
     pass
 
 
-def keyframeOutliner(animCurve="", annotation="", backgroundColor=None, defineTemplate="",
-                     display="", docTag="", dragCallback=None, dropCallback=None, enable=True,
-                     enableBackground=True, enableKeyboardFocus=True, exists=True,
-                     fullPathName=True, height=0, highlightColor=None, isObscured=True,
-                     manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
-                     popupMenuArray=True, preventOverride=True, statusBarMessage="",
-                     useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                     query=True, e=True, edit=True, *args, **kwargs):
+def keyframeOutliner(*args, animCurve="", annotation="", backgroundColor=None,
+                     defineTemplate="", display="", docTag="", dragCallback=None,
+                     dropCallback=None, enable=True, enableBackground=True,
+                     enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                     highlightColor=None, isObscured=True, manage=True, noBackground=True,
+                     numberOfPopupMenus=True, parent="", popupMenuArray=True,
+                     preventOverride=True, statusBarMessage="", useTemplate="", visible=True,
+                     visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
+                     **kwargs):
     """
     This command creates/edits/queries a keyframe outliner control
     
@@ -24474,16 +24471,16 @@ def keyframeOutliner(animCurve="", annotation="", backgroundColor=None, defineTe
     pass
 
 
-def shelfLayout(alignment="", annotation="", backgroundColor=None, cellHeight=0, cellWidth=0,
-                cellWidthHeight=None, childArray=True, defineTemplate="", docTag="",
-                dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
-                enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
-                highlightColor=None, horizontal=True, isObscured=True, ltVersion="",
+def shelfLayout(*args, alignment="", annotation="", backgroundColor=None, cellHeight=0,
+                cellWidth=0, cellWidthHeight=None, childArray=True, defineTemplate="",
+                docTag="", dragCallback=None, dropCallback=None, enable=True,
+                enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
+                height=0, highlightColor=None, horizontal=True, isObscured=True, ltVersion="",
                 manage=True, noBackground=True, numberOfChildren=True, numberOfPopupMenus=True,
                 parent="", popupMenuArray=True, position=None, preventOverride=True, spacing=0,
                 statusBarMessage="", style="", useTemplate="", version="", visible=True,
                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command creates a new empty shelf layout  The shelf layout can accept drops of
     commands scripts  Use the addNewShelfTab MEL command to add a shelf to the top level
@@ -24643,8 +24640,8 @@ def BrushPresetBlendOff(*args, **kwargs):
     pass
 
 
-def targetWeldCtx(exists=True, image1="", image2="", image3="", mergeToCenter=True, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def targetWeldCtx(*args, exists=True, image1="", image2="", image3="", mergeToCenter=True,
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a new context to weld vertices together on a poly object
     
@@ -24677,7 +24674,7 @@ def PolygonBooleanIntersection(*args, **kwargs):
     pass
 
 
-def polyHole(assignHole=True, createHistory=True, q=True, query=True, e=True, edit=True, *args,
+def polyHole(*args, assignHole=True, createHistory=True, q=True, query=True, e=True, edit=True,
              **kwargs):
     """
     Command to set and clear holes on given faces
@@ -24709,9 +24706,9 @@ def FBXRead(*args, **kwargs):
     pass
 
 
-def commandPort(bufferSize=0, close=True, echoOutput=True, listPorts=True, name="",
+def commandPort(*args, bufferSize=0, close=True, echoOutput=True, listPorts=True, name="",
                 noreturn=True, pickleOutput=True, prefix="", returnNumCommands=True,
-                securityWarning=True, sourceType="", q=True, query=True, *args, **kwargs):
+                securityWarning=True, sourceType="", q=True, query=True, **kwargs):
     """
     Opens or closes the Maya command port  The command port comprises a socket to which a
     client program may connect  An example command port client "mcp" is included in the Motion
@@ -24824,14 +24821,14 @@ def HypershadeCloseAllTabs(*args, **kwargs):
     pass
 
 
-def panelConfiguration(addPanel=None, configString="", createStrings=True, defaultImage="",
-                       defineTemplate="", editStrings=True, exists=True, image="",
-                       isFixedState=True, label="", labelStrings=True, numberOfPanels=True,
-                       removeAllPanels=True, removeLastPanel=True, replaceCreateString=None,
-                       replaceEditString=None, replaceFixedState=None, replaceLabel=None,
-                       replacePanel=None, replaceTypeString=None, sceneConfig=True,
-                       typeStrings=True, useTemplate="", userCreated=True, q=True, query=True,
-                       e=True, edit=True, *args, **kwargs):
+def panelConfiguration(*args, addPanel=None, configString="", createStrings=True,
+                       defaultImage="", defineTemplate="", editStrings=True, exists=True,
+                       image="", isFixedState=True, label="", labelStrings=True,
+                       numberOfPanels=True, removeAllPanels=True, removeLastPanel=True,
+                       replaceCreateString=None, replaceEditString=None, replaceFixedState=None,
+                       replaceLabel=None, replacePanel=None, replaceTypeString=None,
+                       sceneConfig=True, typeStrings=True, useTemplate="", userCreated=True,
+                       q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a panel configuration object  Typically you would not call this method
     command directly  Instead use the Panel Editor   Once a panel configuration is created you
@@ -24911,10 +24908,9 @@ def ArcLengthTool(*args, **kwargs):
     pass
 
 
-def cycleCheck(all=True, children=True, dag=True, evaluation=True, firstCycleOnly=True,
+def cycleCheck(*args, all=True, children=True, dag=True, evaluation=True, firstCycleOnly=True,
                firstPlugPerNode=True, lastPlugPerNode=True, list=True, listSeparator="",
-               parents=True, secondary=True, timeLimit=None, q=True, query=True, *args,
-               **kwargs):
+               parents=True, secondary=True, timeLimit=None, q=True, query=True, **kwargs):
     """
     This command searches for plug cycles in the dependency graph  If a plug or node is
     selected then it searches for cycles that that plug or node is involved with  Plugs or
@@ -24990,9 +24986,9 @@ def Import(*args, **kwargs):
     pass
 
 
-def dynExpression(creation=True, name="", runtime=True, runtimeAfterDynamics=True,
+def dynExpression(*args, creation=True, name="", runtime=True, runtimeAfterDynamics=True,
                   runtimeBeforeDynamics=True, string="", q=True, query=True, e=True, edit=True,
-                  *args, **kwargs):
+                  **kwargs):
     """
     This command describes an expression that belongs to the specified particle shape  The
     expression is a block of code of unlimited length with a C-like syntax that can perform
@@ -25054,15 +25050,15 @@ def PreviousGreasePencilFrame(*args, **kwargs):
     pass
 
 
-def hyperShade(assign="", clearWorkArea=True, collapse="", createNode="", dependGraphArea=True,
-               downStream=True, duplicate=True, fixRenderSize=True, incremental=True,
-               listDownstreamNodes=None, listDownstreamShaderNodes=None, listUpstreamNodes=None,
-               name="", networks=True, noSGShapes=True, noShapes=True, noTransforms=True,
-               objects="", renderCreateAndDrop="", reset=True, resetGraph=True,
-               resetSwatch=True, setAllowsRegraphing=True, setWorkArea="", shaderNetwork="",
-               shaderNetworks=True, shaderNetworksSelectMaterialNodes=True, snapShot=True,
-               uncollapse="", upStream=True, userDefinedLayout=True, workAreaAddCmd="",
-               workAreaDeleteCmd="", workAreaSelectCmd="", *args, **kwargs):
+def hyperShade(*args, assign="", clearWorkArea=True, collapse="", createNode="",
+               dependGraphArea=True, downStream=True, duplicate=True, fixRenderSize=True,
+               incremental=True, listDownstreamNodes=None, listDownstreamShaderNodes=None,
+               listUpstreamNodes=None, name="", networks=True, noSGShapes=True, noShapes=True,
+               noTransforms=True, objects="", renderCreateAndDrop="", reset=True,
+               resetGraph=True, resetSwatch=True, setAllowsRegraphing=True, setWorkArea="",
+               shaderNetwork="", shaderNetworks=True, shaderNetworksSelectMaterialNodes=True,
+               snapShot=True, uncollapse="", upStream=True, userDefinedLayout=True,
+               workAreaAddCmd="", workAreaDeleteCmd="", workAreaSelectCmd="", **kwargs):
     """
     Commands for shader editing in the hypergraph
     
@@ -25164,7 +25160,7 @@ def hyperShade(assign="", clearWorkArea=True, collapse="", createNode="", depend
     pass
 
 
-def changeSubdivRegion(action=0, level=0, *args, **kwargs):
+def changeSubdivRegion(*args, action=0, level=0, **kwargs):
     """
     Changes a subdivision surface region based on the command parameters  The command operates
     on the selected subdivision surfaces
@@ -25188,14 +25184,14 @@ def SculptMeshInvertFreeze(*args, **kwargs):
     pass
 
 
-def outlinerEditor(allowMultiSelection=True, alwaysToggleSelect=True, animLayerFilterOptions="",
-                   attrAlphaOrder="", attrFilter="", autoExpand=True, autoExpandLayers=True,
-                   autoSelectNewObjects=True, containersIgnoreFilters=True, control=True,
-                   defineTemplate="", directSelect=True, displayMode="",
-                   doNotSelectNewObjects=True, docTag="", dropIsParent=True, editAttrName=True,
-                   exists=True, expandAllItems=True, expandAllSelectedItems=True,
-                   expandAttribute=True, expandConnections=True, expandObjects=True,
-                   feedbackItemName=True, feedbackRowNumber=True, filter="",
+def outlinerEditor(*args, allowMultiSelection=True, alwaysToggleSelect=True,
+                   animLayerFilterOptions="", attrAlphaOrder="", attrFilter="", autoExpand=True,
+                   autoExpandLayers=True, autoSelectNewObjects=True,
+                   containersIgnoreFilters=True, control=True, defineTemplate="",
+                   directSelect=True, displayMode="", doNotSelectNewObjects=True, docTag="",
+                   dropIsParent=True, editAttrName=True, exists=True, expandAllItems=True,
+                   expandAllSelectedItems=True, expandAttribute=True, expandConnections=True,
+                   expandObjects=True, feedbackItemName=True, feedbackRowNumber=True, filter="",
                    forceMainConnection="", getCurrentSetOfItem=0, highlightActive=True,
                    highlightConnection="", highlightSecondary=True, ignoreDagHierarchy=True,
                    ignoreHiddenAttribute=True, ignoreOutlinerColor=True, isChildSelected=None,
@@ -25218,7 +25214,7 @@ def outlinerEditor(allowMultiSelection=True, alwaysToggleSelect=True, animLayerF
                    showUVAttrsOnly=True, showUnitlessCurves=True, showUpstreamCurves=True,
                    sortOrder="", stateString=True, transmitFilters=True, unParent=True,
                    unlockMainConnection=True, unpinPlug=None, updateMainConnection=True,
-                   useTemplate="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates an outliner editor which can be used to display a list of objects.
     
@@ -25571,7 +25567,7 @@ def RenderOptions(*args, **kwargs):
     pass
 
 
-def polyCylindricalProjection(caching=True, constructionHistory=True, createNewMap=True,
+def polyCylindricalProjection(*args, caching=True, constructionHistory=True, createNewMap=True,
                               imageCenter=None, imageCenterX=0.0, imageCenterY=0.0,
                               imageScale=None, imageScaleU=0.0, imageScaleV=0.0,
                               insertBeforeDeformers=True, keepImageRatio=True, mapDirection="",
@@ -25581,7 +25577,7 @@ def polyCylindricalProjection(caching=True, constructionHistory=True, createNewM
                               projectionHorizontalSweep=0.0, projectionScale=None,
                               projectionScaleU=0.0, projectionScaleV=0.0, radius=10.0,
                               rotationAngle=0.0, seamCorrect=False, smartFit=True,
-                              worldSpace=True, q=True, query=True, e=True, edit=True, *args,
+                              worldSpace=True, q=True, query=True, e=True, edit=True,
                               **kwargs):
     """
     TpolyProjCmdBase is a base class for the command to create a mapping on the selected
@@ -25675,11 +25671,11 @@ def MoveToolOptions(*args, **kwargs):
     pass
 
 
-def memory(adjustedVirtualMemory=True, asFloat=True, debug=True, freeMemory=True, gigaByte=True,
-           heapMemory=True, kiloByte=True, megaByte=True, pageFaults=True, pageReclaims=True,
-           physicalMemory=True, processVirtualMemory=True, summary=True, swapFree=True,
-           swapLogical=True, swapMax=True, swapPhysical=True, swapReserved=True,
-           swapVirtual=True, swaps=True, *args, **kwargs):
+def memory(*args, adjustedVirtualMemory=True, asFloat=True, debug=True, freeMemory=True,
+           gigaByte=True, heapMemory=True, kiloByte=True, megaByte=True, pageFaults=True,
+           pageReclaims=True, physicalMemory=True, processVirtualMemory=True, summary=True,
+           swapFree=True, swapLogical=True, swapMax=True, swapPhysical=True, swapReserved=True,
+           swapVirtual=True, swaps=True, **kwargs):
     """
     Used to query essential statistics on memory availability and usage   By default memory
     sizes are returned in bytes  Since Maya's command engine only supports 32-bit signed
@@ -25737,10 +25733,10 @@ def memory(adjustedVirtualMemory=True, asFloat=True, debug=True, freeMemory=True
     pass
 
 
-def polyNormalizeUV(centerOnTile=True, normalizeDirection=0, normalizeType=0,
+def polyNormalizeUV(*args, centerOnTile=True, normalizeDirection=0, normalizeType=0,
                     preserveAspectRatio=True, caching=True, constructionHistory=True,
                     createNewMap=True, insertBeforeDeformers=True, name="", nodeState=0,
-                    uvSetName="", worldSpace=True, q=True, query=True, e=True, edit=True, *args,
+                    uvSetName="", worldSpace=True, q=True, query=True, e=True, edit=True,
                     **kwargs):
     """
     Normalizes the UVs of input polyFaces  The existing UVs of the faces are normalized between
@@ -25800,10 +25796,10 @@ def geometryCacheOpt(*args, **kwargs):
     pass
 
 
-def polyBlindData(associationType="", binaryData="", booleanData=True, delete=True,
+def polyBlindData(*args, associationType="", binaryData="", booleanData=True, delete=True,
                   doubleData=0.0, int64Data=None, intData=0, longDataName="", rescan=True,
                   reset=True, shape=True, shortDataName="", stringData="", typeId=0, e=True,
-                  edit=True, *args, **kwargs):
+                  edit=True, **kwargs):
     """
     Command creates blindData types (basically creates an instance of TdnPolyBlindData)  When
     used with the query flag, it returns the data types that define this blindData type  This
@@ -25850,7 +25846,7 @@ def polyBlindData(associationType="", binaryData="", booleanData=True, delete=Tr
     pass
 
 
-def colorSliderButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def colorSliderButtonGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                          adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                          annotation="", backgroundColor=None, buttonCommand=None,
                          buttonLabel="", changeCommand=None, columnAlign=None,
@@ -25871,7 +25867,7 @@ def colorSliderButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColu
                          rowAttach=None, statusBarMessage="", symbolButtonCommand=None,
                          symbolButtonDisplay=True, useTemplate="", visible=True,
                          visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                         edit=True, *args, **kwargs):
+                         edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -26103,7 +26099,7 @@ def dR_bridgeTool(*args, **kwargs):
     pass
 
 
-def fontDialog(FontList=True, scalable=True, *args, **kwargs):
+def fontDialog(*args, FontList=True, scalable=True, **kwargs):
     """
     Displays a dialog of available fonts for the user to select from  The name of the selected
     font is returned, or an empty string if no font was selected   When the FontList flag is
@@ -26149,10 +26145,10 @@ def NodeEditorCopy(*args, **kwargs):
     pass
 
 
-def polyLayoutUV(caching=True, constructionHistory=True, flipReversed=True, layout=0,
+def polyLayoutUV(*args, caching=True, constructionHistory=True, flipReversed=True, layout=0,
                  layoutMethod=0, name="", nodeState=0, percentageSpace=0.0, rotateForBestFit=0,
                  scale=0, separate=0, uvSetName="", worldSpace=True, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+                 edit=True, **kwargs):
     """
     Move UVs in the texture plane to avoid overlaps
     
@@ -26229,7 +26225,7 @@ def SelectPreviousObjectsMotionBuilder(*args, **kwargs):
     pass
 
 
-def timeFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def timeFieldGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                  backgroundColor=None, changeCommand=None, columnAlign=None, columnAlign2=None,
                  columnAlign3=None, columnAlign4=None, columnAlign5=None, columnAlign6=None,
@@ -26246,7 +26242,7 @@ def timeFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  popupMenuArray=True, precision=0, preventOverride=True, rowAttach=None,
                  statusBarMessage="", step=None, useTemplate="", value=None, value1=None,
                  value2=None, value3=None, value4=None, visible=True, visibleChangeCommand=None,
-                 width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -26519,7 +26515,7 @@ def AttachBrushToCurves(*args, **kwargs):
     pass
 
 
-def headsUpDisplay(allDescendants=True, allowOverlap=True, attachToRefresh=True,
+def headsUpDisplay(*args, allDescendants=True, allowOverlap=True, attachToRefresh=True,
                    attributeChange="", block=0, blockAlignment="", blockSize="", command=None,
                    conditionChange="", conditionFalse="", conditionTrue="", connectionChange="",
                    dataAlignment="", dataFontSize="", dataWidth=0, decimalPrecision=0,
@@ -26530,7 +26526,7 @@ def headsUpDisplay(allDescendants=True, allowOverlap=True, attachToRefresh=True,
                    nextFreeBlock=0, nodeChanges="", padding=0, preset="", refresh=True,
                    remove=True, removeID=0, removePosition=None, resetNodeChanges="",
                    scriptResult=True, section=0, setOption=None, showGrid=True, visible=True,
-                   q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a Heads-up Display (HUD) object which is placed in a 2D inactive
     overlay plane on the 3D viewport  It is to be used to provide hands-on information
@@ -26713,10 +26709,10 @@ def psdConvSolidTxOptions(*args, **kwargs):
     pass
 
 
-def sphere(axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, nodeState=0,
+def sphere(*args, axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, nodeState=0,
            pivot=None, radius=1.0, sections=8, spans=1, startSweep=0, tolerance=0.01,
            useTolerance=False, constructionHistory=True, name="", object=True, polygon=0,
-           q=True, query=True, e=True, edit=True, *args, **kwargs):
+           q=True, query=True, e=True, edit=True, **kwargs):
     """
     The sphere command creates a new sphere  The number of spans in the in each direction of
     the sphere is determined by the useTolerance attribute  If -ut is true then the -tolerance
@@ -26788,7 +26784,7 @@ def AddTimeWarp(*args, **kwargs):
     pass
 
 
-def aliasAttr(remove=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def aliasAttr(*args, remove=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Allows aliases (alternate names) to be defined for any attribute of a specified node  When
     an attribute is aliased, the alias will be used by the system to display information about
@@ -26812,7 +26808,7 @@ def dR_bridgeRelease(*args, **kwargs):
     pass
 
 
-def attrFieldSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def attrFieldSliderGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                        adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                        annotation="", attribute="", backgroundColor=None, changeCommand=None,
                        columnAlign=None, columnAlign2=None, columnAlign3=None,
@@ -26834,7 +26830,7 @@ def attrFieldSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn
                        sliderMaxValue=0.0, sliderMinValue=0.0, sliderStep=0.0,
                        statusBarMessage="", step=0.0, useTemplate="", vertical=True,
                        visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                       e=True, edit=True, *args, **kwargs):
+                       e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -27067,12 +27063,12 @@ def attrFieldSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn
     pass
 
 
-def outlinerPanel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def outlinerPanel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
                   editString=True, exists=True, init=True, isUnique=True, label="",
                   menuBarRepeatLast=True, menuBarVisible=True, needsInit=True,
                   outlinerEditor=True, parent="", popupMenuProcedure=None, replacePanel="",
                   tearOff=True, tearOffCopy="", tearOffRestore=True, unParent=True,
-                  useTemplate="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates, edit and queries outliner panels which contain only an outliner
     editor
@@ -27151,13 +27147,12 @@ def NodeEditorAdditiveGraphingMode(*args, **kwargs):
     pass
 
 
-def modelPanel(barLayout=True, camera="", control=True, copy="", createString=True,
+def modelPanel(*args, barLayout=True, camera="", control=True, copy="", createString=True,
                defineTemplate="", docTag="", editString=True, exists=True, init=True,
                isUnique=True, label="", menuBarRepeatLast=True, menuBarVisible=True,
                modelEditor=True, needsInit=True, parent="", popupMenuProcedure=None,
                replacePanel="", tearOff=True, tearOffCopy="", tearOffRestore=True,
-               unParent=True, useTemplate="", q=True, query=True, e=True, edit=True, *args,
-               **kwargs):
+               unParent=True, useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a panel consisting of a model editor  See the modelEditor command
     documentation for more information
@@ -27248,7 +27243,7 @@ def PokePolygonOptions(*args, **kwargs):
     pass
 
 
-def ctxEditMode(buttonDown=True, buttonUp=True, *args, **kwargs):
+def ctxEditMode(*args, buttonDown=True, buttonUp=True, **kwargs):
     """
     This command tells the current context to switch edit modes.
     
@@ -27347,7 +27342,7 @@ def RaiseMainWindow(*args, **kwargs):
     pass
 
 
-def stroke(name="", pressure=False, seed=0, *args, **kwargs):
+def stroke(*args, name="", pressure=False, seed=0, **kwargs):
     """
     The stroke command creates a new Paint Effects stroke node
     
@@ -27400,7 +27395,7 @@ def UndoCanvas(*args, **kwargs):
     pass
 
 
-def ungroup(absolute=True, parent="", relative=True, world=True, *args, **kwargs):
+def ungroup(*args, absolute=True, parent="", relative=True, world=True, **kwargs):
     """
     This command ungroups the specified objects   The objects will be placed at the same level
     in the hierarchy the group node occupied unless the -w flag is specified, in which case
@@ -27424,11 +27419,11 @@ def ungroup(absolute=True, parent="", relative=True, world=True, *args, **kwargs
     pass
 
 
-def rebuildCurve(caching=True, degree=3, endKnots=0, fitRebuild=True, keepControlPoints=False,
-                 keepEndPoints=True, keepRange=1, keepTangents=True, nodeState=0, rebuildType=0,
-                 smartSurfaceCurveRebuild=False, spans=4, tolerance=0.01,
-                 constructionHistory=True, name="", object=True, range=True,
-                 replaceOriginal=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def rebuildCurve(*args, caching=True, degree=3, endKnots=0, fitRebuild=True,
+                 keepControlPoints=False, keepEndPoints=True, keepRange=1, keepTangents=True,
+                 nodeState=0, rebuildType=0, smartSurfaceCurveRebuild=False, spans=4,
+                 tolerance=0.01, constructionHistory=True, name="", object=True, range=True,
+                 replaceOriginal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command rebuilds a curve by modifying its parameterization  In some cases the shape
     may also change  The rebuildType (-rt) determines how the curve is to be rebuilt   The
@@ -27495,7 +27490,7 @@ def CreateVolumeCone(*args, **kwargs):
     pass
 
 
-def instanceable(allow=True, recursive=True, shape=True, q=True, query=True, *args, **kwargs):
+def instanceable(*args, allow=True, recursive=True, shape=True, q=True, query=True, **kwargs):
     """
     Flags one or more DAG nodes so that they can (or cannot) be instanced  This command sets an
     internal state on the specified DAG nodes which is checked whenever Maya attempts an
@@ -27525,10 +27520,10 @@ def xgmFileRender(*args, **kwargs):
     pass
 
 
-def extendSurface(caching=True, distance=1, extendDirection=0, extendMethod=0, extendSide=1,
-                  extensionType=0, join=True, nodeState=0, constructionHistory=True, name="",
-                  object=True, replaceOriginal=True, q=True, query=True, e=True, edit=True,
-                  *args, **kwargs):
+def extendSurface(*args, caching=True, distance=1, extendDirection=0, extendMethod=0,
+                  extendSide=1, extensionType=0, join=True, nodeState=0,
+                  constructionHistory=True, name="", object=True, replaceOriginal=True, q=True,
+                  query=True, e=True, edit=True, **kwargs):
     """
     This command extends a surface or creates a new surface as an extension
     
@@ -27569,14 +27564,14 @@ def extendSurface(caching=True, distance=1, extendDirection=0, extendMethod=0, e
     pass
 
 
-def rangeControl(annotation="", backgroundColor=None, changedCommand=None, defineTemplate="",
-                 docTag="", dragCallback=None, dropCallback=None, enable=True,
-                 enableBackground=True, enableKeyboardFocus=True, exists=True,
+def rangeControl(*args, annotation="", backgroundColor=None, changedCommand=None,
+                 defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
+                 enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
                  fullPathName=True, height=0, highlightColor=None, isObscured=True, manage=True,
                  maxRange=None, minRange=None, noBackground=True, numberOfPopupMenus=True,
                  parent="", popupMenuArray=True, preventOverride=True, statusBarMessage="",
                  useTemplate="", visible=True, visibleChangeCommand=None, width=0,
-                 widthHeight=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 widthHeight=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control used for displaying and modifying the current playback range
      Note: only one master rangeControl may exist  Any addition rangeControls that a user
@@ -27698,8 +27693,8 @@ def PolyCreaseTool(*args, **kwargs):
     pass
 
 
-def renderManip(camera=None, light=None, spotLight=None, state=True, q=True, query=True, e=True,
-                edit=True, *args, **kwargs):
+def renderManip(*args, camera=None, light=None, spotLight=None, state=True, q=True, query=True,
+                e=True, edit=True, **kwargs):
     """
     This command creates manipulators for cameras or lights
     
@@ -27764,9 +27759,9 @@ def HypershadeSortReverseOrder(*args, **kwargs):
     pass
 
 
-def containerBind(allNames=True, bindingSet="", bindingSetConditions=True, bindingSetList=True,
-                  force=True, preview=True, q=True, query=True, e=True, edit=True, *args,
-                  **kwargs):
+def containerBind(*args, allNames=True, bindingSet="", bindingSetConditions=True,
+                  bindingSetList=True, force=True, preview=True, q=True, query=True, e=True,
+                  edit=True, **kwargs):
     """
     This is an accessory command to the container command which is used for some automated
     binding operations on the container  A container's published interface can be bound using a
@@ -27805,10 +27800,10 @@ def TimeEditorExplodeGroup(*args, **kwargs):
     pass
 
 
-def setDrivenKeyframe(attribute="", controlPoints=False, currentDriver="", driven=True,
+def setDrivenKeyframe(*args, attribute="", controlPoints=False, currentDriver="", driven=True,
                       driver=True, driverValue=0.0, hierarchy="", inTangentType="", insert=True,
                       insertBlend=True, outTangentType="", shape=True, value=0.0, q=True,
-                      query=True, e=True, edit=True, *args, **kwargs):
+                      query=True, e=True, edit=True, **kwargs):
     """
     This command sets a driven keyframe  A driven keyframe is similar to a regular keyframe 
     However, while a standard keyframe always has an x-axis of time in the graph editor, for a
@@ -27856,9 +27851,9 @@ def setDrivenKeyframe(attribute="", controlPoints=False, currentDriver="", drive
     pass
 
 
-def geomToBBox(bakeAnimation=True, combineMesh=True, endTime=None, keepOriginal=True, name="",
-               nameSuffix="", sampleBy=None, shaderColor=None, single=True, startTime=None,
-               *args, **kwargs):
+def geomToBBox(*args, bakeAnimation=True, combineMesh=True, endTime=None, keepOriginal=True,
+               name="", nameSuffix="", sampleBy=None, shaderColor=None, single=True,
+               startTime=None, **kwargs):
     """
     Create polygonal mesh bounding boxes for geometry  Can also create a single bounding box
     per hierarchy
@@ -27904,7 +27899,7 @@ def createPolyHelixCtx(*args, **kwargs):
     pass
 
 
-def getRenderTasks(camera="", renderLayer="", *args, **kwargs):
+def getRenderTasks(*args, camera="", renderLayer="", **kwargs):
     """
     Command to return render tasks to render an image source  Image source can depend on
     upstream image sources that result from renderings of 3D scene, or 2D renderings (e.g 
@@ -27924,8 +27919,8 @@ def getRenderTasks(camera="", renderLayer="", *args, **kwargs):
     pass
 
 
-def polyCrease(createHistory=True, operation=0, relativeValue=0.0, value=0.0, vertexValue=0.0,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyCrease(*args, createHistory=True, operation=0, relativeValue=0.0, value=0.0,
+               vertexValue=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to set the crease values on the edges or vertices of a poly  The crease values are
     used by the smoothing algorithm
@@ -27980,7 +27975,7 @@ def FBXExportIncludeChildren(*args, **kwargs):
     pass
 
 
-def scriptCtx(allComponents=True, allObjects=True, animBreakdown=True, animCurve=True,
+def scriptCtx(*args, allComponents=True, allObjects=True, animBreakdown=True, animCurve=True,
               animInTangent=True, animKeyframe=True, animOutTangent=True,
               baseClassName="scriptTool", camera=True, cluster=True, collisionModel=True,
               controlVertex=True, cumulativeLists=True, curve=True, curveKnot=True,
@@ -28008,7 +28003,7 @@ def scriptCtx(allComponents=True, allObjects=True, animBreakdown=True, animCurve
               subdivMeshPoint=True, subdivMeshUV=True, surfaceEdge=True, surfaceFace=True,
               surfaceKnot=True, surfaceParameterPoint=True, surfaceRange=True, surfaceUV=True,
               texture=True, title="", toolCursorType="", toolFinish=None, toolStart=None,
-              totalSelectionSets=0, vertex=True, q=True, query=True, e=True, edit=True, *args,
+              totalSelectionSets=0, vertex=True, q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     This command allows a user to create their own tools based on the selection tool  A number
@@ -28298,13 +28293,13 @@ def scriptCtx(allComponents=True, allObjects=True, animBreakdown=True, animCurve
     pass
 
 
-def surfaceSampler(camera=None, fileFormat="", filename="", filterSize=0.0, filterType=0,
+def surfaceSampler(*args, camera=None, fileFormat="", filename="", filterSize=0.0, filterType=0,
                    flipU=True, flipV=True, ignoreMirroredFaces=True, ignoreTransforms=True,
                    mapHeight=0, mapMaterials=True, mapOutput="", mapSpace="", mapWidth=0,
                    maxSearchDistance=0.0, maximumValue=0.0, overscan=0, searchCage="",
                    searchMethod=0, searchOffset=0.0, shadows=True, source="", sourceUVSpace="",
                    superSampling=0, target="", targetUVSpace="", useGeometryNormals=True,
-                   uvSet="", *args, **kwargs):
+                   uvSet="", **kwargs):
     """
     Maps surface detail from a source surface to a new texture map on a target surface  Both
     objects must be selected when the command is invoked, with the source surface selected
@@ -28427,7 +28422,7 @@ def nexMultiCutCtx(*args, **kwargs):
     pass
 
 
-def date(date=True, format="", shortDate=True, shortTime=True, time=True, *args, **kwargs):
+def date(*args, date=True, format="", shortDate=True, shortTime=True, time=True, **kwargs):
     """
     Returns information about current time and date  Use the predefined formats, or the -format
     flag to specify the output format
@@ -28463,7 +28458,7 @@ def GraphSnapOptions(*args, **kwargs):
     pass
 
 
-def goal(goal="", index=True, useTransformAsGoal=True, weight=0.0, q=True, query=True, *args,
+def goal(*args, goal="", index=True, useTransformAsGoal=True, weight=0.0, q=True, query=True,
          **kwargs):
     """
     Specifies the given objects as being goals for the given particle object  If the goal
@@ -28491,7 +28486,7 @@ def goal(goal="", index=True, useTransformAsGoal=True, weight=0.0, q=True, query
     pass
 
 
-def displacementToPoly(findBboxOnly=True, q=True, query=True, e=True, edit=True, *args,
+def displacementToPoly(*args, findBboxOnly=True, q=True, query=True, e=True, edit=True,
                        **kwargs):
     """
     Command bakes geometry with displacement mapping into a polygonal object
@@ -28548,11 +28543,11 @@ def AssumePreferredAngleOptions(*args, **kwargs):
     pass
 
 
-def squareSurface(caching=True, continuityType1=2, continuityType2=2, continuityType3=2,
+def squareSurface(*args, caching=True, continuityType1=2, continuityType2=2, continuityType3=2,
                   continuityType4=2, curveFitCheckpoints=5, endPointTolerance=0.1, nodeState=0,
                   rebuildCurve1=False, rebuildCurve2=False, rebuildCurve3=False,
                   rebuildCurve4=False, constructionHistory=True, name="", object=True,
-                  polygon=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  polygon=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command produces a square surface given 3 or 4 curves  This resulting square surface
     is created within the intersecting region of the selected curves  The order of selection is
@@ -28612,8 +28607,8 @@ def squareSurface(caching=True, continuityType1=2, continuityType2=2, continuity
     pass
 
 
-def texSelectShortestPathCtx(exists=True, image1="", image2="", image3="", q=True, query=True,
-                             e=True, edit=True, *args, **kwargs):
+def texSelectShortestPathCtx(*args, exists=True, image1="", image2="", image3="", q=True,
+                             query=True, e=True, edit=True, **kwargs):
     """
     Creates a new context to select shortest edge path between two vertices or UVs in the
     texture editor window
@@ -28679,9 +28674,9 @@ def HypershadeUnpinSelected(*args, **kwargs):
     pass
 
 
-def subdMapSewMove(caching=True, nodeState=0, constructionHistory=True, limitPieceSize=True,
-                   name="", numberFaces=0, worldSpace=True, q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+def subdMapSewMove(*args, caching=True, nodeState=0, constructionHistory=True,
+                   limitPieceSize=True, name="", numberFaces=0, worldSpace=True, q=True,
+                   query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to Move and Sew together separate UV pieces along geometric edges 
     UV pieces that correspond to the same geometric edge, are merged together by moving the
@@ -28721,12 +28716,12 @@ def ToggleUnsharedUVs(*args, **kwargs):
     pass
 
 
-def hyperPanel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def hyperPanel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
                editString=True, exists=True, hyperEditor=True, init=True, isUnique=True,
                label="", menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
                popupMenuProcedure=None, replacePanel="", tearOff=True, tearOffCopy="",
                tearOffRestore=True, unParent=True, useTemplate="", q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     This command creates, edit and queries hypergraph panels which contain only a hypergraph
     editor
@@ -28896,8 +28891,8 @@ def PublishChildAnchorOptions(*args, **kwargs):
     pass
 
 
-def commandEcho(addFilter=None, filter=None, lineNumbers=True, state=True, q=True, query=True,
-                *args, **kwargs):
+def commandEcho(*args, addFilter=None, filter=None, lineNumbers=True, state=True, q=True,
+                query=True, **kwargs):
     """
     This command controls what is echoed to the command window
     
@@ -28948,10 +28943,10 @@ def DeleteExpressions(*args, **kwargs):
     pass
 
 
-def projectCurve(caching=True, direction=None, directionX=0.0, directionY=0.0, directionZ=1.0,
-                 nodeState=0, tolerance=0.01, useNormal=False, constructionHistory=True,
-                 name="", object=True, range=True, q=True, query=True, e=True, edit=True, *args,
-                 **kwargs):
+def projectCurve(*args, caching=True, direction=None, directionX=0.0, directionY=0.0,
+                 directionZ=1.0, nodeState=0, tolerance=0.01, useNormal=False,
+                 constructionHistory=True, name="", object=True, range=True, q=True, query=True,
+                 e=True, edit=True, **kwargs):
     """
     The projectCurve command creates curves on surface where all selected curves project onto
     the selected surfaces  Projection can be done using the surface normals or the user can
@@ -29007,8 +29002,8 @@ def CreateTextureDeformerOptions(*args, **kwargs):
     pass
 
 
-def group(absolute=True, empty=True, name="", parent="", relative=True, useAsGroup="",
-          world=True, *args, **kwargs):
+def group(*args, absolute=True, empty=True, name="", parent="", relative=True, useAsGroup="",
+          world=True, **kwargs):
     """
     This command groups the specified objects under a new group and returns the name of the new
     group   If the -em flag is specified, then an empty group (with no objects) is created   If
@@ -29179,9 +29174,9 @@ def AddOceanDynamicLocatorOptions(*args, **kwargs):
     pass
 
 
-def referenceEdit(applyFailedEdits=True, changeEditTarget=None, failedEdits=True,
+def referenceEdit(*args, applyFailedEdits=True, changeEditTarget=None, failedEdits=True,
                   removeEdits=True, successfulEdits=True, editCommand="", onReferenceNode="",
-                  *args, **kwargs):
+                  **kwargs):
     """
     Use this command to remove and change the modifications which have been applied to
     references  A valid commandTarget is either a reference node, a reference file, a node in a
@@ -29323,8 +29318,8 @@ def AppendToHairCacheOptions(*args, **kwargs):
     pass
 
 
-def animView(endTime=None, maxValue=0.0, minValue=0.0, nextView=True, previousView=True,
-             startTime=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def animView(*args, endTime=None, maxValue=0.0, minValue=0.0, nextView=True, previousView=True,
+             startTime=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command allows you to specify the current view range within an animation editor
     
@@ -29389,11 +29384,11 @@ def ExtractSubdivSurfaceVerticesOptions(*args, **kwargs):
     pass
 
 
-def viewSet(animate=True, back=True, bottom=True, fit=True, fitFactor=0.0, front=True,
+def viewSet(*args, animate=True, back=True, bottom=True, fit=True, fitFactor=0.0, front=True,
             home=True, keepRenderSettings=True, leftSide=True, namespace="", nextView=True,
             persp=True, previousView=True, rightSide=True, side=True, top=True,
             viewNegativeX=True, viewNegativeY=True, viewNegativeZ=True, viewX=True, viewY=True,
-            viewZ=True, q=True, query=True, *args, **kwargs):
+            viewZ=True, q=True, query=True, **kwargs):
     """
     This command positions the camera to one of the pre-defined positions  If the fit flag is
     set in conjunction with persp, top, side, or front, the view is "fit" based on the list of
@@ -29463,14 +29458,14 @@ def TimeEditorSetZeroKey(*args, **kwargs):
     pass
 
 
-def alignSurface(caching=True, curvatureContinuity=False, curvatureScale1=0.0,
+def alignSurface(*args, caching=True, curvatureContinuity=False, curvatureScale1=0.0,
                  curvatureScale2=0.0, directionU=True, joinParameter=123456.0, nodeState=0,
                  positionalContinuity=True, positionalContinuityType=1, reverse1=False,
                  reverse2=False, swap1=False, swap2=False, tangentContinuity=True,
                  tangentContinuityType=1, tangentScale1=1.0, tangentScale2=1.0, twist=False,
                  attach=True, constructionHistory=True, keepMultipleKnots=True, name="",
                  object=True, replaceOriginal=True, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     The surface align command is used to align surfaces in maya  The main alignment options are
     positional, tangent and curvature continuity  Curvature continuity implies tangent
@@ -29552,9 +29547,9 @@ def alignSurface(caching=True, curvatureContinuity=False, curvatureScale1=0.0,
     pass
 
 
-def cacheFileCombine(cacheIndex=True, channelName="", connectCache="", keepWeights=True,
+def cacheFileCombine(*args, cacheIndex=True, channelName="", connectCache="", keepWeights=True,
                      layerNode=True, nextAvailable=True, object="", objectIndex=0, q=True,
-                     query=True, e=True, edit=True, *args, **kwargs):
+                     query=True, e=True, edit=True, **kwargs):
     """
     Creates a cacheBlend node that can be used to combine, layer or blend multiple cacheFiles
     for a given object
@@ -29625,7 +29620,7 @@ def ProjectCurveOnMeshOptions(*args, **kwargs):
     pass
 
 
-def textScrollList(allItems=True, allowAutomaticSelection=True, allowMultiSelection=True,
+def textScrollList(*args, allItems=True, allowAutomaticSelection=True, allowMultiSelection=True,
                    annotation="", append="", appendPosition=None, backgroundColor=None,
                    defineTemplate="", deleteKeyCommand=None, deselectAll=True,
                    deselectIndexedItem=0, deselectItem="", docTag="", doubleClickCommand=None,
@@ -29638,7 +29633,7 @@ def textScrollList(allItems=True, allowAutomaticSelection=True, allowMultiSelect
                    selectCommand=None, selectIndexedItem=0, selectItem="",
                    selectUniqueTagItem="", showIndexedItem=0, statusBarMessage="", uniqueTag="",
                    useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a text scrolling list  The list can be in single select
     mode where only one item at at time is selected, or in multi-select mode where many items
@@ -29810,10 +29805,9 @@ def IncreaseCheckerDensity(*args, **kwargs):
     pass
 
 
-def scaleConstraint(layer="", maintainOffset=True, name="", offset=None, remove=True,
+def scaleConstraint(*args, layer="", maintainOffset=True, name="", offset=None, remove=True,
                     scaleCompensate=True, skip="", targetList=True, weight=0.0,
-                    weightAliasList=True, q=True, query=True, e=True, edit=True, *args,
-                    **kwargs):
+                    weightAliasList=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Constrain an object's scale to the scale of the target object or to the average scale of a
     number of targets   A scaleConstraint takes as input one or more "target" DAG transform
@@ -29884,7 +29878,7 @@ def LockCurveLength(*args, **kwargs):
     pass
 
 
-def radioButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def radioButtonGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                    adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                    annotation1="", annotation2="", annotation3="", annotation4="",
                    backgroundColor=None, changeCommand=None, changeCommand1=None,
@@ -29909,7 +29903,7 @@ def radioButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                    preventOverride=True, rowAttach=None, select=0, shareCollection="",
                    statusBarMessage="", useTemplate="", vertical=True, visible=True,
                    visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                   *args, **kwargs):
+                   **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -30187,9 +30181,10 @@ def RenderIntoNewWindow(*args, **kwargs):
     pass
 
 
-def polyQueryBlindData(associationType="", binaryData="", booleanData=True, doubleData=0.0,
-                       intData=0, longDataName="", maxValue=0.0, minValue=0.0, shortDataName="",
-                       showComp=True, stringData="", subString="", typeId=0, *args, **kwargs):
+def polyQueryBlindData(*args, associationType="", binaryData="", booleanData=True,
+                       doubleData=0.0, intData=0, longDataName="", maxValue=0.0, minValue=0.0,
+                       shortDataName="", showComp=True, stringData="", subString="", typeId=0,
+                       **kwargs):
     """
     Command query's blindData associated with particular polygonal components  So, the command
     will require the following to be specified: - selection list to query Optional are the: -
@@ -30245,9 +30240,9 @@ def xgmFreezeBrushToolCmd(*args, **kwargs):
     pass
 
 
-def polyClean(caching=True, cleanEdges=True, cleanPartialUVMapping=True, cleanUVs=True,
+def polyClean(*args, caching=True, cleanEdges=True, cleanPartialUVMapping=True, cleanUVs=True,
               cleanVertices=True, constructionHistory=True, frozen=True, name="", nodeState=0,
-              q=True, query=True, e=True, edit=True, *args, **kwargs):
+              q=True, query=True, e=True, edit=True, **kwargs):
     """
     polyClean will attempt to remove components that are invalid in the description of a poly
     mesh
@@ -30287,10 +30282,10 @@ def polyClean(caching=True, cleanEdges=True, cleanPartialUVMapping=True, cleanUV
     pass
 
 
-def bindSkin(byClosestPoint=True, byPartition=True, colorJoints=True, delete=True,
+def bindSkin(*args, byClosestPoint=True, byPartition=True, colorJoints=True, delete=True,
              doNotDescend=True, enable=True, name="", partition="", toAll=True,
              toSelectedBones=True, toSkeleton=True, unbind=True, unbindKeepHistory=True,
-             unlock=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+             unlock=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command binds the currently selected objects to the currently selected skeletons 
     Shapes which can be bound are: meshes, nurbs curves, nurbs surfaces, lattices, subdivision
@@ -30344,8 +30339,8 @@ def bindSkin(byClosestPoint=True, byPartition=True, colorJoints=True, delete=Tru
     pass
 
 
-def container(addNode=None, asset=None, assetMember="", bindAttr=None, connectionList=True,
-              current=True, fileName=None, findContainer=None, force=True,
+def container(*args, addNode=None, asset=None, assetMember="", bindAttr=None,
+              connectionList=True, current=True, fileName=None, findContainer=None, force=True,
               includeHierarchyAbove=True, includeHierarchyBelow=True, includeNetwork=True,
               includeNetworkDetails="", includeShaders=True, includeShapes=True,
               includeTransform=True, isContainer=True, name="", nodeList=True,
@@ -30354,7 +30349,7 @@ def container(addNode=None, asset=None, assetMember="", bindAttr=None, connectio
               publishConnections=True, publishName="", removeContainer=True, removeNode=None,
               type="", unbindAndUnpublish="", unbindAttr=None, unbindChild="", unbindParent="",
               unpublishChild="", unpublishName="", unpublishParent="", unsortedOrder=True,
-              q=True, query=True, e=True, edit=True, *args, **kwargs):
+              q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create and query container nodes  It is also used to perform
     operations on containers such as:  add and remove nodes from the container publish
@@ -30516,11 +30511,12 @@ def QuickRigEditor(*args, **kwargs):
     pass
 
 
-def itemFilter(byBin="", byName="", byScript="", byType="", category="", classification="",
-               clearByBin=True, clearByType=True, difference=None, exists=True, intersect=None,
-               listBuiltInFilters=True, listOtherFilters=True, listUserFilters=True,
-               negate=True, parent="", pythonModule="", secondScript="", text="", union=None,
-               uniqueNodeNames=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def itemFilter(*args, byBin="", byName="", byScript="", byType="", category="",
+               classification="", clearByBin=True, clearByType=True, difference=None,
+               exists=True, intersect=None, listBuiltInFilters=True, listOtherFilters=True,
+               listUserFilters=True, negate=True, parent="", pythonModule="", secondScript="",
+               text="", union=None, uniqueNodeNames=True, q=True, query=True, e=True, edit=True,
+               **kwargs):
     """
     This command creates a named itemFilter object  This object can be attached to
     selectionConnection objects, or to editors, in order to filter the item lists going through
@@ -30595,8 +30591,8 @@ def itemFilter(byBin="", byName="", byScript="", byType="", category="", classif
     pass
 
 
-def polyShortestPathCtx(exists=True, image1="", image2="", image3="", q=True, query=True,
-                        e=True, edit=True, *args, **kwargs):
+def polyShortestPathCtx(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                        e=True, edit=True, **kwargs):
     """
     Creates a new context to select shortest edge path between two vertices or UVs in the 3d
     viewport
@@ -30641,9 +30637,9 @@ def HypershadeDeleteAllCamerasAndImagePlanes(*args, **kwargs):
     pass
 
 
-def freezeOptions(displayLayers=True, downstream="", explicitPropagation=True, invisible=True,
-                  referencedNodes=True, runtimePropagation=True, upstream="", q=True,
-                  query=True, *args, **kwargs):
+def freezeOptions(*args, displayLayers=True, downstream="", explicitPropagation=True,
+                  invisible=True, referencedNodes=True, runtimePropagation=True, upstream="",
+                  q=True, query=True, **kwargs):
     """
     This command provides access to the options used by the evaluation manager to handle
     propagation and recognition of when a node is in a frozen state  See the individual flags
@@ -30715,9 +30711,9 @@ def ModifyPaintValueRelease(*args, **kwargs):
     pass
 
 
-def texMoveContext(editPivotMode=True, exists=True, image1="", image2="", image3="",
+def texMoveContext(*args, editPivotMode=True, exists=True, image1="", image2="", image3="",
                    position=True, snap=True, snapComponentsRelative=True, snapPixelMode=0,
-                   snapValue=0.0, tweakMode=True, q=True, query=True, e=True, edit=True, *args,
+                   snapValue=0.0, tweakMode=True, q=True, query=True, e=True, edit=True,
                    **kwargs):
     """
     This command can be used to create, edit, or query a texture editor move manip context 
@@ -30790,8 +30786,8 @@ def XgmSplineCacheDisableSelectedCache(*args, **kwargs):
     pass
 
 
-def polyAppendVertex(append=None, constructionHistory=True, hole=True, name="", point=None,
-                     texture=0, vertex=0, q=True, query=True, e=True, edit=True, *args,
+def polyAppendVertex(*args, append=None, constructionHistory=True, hole=True, name="",
+                     point=None, texture=0, vertex=0, q=True, query=True, e=True, edit=True,
                      **kwargs):
     """
     Appends a new face to the selected polygonal object  The direction of the normal is given
@@ -30874,7 +30870,7 @@ def KeyBlendShapeTargetsWeight(*args, **kwargs):
     pass
 
 
-def renderPartition(q=True, query=True, *args, **kwargs):
+def renderPartition(*args, q=True, query=True, **kwargs):
     """
     Set or query the model's current partition  When flag q is not used, a partion name must be
     passed as an argument  In this case the current partition is set to that name
@@ -30893,8 +30889,8 @@ def CreateUVsBasedOnCamera(*args, **kwargs):
     pass
 
 
-def fluidVoxelInfo(checkBounds=True, inBounds=None, objectSpace=True, radius=0.0, voxel=None,
-                   voxelCenter=True, xIndex=0, yIndex=0, zIndex=0, *args, **kwargs):
+def fluidVoxelInfo(*args, checkBounds=True, inBounds=None, objectSpace=True, radius=0.0,
+                   voxel=None, voxelCenter=True, xIndex=0, yIndex=0, zIndex=0, **kwargs):
     """
     Provides basic information about the mapping of a fluid voxel grid into world- or object
     space of the fluid  Use this command to determine the center point of a voxel, or to find
@@ -30945,10 +30941,10 @@ def NewtonOptions(*args, **kwargs):
     pass
 
 
-def lsUI(cmdTemplates=True, collection=True, contexts=True, controlLayouts=True, controls=True,
-         dumpWidgets=True, editors=True, head=0, long=True, menuItems=True, menus=True,
-         numWidgets=True, panels=True, radioMenuItemCollections=True, tail=0, type="",
-         windows=True, *args, **kwargs):
+def lsUI(*args, cmdTemplates=True, collection=True, contexts=True, controlLayouts=True,
+         controls=True, dumpWidgets=True, editors=True, head=0, long=True, menuItems=True,
+         menus=True, numWidgets=True, panels=True, radioMenuItemCollections=True, tail=0,
+         type="", windows=True, **kwargs):
     """
     This command returns the names of UI objects
     
@@ -31005,13 +31001,13 @@ def hikGetNodeIdFromName(*args, **kwargs):
     pass
 
 
-def subdToPoly(applyMatrixToResult=True, caching=True, copyUVTopology=False, depth=0,
+def subdToPoly(*args, applyMatrixToResult=True, caching=True, copyUVTopology=False, depth=0,
                extractPointPosition=False, format=0, inSubdCVId=None, inSubdCVIdLeft=0,
                inSubdCVIdRight=0, maxPolys=0, nodeState=0, outSubdCVId=None, outSubdCVIdLeft=0,
                outSubdCVIdRight=0, outv=0, preserveVertexOrdering=True, sampleCount=1,
                shareUVs=False, subdNormals=False, addUnderTransform=True, connectShaders=True,
                constructionHistory=True, name="", object=True, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     This command tessellates a subdivision surface and produces polygon  The name of the new
     polygon is returned  If construction history is ON, then the name of the new dependency
@@ -31099,7 +31095,7 @@ def FBXProperty(*args, **kwargs):
     pass
 
 
-def cmdScrollFieldExecuter(annotation="", appendText="", autoCloseBraces=True,
+def cmdScrollFieldExecuter(*args, annotation="", appendText="", autoCloseBraces=True,
                            backgroundColor=None, clear=True, commandCompletion=True,
                            copySelection=True, currentLine=0, cutSelection=True,
                            defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
@@ -31120,7 +31116,7 @@ def cmdScrollFieldExecuter(annotation="", appendText="", autoCloseBraces=True,
                            sourceType="", spacesPerTab=4, statusBarMessage="", storeContents="",
                            tabsForIndent=True, text="", textLength=True, undo=True,
                            useTemplate="", visible=True, visibleChangeCommand=None, width=0,
-                           q=True, query=True, e=True, edit=True, *args, **kwargs):
+                           q=True, query=True, e=True, edit=True, **kwargs):
     """
     A script editor executer control used to issue script commands to Maya
     
@@ -31344,9 +31340,9 @@ def AssetEditor(*args, **kwargs):
     pass
 
 
-def characterMap(mapAttr=None, mapMethod="", mapNode=None, mapping="", proposedMapping=True,
-                 unmapAttr=None, unmapNode=None, q=True, query=True, e=True, edit=True, *args,
-                 **kwargs):
+def characterMap(*args, mapAttr=None, mapMethod="", mapNode=None, mapping="",
+                 proposedMapping=True, unmapAttr=None, unmapNode=None, q=True, query=True,
+                 e=True, edit=True, **kwargs):
     """
     This command is used to create a correlation between the attributes of 2 or more characters
     
@@ -31392,10 +31388,10 @@ def dR_edgedFacesTGL(*args, **kwargs):
     pass
 
 
-def wrinkleContext(branchCount=2, branchDepth=0, exists=True, history=True, image1="",
+def wrinkleContext(*args, branchCount=2, branchDepth=0, exists=True, history=True, image1="",
                    image2="", image3="", name="", randomness=0.0, style="radial", thickness=0.0,
                    wrinkleCount=3, wrinkleIntensity=0.0, q=True, query=True, e=True, edit=True,
-                   *args, **kwargs):
+                   **kwargs):
     """
     This command creates a context that creates wrinkles
     
@@ -31456,7 +31452,7 @@ def InvertSelection(*args, **kwargs):
     pass
 
 
-def disable(value=True, *args, **kwargs):
+def disable(*args, value=True, **kwargs):
     """
     This command enables or disables the control passed as argument
     
@@ -31484,7 +31480,7 @@ def TumbleTool(*args, **kwargs):
     pass
 
 
-def textFieldButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def textFieldButtonGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                        adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                        annotation="", backgroundColor=None, buttonCommand=None, buttonLabel="",
                        changeCommand=None, columnAlign=None, columnAlign2=None,
@@ -31504,7 +31500,7 @@ def textFieldButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn
                        parent="", placeholderText="", popupMenuArray=True, preventOverride=True,
                        rowAttach=None, statusBarMessage="", text="", textChangedCommand=None,
                        useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -31735,9 +31731,9 @@ def FrameAll(*args, **kwargs):
     pass
 
 
-def psdExport(alphaChannelIdx=0, bytesPerChannel=0, emptyLayerSet=True, format="", layerName="",
-              layerSetName="", outFileName="", preMultiplyAlpha=True, psdFileName="", q=True,
-              query=True, *args, **kwargs):
+def psdExport(*args, alphaChannelIdx=0, bytesPerChannel=0, emptyLayerSet=True, format="",
+              layerName="", layerSetName="", outFileName="", preMultiplyAlpha=True,
+              psdFileName="", q=True, query=True, **kwargs):
     """
     Writes the Photoshop file layer set into different formats  The output file depth (bit per
     channel ) can be different from that of the input  If the input is 16 bpc and output is 8
@@ -31775,12 +31771,12 @@ def psdExport(alphaChannelIdx=0, bytesPerChannel=0, emptyLayerSet=True, format="
     pass
 
 
-def evaluationManager(cycleCluster="", disableInfo="", empty=True, enabled=True, idleAction=0,
-                      idleBuild=True, invalidate=True, manipulation=True,
+def evaluationManager(*args, cycleCluster="", disableInfo="", empty=True, enabled=True,
+                      idleAction=0, idleBuild=True, invalidate=True, manipulation=True,
                       manipulationReady=True, mode="", downstreamFrom="",
                       nodeTypeGloballySerialize=True, nodeTypeParallel=True,
                       nodeTypeSerialize=True, nodeTypeUntrusted=True, upstreamFrom="",
-                      safeMode=True, q=True, query=True, *args, **kwargs):
+                      safeMode=True, q=True, query=True, **kwargs):
     """
     Handles turning on and off the evaluation manager method of evaluating the DG  Query the
     'mode' flag to see all available evaluation modes  The special mode 'off' disables the
@@ -31856,9 +31852,9 @@ def DuplicateFace(*args, **kwargs):
     pass
 
 
-def artSetPaintCtx(accopacity=False, afterStrokeCmd="", beforeStrokeCmd="", brushalignment=True,
-                   brushfeedback=True, clear=True, dragSlider="", dynclonemode=True,
-                   exists=True, expandfilename=True, exportaspectratio=0.0,
+def artSetPaintCtx(*args, accopacity=False, afterStrokeCmd="", beforeStrokeCmd="",
+                   brushalignment=True, brushfeedback=True, clear=True, dragSlider="",
+                   dynclonemode=True, exists=True, expandfilename=True, exportaspectratio=0.0,
                    exportfilemode="luminance/rgb", exportfilesave="", exportfilesizex=0,
                    exportfilesizey=0, exportfiletype="", history=True, image1="", image2="",
                    image3="", importfileload="", importfilemode="alpha", importreassign=False,
@@ -31873,7 +31869,7 @@ def artSetPaintCtx(accopacity=False, afterStrokeCmd="", beforeStrokeCmd="", brus
                    showactive=True, stampDepth=0.0, stampProfile="", stampSpacing=1.0,
                    strokesmooth="", surfaceConformedBrushVertices=True, tablet=True,
                    tangentOutline=True, usepressure=False, worldRadius=0.0, q=True, query=True,
-                   e=True, edit=True, *args, **kwargs):
+                   e=True, edit=True, **kwargs):
     """
     This tool allows the user to modify the set membership (add, transfer, remove cvs) on nurbs
     surfaces using Maya Artisan's interface
@@ -32074,17 +32070,17 @@ def PolygonBooleanIntersectionOptions(*args, **kwargs):
     pass
 
 
-def cacheFile(appendFrame=True, attachFile=True, cacheFileNode="", cacheFormat="", cacheInfo="",
-              cacheableAttrs="", cacheableNode="", channelIndex=True, channelName="",
-              convertPc2=True, createCacheNode=True, creationChannelName="", dataSize=True,
-              deleteCachedFrame=True, descriptionFileName=True, directory="",
+def cacheFile(*args, appendFrame=True, attachFile=True, cacheFileNode="", cacheFormat="",
+              cacheInfo="", cacheableAttrs="", cacheableNode="", channelIndex=True,
+              channelName="", convertPc2=True, createCacheNode=True, creationChannelName="",
+              dataSize=True, deleteCachedFrame=True, descriptionFileName=True, directory="",
               doubleToFloat=True, endTime=None, fileName="", format="", geometry=True,
               inAttr="", inTangent="", interpEndTime=None, interpStartTime=None, noBackup=True,
               outAttr="", outTangent="", pc2File="", pointCount=True, points="",
               pointsAndNormals="", prefix=True, refresh=True, replaceCachedFrame=True,
               replaceWithoutSimulating=True, runupFrames=2, sampleMultiplier=1,
               simulationRate=None, singleCache=True, startTime=None, staticCache=True,
-              worldSpace=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+              worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates one or more cache files on disk to store attribute data for a span of frames  The
     caches can be created for points/normals on a geometry (using the pts/points or
@@ -32252,8 +32248,8 @@ def setToolTo(*args, **kwargs):
     pass
 
 
-def setKeyCtx(breakdown=True, exists=True, history=True, image1="", image2="", image3="",
-              name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def setKeyCtx(*args, breakdown=True, exists=True, history=True, image1="", image2="", image3="",
+              name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to set keys within the graph editor
     
@@ -32290,11 +32286,11 @@ def SetProject(*args, **kwargs):
     pass
 
 
-def defaultNavigation(connectToExisting=True, createNew=True, defaultAttribute=True,
+def defaultNavigation(*args, connectToExisting=True, createNew=True, defaultAttribute=True,
                       defaultTraversal=True, defaultWorkingNode=True, delete=True,
                       destination=None, disconnect=True, force=True, ignore=True,
                       navigatorDecisionString="", quiet=True, relatedNodes=True, source=None,
-                      unignore=True, *args, **kwargs):
+                      unignore=True, **kwargs):
     """
     The defaultNavigation command defines default behaviours when creating or manipulating
     connections between nodes and when navigating between nodes via those connections  This
@@ -32357,9 +32353,8 @@ def NodeEditorToggleZoomIn(*args, **kwargs):
     pass
 
 
-def polyCreaseCtx(createSet="", exists=True, extendSelection=True, image1="", image2="",
-                  image3="", relative=True, q=True, query=True, e=True, edit=True, *args,
-                  **kwargs):
+def polyCreaseCtx(*args, createSet="", exists=True, extendSelection=True, image1="", image2="",
+                  image3="", relative=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a new context to crease components on polygonal objects
     
@@ -32411,11 +32406,11 @@ def ShowMeshCloneTargetToolOptions(*args, **kwargs):
     pass
 
 
-def polySplitCtx2(exists=True, image1="", image2="", image3="", adjustEdgeFlow=0.0,
+def polySplitCtx2(*args, exists=True, image1="", image2="", image3="", adjustEdgeFlow=0.0,
                   constrainToEdges=True, edgeMagnets=0, insertWithEdgeFlow=True,
                   snapTolerance=0.0, snappedToEdgeColor=None, snappedToFaceColor=None,
                   snappedToMagnetColor=None, snappedToVertexColor=None, q=True, query=True,
-                  e=True, edit=True, *args, **kwargs):
+                  e=True, edit=True, **kwargs):
     """
     Create a new context to split facets on polygonal objects
     
@@ -32594,9 +32589,9 @@ def UVPlanarProjection(*args, **kwargs):
     pass
 
 
-def psdEditTextureFile(addChannel="", addChannelColor=None, addChannelImage=None,
+def psdEditTextureFile(*args, addChannel="", addChannelColor=None, addChannelImage=None,
                        deleteChannel="", psdFileName="", snapShotImage="",
-                       uvSnapPostionTop=True, *args, **kwargs):
+                       uvSnapPostionTop=True, **kwargs):
     """
     Edits the existing PSD file  Addition and deletion of the channels (layer sets) are
     supported
@@ -32705,9 +32700,9 @@ def ApplySettingsToSelectedStroke(*args, **kwargs):
     pass
 
 
-def sequenceManager(addSequencerAudio="", attachSequencerAudio="", currentShot="",
+def sequenceManager(*args, addSequencerAudio="", attachSequencerAudio="", currentShot="",
                     currentTime=None, listSequencerAudio="", listShots=True, modelPanel="",
-                    node="", writableSequencer="", q=True, query=True, e=True, edit=True, *args,
+                    node="", writableSequencer="", q=True, query=True, e=True, edit=True,
                     **kwargs):
     """
     The sequenceManager command manages sequences, shots, and their related scenes
@@ -32768,12 +32763,12 @@ def TimeEditorClipResetTiming(*args, **kwargs):
     pass
 
 
-def ikHandleCtx(autoPriorityH=True, createCurve=True, createRootAxis=True, exists=True,
+def ikHandleCtx(*args, autoPriorityH=True, createCurve=True, createRootAxis=True, exists=True,
                 forceSolverH=True, history=True, image1="", image2="", image3="", name="",
                 numSpans=1, parentCurve=True, poWeightH=1, priorityH=1, rootOnCurve=True,
                 rootTwistMode=True, simplifyCurve=True, snapCurve=True, snapHandleH=True,
                 solverTypeH="", stickyH="off", twistType="linear", weightH=1, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+                query=True, e=True, edit=True, **kwargs):
     """
     The ikHandle context command (ikHandleCtx) updates parameters of ikHandle tool  The options
     for the tool will be set to the flags that the user specifies
@@ -32868,8 +32863,8 @@ def TransplantHairOptions(*args, **kwargs):
     pass
 
 
-def geomBind(bindMethod=0, falloff=0.0, geodesicVoxelParams=None, maxInfluences=0, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+def geomBind(*args, bindMethod=0, falloff=0.0, geodesicVoxelParams=None, maxInfluences=0,
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to compute weights using geodesic voxel binding algorithm  It works by
     setting the right weights values on an already-existing skinCluster node
@@ -32915,7 +32910,7 @@ def SoftModTool(*args, **kwargs):
     pass
 
 
-def psdChannelOutliner(addChild=None, allItems=True, annotation="", backgroundColor=None,
+def psdChannelOutliner(*args, addChild=None, allItems=True, annotation="", backgroundColor=None,
                        defineTemplate="", docTag="", doubleClickCommand="", dragCallback=None,
                        dropCallback=None, enable=True, enableBackground=True,
                        enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
@@ -32925,7 +32920,7 @@ def psdChannelOutliner(addChild=None, allItems=True, annotation="", backgroundCo
                        removeChild="", select="", selectCommand="", selectItem=True,
                        statusBarMessage="", useTemplate="", visible=True,
                        visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                       edit=True, *args, **kwargs):
+                       edit=True, **kwargs):
     """
     Create a psdChannelOutliner control which is capable of displaying a tree structure upto
     one level
@@ -33033,14 +33028,14 @@ def psdChannelOutliner(addChild=None, allItems=True, annotation="", backgroundCo
     pass
 
 
-def selectionConnection(activeCacheList=True, activeCharacterList=True, activeList=True,
+def selectionConnection(*args, activeCacheList=True, activeCharacterList=True, activeList=True,
                         addScript=None, addTo="", characterList=True, clear=True,
                         connectionList=True, defineTemplate="", deselect=None, editor="",
                         exists=True, filter="", findObject=None, g=True, highlightList=True,
                         identify=True, keyframeList=True, lock=True, modelList=True,
                         object=None, parent="", remove="", removeScript=None, select=None,
                         setList=True, switch=True, useTemplate="", worldList=True, q=True,
-                        query=True, e=True, edit=True, *args, **kwargs):
+                        query=True, e=True, edit=True, **kwargs):
     """
     This command creates a named selectionConnection object  This object is simply a shared
     selection list  It may be used by editors to share their highlight data  For example, an
@@ -33151,7 +33146,7 @@ def CreateConstraint(*args, **kwargs):
     pass
 
 
-def scmh(absolute=True, ignore=0, quiet=True, relative=True, *args, **kwargs):
+def scmh(*args, absolute=True, ignore=0, quiet=True, relative=True, **kwargs):
     """
     Set the current manipulator handle value(s)  In UI units (where applicable), though the
     syntax is set to handle the unit type of the current manipulator handle (if available)
@@ -33221,8 +33216,8 @@ def FBXExportColladaFrameRate(*args, **kwargs):
     pass
 
 
-def recordDevice(cleanup=True, data=True, device="", duration=60, playback=False, state=True,
-                 wait=True, q=True, query=True, *args, **kwargs):
+def recordDevice(*args, cleanup=True, data=True, device="", duration=60, playback=False,
+                 state=True, wait=True, q=True, query=True, **kwargs):
     """
     Starts and stops server side device recording  The data is recorded at the device rate 
     Once recorded, the data may be brought into Maya with the applyTake command
@@ -33268,7 +33263,7 @@ def MakeCurvesDynamicOptions(*args, **kwargs):
     pass
 
 
-def timeEditorPanel(activeClipEditMode=0, activeTabRootClipId=True, activeTabTime=True,
+def timeEditorPanel(*args, activeClipEditMode=0, activeTabRootClipId=True, activeTabTime=True,
                     activeTabView=0, autoFit="", autoFitTime="", control=True,
                     defineTemplate="", displayActiveKeyTangents="", displayActiveKeys="",
                     displayInfinities="", displayKeys="", displayTangents="", displayValues="",
@@ -33279,7 +33274,7 @@ def timeEditorPanel(activeClipEditMode=0, activeTabRootClipId=True, activeTabTim
                     setToPrevClipEditMode=True, snapTime="", snapToClip=True, snapToFrame=True,
                     snapTolerance=0, snapValue="", stateString=True, tabView=0, timeCursor=True,
                     unParent=True, unlockMainConnection=True, updateMainConnection=True,
-                    useTemplate="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                    useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Time Editor - non-linear animation editor
     
@@ -33418,10 +33413,10 @@ def fluidReplaceFrames(*args, **kwargs):
     pass
 
 
-def parentConstraint(createCache=None, decompRotationToChild=True, deleteCache=True, layer="",
-                     maintainOffset=True, name="", remove=True, skipRotate="", skipTranslate="",
-                     targetList=True, weight=0.0, weightAliasList=True, q=True, query=True,
-                     e=True, edit=True, *args, **kwargs):
+def parentConstraint(*args, createCache=None, decompRotationToChild=True, deleteCache=True,
+                     layer="", maintainOffset=True, name="", remove=True, skipRotate="",
+                     skipTranslate="", targetList=True, weight=0.0, weightAliasList=True,
+                     q=True, query=True, e=True, edit=True, **kwargs):
     """
     Constrain an object's position and rotation so that it behaves as if it were a child of the
     target object(s)  In the case of multiple targets, the overall position and rotation of the
@@ -33483,11 +33478,11 @@ def AirOptions(*args, **kwargs):
     pass
 
 
-def popupMenu(allowOptionBoxes=True, altModifier=True, button=0, ctrlModifier=True,
+def popupMenu(*args, allowOptionBoxes=True, altModifier=True, button=0, ctrlModifier=True,
               defineTemplate="", deleteAllItems=True, exists=True, itemArray=True,
               markingMenu=True, numberOfItems=True, parent="", postMenuCommand=None,
               postMenuCommandOnce=True, shiftModifier=True, useTemplate="", q=True, query=True,
-              e=True, edit=True, *args, **kwargs):
+              e=True, edit=True, **kwargs):
     """
     This command creates a popup menu and attaches it to the current control if no parent is
     specified  The popup menu is posted with the right mouse button by default   Popup menus
@@ -33549,7 +33544,7 @@ def SaveSceneAs(*args, **kwargs):
     pass
 
 
-def artPuttyCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="",
+def artPuttyCtx(*args, accopacity=False, activeListChangedProc="", afterStrokeCmd="",
                 alphaclamp="none", alphaclamplower=0.0, alphaclampupper=1.0, attrSelected="",
                 autosmooth=False, beforeStrokeCmd="", brushStrength=1.0, brushalignment=True,
                 brushfeedback=True, clamp="none", clamplower=0.0, clampupper=1.0, clear=True,
@@ -33579,7 +33574,7 @@ def artPuttyCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="",
                 surfaceConformedBrushVertices=True, tablet=True, tangentOutline=True,
                 toolOffProc="", toolOnProc="", updateerasesrf=True, updaterefsrf=True,
                 useColorRamp=True, useMaxMinColor=True, usepressure=False, value=0.0,
-                whichTool="", worldRadius=0.0, q=True, query=True, e=True, edit=True, *args,
+                whichTool="", worldRadius=0.0, q=True, query=True, e=True, edit=True,
                 **kwargs):
     """
     This is a context command to set the flags on the artAttrContext, which is the base context
@@ -33934,9 +33929,9 @@ def NodeEditorGridToggleSnap(*args, **kwargs):
     pass
 
 
-def illustratorCurves(caching=True, constructionHistory=True, illustratorFilename="",
+def illustratorCurves(*args, caching=True, constructionHistory=True, illustratorFilename="",
                       nodeState=0, object=True, tolerance=0.001, q=True, query=True, e=True,
-                      edit=True, *args, **kwargs):
+                      edit=True, **kwargs):
     """
     The illustratorCurves command creates NURBS curves from an input Adobe(R) Illustrator(R)
     file
@@ -34012,7 +34007,7 @@ def NParticleTool(*args, **kwargs):
     pass
 
 
-def track(down=0.0, left=0.0, right=0.0, upDistance01=0.0, upDistance02=0.0, *args, **kwargs):
+def track(*args, down=0.0, left=0.0, right=0.0, upDistance01=0.0, upDistance02=0.0, **kwargs):
     """
     The track command translates a camera horizontally or vertically in the world space  The
     viewing-direction and up-direction of the camera are not altered  There is no translation
@@ -34080,10 +34075,10 @@ def FBXExportConstraints(*args, **kwargs):
     pass
 
 
-def timeEditorBakeClips(bakeToAnimSource="", bakeToClip="", clipId=0, combineLayers=True,
+def timeEditorBakeClips(*args, bakeToAnimSource="", bakeToClip="", clipId=0, combineLayers=True,
                         forceSampling=True, keepOriginalClip=True, path="", sampleBy=None,
                         targetTrackIndex=0, targetTracksNode="", q=True, query=True, e=True,
-                        edit=True, *args, **kwargs):
+                        edit=True, **kwargs):
     """
     This command is used to bake Time Editor clips and to blend them into a single clip
     
@@ -34124,8 +34119,8 @@ def AlignCurveOptions(*args, **kwargs):
     pass
 
 
-def evaluator(clusters=True, configuration="", enable=True, info=True, name="", nodeType="",
-              nodeTypeChildren=True, priority=0, valueName="", q=True, query=True, *args,
+def evaluator(*args, clusters=True, configuration="", enable=True, info=True, name="",
+              nodeType="", nodeTypeChildren=True, priority=0, valueName="", q=True, query=True,
               **kwargs):
     """
     Handles turning on and off custom evaluation overrides used by the evaluation manager 
@@ -34175,23 +34170,24 @@ def PostInfinityLinear(*args, **kwargs):
     pass
 
 
-def artSelectCtx(accopacity=False, addselection=True, afterStrokeCmd="", beforeStrokeCmd="",
-                 brushalignment=True, brushfeedback=True, clear=True, dragSlider="",
-                 dynclonemode=True, exists=True, expandfilename=True, exportaspectratio=0.0,
-                 exportfilemode="luminance/rgb", exportfilesave="", exportfilesizex=0,
-                 exportfilesizey=0, exportfiletype="", history=True, image1="", image2="",
-                 image3="", importfileload="", importfilemode="alpha", importreassign=False,
-                 importthreshold=0.5, lastRecorderCmd="", lastStampName="", lowerradius=0.0,
-                 makeStroke=0, mappressure="none", name="", opacity=1.0, outline=True,
-                 outwhilepaint=False, paintmode="screen", paintoperationtype="Paint",
-                 pickColor=True, pickValue=True, playbackCursor=None, playbackPressure=0.0,
-                 preserveclonesource=True, profileShapeFile="", projective=False, radius=1.0,
-                 record=True, reflection=False, reflectionaboutorigin=True, reflectionaxis="x",
+def artSelectCtx(*args, accopacity=False, addselection=True, afterStrokeCmd="",
+                 beforeStrokeCmd="", brushalignment=True, brushfeedback=True, clear=True,
+                 dragSlider="", dynclonemode=True, exists=True, expandfilename=True,
+                 exportaspectratio=0.0, exportfilemode="luminance/rgb", exportfilesave="",
+                 exportfilesizex=0, exportfilesizey=0, exportfiletype="", history=True,
+                 image1="", image2="", image3="", importfileload="", importfilemode="alpha",
+                 importreassign=False, importthreshold=0.5, lastRecorderCmd="",
+                 lastStampName="", lowerradius=0.0, makeStroke=0, mappressure="none", name="",
+                 opacity=1.0, outline=True, outwhilepaint=False, paintmode="screen",
+                 paintoperationtype="Paint", pickColor=True, pickValue=True,
+                 playbackCursor=None, playbackPressure=0.0, preserveclonesource=True,
+                 profileShapeFile="", projective=False, radius=1.0, record=True,
+                 reflection=False, reflectionaboutorigin=True, reflectionaxis="x",
                  screenRadius=0.0, selectall=True, selectclonesource=True, selectop="select",
                  showactive=True, stampDepth=0.0, stampProfile="", stampSpacing=1.0,
                  strokesmooth="", surfaceConformedBrushVertices=True, tablet=True,
                  tangentOutline=True, toggleall=True, unselectall=True, usepressure=False,
-                 worldRadius=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 worldRadius=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to select/deselect/toggle components on selected surfaces using a
     brush interface (Maya Artisan)  Since, it selects components of the surface, it only works
@@ -34373,12 +34369,12 @@ def artSelectCtx(accopacity=False, addselection=True, afterStrokeCmd="", beforeS
     pass
 
 
-def timeEditorClipOffset(applyToAllRoots=True, clipId=0, matchClipId=0, matchDstTime=None,
-                         matchObj=None, matchOffsetRot=True, matchOffsetTrans=True,
-                         matchPath="", matchRotOp=0, matchSrcTime=None, matchTransOp=0,
-                         offsetTransform=True, path="", resetMatch=0, resetMatchPath="",
-                         rootObj="", upVectorX=0.0, upVectorY=0.0, upVectorZ=0.0, q=True,
-                         query=True, e=True, edit=True, *args, **kwargs):
+def timeEditorClipOffset(*args, applyToAllRoots=True, clipId=0, matchClipId=0,
+                         matchDstTime=None, matchObj=None, matchOffsetRot=True,
+                         matchOffsetTrans=True, matchPath="", matchRotOp=0, matchSrcTime=None,
+                         matchTransOp=0, offsetTransform=True, path="", resetMatch=0,
+                         resetMatchPath="", rootObj="", upVectorX=0.0, upVectorY=0.0,
+                         upVectorZ=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to compute an offset to apply on a source clip in order to
     automatically align it to a destination clip at a specified match element  For this command
@@ -34514,18 +34510,18 @@ def CreateFluidCache(*args, **kwargs):
     pass
 
 
-def toolButton(allowMultipleTools=True, annotation="", backgroundColor=None, changeCommand=None,
-               collection="", defineTemplate="", docTag="", doubleClickCommand=None,
-               dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
-               enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
-               highlightColor=None, image1="", image2="", image3="", imageOverlayLabel="",
-               isObscured=True, ltVersion="", manage=True, noBackground=True,
-               numberOfPopupMenus=True, offCommand=None, onCommand=None, parent="",
-               popupIndicatorVisible=True, popupMenuArray=True, preventOverride=True,
+def toolButton(*args, allowMultipleTools=True, annotation="", backgroundColor=None,
+               changeCommand=None, collection="", defineTemplate="", docTag="",
+               doubleClickCommand=None, dragCallback=None, dropCallback=None, enable=True,
+               enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
+               height=0, highlightColor=None, image1="", image2="", image3="",
+               imageOverlayLabel="", isObscured=True, ltVersion="", manage=True,
+               noBackground=True, numberOfPopupMenus=True, offCommand=None, onCommand=None,
+               parent="", popupIndicatorVisible=True, popupMenuArray=True, preventOverride=True,
                select=True, statusBarMessage="", style="", tool="", toolArray=True,
                toolCount=True, toolImage1=None, toolImage2=None, toolImage3=None,
                useTemplate="", version="", visible=True, visibleChangeCommand=None, width=0,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a toolButton that is added to the most recently created tool button
     collection unless the cl/collection flag is used  It also attaches the named tool,
@@ -34670,9 +34666,9 @@ def toolButton(allowMultipleTools=True, annotation="", backgroundColor=None, cha
     pass
 
 
-def findKeyframe(animation="keysOrObjects.", attribute="", controlPoints=False, curve=True,
-                 float=None, hierarchy="", includeUpperBound=True, index=0, shape=True,
-                 time=None, timeSlider=True, which="", *args, **kwargs):
+def findKeyframe(*args, animation="keysOrObjects.", attribute="", controlPoints=False,
+                 curve=True, float=None, hierarchy="", includeUpperBound=True, index=0,
+                 shape=True, time=None, timeSlider=True, which="", **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -34734,11 +34730,11 @@ def CreateSubdivRegion(*args, **kwargs):
     pass
 
 
-def nonLinear(after=True, afterReference=True, autoParent=True, before=True, commonParent=True,
-              defaultScale=True, deformerTools=True, exclusive="", frontOfChain=True,
-              geometry="", geometryIndices=True, ignoreSelected=True,
+def nonLinear(*args, after=True, afterReference=True, autoParent=True, before=True,
+              commonParent=True, defaultScale=True, deformerTools=True, exclusive="",
+              frontOfChain=True, geometry="", geometryIndices=True, ignoreSelected=True,
               includeHiddenSelections=False, name="", parallel=True, prune=True, remove=True,
-              split=True, type="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+              split=True, type="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a functional deformer of the specified type that will deform the
     selected objects  The deformer consists of three nodes: The deformer driver that gets
@@ -34808,7 +34804,7 @@ def nonLinear(after=True, afterReference=True, autoParent=True, before=True, com
     pass
 
 
-def shot(audio="", clip="", clipDuration=None, clipOpacity=0.0, clipSyncState=True,
+def shot(*args, audio="", clip="", clipDuration=None, clipOpacity=0.0, clipSyncState=True,
          clipZeroOffset=None, copy=True, createCustomAnim=True, currentCamera="",
          customAnim=True, deleteCustomAnim=True, determineTrack=True, endTime=None,
          favorite=True, flag1=True, flag10=True, flag11=True, flag12=True, flag2=True,
@@ -34819,7 +34815,7 @@ def shot(audio="", clip="", clipDuration=None, clipOpacity=0.0, clipSyncState=Tr
          sequenceEndTime=None, sequenceStartTime=None, shotName="", sourceDuration=None,
          startTime=None, track=0, transitionInLength=None, transitionInType=0,
          transitionOutLength=None, transitionOutType=0, unlinkAudio=True, q=True, query=True,
-         e=True, edit=True, *args, **kwargs):
+         e=True, edit=True, **kwargs):
     """
     Use this command to create a shot node or manipulate that node
     
@@ -34964,8 +34960,9 @@ def shot(audio="", clip="", clipDuration=None, clipOpacity=0.0, clipSyncState=Tr
     pass
 
 
-def moveKeyCtx(exists=True, history=True, image1="", image2="", image3="", moveFunction="",
-               name="", option="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def moveKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+               moveFunction="", name="", option="", q=True, query=True, e=True, edit=True,
+               **kwargs):
     """
     This command creates a context which may be used to move keyframes within the graph editor
     
@@ -35041,8 +35038,8 @@ def SoloLastOutput(*args, **kwargs):
     pass
 
 
-def resampleFluid(resampleDepth=0, resampleHeight=0, resampleWidth=0, q=True, query=True,
-                  e=True, edit=True, *args, **kwargs):
+def resampleFluid(*args, resampleDepth=0, resampleHeight=0, resampleWidth=0, q=True, query=True,
+                  e=True, edit=True, **kwargs):
     """
     A command to extend the fluid grid, keeping the voxels the same size, and keeping the
     existing contents of the fluid in the same place  Note that the fluid transform is also
@@ -35187,10 +35184,10 @@ def ProductInformation(*args, **kwargs):
     pass
 
 
-def namespaceInfo(absoluteName=True, baseName=True, currentNamespace=True, dagPath=True,
+def namespaceInfo(*args, absoluteName=True, baseName=True, currentNamespace=True, dagPath=True,
                   fullName=True, internal=True, isRootNamespace=True, listNamespace=True,
                   listOnlyDependencyNodes=True, listOnlyNamespaces=True, parent=True,
-                  recurse=True, shortName=True, *args, **kwargs):
+                  recurse=True, shortName=True, **kwargs):
     """
     This command displays information about a namespace  The target namespace can optionally be
     specified on the command line  If no namespace is specified, the command will display
@@ -35252,9 +35249,9 @@ def SelectComponentToolMarkingMenuPopDown(*args, **kwargs):
     pass
 
 
-def skinPercent(ignoreBelow=0.0, normalize=True, pruneWeights=0.0, relative=True,
+def skinPercent(*args, ignoreBelow=0.0, normalize=True, pruneWeights=0.0, relative=True,
                 resetToDefault=True, transform="", transformMoveWeights="", transformValue=None,
-                value=True, zeroRemainingInfluences=True, q=True, query=True, *args, **kwargs):
+                value=True, zeroRemainingInfluences=True, q=True, query=True, **kwargs):
     """
     This command edits and queries the weight values on members of a skinCluster node, given as
     the first argument  If no object components are explicitly mentioned in the command line,
@@ -35404,10 +35401,10 @@ def HypershadeAdditiveGraphingMode(*args, **kwargs):
     pass
 
 
-def polySphere(axis=None, createUVs=2, radius=0.5, subdivisionsAxis=0, subdivisionsHeight=0,
-               subdivisionsX=20, subdivisionsY=20, texture=0, caching=True,
-               constructionHistory=True, name="", nodeState=0, object=True, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+def polySphere(*args, axis=None, createUVs=2, radius=0.5, subdivisionsAxis=0,
+               subdivisionsHeight=0, subdivisionsX=20, subdivisionsY=20, texture=0,
+               caching=True, constructionHistory=True, name="", nodeState=0, object=True,
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     The sphere command creates a new polygonal sphere
     
@@ -35483,8 +35480,8 @@ def CreateNURBSPlane(*args, **kwargs):
     pass
 
 
-def loadPlugin(addCallback=None, allPlugins=True, name="", quiet=True, removeCallback=None,
-               *args, **kwargs):
+def loadPlugin(*args, addCallback=None, allPlugins=True, name="", quiet=True,
+               removeCallback=None, **kwargs):
     """
     Load plug-ins into Maya  The parameter(s) to this command are either the names or pathnames
     of plug-in files  The convention for naming plug-ins is to use a .so extension on Linux, a
@@ -35513,7 +35510,7 @@ def loadPlugin(addCallback=None, allPlugins=True, name="", quiet=True, removeCal
     pass
 
 
-def setUITemplate(popTemplate=True, pushTemplate=True, q=True, query=True, *args, **kwargs):
+def setUITemplate(*args, popTemplate=True, pushTemplate=True, q=True, query=True, **kwargs):
     """
     This command sets the current(default) command template for the ELF commands  The special
     name NONE can be used to set no templates current  See "uiTemplate" command also
@@ -35530,9 +35527,9 @@ def setUITemplate(popTemplate=True, pushTemplate=True, q=True, query=True, *args
     pass
 
 
-def boundary(caching=True, endPoint=False, endPointTolerance=0.1, nodeState=0, order=True,
-             constructionHistory=True, name="", object=True, polygon=0, range=True, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+def boundary(*args, caching=True, endPoint=False, endPointTolerance=0.1, nodeState=0,
+             order=True, constructionHistory=True, name="", object=True, polygon=0, range=True,
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command produces a boundary surface given 3 or 4 curves  This resulting boundary
     surface passes through two of the given curves in one direction, while in the other
@@ -35580,14 +35577,14 @@ def SelectPreviousObjectsMudbox(*args, **kwargs):
     pass
 
 
-def flowLayout(annotation="", backgroundColor=None, childArray=True, columnSpacing=0,
+def flowLayout(*args, annotation="", backgroundColor=None, childArray=True, columnSpacing=0,
                defineTemplate="", docTag="", dragCallback=None, dropCallback=None, enable=True,
                enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
                height=0, highlightColor=None, horizontal=True, isObscured=True, manage=True,
                noBackground=True, numberOfChildren=True, numberOfPopupMenus=True, parent="",
                popupMenuArray=True, preventOverride=True, statusBarMessage="", useTemplate="",
                vertical=True, visible=True, visibleChangeCommand=None, width=0, wrap=True,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a layout that arranges its children along a single line (either
     horizontal or vertical)  Depending on the value of the -wrap boolean flag (default is
@@ -35697,9 +35694,9 @@ def xgmBakeGuideToUVSpace(*args, **kwargs):
     pass
 
 
-def radioCollection(collectionItemArray=True, defineTemplate="", exists=True, gl=True,
+def radioCollection(*args, collectionItemArray=True, defineTemplate="", exists=True, gl=True,
                     numberOfCollectionItems=True, parent="", select="", useTemplate="", q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+                    query=True, e=True, edit=True, **kwargs):
     """
     This command creates a radio button collection  Collections are parented to the current
     default layout if no parent is specified with the -p/parent flag  As children of the layout
@@ -35736,7 +35733,7 @@ def radioCollection(collectionItemArray=True, defineTemplate="", exists=True, gl
     pass
 
 
-def floatFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def floatFieldGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                   adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                   backgroundColor=None, changeCommand=None, columnAlign=None, columnAlign2=None,
                   columnAlign3=None, columnAlign4=None, columnAlign5=None, columnAlign6=None,
@@ -35754,7 +35751,7 @@ def floatFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                   preventOverride=True, rowAttach=None, showTrailingZeros=True,
                   statusBarMessage="", step=10.0, useTemplate="", value=None, value1=0.0,
                   value2=0.0, value3=0.0, value4=0.0, visible=True, visibleChangeCommand=None,
-                  width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -35996,9 +35993,10 @@ def fontAttributes(*args, **kwargs):
     pass
 
 
-def nurbsCube(axis=None, caching=True, degree=3, heightRatio=1.0, lengthRatio=1.0, nodeState=0,
-              patchesU=1, patchesV=1, pivot=None, width=1.0, constructionHistory=True, name="",
-              object=True, polygon=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def nurbsCube(*args, axis=None, caching=True, degree=3, heightRatio=1.0, lengthRatio=1.0,
+              nodeState=0, patchesU=1, patchesV=1, pivot=None, width=1.0,
+              constructionHistory=True, name="", object=True, polygon=0, q=True, query=True,
+              e=True, edit=True, **kwargs):
     """
     The nurbsCube command creates a new NURBS Cube made up of six planes  It creates an unit
     cube with center at origin by default
@@ -36043,10 +36041,10 @@ def nurbsCube(axis=None, caching=True, degree=3, heightRatio=1.0, lengthRatio=1.
     pass
 
 
-def undoInfo(chunkName="", closeChunk=True, infinity=True, length=0, openChunk=True,
+def undoInfo(*args, chunkName="", closeChunk=True, infinity=True, length=0, openChunk=True,
              printQueue=True, printRedoQueue=True, redoName="", redoQueueEmpty=True, state=True,
              stateWithoutFlush=True, undoName="", undoQueueEmpty=True, q=True, query=True,
-             *args, **kwargs):
+             **kwargs):
     """
     This command controls the undo/redo parameters   In query mode, if invoked without flags
     (other than the query flag), this command will return the number of items currently on the
@@ -36093,12 +36091,12 @@ def undoInfo(chunkName="", closeChunk=True, infinity=True, length=0, openChunk=T
     pass
 
 
-def polyBevel3(angleTolerance=20.0, autoFit=True, caching=True, chamfer=True,
+def polyBevel3(*args, angleTolerance=20.0, autoFit=True, caching=True, chamfer=True,
                constructionHistory=True, depth=1.0, fillNgons=False, mergeVertexTolerance=0.0,
                mergeVertices=False, miterAlong=0, mitering=0, miteringAngle=0.0, name="",
                nodeState=0, offset=0.2, offsetAsFraction=False, roundness=0.5, segments=1,
                smoothingAngle=0.0, uvAssignment=0, worldSpace=True, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     Bevel edges
     
@@ -36188,11 +36186,11 @@ def ScaleUVTool(*args, **kwargs):
     pass
 
 
-def circle(caching=True, center=None, centerX=0, centerY=0, centerZ=0, degree=3, first=None,
-           firstPointX=1, firstPointY=0, firstPointZ=0, fixCenter=True, nodeState=0,
+def circle(*args, caching=True, center=None, centerX=0, centerY=0, centerZ=0, degree=3,
+           first=None, firstPointX=1, firstPointY=0, firstPointZ=0, fixCenter=True, nodeState=0,
            normal=None, normalX=0, normalY=0, normalZ=1, radius=1.0, sections=8,
            sweep=6.2831853, tolerance=0.01, useTolerance=False, constructionHistory=True,
-           name="", object=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+           name="", object=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The circle command creates a circle or partial circle (arc)
     
@@ -36261,14 +36259,14 @@ def circle(caching=True, center=None, centerX=0, centerY=0, centerZ=0, degree=3,
     pass
 
 
-def assembly(active="", activeLabel="", canCreate="", createOptionBoxProc=None,
+def assembly(*args, active="", activeLabel="", canCreate="", createOptionBoxProc=None,
              createRepresentation="", defaultType="", deleteRepresentation="", deregister="",
              input="", isAType="", isTrackingMemberEdits="", label="", listRepTypes=True,
              listRepTypesProc=None, listRepresentations=True, listTypes=True, name="",
              newRepLabel="", postCreateUIProc=None, proc=None, renameRepresentation="",
              repLabel="", repName="", repNamespace="", repPostCreateUIProc="",
              repPreCreateUIProc="", repType="", repTypeLabel="", repTypeLabelProc=None, type="",
-             q=True, query=True, e=True, edit=True, *args, **kwargs):
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to register assemblies for the scene assembly framework, to create them, and to
     edit and query them  Assembly nodes are DAG nodes, and are therefore shown in the various
@@ -36380,7 +36378,7 @@ def FBXImportSkins(*args, **kwargs):
     pass
 
 
-def createAttrPatterns(patternDefinition="", patternFile="", patternType="", *args, **kwargs):
+def createAttrPatterns(*args, patternDefinition="", patternFile="", patternType="", **kwargs):
     """
     Create a new instance of an attribute pattern given a pattern type (e.g  XML) and a string
     or data file containing the description of the attribute tree in the pattern's format
@@ -36407,14 +36405,14 @@ def BakeDeformerTool(*args, **kwargs):
     pass
 
 
-def bakeResults(animation="keysOrObjects.", attribute="", bakeOnOverrideLayer=True,
+def bakeResults(*args, animation="keysOrObjects.", attribute="", bakeOnOverrideLayer=True,
                 controlPoints=False, destinationLayer="", disableImplicitControl=True,
                 float=None, hierarchy="", includeUpperBound=True, index=0,
                 minimizeRotation=True, oversamplingRate=1, preserveOutsideKeys=False,
                 removeBakedAnimFromLayer=True, removeBakedAttributeFromLayer=True,
                 resolveWithoutLayer="", sampleBy=None, shape=True, simulation=False, smart=None,
                 sparseAnimCurveBake=False, time=None, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command allows the user to replace a chain of dependency nodes which define the value
     for an attribute with a single animation curve  Command allows the user to specify the
@@ -36495,7 +36493,7 @@ def bakeResults(animation="keysOrObjects.", attribute="", bakeOnOverrideLayer=Tr
     pass
 
 
-def textField(alwaysInvokeEnterCommandOnReturn=True, annotation="", backgroundColor=None,
+def textField(*args, alwaysInvokeEnterCommandOnReturn=True, annotation="", backgroundColor=None,
               changeCommand=None, defineTemplate="", disableButtons=True,
               disableClearButton=True, disableHistoryButton=True, docTag="", dragCallback=None,
               drawInactiveFrame=True, dropCallback=None, editable=True, enable=True,
@@ -36506,7 +36504,7 @@ def textField(alwaysInvokeEnterCommandOnReturn=True, annotation="", backgroundCo
               popupMenuArray=True, preventOverride=True, receiveFocusCommand=None,
               searchField=True, statusBarMessage="", text="", textChangedCommand=None,
               useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     Create a text field control
     
@@ -36642,11 +36640,11 @@ def textField(alwaysInvokeEnterCommandOnReturn=True, annotation="", backgroundCo
     pass
 
 
-def polyMoveFacetUV(axisLen=None, axisLenX=1.0, axisLenY=1.0, caching=True,
+def polyMoveFacetUV(*args, axisLen=None, axisLenX=1.0, axisLenY=1.0, caching=True,
                     constructionHistory=True, name="", nodeState=0, pivot=None, pivotU=0.0,
                     pivotV=0.0, random=0.0, rotationAngle=0.0, scale=None, scaleU=1.0,
                     scaleV=1.0, translate=None, translateU=0.0, translateV=0.0, q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+                    query=True, e=True, edit=True, **kwargs):
     """
     Modifies the map by moving all UV values associated with the selected face(s)   The UV
     coordinates of the model are manipulated without changing the vertices of the 3D object
@@ -36740,11 +36738,12 @@ def TangentsSpline(*args, **kwargs):
     pass
 
 
-def thumbnailCaptureComponent(capture=True, capturedFrameCount=True, closeCurrentSession=True,
-                              delete=True, endFrame=0, fileDialogCallback="",
-                              isSessionOpened=True, launchedFromOptionsBox=True,
-                              previewPath=True, removeProjectThumbnail="", save="",
-                              startFrame=0, q=True, query=True, *args, **kwargs):
+def thumbnailCaptureComponent(*args, capture=True, capturedFrameCount=True,
+                              closeCurrentSession=True, delete=True, endFrame=0,
+                              fileDialogCallback="", isSessionOpened=True,
+                              launchedFromOptionsBox=True, previewPath=True,
+                              removeProjectThumbnail="", save="", startFrame=0, q=True,
+                              query=True, **kwargs):
     """
     This command is used to generate a thumbnail/playblast sequence from the scene
     
@@ -36847,12 +36846,12 @@ def SubdivProxy(*args, **kwargs):
     pass
 
 
-def transformLimits(enableRotationX=None, enableRotationY=None, enableRotationZ=None,
+def transformLimits(*args, enableRotationX=None, enableRotationY=None, enableRotationZ=None,
                     enableScaleX=None, enableScaleY=None, enableScaleZ=None,
                     enableTranslationX=None, enableTranslationY=None, enableTranslationZ=None,
                     remove=True, rotationX=None, rotationY=None, rotationZ=None, scaleX=None,
                     scaleY=None, scaleZ=None, translationX=None, translationY=None,
-                    translationZ=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                    translationZ=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The transformLimits command allows us to set, edit, or query the limits of the
     transformation that can be applied to objects   We can also turn any limits off which may
@@ -36937,7 +36936,7 @@ def PolyEditEdgeFlowOptions(*args, **kwargs):
     pass
 
 
-def viewFit(allObjects=True, animate=True, center=True, fitFactor=0.0, namespace="", *args,
+def viewFit(*args, allObjects=True, animate=True, center=True, fitFactor=0.0, namespace="",
             **kwargs):
     """
     The viewFit command positions the specified camera so its point-of-view contains all
@@ -36988,10 +36987,10 @@ def ShowAllComponents(*args, **kwargs):
     pass
 
 
-def pasteKey(animLayer="", animation="keysOrObjects.", attribute="", clipboard="",
+def pasteKey(*args, animLayer="", animation="keysOrObjects.", attribute="", clipboard="",
              connect=False, copies=0, float=None, floatOffset=0.0, includeUpperBound=True,
              index=0, matchByName=False, option="", time=None, timeOffset=None, valueOffset=0.0,
-             q=True, query=True, e=True, edit=True, *args, **kwargs):
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     The pasteKey command pastes curve segment hierarchies from the clipboard onto other objects
     or curves  If the object hierarchy from which the curve segments were copied or cut does
@@ -37173,8 +37172,8 @@ def DeactivateGlobalScreenSliderModeMarkingMenu(*args, **kwargs):
     pass
 
 
-def renderGlobalsNode(name="", parent="", renderQuality="", renderResolution="", shared=True,
-                      skipSelect=True, *args, **kwargs):
+def renderGlobalsNode(*args, name="", parent="", renderQuality="", renderResolution="",
+                      shared=True, skipSelect=True, **kwargs):
     """
     This command creates a new node in the dependency graph of the specified type   The
     renderGlobalsNode creates a render globals node and registers it with the model  The
@@ -37203,10 +37202,10 @@ def renderGlobalsNode(name="", parent="", renderQuality="", renderResolution="",
     pass
 
 
-def multiProfileBirailSurface(caching=True, nodeState=0, tangentContinuityProfile1=False,
+def multiProfileBirailSurface(*args, caching=True, nodeState=0, tangentContinuityProfile1=False,
                               tangentContinuityProfile2=False, transformMode=0,
                               constructionHistory=True, name="", object=True, polygon=0, q=True,
-                              query=True, e=True, edit=True, *args, **kwargs):
+                              query=True, e=True, edit=True, **kwargs):
     """
     The cmd creates a railed surface by sweeping the profiles using two rail curves  The two
     rails are the last two arguments  For examples, if 5 curves are specified, they will
@@ -37245,7 +37244,7 @@ def multiProfileBirailSurface(caching=True, nodeState=0, tangentContinuityProfil
     pass
 
 
-def objectTypeUI(isType="", listAll=True, superClasses=True, *args, **kwargs):
+def objectTypeUI(*args, isType="", listAll=True, superClasses=True, **kwargs):
     """
     This command returns the type of UI element such as button, sliders, etc
     
@@ -37264,7 +37263,7 @@ def objectTypeUI(isType="", listAll=True, superClasses=True, *args, **kwargs):
     pass
 
 
-def gridLayout(allowEmptyCells=True, annotation="", autoGrow=True, backgroundColor=None,
+def gridLayout(*args, allowEmptyCells=True, annotation="", autoGrow=True, backgroundColor=None,
                cellHeight=0, cellWidth=0, cellWidthHeight=None, childArray=True,
                columnsResizable=False, defineTemplate="", docTag="", dragCallback=None,
                dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
@@ -37273,7 +37272,7 @@ def gridLayout(allowEmptyCells=True, annotation="", autoGrow=True, backgroundCol
                numberOfColumns=0, numberOfPopupMenus=True, numberOfRows=0,
                numberOfRowsColumns=None, parent="", popupMenuArray=True, position=None,
                preventOverride=True, statusBarMessage="", useTemplate="", visible=True,
-               visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+               visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     This layout arranges children in a grid fashion where every cell in the grid is the same
@@ -37435,8 +37434,8 @@ def sbs_GetEnumCount(*args, **kwargs):
     pass
 
 
-def parent(absolute=True, addObject=True, noConnections=True, noInvScale=True, relative=True,
-           removeObject=True, shape=True, world=True, *args, **kwargs):
+def parent(*args, absolute=True, addObject=True, noConnections=True, noInvScale=True,
+           relative=True, removeObject=True, shape=True, world=True, **kwargs):
     """
     This command parents (moves) objects under a new group, removes objects from an existing
     group, or adds/removes parents   If the -w flag is specified all the selected or specified
@@ -37473,10 +37472,10 @@ def parent(absolute=True, addObject=True, noConnections=True, noInvScale=True, r
     pass
 
 
-def showManipCtx(currentNodeName=True, exists=True, history=True, image1="", image2="",
+def showManipCtx(*args, currentNodeName=True, exists=True, history=True, image1="", image2="",
                  image3="", incSnap=None, incSnapRelative=None, incSnapUI=True,
                  incSnapValue=None, lockSelection=True, name="", toggleIncSnap=True,
-                 toolFinish=None, toolStart=None, q=True, query=True, e=True, edit=True, *args,
+                 toolFinish=None, toolStart=None, q=True, query=True, e=True, edit=True,
                  **kwargs):
     """
     This command can be used to create a show manip context  The show manip context will
@@ -37532,8 +37531,8 @@ def showManipCtx(currentNodeName=True, exists=True, history=True, image1="", ima
     pass
 
 
-def dgfilter(attribute="", list=True, logicalAnd=None, logicalNot="", logicalOr=None, name="",
-             node="", nodeType="", plug="", *args, **kwargs):
+def dgfilter(*args, attribute="", list=True, logicalAnd=None, logicalNot="", logicalOr=None,
+             name="", node="", nodeType="", plug="", **kwargs):
     """
     The dgfilter command is used to define Dependency Graph filters that select DG objects
     based on certain criteria  The command itself can be used to filter objects or it can be
@@ -37588,10 +37587,10 @@ def SculptSurfacesToolOptions(*args, **kwargs):
     pass
 
 
-def polyTorus(axis=None, caching=True, constructionHistory=True, createUVs=True, name="",
+def polyTorus(*args, axis=None, caching=True, constructionHistory=True, createUVs=True, name="",
               nodeState=0, object=True, radius=1.0, sectionRadius=0.50, subdivisionsAxis=20,
               subdivisionsHeight=20, subdivisionsX=20, subdivisionsY=20, texture=True,
-              twist=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+              twist=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The torus command creates a new polygonal torus
     
@@ -37640,8 +37639,8 @@ def polyTorus(axis=None, caching=True, constructionHistory=True, createUVs=True,
     pass
 
 
-def paramDimContext(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+def paramDimContext(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                    q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command used to register the paramDimCtx tool
     
@@ -37669,8 +37668,8 @@ def paramDimContext(exists=True, history=True, image1="", image2="", image3="", 
     pass
 
 
-def connectControl(fileName=True, index=0, preventContextualMenu=True, preventOverride=True,
-                   *args, **kwargs):
+def connectControl(*args, fileName=True, index=0, preventContextualMenu=True,
+                   preventOverride=True, **kwargs):
     """
     This command attaches a UI widget, specified as the first argument, to one or more
     dependency node attributes  The attributes/nodes don't have to exist yet, they will get
@@ -37745,10 +37744,10 @@ def HypershadeToggleNodeSwatchSize(*args, **kwargs):
     pass
 
 
-def attachCurve(blendBias=0.5, blendKnotInsertion=False, caching=True, keepMultipleKnots=True,
-                method=0, nodeState=0, parameter=0.1, reverse1=False, reverse2=False,
-                constructionHistory=True, name="", object=True, replaceOriginal=True, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+def attachCurve(*args, blendBias=0.5, blendKnotInsertion=False, caching=True,
+                keepMultipleKnots=True, method=0, nodeState=0, parameter=0.1, reverse1=False,
+                reverse2=False, constructionHistory=True, name="", object=True,
+                replaceOriginal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This attach command is used to attach curves  Once the curves are attached, there will be
     multiple knots at the joined point(s)  These can be kept or removed if the user wishes   If
@@ -37798,13 +37797,13 @@ def attachCurve(blendBias=0.5, blendKnotInsertion=False, caching=True, keepMulti
     pass
 
 
-def keyTangent(absolute=True, animation="keysOrObjects.", attribute="", controlPoints=False,
-               float=None, g=True, hierarchy="", inAngle=0.0, inTangentType="", inWeight=0.0,
-               includeUpperBound=True, index=0, ix=0.0, iy=0.0, lock=True, outAngle=0.0,
-               outTangentType="", outWeight=0.0, ox=0.0, oy=0.0, pluginTangentTypes="",
-               relative=True, shape=True, stepAttributes=True, time=None, unify=True,
-               weightLock=True, weightedTangents=True, q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+def keyTangent(*args, absolute=True, animation="keysOrObjects.", attribute="",
+               controlPoints=False, float=None, g=True, hierarchy="", inAngle=0.0,
+               inTangentType="", inWeight=0.0, includeUpperBound=True, index=0, ix=0.0, iy=0.0,
+               lock=True, outAngle=0.0, outTangentType="", outWeight=0.0, ox=0.0, oy=0.0,
+               pluginTangentTypes="", relative=True, shape=True, stepAttributes=True, time=None,
+               unify=True, weightLock=True, weightedTangents=True, q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -37923,8 +37922,8 @@ def geometryExportCacheOpt(*args, **kwargs):
     pass
 
 
-def displayRGBColor(create=True, hueSaturationValue=True, list=True, resetToFactory=True,
-                    resetToSaved=True, q=True, query=True, *args, **kwargs):
+def displayRGBColor(*args, create=True, hueSaturationValue=True, list=True, resetToFactory=True,
+                    resetToSaved=True, q=True, query=True, **kwargs):
     """
     This command changes or queries the display color for anything in the application that
     allows the user to set its color  These colors are part of the UI and not part of the saved
@@ -37950,12 +37949,13 @@ def displayRGBColor(create=True, hueSaturationValue=True, list=True, resetToFact
     pass
 
 
-def keyframe(absolute=True, adjustBreakdown=True, animation="keysOrObjects.", attribute="",
-             breakdown=False, clipTime=None, controlPoints=False, eval=True, float=None,
-             floatChange=0.0, hierarchy="", includeUpperBound=True, index=0, indexValue=True,
-             keyframeCount=True, lastSelected=True, name=True, option="", relative=True,
-             selected=True, shape=True, tickDrawSpecial=True, time=None, timeChange=None,
-             valueChange=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def keyframe(*args, absolute=True, adjustBreakdown=True, animation="keysOrObjects.",
+             attribute="", breakdown=False, clipTime=None, controlPoints=False, eval=True,
+             float=None, floatChange=0.0, hierarchy="", includeUpperBound=True, index=0,
+             indexValue=True, keyframeCount=True, lastSelected=True, name=True, option="",
+             relative=True, selected=True, shape=True, tickDrawSpecial=True, time=None,
+             timeChange=None, valueChange=0.0, q=True, query=True, e=True, edit=True,
+             **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -38043,9 +38043,9 @@ def keyframe(absolute=True, adjustBreakdown=True, animation="keysOrObjects.", at
     pass
 
 
-def toolPropertyWindow(field="", helpButton="", icon="", inMainWindow=True, location="",
+def toolPropertyWindow(*args, field="", helpButton="", icon="", inMainWindow=True, location="",
                        noviceMode=True, resetButton="", restore=True, selectCommand="",
-                       showCommand="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                       showCommand="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     End users should only call this command as 1  a query (in the custom tool property sheet
     code) or 2  with no arguments to create the default tool property sheet  The more complex
@@ -38092,10 +38092,10 @@ def PFXUVSetLinkingEditor(*args, **kwargs):
     pass
 
 
-def delete(all=True, attribute="", channels=True, constraints=True, constructionHistory=True,
-           controlPoints=False, expressions=True, hierarchy="", inputConnectionsAndNodes=True,
-           motionPaths=True, shape=True, staticChannels=True, timeAnimationCurves=True,
-           unitlessAnimationCurves=True, *args, **kwargs):
+def delete(*args, all=True, attribute="", channels=True, constraints=True,
+           constructionHistory=True, controlPoints=False, expressions=True, hierarchy="",
+           inputConnectionsAndNodes=True, motionPaths=True, shape=True, staticChannels=True,
+           timeAnimationCurves=True, unitlessAnimationCurves=True, **kwargs):
     """
     This command is used to delete selected objects, or all objects, or objects specified along
     with the command  Flags are available to filter the type of objects that the command acts
@@ -38153,9 +38153,9 @@ def delete(all=True, attribute="", channels=True, constraints=True, construction
     pass
 
 
-def expression(alwaysEvaluate=0, animated=0, attribute="", name="", object="", safe=True,
+def expression(*args, alwaysEvaluate=0, animated=0, attribute="", name="", object="", safe=True,
                shortNames=True, string="", timeDependent=True, unitConversion="all.", q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     This command describes an expression that belongs to the current scene  The expression is a
     block of code of unlimited length with a C-like syntax that can perform conversions,
@@ -38231,10 +38231,10 @@ def ProportionalModificationTool(*args, **kwargs):
     pass
 
 
-def connectionInfo(destinationFromSource=True, getExactDestination=True, getExactSource=True,
-                   getLockedAncestor=True, isDestination=True, isExactDestination=True,
-                   isExactSource=True, isLocked=True, isSource=True, sourceFromDestination=True,
-                   *args, **kwargs):
+def connectionInfo(*args, destinationFromSource=True, getExactDestination=True,
+                   getExactSource=True, getLockedAncestor=True, isDestination=True,
+                   isExactDestination=True, isExactSource=True, isLocked=True, isSource=True,
+                   sourceFromDestination=True, **kwargs):
     """
     The connectionInfo command is used to get information about connection sources and
     destinations  Unlike the isConnected command, this command needs only one end of the
@@ -38284,7 +38284,7 @@ def PaintEffectsPanel(*args, **kwargs):
     pass
 
 
-def color(rgbColor=None, userDefined=0, *args, **kwargs):
+def color(*args, rgbColor=None, userDefined=0, **kwargs):
     """
     This command sets the dormant wireframe color of the specified objects to be their class
     color or if the -ud/userDefined flag is specified, one of the user defined colors  The
@@ -38309,11 +38309,11 @@ def dR_hypergraphTGL(*args, **kwargs):
     pass
 
 
-def polyHelix(caching=True, coils=3, constructionHistory=True, createUVs=2, direction=1,
+def polyHelix(*args, caching=True, coils=3, constructionHistory=True, createUVs=2, direction=1,
               height=2.0, name="", nodeState=0, object=True, radius=0.4, roundCap=False,
               subdivisionsAxis=8, subdivisionsCaps=0, subdivisionsCoil=50, texture=2,
               useOldInitBehaviour=False, width=2.0, q=True, query=True, e=True, edit=True,
-              *args, **kwargs):
+              **kwargs):
     """
     The polyHelix command creates a new polygonal helix
     
@@ -38367,7 +38367,7 @@ def polyHelix(caching=True, coils=3, constructionHistory=True, createUVs=2, dire
     pass
 
 
-def bakeClip(blend=None, clipIndex=0, keepOriginals=True, name="", *args, **kwargs):
+def bakeClip(*args, blend=None, clipIndex=0, keepOriginals=True, name="", **kwargs):
     """
     This command is used to bake clips and blends into a single clip
     
@@ -38394,11 +38394,11 @@ def HIKToggleReleasePinning(*args, **kwargs):
     pass
 
 
-def dgtimer(combineType=True, hide="", hierarchy=True, maxDisplay=0, name="", noHeader=True,
-            outputFile="", overhead=True, rangeLower=0.0, rangeUpper=0.0, reset=True,
-            returnCode="", returnType="", show="", sortMetric="", sortType="", threshold=0.0,
-            timerOff=True, timerOn=True, trace=True, type="", uniqueName=True, updateHeatMap=0,
-            q=True, query=True, *args, **kwargs):
+def dgtimer(*args, combineType=True, hide="", hierarchy=True, maxDisplay=0, name="",
+            noHeader=True, outputFile="", overhead=True, rangeLower=0.0, rangeUpper=0.0,
+            reset=True, returnCode="", returnType="", show="", sortMetric="", sortType="",
+            threshold=0.0, timerOff=True, timerOn=True, trace=True, type="", uniqueName=True,
+            updateHeatMap=0, q=True, query=True, **kwargs):
     """
     This command measures dependency graph node performance by managing timers on a per-node
     basis  Logically, each DG node has a timer associated with it which records the amount of
@@ -38483,14 +38483,14 @@ def dgtimer(combineType=True, hide="", hierarchy=True, maxDisplay=0, name="", no
     pass
 
 
-def hwRender(acceleratedMultiSampleSupport=True, activeTextureCount=True, camera="",
+def hwRender(*args, acceleratedMultiSampleSupport=True, activeTextureCount=True, camera="",
              currentFrame=True, currentView=True, edgeAntiAliasing=None,
              fixFileNameNumberPattern=True, frame=0.0, fullRenderSupport=True, height=0,
              imageFileName=True, layer=None, limitedRenderSupport=True, lowQualityLighting=True,
              noRenderView=True, notWriteToFile=True, printGeometry=True,
              renderHardwareName=True, renderRegion=None, renderSelected=True,
              textureResolution=0, width=0, writeAlpha=True, writeDepth=True, q=True, query=True,
-             *args, **kwargs):
+             **kwargs):
     """
     Renders an image or a sequence using the hardware rendering engine
     
@@ -38611,7 +38611,7 @@ def TimeEditorKeepTransitionsToggleRelease(*args, **kwargs):
     pass
 
 
-def sysFile(copy="", delete=True, makeDir=True, move="", removeEmptyDir=True, rename="", *args,
+def sysFile(*args, copy="", delete=True, makeDir=True, move="", removeEmptyDir=True, rename="",
             **kwargs):
     """
     This command provides a system independent way to create a directory or to rename or delete
@@ -38695,14 +38695,13 @@ def vnnCompound(*args, **kwargs):
     pass
 
 
-def emitter(alongAxis=0.0, aroundAxis=0.0, awayFromAxis=0.0, awayFromCenter=0.0,
+def emitter(*args, alongAxis=0.0, aroundAxis=0.0, awayFromAxis=0.0, awayFromCenter=0.0,
             cycleEmission="", cycleInterval=0, directionX=0.0, directionY=0.0, directionZ=0.0,
             directionalSpeed=0.0, maxDistance=0.0, minDistance=0.0, name="", needParentUV=True,
             normalSpeed=0.0, position=None, randomDirection=0.0, rate=0.0,
             scaleRateByObjectSize=True, scaleSpeedBySize=True, speed=0.0, speedRandom=0.0,
             spread=0.0, tangentSpeed=0.0, torusSectionRadius=0.0, type="", volumeOffset=None,
-            volumeShape="", volumeSweep=0.0, q=True, query=True, e=True, edit=True, *args,
-            **kwargs):
+            volumeShape="", volumeSweep=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates, edits or queries an auxiliary dynamics object (for example, a field or emitter) 
     Creates an emitter object  If object names are provided or if objects are selected, applies
@@ -38815,8 +38814,9 @@ def HypershadeRefreshFileListing(*args, **kwargs):
     pass
 
 
-def render(abortMissingTexture=True, batch=True, keepPreImage=True, layer="", nglowpass=True,
-           nshadows=True, replace=True, xresolution=0, yresolution=0, *args, **kwargs):
+def render(*args, abortMissingTexture=True, batch=True, keepPreImage=True, layer="",
+           nglowpass=True, nshadows=True, replace=True, xresolution=0, yresolution=0,
+           **kwargs):
     """
     The render command is used to start off a MayaSoftware rendering session of the currently
     active camera  If a rendering is already in progress, then this command stops the rendering
@@ -38854,7 +38854,7 @@ def render(abortMissingTexture=True, batch=True, keepPreImage=True, layer="", ng
     pass
 
 
-def fileInfo(referenceNode="", remove="", q=True, query=True, *args, **kwargs):
+def fileInfo(*args, referenceNode="", remove="", q=True, query=True, **kwargs):
     """
     fileInfo provides a mechanism for keeping information related to a Maya scene file  Each
     invocation of the command consists of a keyword/value pair, where both the keyword and the
@@ -38944,7 +38944,7 @@ def dR_viewGridTGL(*args, **kwargs):
     pass
 
 
-def colorManagementConvert(toDisplaySpace=None, *args, **kwargs):
+def colorManagementConvert(*args, toDisplaySpace=None, **kwargs):
     """
     This command can be used to convert rendering (a.k.a  working) space color values to
     display space color values  This is useful if you create custom UI with colors painted to
@@ -38967,7 +38967,7 @@ def SelectAllGeometry(*args, **kwargs):
     pass
 
 
-def floatSliderButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def floatSliderButtonGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                          adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                          annotation="", backgroundColor=None, buttonCommand=None,
                          buttonLabel="", changeCommand=None, columnAlign=None,
@@ -38989,7 +38989,7 @@ def floatSliderButtonGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColu
                          sliderStep=0.0, statusBarMessage="", step=0.0,
                          symbolButtonCommand=None, symbolButtonDisplay=True, useTemplate="",
                          value=0.0, visible=True, visibleChangeCommand=None, width=0, q=True,
-                         query=True, e=True, edit=True, *args, **kwargs):
+                         query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -39222,7 +39222,7 @@ def GetToonExample(*args, **kwargs):
     pass
 
 
-def jointDisplayScale(absolute=True, ikfk=0.0, q=True, query=True, e=True, edit=True, *args,
+def jointDisplayScale(*args, absolute=True, ikfk=0.0, q=True, query=True, e=True, edit=True,
                       **kwargs):
     """
     This action modifies and queries the current display size of skeleton joints  The joint
@@ -39256,7 +39256,7 @@ def dR_selConstraintAngle(*args, **kwargs):
     pass
 
 
-def componentBox(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def componentBox(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                  dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                  enableKeyboardFocus=True, execute=None, exists=True, fullPathName=True,
                  height=0, highlightColor=None, isObscured=True, labelWidth=0, manage=True,
@@ -39264,7 +39264,7 @@ def componentBox(annotation="", backgroundColor=None, defineTemplate="", docTag=
                  popupMenuArray=True, precision=3, preventOverride=True, rowHeight=0,
                  selectedAttr=True, statusBarMessage="", useTemplate="", visible=True,
                  visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     This command creates a component box, which is sensitive to the active list  It displays
     certain components of the last node on the active list, and provides a two-way connection
@@ -39371,8 +39371,8 @@ def componentBox(annotation="", backgroundColor=None, defineTemplate="", docTag=
     pass
 
 
-def sound(endTime=None, file="", length=True, mute=True, name="", offset=None, sourceEnd=None,
-          sourceStart=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def sound(*args, endTime=None, file="", length=True, mute=True, name="", offset=None,
+          sourceEnd=None, sourceStart=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates an audio node which can be used with UI commands such as soundControl or
     timeControl which support sound scrubbing and sound during playback
@@ -39430,8 +39430,8 @@ def xgmFindAttachment(*args, **kwargs):
     pass
 
 
-def insertJointCtx(exists=True, image1="", image2="", image3="", q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+def insertJointCtx(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                   e=True, edit=True, **kwargs):
     """
     The command will create an insert joint context  The insert joint tool inserts joints into
     an existing chain of joints
@@ -39483,8 +39483,8 @@ def SquashOptions(*args, **kwargs):
     pass
 
 
-def dataStructure(asFile="", asString="", dataType=True, format="", listMemberNames="", name="",
-                  remove=True, removeAll=True, q=True, query=True, *args, **kwargs):
+def dataStructure(*args, asFile="", asString="", dataType=True, format="", listMemberNames="",
+                  name="", remove=True, removeAll=True, q=True, query=True, **kwargs):
     """
     Takes in a description of the structure and creates it, adding it to the list of available
     data structures  The structure definition can either be supplied in the asString flag or
@@ -39529,14 +39529,14 @@ def DeleteAllCameras(*args, **kwargs):
     pass
 
 
-def profiler(addCategory="", allCategories=True, bufferSize=0, categoryIndex=0,
+def profiler(*args, addCategory="", allCategories=True, bufferSize=0, categoryIndex=0,
              categoryIndexToName=0, categoryInfo="", categoryName="", categoryNameToIndex="",
              categoryRecording=True, clearAllMelInstrumentation=True, colorIndex=0,
              eventCPUId=True, eventCategory=True, eventColor=True, eventCount=True,
              eventDescription=True, eventDuration=True, eventIndex=0, eventName=True,
              eventStartTime=True, eventThreadId=True, instrumentMel=True, load="", output="",
              procedureDescription="", procedureName="", removeCategory="", reset=True,
-             sampling=True, signalEvent=True, signalMelEvent=True, q=True, query=True, *args,
+             sampling=True, signalEvent=True, signalMelEvent=True, q=True, query=True,
              **kwargs):
     """
     The profiler is used to record timing information from key events within Maya, as an aid in
@@ -39641,15 +39641,16 @@ def profiler(addCategory="", allCategories=True, bufferSize=0, categoryIndex=0,
     pass
 
 
-def columnLayout(adjustableColumn=True, annotation="", backgroundColor=None, childArray=True,
-                 columnAlign="", columnAttach=None, columnOffset=None, columnWidth=0,
-                 defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
-                 enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
-                 fullPathName=True, height=0, highlightColor=None, isObscured=True, manage=True,
-                 noBackground=True, numberOfChildren=True, numberOfPopupMenus=True, parent="",
-                 popupMenuArray=True, preventOverride=True, rowSpacing=0, statusBarMessage="",
-                 useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+def columnLayout(*args, adjustableColumn=True, annotation="", backgroundColor=None,
+                 childArray=True, columnAlign="", columnAttach=None, columnOffset=None,
+                 columnWidth=0, defineTemplate="", docTag="", dragCallback=None,
+                 dropCallback=None, enable=True, enableBackground=True,
+                 enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                 highlightColor=None, isObscured=True, manage=True, noBackground=True,
+                 numberOfChildren=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
+                 preventOverride=True, rowSpacing=0, statusBarMessage="", useTemplate="",
+                 visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
+                 edit=True, **kwargs):
     """
     This command creates a layout that arranges its children in a single column
     
@@ -39798,10 +39799,10 @@ def ReducePolygon(*args, **kwargs):
     pass
 
 
-def texLatticeDeformContext(envelope=0.0, exists=True, history=True, image1="", image2="",
-                            image3="", latticeColumns=0, latticeRows=0, name="",
+def texLatticeDeformContext(*args, envelope=0.0, exists=True, history=True, image1="",
+                            image2="", image3="", latticeColumns=0, latticeRows=0, name="",
                             showMoveManipulator=True, snapPixelMode=True, useBoundingRect=True,
-                            q=True, query=True, e=True, edit=True, *args, **kwargs):
+                            q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to deform UV maps with lattice manipulator
      This context only works in the texture UV editor
@@ -39875,10 +39876,10 @@ def xgmGuideSculptContext(*args, **kwargs):
     pass
 
 
-def skinBindCtx(about="", axis="", colorRamp="", currentInfluence="", displayInactiveMode=0,
-                displayNormalized=True, exists=True, falloffCurve="", history=True, image1="",
-                image2="", image3="", name="", symmetry=True, tolerance=0.0, q=True, query=True,
-                e=True, edit=True, *args, **kwargs):
+def skinBindCtx(*args, about="", axis="", colorRamp="", currentInfluence="",
+                displayInactiveMode=0, displayNormalized=True, exists=True, falloffCurve="",
+                history=True, image1="", image2="", image3="", name="", symmetry=True,
+                tolerance=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a tool that can be used to edit volumes from an interactive bind
     
@@ -39932,13 +39933,12 @@ def skinBindCtx(about="", axis="", colorRamp="", currentInfluence="", displayIna
     pass
 
 
-def assignCommand(addDivider="", altModifier=True, annotation="", command=None,
+def assignCommand(*args, addDivider="", altModifier=True, annotation="", command=None,
                   commandModifier=True, ctrlModifier=True, data1="", data2="", data3="",
                   delete=0, dividerString="", enableCommandRepeat=True, factorySettings=True,
                   index=0, keyArray=True, keyString="", keyUp=True, name=True,
                   numDividersPreceding=0, numElements=True, optionModifier=True, sortByKey=True,
-                  sourceUserCommands=True, q=True, query=True, e=True, edit=True, *args,
-                  **kwargs):
+                  sourceUserCommands=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command allows the user to assign hotkeys and manipulate the internal array of named
     command objects  Each object in the array has an 1-based index which is used for
@@ -40010,9 +40010,9 @@ def assignCommand(addDivider="", altModifier=True, annotation="", command=None,
     pass
 
 
-def keyframeRegionSetKeyCtx(breakdown=True, exists=True, history=True, image1="", image2="",
-                            image3="", name="", q=True, query=True, e=True, edit=True, *args,
-                            **kwargs):
+def keyframeRegionSetKeyCtx(*args, breakdown=True, exists=True, history=True, image1="",
+                            image2="", image3="", name="", q=True, query=True, e=True,
+                            edit=True, **kwargs):
     """
     This command creates a context which may be used to set keys within the keyframe region of
     the dope sheet editor
@@ -40064,11 +40064,11 @@ def LayoutUVOptions(*args, **kwargs):
     pass
 
 
-def cluster(after=True, afterReference=True, before=True, bindState=True, deformerTools=True,
-            envelope=1.0, exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
-            ignoreSelected=True, includeHiddenSelections=False, name="", parallel=True,
-            prune=True, relative=True, remove=True, resetGeometry=True, split=True,
-            weightedNode=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def cluster(*args, after=True, afterReference=True, before=True, bindState=True,
+            deformerTools=True, envelope=1.0, exclusive="", frontOfChain=True, geometry="",
+            geometryIndices=True, ignoreSelected=True, includeHiddenSelections=False, name="",
+            parallel=True, prune=True, relative=True, remove=True, resetGeometry=True,
+            split=True, weightedNode=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The cluster command creates a cluster or edits the membership of an existing cluster  The
     command returns the name of the cluster node upon creation of a new cluster   After
@@ -40168,11 +40168,10 @@ def FBXImportShapes(*args, **kwargs):
     pass
 
 
-def texSculptCacheContext(adjustSize=True, adjustStrength=True, direction=0, falloffType=0,
-                          floodPin=0.0, grabTwist=True, inverted=True, mode="",
+def texSculptCacheContext(*args, adjustSize=True, adjustStrength=True, direction=0,
+                          falloffType=0, floodPin=0.0, grabTwist=True, inverted=True, mode="",
                           sculptFalloffCurve="", showBrushRingDuringStroke=True, size=0.0,
-                          strength=0.0, q=True, query=True, e=True, edit=True, *args,
-                          **kwargs):
+                          strength=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This is a tool context command for uv cache sculpting tool
     
@@ -40245,7 +40244,7 @@ def xgmWidthBrushContext(*args, **kwargs):
     pass
 
 
-def subdivCrease(sharpness=True, *args, **kwargs):
+def subdivCrease(*args, sharpness=True, **kwargs):
     """
     Set the creasing on subdivision mesh edges or mesh points that are on the selection list
     
@@ -40279,9 +40278,8 @@ def HypershadeShowConnectedAttrs(*args, **kwargs):
     pass
 
 
-def listConnections(connections=False, destination=True, exactType=True, plugs=False,
-                    shapes=False, skipConversionNodes=False, source=True, type="", *args,
-                    **kwargs):
+def listConnections(*args, connections=False, destination=True, exactType=True, plugs=False,
+                    shapes=False, skipConversionNodes=False, source=True, type="", **kwargs):
     """
     This command returns a list of all attributes/objects of a specified type that are
     connected to the given object(s)  If no objects are specified then the command lists the
@@ -40352,12 +40350,12 @@ def LoopBrushAnimationOptions(*args, **kwargs):
     pass
 
 
-def posePanel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def posePanel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
               editString=True, exists=True, init=True, isUnique=True, label="",
               menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
               popupMenuProcedure=None, poseEditor=True, replacePanel="", tearOff=True,
               tearOffCopy="", tearOffRestore=True, unParent=True, useTemplate="", q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     This command creates a panel that derives from the base panel class that houses a
     poseEditor
@@ -40471,10 +40469,10 @@ def HypershadeCreatePSDFile(*args, **kwargs):
     pass
 
 
-def menuSet(addMenu="", allMenuSets=True, currentMenuSet="", exists="", hotBoxVisible=True,
-            insertMenu=None, label="", menuArray=None, moveMenu=None, moveMenuSet=None,
-            numberOfMenuSets=True, numberOfMenus=True, permanent=True, removeMenu="",
-            removeMenuSet="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def menuSet(*args, addMenu="", allMenuSets=True, currentMenuSet="", exists="",
+            hotBoxVisible=True, insertMenu=None, label="", menuArray=None, moveMenu=None,
+            moveMenuSet=None, numberOfMenuSets=True, numberOfMenus=True, permanent=True,
+            removeMenu="", removeMenuSet="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a menu set which is used to logically order menus for display in the main menu bar 
     Such menu sets can be edited and reordered dynamically
@@ -40523,14 +40521,14 @@ def menuSet(addMenu="", allMenuSets=True, currentMenuSet="", exists="", hotBoxVi
     pass
 
 
-def workspace(active=True, baseWorkspace="", create="", directory="", expandName="",
+def workspace(*args, active=True, baseWorkspace="", create="", directory="", expandName="",
               fileRule=None, fileRuleEntry="", fileRuleList=True, filter=True, fullName=True,
               list=True, listFullWorkspaces=True, listWorkspaces=True, newWorkspace=True,
               objectType=None, objectTypeEntry="", objectTypeList=True, openWorkspace=True,
               projectPath="", removeFileRuleEntry="", removeVariableEntry="", renderType=None,
               renderTypeEntry="", renderTypeList=True, rootDirectory=True, saveWorkspace=True,
               shortName=True, update=True, updateAll=True, variable=None, variableEntry="",
-              variableList=True, q=True, query=True, *args, **kwargs):
+              variableList=True, q=True, query=True, **kwargs):
     """
     Create, open, or edit a workspace associated with a given workspace file   The string
     argument represents the workspace  If no workspace is specified then the current workspace
@@ -40669,7 +40667,7 @@ def TogglePolyDisplayEdges(*args, **kwargs):
     pass
 
 
-def disconnectJoint(attachHandleMode=True, deleteHandleMode=True, *args, **kwargs):
+def disconnectJoint(*args, attachHandleMode=True, deleteHandleMode=True, **kwargs):
     """
     This command will break a skeleton at the selected joint and delete any associated handles
     
@@ -40692,8 +40690,8 @@ def DeleteExpressionsOptions(*args, **kwargs):
     pass
 
 
-def polyClipboard(clear=True, color=True, copy=True, paste=True, shader=True,
-                  uvCoordinates=True, *args, **kwargs):
+def polyClipboard(*args, clear=True, color=True, copy=True, paste=True, shader=True,
+                  uvCoordinates=True, **kwargs):
     """
     The command allows the user to copy and paste certain polygonal attributes to a clipboard 
     These attributes are: 1) Shader (shading engine) assignment  2) Texture coordinate (UV)
@@ -40825,7 +40823,7 @@ def Snap2PointsTo2Points(*args, **kwargs):
     pass
 
 
-def dynamicLoad(q=True, query=True, *args, **kwargs):
+def dynamicLoad(*args, q=True, query=True, **kwargs):
     """
     Dynamically load the DLL passed as argument
     
@@ -40892,8 +40890,8 @@ def directConnectPath(*args, **kwargs):
     pass
 
 
-def shotRipple(deleted=True, endDelta=None, endTime=None, startDelta=None, startTime=None,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+def shotRipple(*args, deleted=True, endDelta=None, endTime=None, startDelta=None,
+               startTime=None, q=True, query=True, e=True, edit=True, **kwargs):
     """
     When Ripple Edit Mode is enabled, neighboring shots to the shot that gets manipulated are
     moved in sequence time to either make way or close up gaps corresponding to that node's
@@ -40924,18 +40922,18 @@ def ShowBoundingBox(*args, **kwargs):
     pass
 
 
-def frameLayout(annotation="", backgroundColor=None, backgroundShade=True, borderStyle="",
-                borderVisible=True, childArray=True, collapsable=True, collapse=True,
-                collapseCommand=None, defineTemplate="", docTag="", dragCallback=None,
-                dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
-                exists=True, expandCommand=None, font="", fullPathName=True, height=0,
-                highlightColor=None, isObscured=True, label="", labelAlign="top", labelIndent=0,
-                labelVisible=True, labelWidth=0, manage=True, marginHeight=0, marginWidth=0,
-                noBackground=True, numberOfChildren=True, numberOfPopupMenus=True, parent="",
-                popupMenuArray=True, preCollapseCommand=None, preExpandCommand=None,
-                preventOverride=True, statusBarMessage="", useTemplate="", visible=True,
-                visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+def frameLayout(*args, annotation="", backgroundColor=None, backgroundShade=True,
+                borderStyle="", borderVisible=True, childArray=True, collapsable=True,
+                collapse=True, collapseCommand=None, defineTemplate="", docTag="",
+                dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
+                enableKeyboardFocus=True, exists=True, expandCommand=None, font="",
+                fullPathName=True, height=0, highlightColor=None, isObscured=True, label="",
+                labelAlign="top", labelIndent=0, labelVisible=True, labelWidth=0, manage=True,
+                marginHeight=0, marginWidth=0, noBackground=True, numberOfChildren=True,
+                numberOfPopupMenus=True, parent="", popupMenuArray=True,
+                preCollapseCommand=None, preExpandCommand=None, preventOverride=True,
+                statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
+                width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates frame layout control  A frame layout may draw a border around its
     child controls as well as a display a title  Frame layouts may also be collapsable 
@@ -41079,7 +41077,7 @@ def runTimeCommand(*args, **kwargs):
     pass
 
 
-def upAxis(axis="", rotateView=True, q=True, query=True, *args, **kwargs):
+def upAxis(*args, axis="", rotateView=True, q=True, query=True, **kwargs):
     """
     The upAxis command changes the world up direction  Current implementation provides only two
     choices of axis (the Y-axis or the Z-axis) as the world up direction.  By default, the
@@ -41126,8 +41124,8 @@ def HIKCharacterControlsTool(*args, **kwargs):
     pass
 
 
-def viewPlace(animate=True, eyePoint=None, fieldOfView=0.0, lookAt=None, ortho=True,
-              perspective=True, upDirection=None, viewDirection=None, *args, **kwargs):
+def viewPlace(*args, animate=True, eyePoint=None, fieldOfView=0.0, lookAt=None, ortho=True,
+              perspective=True, upDirection=None, viewDirection=None, **kwargs):
     """
     This command positions the camera as specified  The lookAt and viewDirection flags are
     mutually exclusive, as are the ortho and perspective flags  If this command switches a
@@ -41159,23 +41157,23 @@ def viewPlace(animate=True, eyePoint=None, fieldOfView=0.0, lookAt=None, ortho=T
     pass
 
 
-def channelBox(annotation="", attrBgColor=None, attrColor=None, attrFilter="", attrRegex="",
-               attributeEditorMode=False, backgroundColor=None, containerAtTop=True,
-               defineTemplate="", docTag="", dragCallback=None, dropCallback=None, enable=True,
-               enableBackground=True, enableKeyboardFocus=True, enableLabelSelection=False,
-               execute=None, exists=True, fieldWidth=0, fixedAttrList=None, fullPathName=True,
-               height=0, highlightColor=None, historyObjectList=True, hyperbolic=True,
-               inputs=True, isObscured=True, labelWidth=0, longNames=True,
-               mainListConnection="", mainObjectList=True, manage=True, maxHeight=0, maxWidth=0,
-               niceNames=True, noBackground=True, nodeRegex="", numberOfPopupMenus=True,
-               outputObjectList=True, outputs=True, parent="", popupMenuArray=True, precision=3,
-               preventOverride=True, select="", selectedHistoryAttributes=True,
-               selectedMainAttributes=True, selectedOutputAttributes=True,
-               selectedShapeAttributes=True, shapeObjectList=True, shapes=True,
-               showNamespace=True, showTransforms=True, speed=1.0, statusBarMessage="",
-               takeFocus=True, update=True, useManips="", useTemplate="", visible=True,
-               visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
-               **kwargs):
+def channelBox(*args, annotation="", attrBgColor=None, attrColor=None, attrFilter="",
+               attrRegex="", attributeEditorMode=False, backgroundColor=None,
+               containerAtTop=True, defineTemplate="", docTag="", dragCallback=None,
+               dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
+               enableLabelSelection=False, execute=None, exists=True, fieldWidth=0,
+               fixedAttrList=None, fullPathName=True, height=0, highlightColor=None,
+               historyObjectList=True, hyperbolic=True, inputs=True, isObscured=True,
+               labelWidth=0, longNames=True, mainListConnection="", mainObjectList=True,
+               manage=True, maxHeight=0, maxWidth=0, niceNames=True, noBackground=True,
+               nodeRegex="", numberOfPopupMenus=True, outputObjectList=True, outputs=True,
+               parent="", popupMenuArray=True, precision=3, preventOverride=True, select="",
+               selectedHistoryAttributes=True, selectedMainAttributes=True,
+               selectedOutputAttributes=True, selectedShapeAttributes=True,
+               shapeObjectList=True, shapes=True, showNamespace=True, showTransforms=True,
+               speed=1.0, statusBarMessage="", takeFocus=True, update=True, useManips="",
+               useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
+               query=True, e=True, edit=True, **kwargs):
     """
     This command creates a channel box, which is sensitive to the active list  It displays
     certain attributes (channels) of the last node on the active list, and provides a two-way
@@ -41386,7 +41384,7 @@ def ImportSkinWeightMaps(*args, **kwargs):
     pass
 
 
-def layeredTexturePort(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def layeredTexturePort(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                        dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                        enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                        highlightColor=None, isObscured=True, manage=True, noBackground=True,
@@ -41395,7 +41393,7 @@ def layeredTexturePort(annotation="", backgroundColor=None, defineTemplate="", d
                        selectedBlendModeControl="", selectedColorControl="",
                        selectedIsVisibleControl="", statusBarMessage="", useTemplate="",
                        visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                       e=True, edit=True, *args, **kwargs):
+                       e=True, edit=True, **kwargs):
     """
     This command creates a 3dPort that displays an image representing the layered texture node
     specified
@@ -41494,9 +41492,9 @@ def layeredTexturePort(annotation="", backgroundColor=None, defineTemplate="", d
     pass
 
 
-def cutKey(animation="keysOrObjects.", attribute="", clear=True, controlPoints=False,
+def cutKey(*args, animation="keysOrObjects.", attribute="", clear=True, controlPoints=False,
            float=None, hierarchy="", includeUpperBound=True, index=0, option="", selectKey=True,
-           shape=True, time=None, *args, **kwargs):
+           shape=True, time=None, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -41543,19 +41541,20 @@ def cutKey(animation="keysOrObjects.", attribute="", clear=True, controlPoints=F
     pass
 
 
-def polyExtrudeEdge(caching=True, constructionHistory=True, createCurve=True, divisions=1,
-                    gain=1.0, inputCurve=None, keepFacesTogether=True, localCenter=0,
-                    localDirection=None, localDirectionX=0.0, localDirectionY=0.0,
-                    localDirectionZ=0.0, localRotate=None, localRotateX=0.0, localRotateY=0.0,
-                    localRotateZ=0.0, localScale=None, localScaleX=0.0, localScaleY=0.0,
-                    localScaleZ=0.0, localTranslate=None, localTranslateX=0.0,
-                    localTranslateY=0.0, localTranslateZ=0.0, name="", nodeState=0, offset=0.0,
-                    pivot=None, pivotX=0.0, pivotY=0.0, pivotZ=0.0, random=0.0, rotate=None,
-                    rotateX=0.0, rotateY=0.0, rotateZ=0.0, scale=None, scaleX=0.0, scaleY=0.0,
-                    scaleZ=0.0, smoothingAngle=0.0, taper=1.0, taperCurve_FloatValue=0.0,
-                    taperCurve_Interp=0, taperCurve_Position=0.0, thickness=0.0, translate=None,
-                    translateX=0.0, translateY=0.0, translateZ=0.0, twist=0.0, worldSpace=True,
-                    q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyExtrudeEdge(*args, caching=True, constructionHistory=True, createCurve=True,
+                    divisions=1, gain=1.0, inputCurve=None, keepFacesTogether=True,
+                    localCenter=0, localDirection=None, localDirectionX=0.0,
+                    localDirectionY=0.0, localDirectionZ=0.0, localRotate=None,
+                    localRotateX=0.0, localRotateY=0.0, localRotateZ=0.0, localScale=None,
+                    localScaleX=0.0, localScaleY=0.0, localScaleZ=0.0, localTranslate=None,
+                    localTranslateX=0.0, localTranslateY=0.0, localTranslateZ=0.0, name="",
+                    nodeState=0, offset=0.0, pivot=None, pivotX=0.0, pivotY=0.0, pivotZ=0.0,
+                    random=0.0, rotate=None, rotateX=0.0, rotateY=0.0, rotateZ=0.0, scale=None,
+                    scaleX=0.0, scaleY=0.0, scaleZ=0.0, smoothingAngle=0.0, taper=1.0,
+                    taperCurve_FloatValue=0.0, taperCurve_Interp=0, taperCurve_Position=0.0,
+                    thickness=0.0, translate=None, translateX=0.0, translateY=0.0,
+                    translateZ=0.0, twist=0.0, worldSpace=True, q=True, query=True, e=True,
+                    edit=True, **kwargs):
     """
     Extrude edges separately or together
     
@@ -41693,10 +41692,10 @@ def HypershadeSelectShadingGroupsAndMaterials(*args, **kwargs):
     pass
 
 
-def polyPoke(caching=True, constructionHistory=True, localTranslate=None, localTranslateX=0.0,
-             localTranslateY=0.0, localTranslateZ=0.0, name="", nodeState=0, translate=None,
-             translateX=0.0, translateY=0.0, translateZ=0.0, worldSpace=True, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+def polyPoke(*args, caching=True, constructionHistory=True, localTranslate=None,
+             localTranslateX=0.0, localTranslateY=0.0, localTranslateZ=0.0, name="",
+             nodeState=0, translate=None, translateX=0.0, translateY=0.0, translateZ=0.0,
+             worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Introduces a new vertex in the middle of the selected face, and connects it to the rest of
     the vertices of the face
@@ -41754,9 +41753,8 @@ def OutlinerToggleIgnoreUseColor(*args, **kwargs):
     pass
 
 
-def listRelatives(allDescendents=True, allParents=True, children=True, fullPath=True,
-                  noIntermediate=True, parent=True, path=True, shapes=True, type="", *args,
-                  **kwargs):
+def listRelatives(*args, allDescendents=True, allParents=True, children=True, fullPath=True,
+                  noIntermediate=True, parent=True, path=True, shapes=True, type="", **kwargs):
     """
     This command lists parents and children of DAG objects  The flags -c/children,
     -ad/allDescendents, -s/shapes, -p/parent and -ap/allParents are mutually exclusive  Only
@@ -41820,9 +41818,9 @@ def ResetWireOptions(*args, **kwargs):
     pass
 
 
-def keyframeRegionInsertKeyCtx(breakdown=True, exists=True, history=True, image1="", image2="",
-                               image3="", name="", q=True, query=True, e=True, edit=True, *args,
-                               **kwargs):
+def keyframeRegionInsertKeyCtx(*args, breakdown=True, exists=True, history=True, image1="",
+                               image2="", image3="", name="", q=True, query=True, e=True,
+                               edit=True, **kwargs):
     """
     This command creates a context which may be used to insert keys within the keyframe region
     of the dope sheet editor
@@ -41923,10 +41921,10 @@ def dR_activeHandleYZ(*args, **kwargs):
     pass
 
 
-def directionalLight(decayRate=0, discRadius=0.0, exclusive=True, intensity=0.0, name="",
+def directionalLight(*args, decayRate=0, discRadius=0.0, exclusive=True, intensity=0.0, name="",
                      position=None, rgb=None, rotation=None, shadowColor=None, shadowDither=0.0,
                      shadowSamples=0, softShadow=True, useRayTraceShadows=True, q=True,
-                     query=True, e=True, edit=True, *args, **kwargs):
+                     query=True, e=True, edit=True, **kwargs):
     """
     TlightCmd is the base class for other light commands  TnonAmbientLightCmd is a class that
     looks like a command but is not  It is a base class for the extended/nonExtended lights 
@@ -41974,7 +41972,7 @@ def directionalLight(decayRate=0, discRadius=0.0, exclusive=True, intensity=0.0,
     pass
 
 
-def artUserPaintCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="",
+def artUserPaintCtx(*args, accopacity=False, activeListChangedProc="", afterStrokeCmd="",
                     alphaclamp="none", alphaclamplower=0.0, alphaclampupper=1.0,
                     attrSelected="", beforeStrokeCmd="", brushalignment=True,
                     brushfeedback=True, chunkCommand="", clamp="none", clamplower=0.0,
@@ -42003,7 +42001,7 @@ def artUserPaintCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="
                     surfaceConformedBrushVertices=True, tablet=True, tangentOutline=True,
                     toolCleanupCmd="", toolOffProc="", toolOnProc="", toolSetupCmd="",
                     useColorRamp=True, useMaxMinColor=True, usepressure=False, value=0.0,
-                    whichTool="", worldRadius=0.0, q=True, query=True, e=True, edit=True, *args,
+                    whichTool="", worldRadius=0.0, q=True, query=True, e=True, edit=True,
                     **kwargs):
     """
     This is a context command to set the flags on the artAttrContext, which is the base context
@@ -42323,8 +42321,8 @@ def CreateCameraFromView(*args, **kwargs):
     pass
 
 
-def mirrorJoint(mirrorBehavior=True, mirrorXY=True, mirrorXZ=True, mirrorYZ=True,
-                searchReplace=None, *args, **kwargs):
+def mirrorJoint(*args, mirrorBehavior=True, mirrorXY=True, mirrorXZ=True, mirrorYZ=True,
+                searchReplace=None, **kwargs):
     """
     This command will duplicate a branch of the skeleton from the selected joint symmetrically
     about a plane in world space  There are three mirroring modes(xy-, yz-, xz-plane)
@@ -42355,7 +42353,7 @@ def ParentConstraint(*args, **kwargs):
     pass
 
 
-def colorSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def colorSliderGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                    adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                    backgroundColor=None, changeCommand=None, columnAlign=None,
                    columnAlign2=None, columnAlign3=None, columnAlign4=None, columnAlign5=None,
@@ -42372,7 +42370,7 @@ def colorSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                    numberOfPopupMenus=True, parent="", popupMenuArray=True,
                    preventOverride=True, rgbValue=None, rowAttach=None, statusBarMessage="",
                    useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -42565,9 +42563,9 @@ def colorSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
     pass
 
 
-def renderSettings(camera="", customTokenString="", firstImageName=True, fullPath=True,
+def renderSettings(*args, camera="", customTokenString="", firstImageName=True, fullPath=True,
                    fullPathTemp=True, genericFrameImageName="", imageGenericName=True,
-                   lastImageName=True, layer="", leaveUnmatchedTokens=True, *args, **kwargs):
+                   lastImageName=True, layer="", leaveUnmatchedTokens=True, **kwargs):
     """
     Query interface to the common tab of the render settings
     
@@ -42625,7 +42623,7 @@ def ToggleScalePivots(*args, **kwargs):
     pass
 
 
-def recordAttr(attribute="", delete=True, q=True, query=True, *args, **kwargs):
+def recordAttr(*args, attribute="", delete=True, q=True, query=True, **kwargs):
     """
     This command sets up an attribute to be recorded  When the record command is executed, any
     changes to this attribute are recorded  When recording stops these changes are turned into
@@ -42685,14 +42683,15 @@ def UseSelectedEmitter(*args, **kwargs):
     pass
 
 
-def addAttr(attributeType="", binaryTag="", cachedInternally=True, category="", dataType="",
-            defaultValue=0.0, disconnectBehaviour=0, enumName="", exists=True, fromPlugin=True,
-            hasMaxValue=True, hasMinValue=True, hasSoftMaxValue=True, hasSoftMinValue=True,
-            hidden=True, indexMatters=True, internalSet=True, keyable=True, longName="",
-            maxValue=0.0, minValue=0.0, multi=True, niceName="", numberOfChildren=0, parent="",
-            proxy="", readable=True, shortName="", softMaxValue=0.0, softMinValue=0.0,
-            storable=True, usedAsColor=True, usedAsFilename=True, usedAsProxy=True,
-            writable=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def addAttr(*args, attributeType="", binaryTag="", cachedInternally=True, category="",
+            dataType="", defaultValue=0.0, disconnectBehaviour=0, enumName="", exists=True,
+            fromPlugin=True, hasMaxValue=True, hasMinValue=True, hasSoftMaxValue=True,
+            hasSoftMinValue=True, hidden=True, indexMatters=True, internalSet=True,
+            keyable=True, longName="", maxValue=0.0, minValue=0.0, multi=True, niceName="",
+            numberOfChildren=0, parent="", proxy="", readable=True, shortName="",
+            softMaxValue=0.0, softMinValue=0.0, storable=True, usedAsColor=True,
+            usedAsFilename=True, usedAsProxy=True, writable=True, q=True, query=True, e=True,
+            edit=True, **kwargs):
     """
     This command is used to add a dynamic attribute to a node or nodes  Either the longName or
     the shortName or both must be specified  If neither a dataType nor an attributeType is
@@ -42815,8 +42814,8 @@ def SetFullBodyIKKeys(*args, **kwargs):
     pass
 
 
-def dbtrace(filter="", info=True, keyword="", mark=True, output="", timed=True, title="",
-            verbose=True, q=True, query=True, *args, **kwargs):
+def dbtrace(*args, filter="", info=True, keyword="", mark=True, output="", timed=True, title="",
+            verbose=True, q=True, query=True, **kwargs):
     """
     The dbtrace command is used to manipulate trace objects  The keyword is the only mandatory
     argument, indicating which trace object is to be altered   Trace Objects to affect (keyword
@@ -42850,9 +42849,9 @@ def dbtrace(filter="", info=True, keyword="", mark=True, output="", timed=True, 
     pass
 
 
-def expressionEditorListen(listenFile="", listenForAttr="", listenForExpression="",
+def expressionEditorListen(*args, listenFile="", listenForAttr="", listenForExpression="",
                            listenForName="", stopListenForAttr="", stopListenForExpression="",
-                           stopListenForName="", *args, **kwargs):
+                           stopListenForName="", **kwargs):
     """
     Listens for messages for the Expression Editor, at its request, and communicates them to it
      This action is for internal use only and should not be called by users  This action should
@@ -42912,12 +42911,12 @@ def sbs_GetChannelsNamesFromSubstanceNode(*args, **kwargs):
     pass
 
 
-def particle(attribute="", cache=True, conserve=0.0, count=True, deleteCache=True,
+def particle(*args, attribute="", cache=True, conserve=0.0, count=True, deleteCache=True,
              dynamicAttrList=True, floatValue=0.0, gridSpacing=0.0, inherit=0.0,
              jitterBasePoint=None, jitterRadius=0.0, lowerLeft=None, name="", numJitters=0,
              order=0, particleId=0, perParticleDouble=True, perParticleVector=True,
              position=None, shapeName="", upperRight=None, vectorValue=None, q=True, query=True,
-             e=True, edit=True, *args, **kwargs):
+             e=True, edit=True, **kwargs):
     """
     The particle command creates a new particle object from a list of world space points  If a
     particle object is created, the command returns the names of the new particle shape and its
@@ -43007,7 +43006,7 @@ def FlowPathObject(*args, **kwargs):
     pass
 
 
-def plane(length=0.0, name="", position=None, rotation=None, size=0.0, width=0.0, *args,
+def plane(*args, length=0.0, name="", position=None, rotation=None, size=0.0, width=0.0,
           **kwargs):
     """
     The command creates a sketch plane (also known as a "construction plane") in space  To
@@ -43143,13 +43142,13 @@ def BreakRigidBodyConnection(*args, **kwargs):
     pass
 
 
-def picture(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def picture(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
             dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
             enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
             highlightColor=None, image="", isObscured=True, manage=True, noBackground=True,
             numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
             statusBarMessage="", tile=True, useTemplate="", visible=True,
-            visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+            visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
             **kwargs):
     """
     This command creates a static image
@@ -43246,10 +43245,11 @@ def SelectAllNRigids(*args, **kwargs):
     pass
 
 
-def windowPref(enableAll=True, exists=True, height=0, leftEdge=0, loadAll=True, maximized=True,
-               parentMain=True, remove=True, removeAll=True, restoreMainWindowState="",
-               saveAll=True, saveMainWindowState="", topEdge=0, topLeftCorner=None, width=0,
-               widthHeight=None, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def windowPref(*args, enableAll=True, exists=True, height=0, leftEdge=0, loadAll=True,
+               maximized=True, parentMain=True, remove=True, removeAll=True,
+               restoreMainWindowState="", saveAll=True, saveMainWindowState="", topEdge=0,
+               topLeftCorner=None, width=0, widthHeight=None, q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     Create or modify preferred window attributes  The size and position of a window is retained
     during and between application sessions  A default window preference is created when a
@@ -43307,8 +43307,8 @@ def dR_selConstraintEdgeRing(*args, **kwargs):
     pass
 
 
-def editRenderLayerAdjustment(attributeLog=True, layer=None, nodeLog=True, remove=True, q=True,
-                              query=True, *args, **kwargs):
+def editRenderLayerAdjustment(*args, attributeLog=True, layer=None, nodeLog=True, remove=True,
+                              q=True, query=True, **kwargs):
     """
     This command is used to create, edit, and query adjustments to render layers  An adjustment
     allows different attribute values or connections to be used depending on the active render
@@ -43346,7 +43346,7 @@ def xgmRebuildSplineDescription(*args, **kwargs):
     pass
 
 
-def refresh(currentView=True, fileExtension="", filename="", force=True, suspend=True, *args,
+def refresh(*args, currentView=True, fileExtension="", filename="", force=True, suspend=True,
             **kwargs):
     """
     This command is used to force a redraw during script execution  Normally, redraw is
@@ -43387,7 +43387,7 @@ def PolygonCollapseEdges(*args, **kwargs):
     pass
 
 
-def optionMenuGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def optionMenuGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                   adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                   backgroundColor=None, changeCommand=None, columnAlign=None, columnAlign2=None,
                   columnAlign3=None, columnAlign4=None, columnAlign5=None, columnAlign6=None,
@@ -43404,7 +43404,7 @@ def optionMenuGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                   popupMenuArray=True, preventOverride=True, rowAttach=None, select=0,
                   statusBarMessage="", useTemplate="", value="", visible=True,
                   visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                  *args, **kwargs):
+                  **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -43604,8 +43604,8 @@ def optionMenuGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
     pass
 
 
-def polyUnite(caching=True, mergeUVSets=1, nodeState=0, centerPivot=True, objectPivot=True,
-              q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyUnite(*args, caching=True, mergeUVSets=1, nodeState=0, centerPivot=True,
+              objectPivot=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new poly as an union of a list of polys If no objects are specified
     in the command line, then the objects from the active list are used
@@ -43638,7 +43638,7 @@ def SubdivSmoothnessRough(*args, **kwargs):
     pass
 
 
-def animCurveEditor(areCurvesSelected=True, autoFit="", autoFitTime="", classicMode=True,
+def animCurveEditor(*args, areCurvesSelected=True, autoFit="", autoFitTime="", classicMode=True,
                     clipTime="", constrainDrag=0, control=True, curvesShown=True,
                     curvesShownForceUpdate=True, defineTemplate="", denormalizeCurvesCommand="",
                     displayActiveKeyTangents="", displayActiveKeys="", displayInfinities="",
@@ -43654,7 +43654,7 @@ def animCurveEditor(areCurvesSelected=True, autoFit="", autoFitTime="", classicM
                     stackedCurvesMin=0.0, stackedCurvesSpace=0.0, stateString=True,
                     unParent=True, unlockMainConnection=True, updateMainConnection=True,
                     useTemplate="", valueLinesToggle="", q=True, query=True, e=True, edit=True,
-                    *args, **kwargs):
+                    **kwargs):
     """
     Edit a characteristic of a graph editor
     
@@ -43844,14 +43844,14 @@ def ReverseSurfaceDirectionOptions(*args, **kwargs):
     pass
 
 
-def contentBrowser(addContentPath="", context=None, control=True, defineTemplate="", docTag="",
-                   exists=True, filter="", forceMainConnection="", highlightConnection="",
-                   location="", lockMainConnection=True, mainListConnection="", panel="",
-                   parent="", preview=True, refreshTreeView=True, removeContentPath="",
-                   saveCurrentContext=True, selectionConnection="", stateString=True,
-                   thumbnailView=True, treeView=True, unParent=True, unlockMainConnection=True,
-                   updateMainConnection=True, useTemplate="", q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+def contentBrowser(*args, addContentPath="", context=None, control=True, defineTemplate="",
+                   docTag="", exists=True, filter="", forceMainConnection="",
+                   highlightConnection="", location="", lockMainConnection=True,
+                   mainListConnection="", panel="", parent="", preview=True,
+                   refreshTreeView=True, removeContentPath="", saveCurrentContext=True,
+                   selectionConnection="", stateString=True, thumbnailView=True, treeView=True,
+                   unParent=True, unlockMainConnection=True, updateMainConnection=True,
+                   useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to edit and query a Content Browser  The Content Browser is a unique
     panel, so only one instance of it can exist at a given time  The optional argument is the
@@ -43971,7 +43971,7 @@ def FBXExportInstances(*args, **kwargs):
     pass
 
 
-def frameBufferName(autoTruncate=True, camera="", renderLayer="", renderPass="", *args,
+def frameBufferName(*args, autoTruncate=True, camera="", renderLayer="", renderPass="",
                     **kwargs):
     """
     Returns the frame buffer name for a given renderPass renderLayer and camera combination 
@@ -44050,7 +44050,7 @@ def PaintReduceWeightsTool(*args, **kwargs):
     pass
 
 
-def polyMoveFacet(attraction=0.0, caching=True, constructionHistory=True, gain=1.0,
+def polyMoveFacet(*args, attraction=0.0, caching=True, constructionHistory=True, gain=1.0,
                   gravity=None, gravityX=0.0, gravityY=0.0, gravityZ=0.0, localCenter=0,
                   localDirection=None, localDirectionX=0.0, localDirectionY=0.0,
                   localDirectionZ=0.0, localRotate=None, localRotateX=0.0, localRotateY=0.0,
@@ -44061,7 +44061,7 @@ def polyMoveFacet(attraction=0.0, caching=True, constructionHistory=True, gain=1
                   pivotY=0.0, pivotZ=0.0, random=0.0, rotate=None, rotateX=0.0, rotateY=0.0,
                   rotateZ=0.0, scale=None, scaleX=0.0, scaleY=0.0, scaleZ=0.0, translate=None,
                   translateX=0.0, translateY=0.0, translateZ=0.0, weight=0.0, worldSpace=True,
-                  q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     Modifies facet of a polygonal object  Translate, move, rotate or scale facets
     
@@ -44186,7 +44186,7 @@ def polyMoveFacet(attraction=0.0, caching=True, constructionHistory=True, gain=1
     pass
 
 
-def getModulePath(moduleName="", *args, **kwargs):
+def getModulePath(*args, moduleName="", **kwargs):
     """
     Returns the module path for a given module name
     
@@ -44234,9 +44234,9 @@ def HypershadeFrameSelected(*args, **kwargs):
     pass
 
 
-def panelHistory(back=True, clear=True, defineTemplate="", exists=True, forward=True,
+def panelHistory(*args, back=True, clear=True, defineTemplate="", exists=True, forward=True,
                  historyDepth=0, isEmpty=True, suspend=True, targetPane="", useTemplate="",
-                 wrap=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 wrap=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a panel history object  The object is targeted on a particular
     paneLayout and thereafter notes changes in panel configurations within that paneLayout,
@@ -44283,8 +44283,8 @@ def HypershadeShapeMenuStateAll(*args, **kwargs):
     pass
 
 
-def boxDollyCtx(alternateContext=True, exists=True, history=True, image1="", image2="",
-                image3="", name="", toolName="", q=True, query=True, e=True, edit=True, *args,
+def boxDollyCtx(*args, alternateContext=True, exists=True, history=True, image1="", image2="",
+                image3="", name="", toolName="", q=True, query=True, e=True, edit=True,
                 **kwargs):
     """
     This command can be used to create, edit, or query a dolly context
@@ -44359,8 +44359,8 @@ def createPolyPlatonicSolidCtx(*args, **kwargs):
     pass
 
 
-def polySplitVertex(caching=True, constructionHistory=True, name="", nodeState=0,
-                    worldSpace=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polySplitVertex(*args, caching=True, constructionHistory=True, name="", nodeState=0,
+                    worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Use this command to split one or more vertices. A mesh is made up of one or more faces  The
     faces are defined by edges which connect vertices together  Typically a face will share
@@ -44495,9 +44495,9 @@ def NonWeightedTangents(*args, **kwargs):
     pass
 
 
-def shadingNetworkCompare(byName=False, byValue=True, delete=True, equivalent=True,
+def shadingNetworkCompare(*args, byName=False, byValue=True, delete=True, equivalent=True,
                           network1=True, network2=True, upstreamOnly=False, q=True, query=True,
-                          *args, **kwargs):
+                          **kwargs):
     """
     This command allows you to compare two shading networks
     
@@ -44542,7 +44542,7 @@ def dR_setExtendLoop(*args, **kwargs):
     pass
 
 
-def renderQualityNode(name="", parent="", shared=True, skipSelect=True, *args, **kwargs):
+def renderQualityNode(*args, name="", parent="", shared=True, skipSelect=True, **kwargs):
     """
     This command creates a new node in the dependency graph of the specified type   The
     renderQualityNode creates a render quality node and registers it with the model  The
@@ -44580,9 +44580,9 @@ def dR_symmetryFlip(*args, **kwargs):
     pass
 
 
-def lightlink(b=True, hierarchy=True, light=None, make=True, object=None, sets=True,
+def lightlink(*args, b=True, hierarchy=True, light=None, make=True, object=None, sets=True,
               shadow=True, shapes=True, transforms=True, useActiveLights=True,
-              useActiveObjects=True, q=True, query=True, *args, **kwargs):
+              useActiveObjects=True, q=True, query=True, **kwargs):
     """
     This command is used to make, break and query light linking relationships between
     lights/sets of lights and objects/sets of objects   If no make, break or query flag is
@@ -44711,7 +44711,7 @@ def syncSculptCache(*args, **kwargs):
     pass
 
 
-def exactWorldBoundingBox(calculateExactly=True, ignoreInvisible=True, *args, **kwargs):
+def exactWorldBoundingBox(*args, calculateExactly=True, ignoreInvisible=True, **kwargs):
     """
     This command figures out an exact-fit bounding box for the specified objects (or selected
     objects if none are specified) This bounding box is always in world space
@@ -44777,13 +44777,12 @@ def Duplicate(*args, **kwargs):
     pass
 
 
-def polyContourProjection(caching=True, constructionHistory=True, createNewMap=True,
+def polyContourProjection(*args, caching=True, constructionHistory=True, createNewMap=True,
                           flipRails=True, insertBeforeDeformers=True, method=0, name="",
                           nodeState=0, offset0=0.0, offset1=0.0, offset2=0.0, offset3=0.0,
                           reduceShear=0.0, smoothness0=0.0, smoothness1=0.0, smoothness2=0.0,
                           smoothness3=0.0, userDefinedCorners=True, uvSetName="",
-                          worldSpace=True, q=True, query=True, e=True, edit=True, *args,
-                          **kwargs):
+                          worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Performs a contour stretch UV projection onto an object
     
@@ -44889,7 +44888,7 @@ def ActivateViewport20(*args, **kwargs):
     pass
 
 
-def tabLayout(annotation="", backgroundColor=None, borderStyle="", changeCommand=None,
+def tabLayout(*args, annotation="", backgroundColor=None, borderStyle="", changeCommand=None,
               childArray=True, childResizable=True, defineTemplate="", docTag="",
               doubleClickCommand=None, dragCallback=None, dropCallback=None, enable=True,
               enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
@@ -44902,7 +44901,7 @@ def tabLayout(annotation="", backgroundColor=None, borderStyle="", changeCommand
               statusBarMessage="", tabLabel=None, tabLabelIndex=None, tabPosition="",
               tabTooltip=None, tabTooltipIndex=None, tabsClosable=True, tabsVisible=True,
               useTemplate="", verticalScrollBarThickness=0, visible=True,
-              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     This command creates a tab group  Tab groups are a specialized form of control layouts that
@@ -45116,8 +45115,8 @@ def PerspGraphLayout(*args, **kwargs):
     pass
 
 
-def selectContext(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def selectContext(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates a context to perform selection
     
@@ -45152,11 +45151,11 @@ def DeleteSurfaceFlowOptions(*args, **kwargs):
     pass
 
 
-def polyMergeEdgeCtx(activeNodes=True, exists=True, image1="", image2="", image3="",
+def polyMergeEdgeCtx(*args, activeNodes=True, exists=True, image1="", image2="", image3="",
                      immediate=True, name="", previous=True, reset=True, toolNode=True,
                      caching=True, constructionHistory=True, firstEdge=0, mergeMode=1,
                      mergeTexture=False, nodeState=0, secondEdge=0, q=True, query=True, e=True,
-                     edit=True, *args, **kwargs):
+                     edit=True, **kwargs):
     """
     Sews two border edges together.
     
@@ -45267,8 +45266,8 @@ def FBXExportCacheFile(*args, **kwargs):
     pass
 
 
-def sceneUIReplacement(clear=True, deleteRemaining=True, getNextFilter=None, getNextPanel=None,
-                       getNextScriptedPanel=None, update="", *args, **kwargs):
+def sceneUIReplacement(*args, clear=True, deleteRemaining=True, getNextFilter=None,
+                       getNextPanel=None, getNextScriptedPanel=None, update="", **kwargs):
     """
     This command returns existing scene based UI that can be utilized by the scene that is
     being loaded  It can also delete any such UI that is not used by the loading scene
@@ -45297,10 +45296,10 @@ def sceneUIReplacement(clear=True, deleteRemaining=True, getNextFilter=None, get
     pass
 
 
-def singleProfileBirailSurface(caching=True, nodeState=0, tangentContinuityProfile1=False,
-                               transformMode=0, constructionHistory=True, name="", object=True,
-                               polygon=0, q=True, query=True, e=True, edit=True, *args,
-                               **kwargs):
+def singleProfileBirailSurface(*args, caching=True, nodeState=0,
+                               tangentContinuityProfile1=False, transformMode=0,
+                               constructionHistory=True, name="", object=True, polygon=0,
+                               q=True, query=True, e=True, edit=True, **kwargs):
     """
     This cmd creates a railed surface by sweeping the profile curve along the two rail curves 
     One of the requirements for surface creation is the profile curve must intersect the two
@@ -45357,8 +45356,8 @@ def CurveSmoothnessCoarse(*args, **kwargs):
     pass
 
 
-def selectKeyCtx(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+def selectKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to select keyframes within the graph
     editor
@@ -45415,7 +45414,7 @@ def MoveNearestPickedKeyToolDeactivate(*args, **kwargs):
     pass
 
 
-def objectCenter(gl=True, local=True, x=True, y=True, z=True, *args, **kwargs):
+def objectCenter(*args, gl=True, local=True, x=True, y=True, z=True, **kwargs):
     """
     This command returns the coordinates of the center of the bounding box of the specified
     object  If one coordinate only is specified, it will be returned as a float  If no
@@ -45481,8 +45480,8 @@ def FBXExportInputConnections(*args, **kwargs):
     pass
 
 
-def cacheFileMerge(endTime=None, geometry=True, startTime=None, q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+def cacheFileMerge(*args, endTime=None, geometry=True, startTime=None, q=True, query=True,
+                   e=True, edit=True, **kwargs):
     """
     If selected/specified caches can be successfully merged, will return the start/end frames
     of the new cache followed by the start/end frames of any gaps in the merged cache for which
@@ -45505,10 +45504,10 @@ def cacheFileMerge(endTime=None, geometry=True, startTime=None, q=True, query=Tr
     pass
 
 
-def closeCurve(blendBias=0.5, blendKnotInsertion=False, caching=True, nodeState=0,
+def closeCurve(*args, blendBias=0.5, blendKnotInsertion=False, caching=True, nodeState=0,
                parameter=0.1, preserveShape=1, constructionHistory=True, curveOnSurface=True,
                name="", object=True, replaceOriginal=True, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     The closeCurve command closes a curve, making it periodic  The pathname to the newly closed
     curve and the name of the resulting dependency node are returned  If a curve is not
@@ -45551,8 +45550,8 @@ def closeCurve(blendBias=0.5, blendKnotInsertion=False, caching=True, nodeState=
     pass
 
 
-def setDynamic(allOnWhenRun=True, disableAllOnWhenRun=True, setAll=True, setOff=True,
-               setOn=True, *args, **kwargs):
+def setDynamic(*args, allOnWhenRun=True, disableAllOnWhenRun=True, setAll=True, setOff=True,
+               setOn=True, **kwargs):
     """
     setDynamic sets the isDynamic attribute of particle objects on or off  If no objects are
     specified, it sets the attribute for any selected objects  If -all is thrown, it sets the
@@ -45604,7 +45603,7 @@ def ViewSequence(*args, **kwargs):
     pass
 
 
-def volumeBind(influence="", name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def volumeBind(*args, influence="", name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command for creating and editing volume binding nodes  The node is use for storing volume
     data to define skin weighting data
@@ -45620,17 +45619,17 @@ def volumeBind(influence="", name="", q=True, query=True, e=True, edit=True, *ar
     pass
 
 
-def animLayer(addRelatedKG=True, addSelectedObjects=True, affectedLayers=True, animCurves=True,
-              attribute="", baseAnimCurves=True, bestAnimLayer=True, bestLayer=True,
-              blendNodes=True, children="", collapse=True, copy="", copyAnimation="",
-              copyNoAnimation="", excludeBoolean=True, excludeDynamic=True, excludeEnum=True,
-              excludeRotate=True, excludeScale=True, excludeTranslate=True,
+def animLayer(*args, addRelatedKG=True, addSelectedObjects=True, affectedLayers=True,
+              animCurves=True, attribute="", baseAnimCurves=True, bestAnimLayer=True,
+              bestLayer=True, blendNodes=True, children="", collapse=True, copy="",
+              copyAnimation="", copyNoAnimation="", excludeBoolean=True, excludeDynamic=True,
+              excludeEnum=True, excludeRotate=True, excludeScale=True, excludeTranslate=True,
               excludeVisibility=True, exists=True, extractAnimation="", findCurveForPlug="",
               forceUIRebuild=True, forceUIRefresh=True, layeredPlug="", lock=False,
               maxLayers=True, moveLayerAfter="", moveLayerBefore="", mute=False, override=False,
               parent="", passthrough=True, preferred=True, removeAllAttributes=True,
               removeAttribute="", root="", selected=True, solo=False, weight=1,
-              writeBlendnodeDestinations=True, q=True, query=True, e=True, edit=True, *args,
+              writeBlendnodeDestinations=True, q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     This command creates and edits animation layers
@@ -45774,7 +45773,7 @@ def FBXImportCacheFile(*args, **kwargs):
     pass
 
 
-def projectionManip(fitBBox=True, projType=0, switchType=True, q=True, query=True, *args,
+def projectionManip(*args, fitBBox=True, projType=0, switchType=True, q=True, query=True,
                     **kwargs):
     """
     Various commands to set the manipulator to interesting positions
@@ -45795,9 +45794,9 @@ def projectionManip(fitBBox=True, projType=0, switchType=True, q=True, query=Tru
     pass
 
 
-def texScaleContext(editPivotMode=True, exists=True, image1="", image2="", image3="",
+def texScaleContext(*args, editPivotMode=True, exists=True, image1="", image2="", image3="",
                     position=True, preventNegativeScale=True, snap=True, snapRelative=True,
-                    snapValue=0.0, tweakMode=True, q=True, query=True, e=True, edit=True, *args,
+                    snapValue=0.0, tweakMode=True, q=True, query=True, e=True, edit=True,
                     **kwargs):
     """
     This command can be used to create, edit, or query a scale context for the UV Editor  Note
@@ -45846,7 +45845,7 @@ def evalContinue(*args, **kwargs):
     pass
 
 
-def volumeAxis(alongAxis=0.0, aroundAxis=0.0, attenuation=0.0, awayFromAxis=0.0,
+def volumeAxis(*args, alongAxis=0.0, aroundAxis=0.0, attenuation=0.0, awayFromAxis=0.0,
                awayFromCenter=0.0, detailTurbulence=0.0, directionX=0.0, directionY=0.0,
                directionZ=0.0, directionalSpeed=0.0, invertAttenuation=True, magnitude=0.0,
                maxDistance=0.0, name="", perVertex=True, position=None, torusSectionRadius=0.0,
@@ -45854,7 +45853,7 @@ def volumeAxis(alongAxis=0.0, aroundAxis=0.0, attenuation=0.0, awayFromAxis=0.0,
                turbulenceFrequencyZ=0.0, turbulenceOffsetX=0.0, turbulenceOffsetY=0.0,
                turbulenceOffsetZ=0.0, turbulenceSpeed=0.0, volumeExclusion=True,
                volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -45959,14 +45958,14 @@ def RemoveShrinkWrapTarget(*args, **kwargs):
     pass
 
 
-def character(addElement=None, addOffsetObject="", characterPlug=True, clear=None, empty=True,
-              excludeDynamic=True, excludeRotate=True, excludeScale=True, excludeTranslate=True,
-              excludeVisibility=True, flatten=None, forceElement=None, include=None,
-              intersection=None, isIntersecting=None, isMember=None, library=True,
+def character(*args, addElement=None, addOffsetObject="", characterPlug=True, clear=None,
+              empty=True, excludeDynamic=True, excludeRotate=True, excludeScale=True,
+              excludeTranslate=True, excludeVisibility=True, flatten=None, forceElement=None,
+              include=None, intersection=None, isIntersecting=None, isMember=None, library=True,
               memberIndex=0, name="", noWarnings=True, nodesOnly=True, offsetNode=True,
               remove=None, removeOffsetObject="", root="", scheduler=True, split=None,
               subtract=None, text="", union=None, userAlias=None, q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+              edit=True, **kwargs):
     """
     This command is used to manage the membership of a character  Characters are a type of set
     that gathers together the attributes of a node or nodes that a user wishes to animate as a
@@ -46075,8 +46074,8 @@ def SelectAllStrokes(*args, **kwargs):
     pass
 
 
-def timeWarp(deleteFrame=0, frame=0.0, g=True, interpType=None, moveFrame=None, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+def timeWarp(*args, deleteFrame=0, frame=0.0, g=True, interpType=None, moveFrame=None, q=True,
+             query=True, e=True, edit=True, **kwargs):
     """
     This command is used to create a time warp input to a set of animation curves
     
@@ -46102,7 +46101,7 @@ def timeWarp(deleteFrame=0, frame=0.0, g=True, interpType=None, moveFrame=None, 
     pass
 
 
-def containerTemplate(addBindingSet="", addNames=True, addView="", allKeyable=True,
+def containerTemplate(*args, addBindingSet="", addNames=True, addView="", allKeyable=True,
                       attribute="", attributeList="", baseName="", bindingSetList="",
                       childAnchor=True, delete=True, expandCompounds=True, fromContainer="",
                       fromSelection=True, layoutMode=0, matchName="", parentAnchor=True,
@@ -46110,7 +46109,7 @@ def containerTemplate(addBindingSet="", addNames=True, addView="", allKeyable=Tr
                       rootTransform=True, save=True, searchPath="", templateList="",
                       updateBindingSet="", useHierarchy=True, exists=True, fileName="",
                       force=True, load=True, matchFile="", silent=True, unload=True,
-                      viewList="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                      viewList="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     A container template is a description of a container's published interface  This command
     provides the ability to create and save a template file for a container or load an existing
@@ -46259,8 +46258,8 @@ def ToggleTangentDisplay(*args, **kwargs):
     pass
 
 
-def dbcount(enabled=True, file="", keyword="", list=True, maxdepth=0, quick=True, reset=True,
-            spreadsheet=True, *args, **kwargs):
+def dbcount(*args, enabled=True, file="", keyword="", list=True, maxdepth=0, quick=True,
+            reset=True, spreadsheet=True, **kwargs):
     """
     The dbcount command is used to print and manage a list of statistics collected for counting
     operations  These statistics are displayed as a list of hits on a particular location in
@@ -46311,9 +46310,9 @@ def RandomizeFollicles(*args, **kwargs):
     pass
 
 
-def bakePartialHistory(allShapes=True, postSmooth=False, preCache=True, preDeformers=True,
-                       prePostDeformers=True, q=True, query=True, e=True, edit=True, *args,
-                       **kwargs):
+def bakePartialHistory(*args, allShapes=True, postSmooth=False, preCache=True,
+                       preDeformers=True, prePostDeformers=True, q=True, query=True, e=True,
+                       edit=True, **kwargs):
     """
     This command is used to bake sections of the construction history of a shape node when
     possible  A typical usage would be on a shape that has both modelling operations and
@@ -46350,7 +46349,7 @@ def hotkeyEditor(*args, **kwargs):
     pass
 
 
-def file(absoluteName=True, activate=True, activeProxy=True, add=True, anyModified=True,
+def file(*args, absoluteName=True, activate=True, activeProxy=True, add=True, anyModified=True,
          applyTo="", buildLoadSettings=True, channels=True, cleanReference="", command=None,
          compress=True, constraints=True, constructionHistory=True, copyNumberList=True,
          defaultExtensions=True, defaultNamespace=True, deferReference=False, editCommand="",
@@ -46378,7 +46377,7 @@ def file(absoluteName=True, activate=True, activeProxy=True, add=True, anyModifi
          sceneName=True, segment="", selectAll=True, shader=True, sharedNodes="",
          sharedReferenceFile=True, shortName=True, strict=True, swapNamespace=None, type="",
          uiConfiguration=True, unloadReference="", unresolvedName=True, usingNamespaces=True,
-         withoutCopyNumber=True, writable=True, q=True, query=True, e=True, edit=True, *args,
+         withoutCopyNumber=True, writable=True, q=True, query=True, e=True, edit=True,
          **kwargs):
     """
     Opening, importing, exporting, referencing, saving, or renaming a file   This command needs
@@ -46745,9 +46744,9 @@ def file(absoluteName=True, activate=True, activeProxy=True, add=True, anyModifi
     pass
 
 
-def polyRemesh(caching=True, constructionHistory=True, interpolationType=0, name="",
+def polyRemesh(*args, caching=True, constructionHistory=True, interpolationType=0, name="",
                nodeState=0, reduceThreshold=0.0, refineThreshold=0.0, smoothStrength=0.0,
-               tessellateBorders=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+               tessellateBorders=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Triangulates, then remeshes the given mesh through edge splitting and collapsing  Edges
     longer than the specified refinement threshold are split, and edges shorter than the
@@ -46806,7 +46805,7 @@ def QuadrangulateOptions(*args, **kwargs):
     pass
 
 
-def inViewEditor(visible=True, q=True, query=True, *args, **kwargs):
+def inViewEditor(*args, visible=True, q=True, query=True, **kwargs):
     """
     Mel access to the In-View Editor  In-View Editors display a customizable subset of a node's
     attributes, letting you adjust attributes directly in a scene instead of opening the
@@ -46828,8 +46827,8 @@ def poseInterpolator(*args, **kwargs):
     pass
 
 
-def lockNode(ignoreComponents=True, lock=True, lockName=True, lockUnpublished=True, q=True,
-             query=True, *args, **kwargs):
+def lockNode(*args, ignoreComponents=True, lock=True, lockName=True, lockUnpublished=True,
+             q=True, query=True, **kwargs):
     """
     Locks or unlocks one or more dependency nodes  A locked node is restricted in the following
     ways:  It may not be deleted  It may not be renamed  Its parenting may not be changed 
@@ -46853,9 +46852,9 @@ def lockNode(ignoreComponents=True, lock=True, lockName=True, lockUnpublished=Tr
     pass
 
 
-def dgInfo(allNodes=True, connections=True, dirty=True, nodes=True, nonDeletable=True,
+def dgInfo(*args, allNodes=True, connections=True, dirty=True, nodes=True, nonDeletable=True,
            outputFile="", propagation=True, short=True, size=True, subgraph=True, type="",
-           *args, **kwargs):
+           **kwargs):
     """
     This command prints information about the DG in plain text  The scope of the information
     printed is the entire graph if the all flag is used, the nodes/plugs on the command line if
@@ -46922,8 +46921,8 @@ def cMuscleQuery(*args, **kwargs):
     pass
 
 
-def headsUpMessage(horizontalOffset=0, object="", selection=True, time=0.0,
-                   uvTextureEditor=True, verticalOffset=0, viewport=True, *args, **kwargs):
+def headsUpMessage(*args, horizontalOffset=0, object="", selection=True, time=0.0,
+                   uvTextureEditor=True, verticalOffset=0, viewport=True, **kwargs):
     """
     This command draws a message in the 3d view  The message is automatically erased at the
     next screen refresh
@@ -46983,8 +46982,8 @@ def InTangentLinear(*args, **kwargs):
     pass
 
 
-def keyframeRegionCurrentTimeCtx(exists=True, history=True, image1="", image2="", image3="",
-                                 name="", q=True, query=True, e=True, edit=True, *args,
+def keyframeRegionCurrentTimeCtx(*args, exists=True, history=True, image1="", image2="",
+                                 image3="", name="", q=True, query=True, e=True, edit=True,
                                  **kwargs):
     """
     This command creates a context which may be used to change current time within the keyframe
@@ -47021,8 +47020,8 @@ def FBXExportTriangulate(*args, **kwargs):
     pass
 
 
-def keyframeRegionMoveKeyCtx(exists=True, history=True, image1="", image2="", image3="",
-                             name="", option="", q=True, query=True, e=True, edit=True, *args,
+def keyframeRegionMoveKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                             name="", option="", q=True, query=True, e=True, edit=True,
                              **kwargs):
     """
     This command creates a context which may be used to move keyframes within the keyframe
@@ -47184,7 +47183,7 @@ def currentCtx(*args, **kwargs):
     pass
 
 
-def polySelectConstraintMonitor(changeCommand=None, create=True, delete=True, *args, **kwargs):
+def polySelectConstraintMonitor(*args, changeCommand=None, create=True, delete=True, **kwargs):
     """
     Manage the window to display/edit the polygonal selection constraint parameters
     
@@ -47202,9 +47201,9 @@ def polySelectConstraintMonitor(changeCommand=None, create=True, delete=True, *a
     pass
 
 
-def texSmudgeUVContext(dragSlider="", effectType="", exists=True, functionType="", history=True,
-                       image1="", image2="", image3="", name="", pressure=0.0, radius=0.0,
-                       smudgeIsMiddle=True, q=True, query=True, e=True, edit=True, *args,
+def texSmudgeUVContext(*args, dragSlider="", effectType="", exists=True, functionType="",
+                       history=True, image1="", image2="", image3="", name="", pressure=0.0,
+                       radius=0.0, smudgeIsMiddle=True, q=True, query=True, e=True, edit=True,
                        **kwargs):
     """
     This command creates a context for smudge UV tool  This context only works in the texture
@@ -47273,9 +47272,9 @@ def arnoldBakeGeo(*args, **kwargs):
     pass
 
 
-def curve(append=True, bezier=True, degree=3, editPoint=None, knot=0.0, name="",
+def curve(*args, append=True, bezier=True, degree=3, editPoint=None, knot=0.0, name="",
           objectSpace=True, periodic=True, point=None, pointWeight=None, replace=True,
-          worldSpace=True, *args, **kwargs):
+          worldSpace=True, **kwargs):
     """
     The curve command creates a new curve from a list of control vertices (CVs)  A string is
     returned containing the pathname to the newly created curve  You can create a curve from
@@ -47350,10 +47349,10 @@ def CleanupPolygonOptions(*args, **kwargs):
     pass
 
 
-def dollyCtx(alternateContext=True, boxDollyType="", centerOfInterestDolly=True,
+def dollyCtx(*args, alternateContext=True, boxDollyType="", centerOfInterestDolly=True,
              dollyTowardsCenter=True, exists=True, history=True, image1="", image2="",
              image3="", localDolly=True, name="", orthoZoom=True, scale=0.0, toolName="",
-             q=True, query=True, e=True, edit=True, *args, **kwargs):
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a dolly context
     
@@ -47604,9 +47603,9 @@ def ResetWire(*args, **kwargs):
     pass
 
 
-def pointConstraint(layer="", maintainOffset=True, name="", offset=None, remove=True, skip="",
-                    targetList=True, weight=0.0, weightAliasList=True, q=True, query=True,
-                    e=True, edit=True, *args, **kwargs):
+def pointConstraint(*args, layer="", maintainOffset=True, name="", offset=None, remove=True,
+                    skip="", targetList=True, weight=0.0, weightAliasList=True, q=True,
+                    query=True, e=True, edit=True, **kwargs):
     """
     Constrain an object's position to the position of the target object or to the average
     position of a number of targets   A pointConstraint takes as input one or more "target" DAG
@@ -47686,7 +47685,7 @@ def SetMeshMaskTool(*args, **kwargs):
     pass
 
 
-def showShadingGroupAttrEditor(q=True, query=True, *args, **kwargs):
+def showShadingGroupAttrEditor(*args, q=True, query=True, **kwargs):
     """
     The showShadingGroupAttrEditor command opens up the attribute editor for the current
     object's shading-group information
@@ -47873,7 +47872,7 @@ def ExtrudeFace(*args, **kwargs):
     pass
 
 
-def resolutionNode(name="", parent="", shared=True, skipSelect=True, *args, **kwargs):
+def resolutionNode(*args, name="", parent="", shared=True, skipSelect=True, **kwargs):
     """
     This command creates a new node in the dependency graph of the specified type   The
     resolutionNode creates a render resolution node and registers it with the model  The
@@ -47897,8 +47896,8 @@ def resolutionNode(name="", parent="", shared=True, skipSelect=True, *args, **kw
     pass
 
 
-def polyCutCtx(deleteFaces=False, exists=True, extractFaces=False, extractOffset=None,
-               image1="", image2="", image3="", q=True, query=True, e=True, edit=True, *args,
+def polyCutCtx(*args, deleteFaces=False, exists=True, extractFaces=False, extractOffset=None,
+               image1="", image2="", image3="", q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     Create a new context to cut facets on polygonal objects
@@ -47945,8 +47944,8 @@ def ToggleFaceIDs(*args, **kwargs):
     pass
 
 
-def polyAverageNormal(allowZeroNormal=True, distance=0.0, postnormalize=True, prenormalize=True,
-                      replaceNormalXYZ=None, *args, **kwargs):
+def polyAverageNormal(*args, allowZeroNormal=True, distance=0.0, postnormalize=True,
+                      prenormalize=True, replaceNormalXYZ=None, **kwargs):
     """
     Set normals of vertices or vertex-faces to an average value when the vertices within a
     given threshold  First, it sorts out the containing edges, and set them to be soft, if it
@@ -48010,7 +48009,7 @@ def AutoPaintMarkingMenu(*args, **kwargs):
     pass
 
 
-def overrideModifier(clear=True, press="", release="", *args, **kwargs):
+def overrideModifier(*args, clear=True, press="", release="", **kwargs):
     """
     This command allows you to assign modifier key behaviour to other parts of the system  For
     example you can use a hotkey or input device instead of a modifer key to perform the same
@@ -48060,7 +48059,7 @@ def PositionAlongCurve(*args, **kwargs):
     pass
 
 
-def movOut(comment=False, file="", precision=6, time=None, *args, **kwargs):
+def movOut(*args, comment=False, file="", precision=6, time=None, **kwargs):
     """
     Exports a .mov file from the listed attributes  Valid attribute types are numeric
     attributes; time attributes; linear attributes; angular attributes; compound attributes
@@ -48086,7 +48085,7 @@ def movOut(comment=False, file="", precision=6, time=None, *args, **kwargs):
     pass
 
 
-def align(alignToLead=False, coordinateSystem=None, xAxis="", yAxis="", zAxis="", *args,
+def align(*args, alignToLead=False, coordinateSystem=None, xAxis="", yAxis="", zAxis="",
           **kwargs):
     """
     Align or spread objects along X Y and Z axis
@@ -48113,17 +48112,17 @@ def align(alignToLead=False, coordinateSystem=None, xAxis="", yAxis="", zAxis=""
     pass
 
 
-def blendShape(after=True, afterReference=True, automatic=True, before=True, copyDelta=None,
-               copyInBetweenDelta=None, deformerTools=True, envelope=1.0, exclusive="",
-               export="", exportTarget=None, flipTarget=None, frontOfChain=True, geometry="",
-               geometryIndices=True, ignoreSelected=True, ip="", inBetween=True,
+def blendShape(*args, after=True, afterReference=True, automatic=True, before=True,
+               copyDelta=None, copyInBetweenDelta=None, deformerTools=True, envelope=1.0,
+               exclusive="", export="", exportTarget=None, flipTarget=None, frontOfChain=True,
+               geometry="", geometryIndices=True, ignoreSelected=True, ip="", inBetween=True,
                inBetweenIndex=0, inBetweenType="", includeHiddenSelections=False, mergeSource=0,
                mergeTarget=0, mirrorDirection=0, mirrorTarget=None, name="",
                normalizationGroups=True, origin="", parallel=True, prune=True, remove=True,
                resetTargetDelta=None, split=True, suppressDialog=True, symmetryAxis="",
                symmetryEdge="", symmetrySpace=0, tangentSpace=True, target=None,
                topologyCheck=True, transform="", weight=None, weightCount=0, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+               e=True, edit=True, **kwargs):
     """
     This command creates a blendShape deformer, which blends in specified amounts of each
     target shape to the initial base shape  Each base shape is deformed by its own set of
@@ -48272,7 +48271,7 @@ def NURBSToPolygons(*args, **kwargs):
     pass
 
 
-def containerProxy(fromTemplate="", type="", q=True, query=True, e=True, edit=True, *args,
+def containerProxy(*args, fromTemplate="", type="", q=True, query=True, e=True, edit=True,
                    **kwargs):
     """
     Creates a new container with the same published interface, dynamic attributes and attribute
@@ -48307,12 +48306,12 @@ def xgmLengthBrushToolCmd(*args, **kwargs):
     pass
 
 
-def timeEditorClipLayer(addAttribute="", addLayer="", addObject="", allLayers=True,
+def timeEditorClipLayer(*args, addAttribute="", addLayer="", addObject="", allLayers=True,
                         attribute="", attributeKeyable="", clipId=0, index=0, keySiblings=True,
                         layerId=0, layerName="", mode=0, mute=True, name=True, path="",
                         removeAttribute="", removeLayer=True, removeObject="", resetSolo=True,
                         setKeyframe=True, solo=True, zeroKeying=True, q=True, query=True,
-                        e=True, edit=True, *args, **kwargs):
+                        e=True, edit=True, **kwargs):
     """
     Time Editor clip layers commands
     
@@ -48406,10 +48405,9 @@ def cacheAppend(*args, **kwargs):
     pass
 
 
-def latticeDeformKeyCtx(envelope=0.0, exists=True, history=True, image1="", image2="",
+def latticeDeformKeyCtx(*args, envelope=0.0, exists=True, history=True, image1="", image2="",
                         image3="", latticeColumns=0, latticeRows=0, name="",
-                        scaleLatticePts=True, q=True, query=True, e=True, edit=True, *args,
-                        **kwargs):
+                        scaleLatticePts=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to deform key frames with lattice
     manipulator  This context only works in the graph editor
@@ -48475,10 +48473,10 @@ def UVUnstackShellsOptions(*args, **kwargs):
     pass
 
 
-def filterCurve(cutoffFrequency=0.0, endTime=None, filter="", keepKeysOnFrame=True, kernel="",
-                keySync=True, maxTimeStep=0.0, minTimeStep=0.0, period=0.0, precision=0.0,
-                precisionMode=0, preserveKeyTangent="", samplingRate=0.0, selectedKeys=True,
-                startTime=None, timeTolerance=0.0, tolerance=0.0, *args, **kwargs):
+def filterCurve(*args, cutoffFrequency=0.0, endTime=None, filter="", keepKeysOnFrame=True,
+                kernel="", keySync=True, maxTimeStep=0.0, minTimeStep=0.0, period=0.0,
+                precision=0.0, precisionMode=0, preserveKeyTangent="", samplingRate=0.0,
+                selectedKeys=True, startTime=None, timeTolerance=0.0, tolerance=0.0, **kwargs):
     """
     The filterCurve command takes a list of anim curve and filters them using a specified
     filter  The following filters are supported: butterworth euler keyReducer keySync resample
@@ -48562,7 +48560,7 @@ def getDefaultBrush(*args, **kwargs):
     pass
 
 
-def shelfButton(align="", annotation="", backgroundColor=None, command=None,
+def shelfButton(*args, align="", annotation="", backgroundColor=None, command=None,
                 commandRepeatable=True, defineTemplate="", disabledImage="", docTag="",
                 doubleClickCommand=None, dragCallback=None, dropCallback=None, enable=True,
                 enableBackground=True, enableCommandRepeat=True, enableKeyboardFocus=True,
@@ -48577,7 +48575,7 @@ def shelfButton(align="", annotation="", backgroundColor=None, command=None,
                 popupMenuArray=True, preventOverride=True, rotation=0.0, scaleIcon=True,
                 selectionImage="", sourceType="", statusBarMessage="", style="", useAlpha=True,
                 useTemplate="", version="", visible=True, visibleChangeCommand=None, width=0,
-                q=True, query=True, e=True, edit=True, *args, **kwargs):
+                q=True, query=True, e=True, edit=True, **kwargs):
     """
     This control supports up to 3 icon images and 4 different display styles  The icon image
     displayed is the one that best fits the current size of the control given its current style
@@ -48792,13 +48790,13 @@ def listNodesWithIncorrectNames(*args, **kwargs):
     pass
 
 
-def polySelect(add=True, addFirst=True, asSelectString=True, deselect=True, edgeBorder=0,
+def polySelect(*args, add=True, addFirst=True, asSelectString=True, deselect=True, edgeBorder=0,
                edgeBorderPath=None, edgeBorderPattern=None, edgeLoop=0, edgeLoopOrBorder=0,
                edgeLoopOrBorderPattern=None, edgeLoopPath=None, edgeLoopPattern=None,
                edgeRing=0, edgeRingPath=None, edgeRingPattern=None, edgeUVLoopOrBorder=0,
                everyN=0, extendToShell=0, noSelection=True, replace=True, shortestEdgePath=None,
                shortestEdgePathUV=None, shortestFacePath=None, toggle=True, q=True, query=True,
-               *args, **kwargs):
+               **kwargs):
     """
     This command makes different types of poly component selections  The return value is an
     integer array containing the id's of the components in the selection in order  If a given
@@ -48886,8 +48884,8 @@ def polySelect(add=True, addFirst=True, asSelectString=True, deselect=True, edge
     pass
 
 
-def setParent(defineTemplate="", menu=True, topLevel=True, upLevel=True, useTemplate="", q=True,
-              query=True, *args, **kwargs):
+def setParent(*args, defineTemplate="", menu=True, topLevel=True, upLevel=True, useTemplate="",
+              q=True, query=True, **kwargs):
     """
     This command changes the default parent to be the specified parent  Two special parents are
     "|" which indicates the top level layout of the window hierarchy, or ".." which indicates
@@ -48992,9 +48990,9 @@ def OutlinerExpandAllItems(*args, **kwargs):
     pass
 
 
-def intersect(caching=True, firstSurface=True, nodeState=0, tolerance=0.01,
+def intersect(*args, caching=True, firstSurface=True, nodeState=0, tolerance=0.01,
               constructionHistory=True, curveOnSurface=True, name="", object=True, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     The intersect command creates a curve on surface where all surfaces intersect with each
     other  By default, the curve on surface is created for both surfaces  However, by using the
@@ -49063,8 +49061,8 @@ def ScaleToolMarkingMenu(*args, **kwargs):
     pass
 
 
-def snapshotModifyKeyCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                         q=True, query=True, e=True, edit=True, *args, **kwargs):
+def snapshotModifyKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                         name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates a context for inserting/delete keys on an editable motion trail
     
@@ -49099,7 +49097,7 @@ def HypershadeConnectSelected(*args, **kwargs):
     pass
 
 
-def nodeType(apiType=True, derived=True, inherited=True, isTypeName=True, *args, **kwargs):
+def nodeType(*args, apiType=True, derived=True, inherited=True, isTypeName=True, **kwargs):
     """
     This command returns a string which identifies the given node's type   When no flags are
     used, the unique type name is returned  This can be useful for seeing if two nodes are of
@@ -49165,7 +49163,7 @@ def PolySelectToolOptions(*args, **kwargs):
     pass
 
 
-def multiTouch(gestures=True, trackpad=0, q=True, query=True, *args, **kwargs):
+def multiTouch(*args, gestures=True, trackpad=0, q=True, query=True, **kwargs):
     """
     Used to interact with the Gestura (multi-touch) library
     
@@ -49181,13 +49179,14 @@ def multiTouch(gestures=True, trackpad=0, q=True, query=True, *args, **kwargs):
     pass
 
 
-def canvas(annotation="", backgroundColor=None, defineTemplate="", docTag="", dragCallback=None,
-           dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
-           exists=True, fullPathName=True, height=0, highlightColor=None, hsvValue=None,
-           isObscured=True, manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
-           popupMenuArray=True, pressCommand=None, preventOverride=True, rgbValue=None,
-           statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-           width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def canvas(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
+           dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
+           enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+           highlightColor=None, hsvValue=None, isObscured=True, manage=True, noBackground=True,
+           numberOfPopupMenus=True, parent="", popupMenuArray=True, pressCommand=None,
+           preventOverride=True, rgbValue=None, statusBarMessage="", useTemplate="",
+           visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
+           edit=True, **kwargs):
     """
     Creates a control capable of displaying a color swatch  This control can also accept a
     command to be called when the colour swatch is pressed by the user   Note: The
@@ -49330,7 +49329,7 @@ def PolyMergeVertices(*args, **kwargs):
     pass
 
 
-def nodeTreeLister(addFavorite="", addItem=None, addVnnItem=None, annotation="",
+def nodeTreeLister(*args, addFavorite="", addItem=None, addVnnItem=None, annotation="",
                    backgroundColor=None, clearContents=True, collapsePath="", defineTemplate="",
                    docTag="", dragCallback=None, dropCallback=None, enable=True,
                    enableBackground=True, enableKeyboardFocus=True, executeItem="", exists=True,
@@ -49341,7 +49340,7 @@ def nodeTreeLister(addFavorite="", addItem=None, addVnnItem=None, annotation="",
                    preventOverride=True, refreshCommand=None, removeFavorite="", removeItem="",
                    resultsPathUnderCursor=True, selectPath="", statusBarMessage="",
                    useTemplate="", visible=True, visibleChangeCommand=None, vnnString=True,
-                   width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries the node tree lister control  nodeTreeLister is a
     treeLister, but items are assumed to have commands which return dependency node names 
@@ -49510,9 +49509,8 @@ def SelectMaskToolMarkingMenu(*args, **kwargs):
     pass
 
 
-def untangleUV(mapBorder="", maxRelaxIterations=0, pinBorder=True, pinSelected=True,
-               pinUnselected=True, relax="", relaxTolerance=0.0, shapeDetail=0.0, *args,
-               **kwargs):
+def untangleUV(*args, mapBorder="", maxRelaxIterations=0, pinBorder=True, pinSelected=True,
+               pinUnselected=True, relax="", relaxTolerance=0.0, shapeDetail=0.0, **kwargs):
     """
     This command will aid in the creation of non-overlapping regions (i.e  polygons) in texture
     space by untangling texture UVs  This is done in two stages:
@@ -49583,9 +49581,9 @@ def spBirailCtx(*args, **kwargs):
     pass
 
 
-def keyframeRegionScaleKeyCtx(exists=True, history=True, image1="", image2="", image3="",
+def keyframeRegionScaleKeyCtx(*args, exists=True, history=True, image1="", image2="", image3="",
                               name="", scaleSpecifiedKeys=True, type="", q=True, query=True,
-                              e=True, edit=True, *args, **kwargs):
+                              e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to scale keyframes within the keyframe
     region of the dope sheet editor
@@ -49619,8 +49617,8 @@ def keyframeRegionScaleKeyCtx(exists=True, history=True, image1="", image2="", i
     pass
 
 
-def nameCommand(annotation="", command=None, data1="", data2="", data3="", default=True,
-                sourceType="", *args, **kwargs):
+def nameCommand(*args, annotation="", command=None, data1="", data2="", data3="", default=True,
+                sourceType="", **kwargs):
     """
     This command creates a nameCommand object  Each nameCommand object can be connected to a
     hotkey  Thereafter, the nameCommand's command string will be executed whenever the hotkey
@@ -49671,7 +49669,7 @@ def MoveLeft(*args, **kwargs):
     pass
 
 
-def rename(ignoreShape=True, uuid=True, *args, **kwargs):
+def rename(*args, ignoreShape=True, uuid=True, **kwargs):
     """
     Renames the given object to have the new name  If only one argument is supplied the command
     will rename the (first) selected object  If the new name conflicts with an existing name,
@@ -49723,9 +49721,10 @@ def OneClickMotionBuilderSendToCurrentScene(*args, **kwargs):
     pass
 
 
-def manipPivot(moveToolOri=0, ori=None, oriValid=True, pinPivot=True, pos=None, posValid=True,
-               reset=True, resetOri=True, resetPos=True, rotateToolOri=0, scaleToolOri=0,
-               snapOri=True, snapPos=True, valid=True, q=True, query=True, *args, **kwargs):
+def manipPivot(*args, moveToolOri=0, ori=None, oriValid=True, pinPivot=True, pos=None,
+               posValid=True, reset=True, resetOri=True, resetPos=True, rotateToolOri=0,
+               scaleToolOri=0, snapOri=True, snapPos=True, valid=True, q=True, query=True,
+               **kwargs):
     """
     Changes transform component pivot used by the move/rotate/scale manipulators
     
@@ -49770,10 +49769,10 @@ def manipPivot(moveToolOri=0, ori=None, oriValid=True, pinPivot=True, pos=None, 
     pass
 
 
-def renderPassRegistry(channels=0, isPassSupported=True, passID="", passName=True, renderer="",
-                       supportedChannelCounts=True, supportedDataTypes=True,
+def renderPassRegistry(*args, channels=0, isPassSupported=True, passID="", passName=True,
+                       renderer="", supportedChannelCounts=True, supportedDataTypes=True,
                        supportedPassSemantics=True, supportedRenderPassNames=True,
-                       supportedRenderPasses=True, *args, **kwargs):
+                       supportedRenderPasses=True, **kwargs):
     """
     query information related with render passes
     
@@ -49834,12 +49833,13 @@ def PruneSmallWeights(*args, **kwargs):
     pass
 
 
-def ikSplineHandleCtx(autoPriorityH=True, createCurve=True, createRootAxis=True, exists=True,
-                      forceSolverH=True, history=True, image1="", image2="", image3="", name="",
-                      numSpans=1, parentCurve=True, poWeightH=1, priorityH=1, rootOnCurve=True,
-                      rootTwistMode=True, simplifyCurve=True, snapCurve=True, snapHandleH=True,
-                      solverTypeH="", stickyH="off", twistType="linear", weightH=1, q=True,
-                      query=True, e=True, edit=True, *args, **kwargs):
+def ikSplineHandleCtx(*args, autoPriorityH=True, createCurve=True, createRootAxis=True,
+                      exists=True, forceSolverH=True, history=True, image1="", image2="",
+                      image3="", name="", numSpans=1, parentCurve=True, poWeightH=1,
+                      priorityH=1, rootOnCurve=True, rootTwistMode=True, simplifyCurve=True,
+                      snapCurve=True, snapHandleH=True, solverTypeH="", stickyH="off",
+                      twistType="linear", weightH=1, q=True, query=True, e=True, edit=True,
+                      **kwargs):
     """
     The ikSplineHandle context command (ikSplineHandleCtx) updates parameters of ikSplineHandle
     tool  The options for the tool will be set to the flags the user specifies
@@ -49926,8 +49926,8 @@ def xgmAddGuide(*args, **kwargs):
     pass
 
 
-def boxZoomCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-               zoomScale=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def boxZoomCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+               zoomScale=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a box zoom context  If this context is
     used on a perspective camera, the field of view and view direction are changed  If the
@@ -50023,7 +50023,7 @@ def HypershadeSelectMaterialsFromObjects(*args, **kwargs):
     pass
 
 
-def polyDuplicateAndConnect(removeOriginalFromShaders=True, renameChildren=True, *args,
+def polyDuplicateAndConnect(*args, removeOriginalFromShaders=True, renameChildren=True,
                             **kwargs):
     """
     This command duplicates the input polygonal object, connects up the outMesh attribute of
@@ -50144,13 +50144,13 @@ def ModifyDisplacementPress(*args, **kwargs):
     pass
 
 
-def itemFilterAttr(byName="", byNameString="", byScript="", classification="", dynamic=True,
-                   exists=True, hasCurve=True, hasDrivenKey=True, hasExpression=True,
-                   hidden=True, intersect=None, keyable=True, listBuiltInFilters=True,
-                   listOtherFilters=True, listUserFilters=True, negate=True, parent="",
-                   published=True, readable=True, scaleRotateTranslate=True, secondScript="",
-                   text="", union=None, writable=True, q=True, query=True, e=True, edit=True,
-                   *args, **kwargs):
+def itemFilterAttr(*args, byName="", byNameString="", byScript="", classification="",
+                   dynamic=True, exists=True, hasCurve=True, hasDrivenKey=True,
+                   hasExpression=True, hidden=True, intersect=None, keyable=True,
+                   listBuiltInFilters=True, listOtherFilters=True, listUserFilters=True,
+                   negate=True, parent="", published=True, readable=True,
+                   scaleRotateTranslate=True, secondScript="", text="", union=None,
+                   writable=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a named itemFilterAttr object  This object can be attached to editors,
     in order to filter the attributes going through them  Using union and intersection filters,
@@ -50256,14 +50256,14 @@ def geometryMergeCache(*args, **kwargs):
     pass
 
 
-def polyEvaluate(accurateEvaluation=True, activeShells=True, activeUVShells=True, area=True,
-                 boundingBox=True, boundingBox2d=True, boundingBoxComponent=True,
+def polyEvaluate(*args, accurateEvaluation=True, activeShells=True, activeUVShells=True,
+                 area=True, boundingBox=True, boundingBox2d=True, boundingBoxComponent=True,
                  boundingBoxComponent2d=True, displayStats=True, edge=True, edgeComponent=True,
                  face=True, faceArea=True, faceComponent=True, format=True, shell=True,
                  triangle=True, triangleComponent=True, uvArea=True, uvComponent=True,
                  uvEdgePairs=True, uvFaceArea=True, uvSetName="", uvShell=True, uvShellIds=True,
                  uvcoord=True, uvsInShell=0, vertex=True, vertexComponent=True, worldArea=True,
-                 worldFaceArea=True, *args, **kwargs):
+                 worldFaceArea=True, **kwargs):
     """
     Returns the required counts on the specified objects
     
@@ -50357,12 +50357,12 @@ def polyEvaluate(accurateEvaluation=True, activeShells=True, activeUVShells=True
     pass
 
 
-def polySelectEditCtx(adjustEdgeFlow=1.0, divisions=2, exists=True, fixQuads=False, image1="",
-                      image2="", image3="", insertWithEdgeFlow=False, smoothingAngle=0.0,
-                      splitType=0, useEqualMultiplier=True, absoluteOffset=True,
-                      autoComplete=True, deleteEdge=True, endVertexOffset=0.0, mode=0,
-                      startVertexOffset=0.0, q=True, query=True, e=True, edit=True, *args,
-                      **kwargs):
+def polySelectEditCtx(*args, adjustEdgeFlow=1.0, divisions=2, exists=True, fixQuads=False,
+                      image1="", image2="", image3="", insertWithEdgeFlow=False,
+                      smoothingAngle=0.0, splitType=0, useEqualMultiplier=True,
+                      absoluteOffset=True, autoComplete=True, deleteEdge=True,
+                      endVertexOffset=0.0, mode=0, startVertexOffset=0.0, q=True, query=True,
+                      e=True, edit=True, **kwargs):
     """
     Create a new context to select and edit polygonal objects
     
@@ -50428,7 +50428,7 @@ def sbs_GetPackageFullPathNameFromSubstanceNode(*args, **kwargs):
     pass
 
 
-def polySetToFaceNormal(setUserNormal=False, *args, **kwargs):
+def polySetToFaceNormal(*args, setUserNormal=False, **kwargs):
     """
     This command takes selected polygonal vertices or vertex-faces and changes their normals 
     If the option  userNormal  is used, the new normal values will be the face normals arround
@@ -50452,8 +50452,8 @@ def FBXExportSmoothMesh(*args, **kwargs):
     pass
 
 
-def polySeparate(caching=True, nodeState=0, removeShells=True, separateSpecificShell=0, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+def polySeparate(*args, caching=True, nodeState=0, removeShells=True, separateSpecificShell=0,
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates new objects from the given poly  A new object will be created for each
     section of the mesh that is distinct (no edges connect it to the rest of the mesh)
@@ -50496,7 +50496,7 @@ def RemoveBifrostCollider(*args, **kwargs):
     pass
 
 
-def saveInitialState(attribute="", saveall=True, *args, **kwargs):
+def saveInitialState(*args, attribute="", saveall=True, **kwargs):
     """
     saveInitialState saves the current state of dynamics objects as the initial state  A
     dynamic object is a particle shape, rigid body, rigid constraint or rigid solver  If no
@@ -50529,7 +50529,7 @@ def ResetReflectionOptions(*args, **kwargs):
     pass
 
 
-def launch(directory="", movie="", pdfFile="", webPage="", *args, **kwargs):
+def launch(*args, directory="", movie="", pdfFile="", webPage="", **kwargs):
     """
     Launch the appropriate application to open the document, web page or directory specified
     
@@ -50564,9 +50564,9 @@ def RotateToolOptions(*args, **kwargs):
     pass
 
 
-def attrControlGrp(annotation="", attribute=None, changeCommand=None, enable=True, exists=True,
-                   handlesAttribute=None, hideMapButton=True, label="", preventOverride=True,
-                   q=True, query=True, e=True, edit=True, *args, **kwargs):
+def attrControlGrp(*args, annotation="", attribute=None, changeCommand=None, enable=True,
+                   exists=True, handlesAttribute=None, hideMapButton=True, label="",
+                   preventOverride=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control of the type most appropriate for the specified attribute,
     and associates the control with the attribute  Any change to the control will cause a
@@ -50630,8 +50630,8 @@ def paramDimension(*args, **kwargs):
     pass
 
 
-def applyTake(channel="", device="", filter="", preview=True, recurseChannel=True, reset=True,
-              specifyChannel=True, startTime=None, *args, **kwargs):
+def applyTake(*args, channel="", device="", filter="", preview=True, recurseChannel=True,
+              reset=True, specifyChannel=True, startTime=None, **kwargs):
     """
     This command takes data in a device (refered to as a take) and converts it into a form that
     may be played back and reviewed  The take can either be imported through the readTake
@@ -50753,8 +50753,8 @@ def AbortCurrentTool(*args, **kwargs):
     pass
 
 
-def collision(friction=0.0, name="", offset=0.0, resilience=0.0, q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+def collision(*args, friction=0.0, name="", offset=0.0, resilience=0.0, q=True, query=True,
+              e=True, edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -50785,8 +50785,9 @@ def TexSewDeactivateBrushSize(*args, **kwargs):
     pass
 
 
-def makePaintable(activate=True, activateAll=True, altAttribute="", attrType="", clearAll=True,
-                  remove=True, shapeMode="", uiName="", q=True, query=True, *args, **kwargs):
+def makePaintable(*args, activate=True, activateAll=True, altAttribute="", attrType="",
+                  clearAll=True, remove=True, shapeMode="", uiName="", q=True, query=True,
+                  **kwargs):
     """
     Make attributes of nodes paintable to Attribute Paint Tool  This command is used to
     register new attributes to the Attribute Paint tool as paintable  Once registered the
@@ -50842,9 +50843,9 @@ def DetachCurveOptions(*args, **kwargs):
     pass
 
 
-def polyMultiLayoutUV(flipReversed=True, gridU=0, gridV=0, layout=0, layoutMethod=0,
+def polyMultiLayoutUV(*args, flipReversed=True, gridU=0, gridV=0, layout=0, layoutMethod=0,
                       offsetU=0.0, offsetV=0.0, percentageSpace=0.0, prescale=0,
-                      rotateForBestFit=0, scale=0, sizeU=0.0, sizeV=0.0, uvSetName="", *args,
+                      rotateForBestFit=0, scale=0, sizeU=0.0, sizeV=0.0, uvSetName="",
                       **kwargs):
     """
     place the UVs of the selected polygonal objects so that they do not overlap
@@ -50898,7 +50899,7 @@ def HypershadePublishConnections(*args, **kwargs):
     pass
 
 
-def showHelp(absolute=True, docs=True, helpTable=True, version=True, q=True, query=True, *args,
+def showHelp(*args, absolute=True, docs=True, helpTable=True, version=True, q=True, query=True,
              **kwargs):
     """
     Invokes a web browser to open the on-line documentation and help files  It will open the
@@ -50950,8 +50951,8 @@ def ViewAlongAxisZ(*args, **kwargs):
     pass
 
 
-def distanceDimContext(exists=True, history=True, image1="", image2="", image3="", name="",
-                       q=True, query=True, e=True, edit=True, *args, **kwargs):
+def distanceDimContext(*args, exists=True, history=True, image1="", image2="", image3="",
+                       name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command used to register the distanceDimCtx tool
     
@@ -51021,10 +51022,10 @@ def dR_mtkToolTGL(*args, **kwargs):
     pass
 
 
-def subdAutoProjection(caching=True, nodeState=0, constructionHistory=True, layout=0,
+def subdAutoProjection(*args, caching=True, nodeState=0, constructionHistory=True, layout=0,
                        layoutMethod=0, name="", optimize=0, percentageSpace=0.0, planes=6,
                        scale=0, skipIntersect=True, worldSpace=True, q=True, query=True, e=True,
-                       edit=True, *args, **kwargs):
+                       edit=True, **kwargs):
     """
     Projects a texture map onto an object, using several orthogonal projections simultaneously 
      The argument is a face selection list
@@ -51079,8 +51080,8 @@ def AddPfxToHairSystem(*args, **kwargs):
     pass
 
 
-def dynPref(autoCreate=True, echoCollision=True, runupFrom=0, runupToCurrentTime=True,
-            saveOnQuit=True, saveRuntimeState=True, q=True, query=True, *args, **kwargs):
+def dynPref(*args, autoCreate=True, echoCollision=True, runupFrom=0, runupToCurrentTime=True,
+            saveOnQuit=True, saveRuntimeState=True, q=True, query=True, **kwargs):
     """
     This action modifies and queries the current state of "autoCreate rigid bodies", "run up to
     current time", and "run up from" (previous time or start time)
@@ -51106,7 +51107,7 @@ def dynPref(autoCreate=True, echoCollision=True, runupFrom=0, runupToCurrentTime
     pass
 
 
-def waitCursor(state=True, q=True, query=True, *args, **kwargs):
+def waitCursor(*args, state=True, q=True, query=True, **kwargs):
     """
     This command sets/resets a wait cursor for the entire Maya application  This works as a
     stack, such that for each waitCursor -state on command executed there should be a matching
@@ -51196,8 +51197,8 @@ def CreateTextureDeformer(*args, **kwargs):
     pass
 
 
-def choice(attribute="", controlPoints=False, index=0, name="", selector=None, shape=True,
-           sourceAttribute=None, time=None, q=True, query=True, e=True, edit=True, *args,
+def choice(*args, attribute="", controlPoints=False, index=0, name="", selector=None,
+           shape=True, sourceAttribute=None, time=None, q=True, query=True, e=True, edit=True,
            **kwargs):
     """
     The choice command provides a mechanism for changing the inputs to an attribute based on
@@ -51260,7 +51261,7 @@ def MovePolygonComponent(*args, **kwargs):
     pass
 
 
-def objectType(isAType="", isType="", tagFromType="", typeFromTag=0, typeTag=True, *args,
+def objectType(*args, isAType="", isType="", tagFromType="", typeFromTag=0, typeTag=True,
                **kwargs):
     """
     This command returns the type of elements  Warning: This command is incomplete and may not
@@ -51293,10 +51294,10 @@ def AbcExport(*args, **kwargs):
     pass
 
 
-def polyFlipUV(caching=True, constructionHistory=True, createNewMap=True, cutUV=True,
+def polyFlipUV(*args, caching=True, constructionHistory=True, createNewMap=True, cutUV=True,
                flipType=0, insertBeforeDeformers=True, local=True, name="", nodeState=0,
                pivotU=0.0, pivotV=0.0, usePivot=True, uvSetName="", worldSpace=True, q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     Flip (mirror) the UVs (in texture space) of input polyFaces, about either the U or V axis.
     
@@ -51380,10 +51381,10 @@ def AddSelectionAsCombinationTargetOptions(*args, **kwargs):
     pass
 
 
-def scriptEditorInfo(clearHistory=True, clearHistoryFile=True, historyFilename="", input="",
-                     suppressErrors=True, suppressInfo=True, suppressResults=True,
+def scriptEditorInfo(*args, clearHistory=True, clearHistoryFile=True, historyFilename="",
+                     input="", suppressErrors=True, suppressInfo=True, suppressResults=True,
                      suppressStackWindow=True, suppressWarnings=True, writeHistory=True, q=True,
-                     query=True, e=True, edit=True, *args, **kwargs):
+                     query=True, e=True, edit=True, **kwargs):
     """
     Use this command to directly manipulate and query the contents of the Command Window window
      Note: Due to recent changes, certain flags will no longer work on the Script Editor Window
@@ -51449,8 +51450,8 @@ def Extrude(*args, **kwargs):
     pass
 
 
-def propMove(percent=0.0, percentX=0.0, percentY=0.0, percentZ=0.0, pivot=None, rotate=None,
-             scale=None, translate=None, worldSpace=True, *args, **kwargs):
+def propMove(*args, percent=0.0, percentX=0.0, percentY=0.0, percentZ=0.0, pivot=None,
+             rotate=None, scale=None, translate=None, worldSpace=True, **kwargs):
     """
     Performs a proportional translate, scale or rotate operation on any number of objects  The
     percentages to rotate, scale or translate by can be specified using either the -p flags or
@@ -51504,10 +51505,10 @@ def dR_vertUnlockAll(*args, **kwargs):
     pass
 
 
-def polyCBoolOp(classification=0, faceAreaThreshold=0.0001, operation=0, preserveColor=False,
-                useCarveBooleans=True, useThresholds=False, vertexDistanceThreshold=0.001,
-                caching=True, mergeUVSets=0, nodeState=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+def polyCBoolOp(*args, classification=0, faceAreaThreshold=0.0001, operation=0,
+                preserveColor=False, useCarveBooleans=True, useThresholds=False,
+                vertexDistanceThreshold=0.001, caching=True, mergeUVSets=0, nodeState=0, q=True,
+                query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new poly as the result of a boolean operation on input polys : union,
     intersection, difference
@@ -51572,9 +51573,9 @@ def GraphCut(*args, **kwargs):
     pass
 
 
-def panZoomCtx(alternateContext=True, buttonDown=True, buttonUp=True, exists=True, history=True,
-               image1="", image2="", image3="", name="", panMode=True, toolName="",
-               zoomMode=True, zoomScale=0.0, q=True, query=True, e=True, edit=True, *args,
+def panZoomCtx(*args, alternateContext=True, buttonDown=True, buttonUp=True, exists=True,
+               history=True, image1="", image2="", image3="", name="", panMode=True,
+               toolName="", zoomMode=True, zoomScale=0.0, q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     This command can be used to create camera 2D pan/zoom context
@@ -51617,8 +51618,8 @@ def panZoomCtx(alternateContext=True, buttonDown=True, buttonUp=True, exists=Tru
     pass
 
 
-def displaySurface(flipNormals=True, twoSidedLighting=True, xRay=True, q=True, query=True,
-                   *args, **kwargs):
+def displaySurface(*args, flipNormals=True, twoSidedLighting=True, xRay=True, q=True,
+                   query=True, **kwargs):
     """
     This command toggles display options on the specified or active surfaces  Typically this
     command applies to NURBS or poly mesh surfaces and ignores other type of objects
@@ -51658,9 +51659,9 @@ def OutTangentSpline(*args, **kwargs):
     pass
 
 
-def help(documentation=True, language="", list=True, popupDisplayTime=4, popupMode=True,
+def help(*args, documentation=True, language="", list=True, popupDisplayTime=4, popupMode=True,
          popupPauseTime=800, popupSimpleMode=True, rolloverMode=True, syntaxOnly=True, q=True,
-         query=True, *args, **kwargs):
+         query=True, **kwargs):
     """
     With no arguments, help tells how to use help  If a command name is specified, help will
     return the quick help for that command  Other flags can be used to open the online
@@ -51702,7 +51703,7 @@ def help(documentation=True, language="", list=True, popupDisplayTime=4, popupMo
     pass
 
 
-def treeView(addItem=None, allowDragAndDrop=True, allowHiddenParents=True,
+def treeView(*args, addItem=None, allowDragAndDrop=True, allowHiddenParents=True,
              allowMultiSelection=True, allowReparenting=True, annotation="",
              attachButtonRight=0, backgroundColor=None, borderHighlite=None,
              borderHighliteColor=None, buttonErase=None, buttonState=None, buttonStyle=None,
@@ -51725,7 +51726,7 @@ def treeView(addItem=None, allowDragAndDrop=True, allowHiddenParents=True,
              rightPressCommand=None, select=None, selectCommand=None, selectItem=None,
              selectionChangedCommand=None, selectionColor=None, showItem="",
              statusBarMessage="", textColor=None, useTemplate="", visible=True,
-             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
              **kwargs):
     """
     This command creates a custom control
@@ -52019,11 +52020,11 @@ def treeView(addItem=None, allowDragAndDrop=True, allowHiddenParents=True,
     pass
 
 
-def polyToSubdiv(absolutePosition=True, applyMatrixToResult=True, caching=True,
+def polyToSubdiv(*args, absolutePosition=True, applyMatrixToResult=True, caching=True,
                  maxEdgesPerVert=32, maxPolyCount=1000, nodeState=0,
                  preserveVertexOrdering=True, quickConvert=True, uvPoints=None, uvPointsU=0.0,
                  uvPointsV=0.0, uvTreatment=0, addUnderTransform=True, constructionHistory=True,
-                 name="", object=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 name="", object=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command converts a polygon and produces a subd surface  The name of the new
     subdivision surface is returned  If construction history is ON, then the name of the new
@@ -52081,8 +52082,8 @@ def polyToSubdiv(absolutePosition=True, applyMatrixToResult=True, caching=True,
     pass
 
 
-def enableDevice(apply=True, device="", enable=True, monitor=True, record=True, q=True,
-                 query=True, *args, **kwargs):
+def enableDevice(*args, apply=True, device="", enable=True, monitor=True, record=True, q=True,
+                 query=True, **kwargs):
     """
     Sets (or queries) the device enable state for actions involving the device    -monitor
     affects all assignInputDevice and attachDeviceAttr actions for the named device -record
@@ -52113,8 +52114,8 @@ def PolygonCollapse(*args, **kwargs):
     pass
 
 
-def assignInputDevice(clutch="", continuous=True, device="", immediate=True, multiple=True,
-                      q=True, query=True, *args, **kwargs):
+def assignInputDevice(*args, clutch="", continuous=True, device="", immediate=True,
+                      multiple=True, q=True, query=True, **kwargs):
     """
     This command associates a command string (i.e  a mel script) with the input device  When
     the device moves or a button on the device is pressed, the command string is executed as if
@@ -52148,9 +52149,9 @@ def ShowSelectedObjects(*args, **kwargs):
     pass
 
 
-def editMetadata(memberName="", remove=True, stringValue="", value=0.0, channelName="",
+def editMetadata(*args, memberName="", remove=True, stringValue="", value=0.0, channelName="",
                  channelType="", endIndex="", index="", indexType="", scene=True, startIndex="",
-                 streamName="", *args, **kwargs):
+                 streamName="", **kwargs):
     """
     This command is used to set metadata elements onto or remove metadata elements from an
     object  Before using this command you must first attach a metadata stream type to the
@@ -52231,9 +52232,9 @@ def OutlinerRevealSelected(*args, **kwargs):
     pass
 
 
-def polyCollapseFacet(areaThreshold=0.1, caching=True, constructionHistory=True, name="",
+def polyCollapseFacet(*args, areaThreshold=0.1, caching=True, constructionHistory=True, name="",
                       nodeState=0, useAreaThreshold=False, q=True, query=True, e=True,
-                      edit=True, *args, **kwargs):
+                      edit=True, **kwargs):
     """
     Turns each selected facet into a point
     
@@ -52297,7 +52298,7 @@ def ClosestPointOnOptions(*args, **kwargs):
     pass
 
 
-def ikHandleDisplayScale(q=True, query=True, e=True, edit=True, *args, **kwargs):
+def ikHandleDisplayScale(*args, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This action modifies and queries the current display size of ikHandle  The default display
     scale is 1.0
@@ -52309,15 +52310,15 @@ def ikHandleDisplayScale(q=True, query=True, e=True, edit=True, *args, **kwargs)
     pass
 
 
-def timeEditorClip(absolute=True, addAttribute="", allowShrinking=True, animSource="", audio="",
-                   children=0, clipAfter=True, clipBefore=True, clipDataType=True, clipId=0,
-                   clipIdFromNodeName=0, clipIdFromPath=True, clipNode=True, clipPath=True,
-                   copyClip=True, crossfadeMode=0, crossfadePlug=True, curveTime=None,
-                   defaultGhostRoot=True, drivenAttributes=True, drivenClipsBySource="",
-                   drivenObjects=True, drivenRootObjects=True, drivingSources="",
-                   duplicateClip=True, duration=None, emptySource=True, endTime=None,
-                   existingOnly=True, exists=True, explode=0, exportAllClips=True, exportFbx="",
-                   extend=True, extendParent=True, ghost=True, ghostRootAdd="",
+def timeEditorClip(*args, absolute=True, addAttribute="", allowShrinking=True, animSource="",
+                   audio="", children=0, clipAfter=True, clipBefore=True, clipDataType=True,
+                   clipId=0, clipIdFromNodeName=0, clipIdFromPath=True, clipNode=True,
+                   clipPath=True, copyClip=True, crossfadeMode=0, crossfadePlug=True,
+                   curveTime=None, defaultGhostRoot=True, drivenAttributes=True,
+                   drivenClipsBySource="", drivenObjects=True, drivenRootObjects=True,
+                   drivingSources="", duplicateClip=True, duration=None, emptySource=True,
+                   endTime=None, existingOnly=True, exists=True, explode=0, exportAllClips=True,
+                   exportFbx="", extend=True, extendParent=True, ghost=True, ghostRootAdd="",
                    ghostRootRemove="", group=True, holdEnd=None, holdStart=None,
                    importTakeDestination=1, isContainer=True, listUserGhostRoot=True,
                    loopEnd=None, loopStart=None, minClipDuration=True, modifyAnimSource=True,
@@ -52337,8 +52338,7 @@ def timeEditorClip(absolute=True, addAttribute="", allowShrinking=True, animSour
                    importPopulateOption="", importedContainerNames="", includeRoot=True,
                    populateImportedAnimSources="", poseClip=True, recursively=True,
                    removeSceneAnimation=True, showAnimSourceRemapping=True, takeList="",
-                   takesToImport="", type="", q=True, query=True, e=True, edit=True, *args,
-                   **kwargs):
+                   takesToImport="", type="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command edits/queries Time Editor clips
     
@@ -52640,9 +52640,9 @@ def xgmWrapXGen(*args, **kwargs):
     pass
 
 
-def polyConnectComponents(adjustEdgeFlow=0.0, caching=True, constructionHistory=True,
+def polyConnectComponents(*args, adjustEdgeFlow=0.0, caching=True, constructionHistory=True,
                           insertWithEdgeFlow=True, name="", nodeState=0, q=True, query=True,
-                          e=True, edit=True, *args, **kwargs):
+                          e=True, edit=True, **kwargs):
     """
     Splits polygon edges according to the selected components  The selected components are
     gathered into connected 'paths' that define continuous splits  Mixed components (vertices,
@@ -52727,7 +52727,7 @@ def CreatePondOptions(*args, **kwargs):
     pass
 
 
-def xpmPicker(fileName="", parent="", *args, **kwargs):
+def xpmPicker(*args, fileName="", parent="", **kwargs):
     """
     Open a dialog and ask you to choose a xpm file
     
@@ -52763,9 +52763,9 @@ def ReverseCurveOptions(*args, **kwargs):
     pass
 
 
-def batchRender(filename="", melCommand="", numProcs=0, preRenderCommand="",
+def batchRender(*args, filename="", melCommand="", numProcs=0, preRenderCommand="",
                 remoteRenderMachine="", renderCommandOptions="", showImage=True, status="",
-                useRemoteRender=True, useStandalone=True, verbosity=0, *args, **kwargs):
+                useRemoteRender=True, useStandalone=True, verbosity=0, **kwargs):
     """
     The batchRender command is used to spawn off a separate rendering session of the current
     maya file  If no mayaFile is specified, it'll ask you whether you want the current job
@@ -52857,12 +52857,12 @@ def subdCleanTopology(*args, **kwargs):
     pass
 
 
-def convertSolidTx(alpha=True, antiAlias=True, backgroundColor=None, backgroundMode="",
+def convertSolidTx(*args, alpha=True, antiAlias=True, backgroundColor=None, backgroundMode="",
                    camera=None, componentRange=True, doubleSided=True, fileFormat="",
                    fileImageName="", fillTextureSeams=True, force=True, fullUvRange=True,
                    name="", pixelFormat="8", resolutionX=0, resolutionY=0, reuseDepthMap=False,
                    samplePlane=True, samplePlaneRange=None, shadows=True, uvBBoxIntersect=True,
-                   uvRange=None, uvSetName="", q=True, query=True, e=True, edit=True, *args,
+                   uvRange=None, uvSetName="", q=True, query=True, e=True, edit=True,
                    **kwargs):
     """
     Command to convert a texture on a surface to a file texture  The first argument is a
@@ -52981,14 +52981,14 @@ def AlignUVOptions(*args, **kwargs):
     pass
 
 
-def nameField(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
+def nameField(*args, annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
               docTag="", dragCallback=None, drawInactiveFrame=True, dropCallback=None,
               enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
               fullPathName=True, height=0, highlightColor=None, isObscured=True, manage=True,
               nameChangeCommand=None, noBackground=True, numberOfPopupMenus=True, object="",
               parent="", popupMenuArray=True, preventOverride=True, receiveFocusCommand=None,
               statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-              width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+              width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates an editable field that can be linked to the name of a Maya object  The
     field will always show the name of the object
@@ -53109,8 +53109,8 @@ def CVHardnessOptions(*args, **kwargs):
     pass
 
 
-def modelCurrentTimeCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                        percent=50, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def modelCurrentTimeCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                        name="", percent=50, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to change current time within the model
     views
@@ -53170,7 +53170,7 @@ def HypershadeRenameActiveTab(*args, **kwargs):
     pass
 
 
-def playblast(activeEditor=True, cameraSetup=None, clearCache=True, codecOptions=True,
+def playblast(*args, activeEditor=True, cameraSetup=None, clearCache=True, codecOptions=True,
               combineSound=True, completeFilename="", compression="", editorPanelName="",
               endTime=None, filename="", forceOverwrite=True, format="", frame=None,
               framePadding=0, height=0, indexFromZero=True, offScreen=True,
@@ -53178,7 +53178,7 @@ def playblast(activeEditor=True, cameraSetup=None, clearCache=True, codecOptions
               rawFrameNumbers=True, replaceAudioOnly=True, replaceEndTime=None,
               replaceFilename="", replaceStartTime=None, sequenceTime=True, showOrnaments=True,
               sound="", startTime=None, throwOnError=True, useTraxSounds=True, viewer=True,
-              width=0, widthHeight=None, *args, **kwargs):
+              width=0, widthHeight=None, **kwargs):
     """
     This command playblasts the current playback range  Sound is optional   Note that the
     playblast command registers a condition called "playblasting" so that users can monitor
@@ -53301,7 +53301,7 @@ def NodeEditorPinSelected(*args, **kwargs):
     pass
 
 
-def hilite(replace=True, toggle=True, unHilite=True, *args, **kwargs):
+def hilite(*args, replace=True, toggle=True, unHilite=True, **kwargs):
     """
     Hilites/Unhilites the specified object(s)  Hiliting an object makes it possible to select
     the components of the object  If no objects are specified then the selection list is used
@@ -53334,9 +53334,8 @@ def xgmLengthBrushContext(*args, **kwargs):
     pass
 
 
-def containerView(itemInfo="", itemList=True, viewDescription=True, viewLabel=True,
-                  viewList=True, viewName="", q=True, query=True, e=True, edit=True, *args,
-                  **kwargs):
+def containerView(*args, itemInfo="", itemList=True, viewDescription=True, viewLabel=True,
+                  viewList=True, viewName="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     A container view defines the layout information for the published attributes of a
     particular container  Container views can be selected from a set of built-in views or may
@@ -53443,10 +53442,10 @@ def RetimeKeysToolOptions(*args, **kwargs):
     pass
 
 
-def radial(attenuation=0.0, magnitude=0.0, maxDistance=0.0, name="", perVertex=True,
+def radial(*args, attenuation=0.0, magnitude=0.0, maxDistance=0.0, name="", perVertex=True,
            position=None, torusSectionRadius=0.0, type=0.0, volumeExclusion=True,
            volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True, query=True, e=True,
-           edit=True, *args, **kwargs):
+           edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -53507,9 +53506,9 @@ def U3DBrushPressureOff(*args, **kwargs):
     pass
 
 
-def roundConstantRadius(append=False, constructionHistory=True, name="", object=True,
+def roundConstantRadius(*args, append=False, constructionHistory=True, name="", object=True,
                         radiuss=0.0, side=None, sidea=0, sideb=0, q=True, query=True, e=True,
-                        edit=True, *args, **kwargs):
+                        edit=True, **kwargs):
     """
     This command generates constant radius NURBS fillets and NURBS corner surfaces for matching
     edge pairs on NURBS surfaces  An edge pair is a matching pair of surface isoparms or trim
@@ -53566,8 +53565,8 @@ def IncreaseExposureCoarse(*args, **kwargs):
     pass
 
 
-def openMayaPref(errlog=True, lazyLoad=True, oldPluginWarning=True, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+def openMayaPref(*args, errlog=True, lazyLoad=True, oldPluginWarning=True, q=True, query=True,
+                 e=True, edit=True, **kwargs):
     """
     Set or query API preferences
     
@@ -53588,11 +53587,11 @@ def openMayaPref(errlog=True, lazyLoad=True, oldPluginWarning=True, q=True, quer
     pass
 
 
-def renderInfo(castShadows=True, chordHeight=0.0, chordHeightRatio=0.0, doubleSided=True,
+def renderInfo(*args, castShadows=True, chordHeight=0.0, chordHeightRatio=0.0, doubleSided=True,
                edgeSwap=True, minScreen=0.0, name="", opposite=True, smoothShading=True, unum=0,
                useChordHeight=True, useChordHeightRatio=True, useDefaultLights=True,
                useMinScreen=True, utype=0, vnum=0, vtype=0, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     The renderInfo commands sets geometric properties of surfaces of the selected object
     
@@ -53659,8 +53658,8 @@ def XgmSetDensityBrushToolOption(*args, **kwargs):
     pass
 
 
-def reorderContainer(back=True, front=True, relative=0, q=True, query=True, e=True, edit=True,
-                     *args, **kwargs):
+def reorderContainer(*args, back=True, front=True, relative=0, q=True, query=True, e=True,
+                     edit=True, **kwargs):
     """
     This command reorders (moves) objects relative to their siblings in a container   For
     relative moves, both positive and negative numbers may be specified  Positive numbers move
@@ -53722,7 +53721,7 @@ def MirrorSubdivSurfaceOptions(*args, **kwargs):
     pass
 
 
-def checkBoxGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def checkBoxGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                 adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                 backgroundColor=None, changeCommand=None, changeCommand1=None,
                 changeCommand2=None, changeCommand3=None, changeCommand4=None, columnAlign=None,
@@ -53745,7 +53744,7 @@ def checkBoxGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                 value1=True, value2=True, value3=True, value4=True, valueArray2=None,
                 valueArray3=None, valueArray4=None, vertical=True, visible=True,
                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -54006,9 +54005,9 @@ def checkBoxGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
     pass
 
 
-def event(count=0, delete=True, dieAtCollision=True, emit=0, list=True, name="", proc=None,
-          random=True, rename="", select=True, split=0, spread=0.0, target="", q=True,
-          query=True, e=True, edit=True, *args, **kwargs):
+def event(*args, count=0, delete=True, dieAtCollision=True, emit=0, list=True, name="",
+          proc=None, random=True, rename="", select=True, split=0, spread=0.0, target="",
+          q=True, query=True, e=True, edit=True, **kwargs):
     """
     The event command assigns collision events to a particle object  Collision events are
     stored in multi-attributes in the particle shape  The event command returns the event name
@@ -54070,9 +54069,9 @@ def OpenCloseSurfaces(*args, **kwargs):
     pass
 
 
-def simplify(animation="keysOrObjects.", attribute="", controlPoints=False, float=None,
+def simplify(*args, animation="keysOrObjects.", attribute="", controlPoints=False, float=None,
              floatTolerance=0.0, hierarchy="", includeUpperBound=True, index=0, shape=True,
-             time=None, timeTolerance=None, valueTolerance=0.0, *args, **kwargs):
+             time=None, timeTolerance=None, valueTolerance=0.0, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -54120,24 +54119,24 @@ def simplify(animation="keysOrObjects.", attribute="", controlPoints=False, floa
     pass
 
 
-def renderWindowEditor(autoResize=True, blendMode=0, caption="", changeCommand=None, clear=None,
-                       cmEnabled=True, colorManage=True, compDisplay=0, compImageFile="",
-                       control=True, currentCamera="", currentCameraRig="", defineTemplate="",
-                       displayImage=0, displayImageViewCount=0, displayStyle="", docTag="",
-                       doubleBuffer=True, drawAxis=True, editorName=True, exists=True,
-                       exposure=0.0, filter="", forceMainConnection="", frameImage=True,
-                       frameRegion=True, gamma=0.0, highlightConnection="", loadImage="",
-                       lockMainConnection=True, mainListConnection="", marquee=None,
-                       nbImages=True, nextViewImage=True, outputColorManage=True, panel="",
-                       parent="", pcaption="", realSize=True, refresh=True,
-                       removeAllImages=True, removeImage=True, resetRegion=True,
+def renderWindowEditor(*args, autoResize=True, blendMode=0, caption="", changeCommand=None,
+                       clear=None, cmEnabled=True, colorManage=True, compDisplay=0,
+                       compImageFile="", control=True, currentCamera="", currentCameraRig="",
+                       defineTemplate="", displayImage=0, displayImageViewCount=0,
+                       displayStyle="", docTag="", doubleBuffer=True, drawAxis=True,
+                       editorName=True, exists=True, exposure=0.0, filter="",
+                       forceMainConnection="", frameImage=True, frameRegion=True, gamma=0.0,
+                       highlightConnection="", loadImage="", lockMainConnection=True,
+                       mainListConnection="", marquee=None, nbImages=True, nextViewImage=True,
+                       outputColorManage=True, panel="", parent="", pcaption="", realSize=True,
+                       refresh=True, removeAllImages=True, removeImage=True, resetRegion=True,
                        resetViewImage=True, saveImage=True, scaleBlue=0.0, scaleGreen=0.0,
                        scaleRed=0.0, selectionConnection="", showRegion=None, singleBuffer=True,
                        snapshot=None, snapshotMode=True, stateString=True, stereo=0,
                        stereoImageOrientation=None, stereoMode="", toggle=True, unParent=True,
                        unlockMainConnection=True, updateMainConnection=True, useTemplate="",
                        viewImageCount=0, viewTransformName="", writeImage="", q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     Create a editor window that can receive the result of the rendering process
     
@@ -54347,10 +54346,10 @@ def dR_symmetrize(*args, **kwargs):
     pass
 
 
-def copyDeformerWeights(destinationDeformer="", destinationShape="", mirrorInverse=True,
+def copyDeformerWeights(*args, destinationDeformer="", destinationShape="", mirrorInverse=True,
                         mirrorMode="", noMirror=True, smooth=True, sourceDeformer="",
                         sourceShape="", surfaceAssociation="", uvSpace=None, q=True, query=True,
-                        e=True, edit=True, *args, **kwargs):
+                        e=True, edit=True, **kwargs):
     """
     Command to copy or mirror the deformer weights accross one of the three major axes  The
     command can be used to mirror weights either from one surface to another or within the same
@@ -54391,11 +54390,11 @@ def copyDeformerWeights(destinationDeformer="", destinationShape="", mirrorInver
     pass
 
 
-def rebuildSurface(caching=True, degreeU=3, degreeV=3, direction=2, endKnots=0, fitRebuild=0,
-                   keepControlPoints=False, keepCorners=True, keepRange=1, nodeState=0,
-                   rebuildType=0, spansU=4, spansV=4, tolerance=0.01, constructionHistory=True,
-                   name="", object=True, polygon=0, replaceOriginal=True, q=True, query=True,
-                   e=True, edit=True, *args, **kwargs):
+def rebuildSurface(*args, caching=True, degreeU=3, degreeV=3, direction=2, endKnots=0,
+                   fitRebuild=0, keepControlPoints=False, keepCorners=True, keepRange=1,
+                   nodeState=0, rebuildType=0, spansU=4, spansV=4, tolerance=0.01,
+                   constructionHistory=True, name="", object=True, polygon=0,
+                   replaceOriginal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command rebuilds a surface by modifying its parameterization  In some cases the shape
     of the surface may also change  The rebuildType (-rt) attribute determines how the surface
@@ -54490,7 +54489,7 @@ def characterizationToolUICmd(*args, **kwargs):
     pass
 
 
-def listSets(allSets=True, extendToShape=True, object=None, type=0, *args, **kwargs):
+def listSets(*args, allSets=True, extendToShape=True, object=None, type=0, **kwargs):
     """
     The listSets command is used to get a list of all the sets an object belongs to  To get
     sets of a specific type for an object use the type flag as well   To get a list of all sets
@@ -54513,9 +54512,9 @@ def listSets(allSets=True, extendToShape=True, object=None, type=0, *args, **kwa
     pass
 
 
-def polyColorPerVertex(alpha=0.0, clamped=True, colorB=0.0, colorDisplayOption=True, colorG=0.0,
-                       colorR=0.0, colorRGB=None, notUndoable=True, relative=True, remove=True,
-                       representation=0, q=True, query=True, e=True, edit=True, *args,
+def polyColorPerVertex(*args, alpha=0.0, clamped=True, colorB=0.0, colorDisplayOption=True,
+                       colorG=0.0, colorR=0.0, colorRGB=None, notUndoable=True, relative=True,
+                       remove=True, representation=0, q=True, query=True, e=True, edit=True,
                        **kwargs):
     """
     Command associates color(rgb and alpha) with vertices on polygonal objects  When used with
@@ -54591,7 +54590,7 @@ def dR_setRelaxAffectsAll(*args, **kwargs):
     pass
 
 
-def showHidden(above=True, allObjects=True, below=True, lastHidden=True, *args, **kwargs):
+def showHidden(*args, above=True, allObjects=True, below=True, lastHidden=True, **kwargs):
     """
     The showHidden command is used to make invisible objects visible  If no flags are specified,
     only the objects given to the command will be made visible  If a parent of an object is
@@ -54613,10 +54612,10 @@ def showHidden(above=True, allObjects=True, below=True, lastHidden=True, *args, 
     pass
 
 
-def displaySmoothness(all=True, boundary=True, defaultCreation=True, divisionsU=0, divisionsV=0,
-                      full=True, hull=True, pointsShaded=0, pointsWire=0, polygonObject=0,
-                      renderTessellation=True, simplifyU=0, simplifyV=0, q=True, query=True,
-                      *args, **kwargs):
+def displaySmoothness(*args, all=True, boundary=True, defaultCreation=True, divisionsU=0,
+                      divisionsV=0, full=True, hull=True, pointsShaded=0, pointsWire=0,
+                      polygonObject=0, renderTessellation=True, simplifyU=0, simplifyV=0,
+                      q=True, query=True, **kwargs):
     """
     This command is responsible for setting the display smoothness of NURBS curves and surfaces
     to either predefined or custom values  It also sets display modes for smoothness such as
@@ -54672,7 +54671,7 @@ def dagCommandWrapper(*args, **kwargs):
     pass
 
 
-def polyReduce(caching=True, cachingReduce=False, colorWeights=0, compactness=0.0,
+def polyReduce(*args, caching=True, cachingReduce=False, colorWeights=0, compactness=0.0,
                constructionHistory=True, geomWeights=1, invertVertexWeights=True,
                keepBorder=True, keepBorderWeight=0.5, keepColorBorder=True,
                keepColorBorderWeight=0.5, keepCreaseEdge=True, keepCreaseEdgeWeight=0.5,
@@ -54684,8 +54683,7 @@ def polyReduce(caching=True, cachingReduce=False, colorWeights=0, compactness=0.
                symmetryPlaneY=0, symmetryPlaneZ=0, symmetryTolerance=0, termination=0,
                triangleCount=0, triangulate=True, useVirtualSymmetry=0, uvWeights=0, version=0,
                vertexCount=0, vertexMapName="", vertexWeightCoefficient=1,
-               weightCoefficient=10000, q=True, query=True, e=True, edit=True, *args,
-               **kwargs):
+               weightCoefficient=10000, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Simplify a polygonal object by reducing geometry while preserving the overall shape of the
     mesh   The algorithm for polyReduce was changed in 2014 to use a new algorithm derived from
@@ -54847,10 +54845,10 @@ def polyReduce(caching=True, cachingReduce=False, colorWeights=0, compactness=0.
     pass
 
 
-def tumbleCtx(alternateContext=True, autoOrthoConstrain=True, autoSetPivot=True, exists=True,
-              history=True, image1="", image2="", image3="", localTumble=0, name="",
-              objectTumble=True, orthoLock=True, orthoStep=0.0, toolName="", tumbleScale=0.0,
-              q=True, query=True, e=True, edit=True, *args, **kwargs):
+def tumbleCtx(*args, alternateContext=True, autoOrthoConstrain=True, autoSetPivot=True,
+              exists=True, history=True, image1="", image2="", image3="", localTumble=0,
+              name="", objectTumble=True, orthoLock=True, orthoStep=0.0, toolName="",
+              tumbleScale=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a tumble context
     
@@ -54916,8 +54914,8 @@ def EmptyAnimLayer(*args, **kwargs):
     pass
 
 
-def uvLink(b=True, isValid=True, make=True, queryObject=None, texture=None, uvSet=None, q=True,
-           query=True, *args, **kwargs):
+def uvLink(*args, b=True, isValid=True, make=True, queryObject=None, texture=None, uvSet=None,
+           q=True, query=True, **kwargs):
     """
     This command is used to make, break and query UV linking relationships between UV sets on
     objects and textures that use those UV sets   If no make, break or query flag is specified
@@ -54991,10 +54989,10 @@ def ToggleUVIsolateViewSelected(*args, **kwargs):
     pass
 
 
-def jointCluster(aboveBound=0.0, aboveCluster=True, aboveDropoffType="", aboveValue=0.0,
+def jointCluster(*args, aboveBound=0.0, aboveCluster=True, aboveDropoffType="", aboveValue=0.0,
                  belowBound=0.0, belowCluster=True, belowDropoffType="", belowValue=0.0,
                  deformerTools=True, joint="", name="", q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     The joint cluster command adds high-level controls to manage the cluster percentage values
     on a bound skin around a joint  JointClusters are one way to create smooth bending
@@ -55053,8 +55051,8 @@ def AttachSelectedAsSourceField(*args, **kwargs):
     pass
 
 
-def subdCollapse(caching=True, level=0, nodeState=0, constructionHistory=True, name="",
-                 object=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def subdCollapse(*args, caching=True, level=0, nodeState=0, constructionHistory=True, name="",
+                 object=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command converts a takes a subdivision surface, passed as the argument, and produces a
     subdivision surface with a number of hierarchy levels "removed"  Returns the name of the
@@ -55145,15 +55143,15 @@ def PolyMerge(*args, **kwargs):
     pass
 
 
-def rigidBody(active=True, angularVelocity=True, applyForceAt="", bounciness=0.6, cache=True,
-              centerOfMass=None, collisions=True, contactCount=True, contactName=True,
-              contactPosition=True, damping=0.0, deleteCache=True, dynamicFriction=0.2,
-              force=True, ignore=True, impulse=None, impulsePosition=None,
+def rigidBody(*args, active=True, angularVelocity=True, applyForceAt="", bounciness=0.6,
+              cache=True, centerOfMass=None, collisions=True, contactCount=True,
+              contactName=True, contactPosition=True, damping=0.0, deleteCache=True,
+              dynamicFriction=0.2, force=True, ignore=True, impulse=None, impulsePosition=None,
               initialAngularVelocity=None, initialVelocity=None, layer=0, lockCenterOfMass=True,
               mass=1.0, name="", orientation=None, particleCollision=True, passive=True,
               position=None, removeShape="", solver="", spinImpulse=None, standInObject="",
               staticFriction=0.2, tesselationFactor=200, velocity=True, q=True, query=True,
-              e=True, edit=True, *args, **kwargs):
+              e=True, edit=True, **kwargs):
     """
     This command creates a rigid body from a polygonal or nurbs surface
     
@@ -55268,13 +55266,13 @@ def canCreateCaddyManip(*args, **kwargs):
     pass
 
 
-def timePort(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def timePort(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
              dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
              enableKeyboardFocus=True, exists=True, fullPathName=True, globalTime=True,
              height=0, highlightColor=None, isObscured=True, manage=True, noBackground=True,
              numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
              snap=True, statusBarMessage="", useTemplate="", visible=True,
-             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
              **kwargs):
     """
     This command creates a simple time control widget  See also the "timeControl" command
@@ -55372,8 +55370,8 @@ def MakeBrushSpringOptions(*args, **kwargs):
     pass
 
 
-def selectKeyframeRegionCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                            q=True, query=True, e=True, edit=True, *args, **kwargs):
+def selectKeyframeRegionCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                            name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to select keyframes within the keyframe
     region of the dope sheet editor
@@ -55409,7 +55407,7 @@ def ShowLightManipulators(*args, **kwargs):
     pass
 
 
-def deleteExtension(attribute="", forceDelete=True, nodeType="", *args, **kwargs):
+def deleteExtension(*args, attribute="", forceDelete=True, nodeType="", **kwargs):
     """
     This command is used to delete an extension attribute from a node type  The attribute can
     be specified by using either the long or short name  Only one extension attribute can be
@@ -55437,7 +55435,7 @@ def AnimationSnapshotOptions(*args, **kwargs):
     pass
 
 
-def setRenderPassType(defaultDataType=True, numChannels=0, type="", *args, **kwargs):
+def setRenderPassType(*args, defaultDataType=True, numChannels=0, type="", **kwargs):
     """
     This command will set the passID of a renderPass node and create the custom attributes
     specified by the corresponding render pass definition  If the render pass node already has
@@ -55471,9 +55469,8 @@ def renameAttr(*args, **kwargs):
     pass
 
 
-def geometryConstraint(layer="", name="", remove=True, targetList=True, weight=0.0,
-                       weightAliasList=True, q=True, query=True, e=True, edit=True, *args,
-                       **kwargs):
+def geometryConstraint(*args, layer="", name="", remove=True, targetList=True, weight=0.0,
+                       weightAliasList=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Constrain an object's position based on the shape of the target surface(s) at the closest
     point(s) to the object   A geometryConstraint takes as input one or more surface shapes
@@ -55503,9 +55500,9 @@ def geometryConstraint(layer="", name="", remove=True, targetList=True, weight=0
     pass
 
 
-def toolCollection(collectionItemArray=True, defineTemplate="", exists=True, gl=True,
+def toolCollection(*args, collectionItemArray=True, defineTemplate="", exists=True, gl=True,
                    numberOfCollectionItems=True, parent="", select="", useTemplate="", q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     This command creates a tool button collection  Collections are parented to the current
     default layout if no parent is specified with the -p/parent flag  As children of the layout
@@ -55578,9 +55575,9 @@ def SetMeshFillTool(*args, **kwargs):
     pass
 
 
-def fileBrowserDialog(actionName="", dialogStyle=0, fileCommand=None, fileType="",
+def fileBrowserDialog(*args, actionName="", dialogStyle=0, fileCommand=None, fileType="",
                       filterList="", includeName="", mode=0, operationMode="", tipMessage="",
-                      windowTitle="", *args, **kwargs):
+                      windowTitle="", **kwargs):
     """
     The fileBrowserDialog and fileDialog commands have now been deprecated  Both commands are
     still callable, but it is recommended that the fileDialog2 command be used instead  To
@@ -55634,11 +55631,11 @@ def PaintEffectsToPoly(*args, **kwargs):
     pass
 
 
-def instancer(addObject=True, cycle="none", cycleStep=0.0, cycleStepUnits="frames", index=0,
-              levelOfDetail="geometry", name="", object="", objectPosition="",
+def instancer(*args, addObject=True, cycle="none", cycleStep=0.0, cycleStepUnits="frames",
+              index=0, levelOfDetail="geometry", name="", object="", objectPosition="",
               objectRotation="", objectScale="", pointDataSource=True, removeObject=True,
               rotationOrder="", rotationUnits="", valueName="", q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+              edit=True, **kwargs):
     """
     This command is used to create a instancer node and set the proper attributes in the node
     
@@ -55703,7 +55700,7 @@ def HideNURBSCurves(*args, **kwargs):
     pass
 
 
-def openGLExtension(extension="", renderer=True, vendor=True, version=True, *args, **kwargs):
+def openGLExtension(*args, extension="", renderer=True, vendor=True, version=True, **kwargs):
     """
     Command returns the extension name depending on whether a given OpenGL extension is
     supported or not  The input is the extension string to the -extension flag  If the
@@ -55776,8 +55773,8 @@ def FBXImportSetMayaFrameRate(*args, **kwargs):
     pass
 
 
-def texManipContext(exists=True, image1="", image2="", image3="", q=True, query=True, e=True,
-                    edit=True, *args, **kwargs):
+def texManipContext(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                    e=True, edit=True, **kwargs):
     """
     Command used to register the texSelectCtx tool  Command used to register the texManipCtx
     tool
@@ -55822,7 +55819,7 @@ def CreateNURBSSquare(*args, **kwargs):
     pass
 
 
-def truncateHairCache(q=True, query=True, e=True, edit=True, *args, **kwargs):
+def truncateHairCache(*args, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command sets the end time of a hair cache to the current time  If the current time is
     less than the end time of the cache, the cache is truncated so that only the portion of the
@@ -55835,8 +55832,8 @@ def truncateHairCache(q=True, query=True, e=True, edit=True, *args, **kwargs):
     pass
 
 
-def arcLenDimContext(exists=True, history=True, image1="", image2="", image3="", name="",
-                     q=True, query=True, e=True, edit=True, *args, **kwargs):
+def arcLenDimContext(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                     q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command used to register the arcLenDimCtx tool
     
@@ -55871,9 +55868,9 @@ def RemoveWireOptions(*args, **kwargs):
     pass
 
 
-def promptDialog(backgroundColor=None, button="", cancelButton="", defaultButton="",
+def promptDialog(*args, backgroundColor=None, button="", cancelButton="", defaultButton="",
                  dismissString="", message="", messageAlign="", parent="", scrollableField=True,
-                 style="", text="", title="", q=True, query=True, *args, **kwargs):
+                 style="", text="", title="", q=True, query=True, **kwargs):
     """
     The promptDialog command creates a modal dialog with a message to the user, a text field in
     which the user may enter a response, and a variable number of buttons to dismiss the dialog
@@ -55951,9 +55948,9 @@ def dR_meshAlphaTGL(*args, **kwargs):
     pass
 
 
-def nodeCast(copyDynamicAttrs=True, disableAPICallbacks=True, disableScriptJobCallbacks=True,
-             disconnectUnmatchedAttrs=True, force=True, swapNames=True, swapValues=True, *args,
-             **kwargs):
+def nodeCast(*args, copyDynamicAttrs=True, disableAPICallbacks=True,
+             disableScriptJobCallbacks=True, disconnectUnmatchedAttrs=True, force=True,
+             swapNames=True, swapValues=True, **kwargs):
     """
     Given two nodes, a source node of type A and a target node of type B, where type A is
     either type B or a sub-type of B, this command will replace the target node with the source
@@ -55986,7 +55983,7 @@ def nodeCast(copyDynamicAttrs=True, disableAPICallbacks=True, disableScriptJobCa
     pass
 
 
-def reorder(back=True, front=True, relative=0, *args, **kwargs):
+def reorder(*args, back=True, front=True, relative=0, **kwargs):
     """
     This command reorders (moves) objects relative to their siblings   For relative moves, both
     positive and negative numbers may be specified  Positive numbers move the object forward
@@ -56006,10 +56003,10 @@ def reorder(back=True, front=True, relative=0, *args, **kwargs):
     pass
 
 
-def polyDuplicateEdge(adjustEdgeFlow=0.0, deleteEdge=True, endVertexOffset=0.0,
+def polyDuplicateEdge(*args, adjustEdgeFlow=0.0, deleteEdge=True, endVertexOffset=0.0,
                       insertWithEdgeFlow=True, offset=0.0, smoothingAngle=0.0, splitType=0,
                       startVertexOffset=0.0, caching=True, constructionHistory=True, name="",
-                      nodeState=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                      nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Duplicates a series of connected edges (edgeLoop)
     
@@ -56060,14 +56057,14 @@ def BrushPresetReplaceShadingOff(*args, **kwargs):
     pass
 
 
-def saveImage(annotation="", backgroundColor=None, currentView=True, defineTemplate="",
+def saveImage(*args, annotation="", backgroundColor=None, currentView=True, defineTemplate="",
               docTag="", dragCallback=None, dropCallback=None, enable=True,
               enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
               height=0, highlightColor=None, image="", isObscured=True, manage=True,
               noBackground=True, numberOfPopupMenus=True, objectThumbnail="", parent="",
               popupMenuArray=True, preventOverride=True, sceneFile="", statusBarMessage="",
               useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     This command creates a static image for non-xpm files  Any image file format supported by
     the file texture node is supported by this command   This command creates a static image
@@ -56189,7 +56186,7 @@ def NodeEditorSetTraversalDepthZero(*args, **kwargs):
     pass
 
 
-def relationship(b=True, relationshipData="", q=True, query=True, e=True, edit=True, *args,
+def relationship(*args, b=True, relationshipData="", q=True, query=True, e=True, edit=True,
                  **kwargs):
     """
     This is primarily for use with file IO  Rather than write out the specific
@@ -56210,7 +56207,7 @@ def relationship(b=True, relationshipData="", q=True, query=True, e=True, edit=T
     pass
 
 
-def pfxstrokes(filename="", postCallback=True, selected=True, *args, **kwargs):
+def pfxstrokes(*args, filename="", postCallback=True, selected=True, **kwargs):
     """
     This command will loop through all the Paint Effects strokes, including pfxHair nodes, and
     write the current state of all the tubes to a file  For normal stroke nodes tubes must be
@@ -56231,7 +56228,7 @@ def pfxstrokes(filename="", postCallback=True, selected=True, *args, **kwargs):
     pass
 
 
-def launchImageEditor(editImageFile="", viewImageFile="", *args, **kwargs):
+def launchImageEditor(*args, editImageFile="", viewImageFile="", **kwargs):
     """
     Launch the appropriate application to edit/view the image files specified  This command
     works only on the Macintosh and Windows platforms
@@ -56269,8 +56266,8 @@ def SelectAllFurs(*args, **kwargs):
     pass
 
 
-def detachDeviceAttr(all=True, attribute="", axis="", device="", selection=True, q=True,
-                     query=True, *args, **kwargs):
+def detachDeviceAttr(*args, all=True, attribute="", axis="", device="", selection=True, q=True,
+                     query=True, **kwargs):
     """
     This command detaches connections between device axes and node attributes  The command line
     arguments are the same as for the corresponding attachDeviceAttr except for the clutch
@@ -56372,7 +56369,7 @@ def AutoPaintMarkingMenuPopDown(*args, **kwargs):
     pass
 
 
-def subdivDisplaySmoothness(smoothness=0, q=True, query=True, *args, **kwargs):
+def subdivDisplaySmoothness(*args, smoothness=0, q=True, query=True, **kwargs):
     """
     Sets or querys the display smoothness of subdivision surfaces on the selection list or of
     all subdivision surfaces if the -all option is set  Smoothness options are; rough, medium,
@@ -56408,10 +56405,10 @@ def InTangentClamped(*args, **kwargs):
     pass
 
 
-def curveCVCtx(bezier=True, degree=0, exists=True, history=True, image1="", image2="",
+def curveCVCtx(*args, bezier=True, degree=0, exists=True, history=True, image1="", image2="",
                image3="", multEndKnots=True, name="", preserveShape=True, rational=True,
                refit=True, symmetry=True, uniform=True, q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+               **kwargs):
     """
     The curveCVCtx command creates a new context for creating curves by placing control
     vertices (CVs)
@@ -56463,8 +56460,8 @@ def NodeEditorSelectUpStream(*args, **kwargs):
     pass
 
 
-def setEditCtx(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+def setEditCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a tool that can be used to modify set membership
     
@@ -56506,24 +56503,24 @@ def TimeEditorCutClips(*args, **kwargs):
     pass
 
 
-def selectPriority(allComponents=0, allObjects=0, animBreakdown=0, animCurve=0, animInTangent=0,
-                   animKeyframe=0, animOutTangent=0, byName=None, camera=0, cluster=0,
-                   collisionModel=0, controlVertex=0, curve=0, curveKnot=0, curveOnSurface=0,
-                   curveParameterPoint=0, dimension=0, dynamicConstraint=0, edge=0, editPoint=0,
-                   emitter=0, facet=0, field=0, fluid=0, follicle=0, hairSystem=0, handle=0,
-                   hull=0, ikEndEffector=0, ikHandle=0, imagePlane=0, implicitGeometry=0,
-                   isoparm=0, joint=0, jointPivot=0, lattice=0, latticePoint=0, light=0,
-                   localRotationAxis=0, locator=0, locatorUV=0, locatorXYZ=0, meshUVShell=0,
-                   motionTrailPoint=0, motionTrailTangent=0, nCloth=0, nParticle=0,
-                   nParticleShape=0, nRigid=0, nonlinear=0, nurbsCurve=0, nurbsSurface=0,
-                   orientationLocator=0, particle=0, particleShape=0, plane=0, polymesh=0,
-                   polymeshEdge=0, polymeshFace=0, polymeshFreeEdge=0, polymeshUV=0,
+def selectPriority(*args, allComponents=0, allObjects=0, animBreakdown=0, animCurve=0,
+                   animInTangent=0, animKeyframe=0, animOutTangent=0, byName=None, camera=0,
+                   cluster=0, collisionModel=0, controlVertex=0, curve=0, curveKnot=0,
+                   curveOnSurface=0, curveParameterPoint=0, dimension=0, dynamicConstraint=0,
+                   edge=0, editPoint=0, emitter=0, facet=0, field=0, fluid=0, follicle=0,
+                   hairSystem=0, handle=0, hull=0, ikEndEffector=0, ikHandle=0, imagePlane=0,
+                   implicitGeometry=0, isoparm=0, joint=0, jointPivot=0, lattice=0,
+                   latticePoint=0, light=0, localRotationAxis=0, locator=0, locatorUV=0,
+                   locatorXYZ=0, meshUVShell=0, motionTrailPoint=0, motionTrailTangent=0,
+                   nCloth=0, nParticle=0, nParticleShape=0, nRigid=0, nonlinear=0, nurbsCurve=0,
+                   nurbsSurface=0, orientationLocator=0, particle=0, particleShape=0, plane=0,
+                   polymesh=0, polymeshEdge=0, polymeshFace=0, polymeshFreeEdge=0, polymeshUV=0,
                    polymeshVertex=0, polymeshVtxFace=0, queryByName="", rigidBody=0,
                    rigidConstraint=0, rotatePivot=0, scalePivot=0, sculpt=0, selectHandle=0,
                    spring=0, springComponent=0, stroke=0, subdiv=0, subdivMeshEdge=0,
                    subdivMeshFace=0, subdivMeshPoint=0, subdivMeshUV=0, surfaceEdge=0,
                    surfaceFace=0, surfaceKnot=0, surfaceParameterPoint=0, surfaceRange=0,
-                   texture=0, vertex=0, q=True, query=True, *args, **kwargs):
+                   texture=0, vertex=0, q=True, query=True, **kwargs):
     """
     The selectPriority command is used to change the selection priority of particular types of
     objects that can be selected when using the select tool  It accepts no other arguments
@@ -56735,12 +56732,12 @@ def arnoldUpdateTx(*args, **kwargs):
     pass
 
 
-def hudSlider(allowOverlap=True, block=0, blockAlignment="", blockSize="", decimalPrecision=0,
-              dragCommand=None, internalPadding=0, label="", labelFontSize="", labelWidth=0,
-              maxValue=0.0, minValue=0.0, padding=0, pressCommand=None, releaseCommand=None,
-              section=0, sliderIncrement=0.0, sliderLength=0, type="", value=0.0,
-              valueAlignment="", valueFontSize="", valueWidth=0, visible=True, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+def hudSlider(*args, allowOverlap=True, block=0, blockAlignment="", blockSize="",
+              decimalPrecision=0, dragCommand=None, internalPadding=0, label="",
+              labelFontSize="", labelWidth=0, maxValue=0.0, minValue=0.0, padding=0,
+              pressCommand=None, releaseCommand=None, section=0, sliderIncrement=0.0,
+              sliderLength=0, type="", value=0.0, valueAlignment="", valueFontSize="",
+              valueWidth=0, visible=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a Heads-up Display (HUD) slider control which is placed in a 2D
     inactive overlay plane on the 3D viewport  It is to be used to provide hands-on interaction
@@ -56874,9 +56871,9 @@ def TesselateSubdivSurfaceOptions(*args, **kwargs):
     pass
 
 
-def timeEditorComposition(active=True, allCompositions=True, createTrack=True, delete=True,
-                          duplicateFrom="", rename=None, tracksNode=True, q=True, query=True,
-                          e=True, edit=True, *args, **kwargs):
+def timeEditorComposition(*args, active=True, allCompositions=True, createTrack=True,
+                          delete=True, duplicateFrom="", rename=None, tracksNode=True, q=True,
+                          query=True, e=True, edit=True, **kwargs):
     """
     Commands related to composition management inside Time Editor
     
@@ -56964,8 +56961,8 @@ def ShowMeshFlattenToolOptions(*args, **kwargs):
     pass
 
 
-def savePrefs(colors=True, general=True, hotkeys=True, menuSets=True, plugins=True,
-              uiLayout=True, *args, **kwargs):
+def savePrefs(*args, colors=True, general=True, hotkeys=True, menuSets=True, plugins=True,
+              uiLayout=True, **kwargs):
     """
     This command saves preferences to disk  If no flags are specified then all pref types get
     saved out
@@ -57045,11 +57042,11 @@ def ScaleTool(*args, **kwargs):
     pass
 
 
-def sculptTarget(after=True, afterReference=True, before=True, deformerTools=True, exclusive="",
-                 frontOfChain=True, geometry="", geometryIndices=True, ignoreSelected=True,
-                 inbetweenWeight=0.0, includeHiddenSelections=False, name="", parallel=True,
-                 prune=True, regenerate=True, remove=True, snapshot=0, split=True, target=0,
-                 e=True, edit=True, *args, **kwargs):
+def sculptTarget(*args, after=True, afterReference=True, before=True, deformerTools=True,
+                 exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
+                 ignoreSelected=True, inbetweenWeight=0.0, includeHiddenSelections=False,
+                 name="", parallel=True, prune=True, regenerate=True, remove=True, snapshot=0,
+                 split=True, target=0, e=True, edit=True, **kwargs):
     """
     This command is used to specify the blend shape target to be modified by the sculpting
     tools and transform manipulators
@@ -57144,9 +57141,9 @@ def MinimizeApplication(*args, **kwargs):
     pass
 
 
-def timeCode(mayaStartFrame=0.0, productionStartFrame=0.0, productionStartHour=0.0,
+def timeCode(*args, mayaStartFrame=0.0, productionStartFrame=0.0, productionStartHour=0.0,
              productionStartMinute=0.0, productionStartSecond=0.0, q=True, query=True, e=True,
-             edit=True, *args, **kwargs):
+             edit=True, **kwargs):
     """
     Use this command to query and set the time code information in the file
     
@@ -57172,8 +57169,8 @@ def timeCode(mayaStartFrame=0.0, productionStartFrame=0.0, productionStartHour=0
     pass
 
 
-def lassoContext(drawClosed=True, exists=True, history=True, image1="", image2="", image3="",
-                 name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def lassoContext(*args, drawClosed=True, exists=True, history=True, image1="", image2="",
+                 image3="", name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates a context to perform selection via a "lasso"  Use for irregular selection regions,
     where the "marquee-style" select of the "selectContext" is inappropriate
@@ -57232,8 +57229,8 @@ def ShowManipulators(*args, **kwargs):
     pass
 
 
-def play(forward=True, playSound=True, record=True, sound="", state=True, wait=True, q=True,
-         query=True, *args, **kwargs):
+def play(*args, forward=True, playSound=True, record=True, sound="", state=True, wait=True,
+         q=True, query=True, **kwargs):
     """
     This command starts and stops playback  In order to change the frame range of playback, see
     the playbackOptions command
@@ -57265,14 +57262,14 @@ def SelectToggleMode(*args, **kwargs):
     pass
 
 
-def hotkeyEditorPanel(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def hotkeyEditorPanel(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                       dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                       enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                       highlightColor=None, isObscured=True, manage=True, noBackground=True,
                       numberOfPopupMenus=True, parent="", popupMenuArray=True,
                       preventOverride=True, statusBarMessage="", useTemplate="", visible=True,
                       visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                      *args, **kwargs):
+                      **kwargs):
     """
     A hotkeyEditor creates a new hotkey editor in the current layout  The hotkey editor lets
     you assign predefined commands, MEL scripts, or marking menus to keys and key combinations
@@ -57357,10 +57354,10 @@ def hotkeyEditorPanel(annotation="", backgroundColor=None, defineTemplate="", do
     pass
 
 
-def getPanel(allConfigs=True, allPanels=True, allScriptedTypes=True, allTypes=True,
+def getPanel(*args, allConfigs=True, allPanels=True, allScriptedTypes=True, allTypes=True,
              atPosition=None, configWithLabel="", containing="", invisiblePanels=True,
              scriptType="", type="", typeOf="", underPointer=True, visiblePanels=True,
-             withFocus=True, withLabel="", *args, **kwargs):
+             withFocus=True, withLabel="", **kwargs):
     """
     This command returns panel and panel configuration information
     
@@ -57409,11 +57406,11 @@ def getPanel(allConfigs=True, allPanels=True, allScriptedTypes=True, allTypes=Tr
     pass
 
 
-def polyBridgeEdge(bridgeOffset=0, caching=True, constructionHistory=True, curveType=0,
+def polyBridgeEdge(*args, bridgeOffset=0, caching=True, constructionHistory=True, curveType=0,
                    divisions=1, inputCurve=None, name="", nodeState=0, smoothingAngle=0.0,
                    startVert1=1, startVert2=1, taper=1.0, taperCurve_FloatValue=0.0,
                    taperCurve_Interp=0, taperCurve_Position=0.0, twist=0.0, worldSpace=True,
-                   q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   q=True, query=True, e=True, edit=True, **kwargs):
     """
     Bridges two sets of edges
     
@@ -57516,9 +57513,9 @@ def dR_cycleCustomCameras(*args, **kwargs):
     pass
 
 
-def view2dToolCtx(alternateContext=True, boxzoom=True, dolly=True, exists=True, history=True,
-                  image1="", image2="", image3="", name="", toolName="", track=True, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def view2dToolCtx(*args, alternateContext=True, boxzoom=True, dolly=True, exists=True,
+                  history=True, image1="", image2="", image3="", name="", toolName="",
+                  track=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This class creates a context for the View Tools "track", "dolly", and "box zoom" in the
     Hypergraph
@@ -57557,9 +57554,9 @@ def view2dToolCtx(alternateContext=True, boxzoom=True, dolly=True, exists=True, 
     pass
 
 
-def hasMetadata(asList=True, ignoreDefault=True, memberName="", channelName="", channelType="",
-                endIndex="", index="", indexType="", scene=True, startIndex="", streamName="",
-                *args, **kwargs):
+def hasMetadata(*args, asList=True, ignoreDefault=True, memberName="", channelName="",
+                channelType="", endIndex="", index="", indexType="", scene=True, startIndex="",
+                streamName="", **kwargs):
     """
     This command is used to query for the presence of metadata elements on a node, components,
     or scene  The command works at all levels of metadata presence, from the existence of any
@@ -57607,14 +57604,14 @@ def hasMetadata(asList=True, ignoreDefault=True, memberName="", channelName="", 
     pass
 
 
-def scriptJob(allChildren=True, attributeAdded=None, attributeChange=None,
+def scriptJob(*args, allChildren=True, attributeAdded=None, attributeChange=None,
               attributeDeleted=None, compressUndo=True, conditionChange=None,
               conditionFalse=None, conditionTrue=None, connectionChange=None,
               disregardIndex=True, event=None, exists=0, force=True, idleEvent=None, kill=0,
               killAll=True, killWithScene=True, listConditions=True, listEvents=True,
               listJobs=True, nodeDeleted=None, nodeNameChanged=None, optionVarChanged=None,
               parent="", permanent=True, protected=True, replacePrevious=True, runOnce=True,
-              timeChange=None, uiDeleted=None, *args, **kwargs):
+              timeChange=None, uiDeleted=None, **kwargs):
     """
     This command creates a "script job", which is a MEL command or script  This job is attached
     to the named condition, event, or attribute  Each time the condition switches to the
@@ -57740,14 +57737,14 @@ def HideDeformingGeometry(*args, **kwargs):
     pass
 
 
-def checkBox(align="", annotation="", backgroundColor=None, changeCommand=None,
+def checkBox(*args, align="", annotation="", backgroundColor=None, changeCommand=None,
              defineTemplate="", docTag="", dragCallback=None, dropCallback=None, editable=True,
              enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
              fullPathName=True, height=0, highlightColor=None, isObscured=True, label="",
              manage=True, noBackground=True, numberOfPopupMenus=True, offCommand=None,
              onCommand=None, parent="", popupMenuArray=True, preventOverride=True,
              recomputeSize=True, statusBarMessage="", useTemplate="", value=True, visible=True,
-             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
              **kwargs):
     """
     This command creates a check box  A check box is a simple control containing a text label
@@ -57861,8 +57858,8 @@ def FBXImportAxisConversionEnable(*args, **kwargs):
     pass
 
 
-def blindDataType(dataType="", longDataName="", longNames=True, query=True, shortDataName="",
-                  shortNames=True, typeId=0, typeNames=True, *args, **kwargs):
+def blindDataType(*args, dataType="", longDataName="", longNames=True, query=True,
+                  shortDataName="", shortNames=True, typeId=0, typeNames=True, **kwargs):
     """
     This command creates a blind data type, which is represented by a blindDataTemplate node in
     the DG  A blind data type can have one or more attributes  On the command line, the
@@ -57933,9 +57930,9 @@ def Quadrangulate(*args, **kwargs):
     pass
 
 
-def psdTextureFile(channelRGB=None, channels=None, imageFileName=None, psdFileName="",
+def psdTextureFile(*args, channelRGB=None, channels=None, imageFileName=None, psdFileName="",
                    snapShotImageName="", uvSnapPostionTop=True, xResolution=0, yResolution=0,
-                   *args, **kwargs):
+                   **kwargs):
     """
     Creates a Photoshop file with UVSnap shot image and the layer set names as the input
     
@@ -57995,8 +57992,8 @@ def DeactivateGlobalScreenSlider(*args, **kwargs):
     pass
 
 
-def doBlur(colorFile="", length=0.0, memCapSize=0.0, sharpness=0.0, smooth=0.0,
-           smoothColor=True, vectorFile="", *args, **kwargs):
+def doBlur(*args, colorFile="", length=0.0, memCapSize=0.0, sharpness=0.0, smooth=0.0,
+           smoothColor=True, vectorFile="", **kwargs):
     """
     The doBlur command will invoke the blur2d, which is a Maya stand-alone application to do
     2.5 motion blur given the color image and the motion vector file  For a given input
@@ -58061,7 +58058,7 @@ def TimeEditorClipRazor(*args, **kwargs):
     pass
 
 
-def applyMetadata(format="", scene=True, value="", *args, **kwargs):
+def applyMetadata(*args, format="", scene=True, value="", **kwargs):
     """
     Define the values of a particular set of metadata on selected objects  This command is used
     in preservation of metadata through Maya file formats (.ma/.mb)  If any metadata already
@@ -58140,9 +58137,9 @@ def PublishAttributes(*args, **kwargs):
     pass
 
 
-def autoSave(destination=0, destinationFolder=True, enable=True, folder="", interval=0.0,
+def autoSave(*args, destination=0, destinationFolder=True, enable=True, folder="", interval=0.0,
              limitBackups=True, maxBackups=0, perform=True, prompt=True, q=True, query=True,
-             *args, **kwargs):
+             **kwargs):
     """
     Provides an interface to the auto-save mechanism
     
@@ -58189,21 +58186,22 @@ def ToolSettingsWindow(*args, **kwargs):
     pass
 
 
-def polySelectConstraint(angle=0, anglePropagation=True, angleTolerance=0.0, anglebound=None,
-                         border=True, borderPropagation=True, convexity=0, crease=True,
-                         disable=True, dist=0, distaxis=None, distbound=None, distpoint=None,
-                         edgeDistance=0, geometricarea=0, geometricareabound=None, holes=0,
-                         length=0, lengthbound=None, loopPropagation=True, max2dAngle=0.0,
-                         max3dAngle=0.0, mode=0, nonmanifold=0, oppositeEdges=True, order=0,
-                         orderbound=None, orient=0, orientaxis=None, orientbound=None,
-                         planarity=0, propagate=0, random=0, randomratio=0.0,
-                         returnSelection=True, ringPropagation=True, shell=True, size=0,
-                         smoothness=0, stateString=True, textured=0, texturedarea=0,
-                         texturedareabound=None, textureshared=0, topology=0, type=0,
-                         uvBorderSelection=True, uvConstraint=True, uvEdgeLoopPropagation=True,
-                         uvEdgeRingPropagation=True, uvFaceOrientation=0, uvShell=True,
-                         visibility=0, visibilityangle=0.0, visibilitypoint=None, where=0,
-                         wholeSensitive=True, q=True, query=True, *args, **kwargs):
+def polySelectConstraint(*args, angle=0, anglePropagation=True, angleTolerance=0.0,
+                         anglebound=None, border=True, borderPropagation=True, convexity=0,
+                         crease=True, disable=True, dist=0, distaxis=None, distbound=None,
+                         distpoint=None, edgeDistance=0, geometricarea=0,
+                         geometricareabound=None, holes=0, length=0, lengthbound=None,
+                         loopPropagation=True, max2dAngle=0.0, max3dAngle=0.0, mode=0,
+                         nonmanifold=0, oppositeEdges=True, order=0, orderbound=None, orient=0,
+                         orientaxis=None, orientbound=None, planarity=0, propagate=0, random=0,
+                         randomratio=0.0, returnSelection=True, ringPropagation=True,
+                         shell=True, size=0, smoothness=0, stateString=True, textured=0,
+                         texturedarea=0, texturedareabound=None, textureshared=0, topology=0,
+                         type=0, uvBorderSelection=True, uvConstraint=True,
+                         uvEdgeLoopPropagation=True, uvEdgeRingPropagation=True,
+                         uvFaceOrientation=0, uvShell=True, visibility=0, visibilityangle=0.0,
+                         visibilitypoint=None, where=0, wholeSensitive=True, q=True, query=True,
+                         **kwargs):
     """
     Changes the global polygonal selection constraints
     
@@ -58412,11 +58410,10 @@ def TextureCentricUVLinkingEditor(*args, **kwargs):
     pass
 
 
-def polyCone(axis=None, caching=True, constructionHistory=True, createUVs=2, height=2.0,
+def polyCone(*args, axis=None, caching=True, constructionHistory=True, createUVs=2, height=2.0,
              name="", nodeState=0, object=True, radius=1.0, roundCap=False, subdivisionsAxis=20,
              subdivisionsCap=0, subdivisionsHeight=1, subdivisionsX=20, subdivisionsY=1,
-             subdivisionsZ=0, texture=True, q=True, query=True, e=True, edit=True, *args,
-             **kwargs):
+             subdivisionsZ=0, texture=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The cone command creates a new polygonal cone
     
@@ -58548,7 +58545,7 @@ def PruneCluster(*args, **kwargs):
     pass
 
 
-def xform(absolute=True, boundingBox=True, boundingBoxInvisible=True, centerPivots=True,
+def xform(*args, absolute=True, boundingBox=True, boundingBoxInvisible=True, centerPivots=True,
           centerPivotsOnComponents=True, deletePriorHistory=True, euler=True, matrix=None,
           objectSpace=True, pivots=None, preserve=True, preserveUV=False, reflection=True,
           reflectionAboutBBox=True, reflectionAboutOrigin=True, reflectionAboutX=True,
@@ -58556,7 +58553,7 @@ def xform(absolute=True, boundingBox=True, boundingBoxInvisible=True, centerPivo
           rotateAxis=None, rotateOrder="", rotatePivot=None, rotateTranslation=None,
           rotation=None, scale=None, scalePivot=None, scaleTranslation=None, shear=None,
           translation=None, worldSpace=True, worldSpaceDistance=True, zeroTransformPivots=True,
-          q=True, query=True, *args, **kwargs):
+          q=True, query=True, **kwargs):
     """
     This command can be used query/set any element in a transformation node  It can also be
     used to query some values that cannot be set directly such as the transformation matrix or
@@ -58657,12 +58654,12 @@ def xform(absolute=True, boundingBox=True, boundingBoxInvisible=True, centerPivo
     pass
 
 
-def dynParticleCtx(conserve=0.0, cursorPlacement=True, exists=True, grid=True, gridSpacing=0.0,
-                   history=True, image1="", image2="", image3="", jitterRadius=0.0,
-                   lowerLeftX=0.0, lowerLeftY=0.0, lowerLeftZ=0.0, name="", nucleus=True,
-                   numJitters=0, particleName="", sketch=True, sketchInterval=0,
+def dynParticleCtx(*args, conserve=0.0, cursorPlacement=True, exists=True, grid=True,
+                   gridSpacing=0.0, history=True, image1="", image2="", image3="",
+                   jitterRadius=0.0, lowerLeftX=0.0, lowerLeftY=0.0, lowerLeftZ=0.0, name="",
+                   nucleus=True, numJitters=0, particleName="", sketch=True, sketchInterval=0,
                    textPlacement=True, upperRightX=0.0, upperRightY=0.0, upperZ=0.0, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     The particle context command creates a particle context  The particle context provides an
     interactive means to create particle objects  The particle context command also provides an
@@ -58745,8 +58742,8 @@ def CutKeysOptions(*args, **kwargs):
     pass
 
 
-def polyMapSew(caching=True, constructionHistory=True, name="", nodeState=0, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+def polyMapSew(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+               query=True, e=True, edit=True, **kwargs):
     """
     Sew border edges in texture space  Selected edges must be map borders
     
@@ -58797,9 +58794,9 @@ def polySpinEdge(*args, **kwargs):
     pass
 
 
-def detachSurface(caching=True, direction=1, keep=True, nodeState=0, parameter=0.0,
+def detachSurface(*args, caching=True, direction=1, keep=True, nodeState=0, parameter=0.0,
                   constructionHistory=True, name="", object=True, replaceOriginal=True, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+                  query=True, e=True, edit=True, **kwargs):
     """
     The detachSurface command detaches a surface into pieces, given a list of parameter values
     and a direction  You can also specify which pieces to keep and which to discard using the
@@ -58835,10 +58832,11 @@ def detachSurface(caching=True, direction=1, keep=True, nodeState=0, parameter=0
     pass
 
 
-def filletCurve(bias=0.0, blendControl=False, caching=True, circular=True, curveParameter1=0.0,
-                curveParameter2=0.0, depth=0.5, freeformBlend=False, nodeState=0, radius=1.0,
-                constructionHistory=True, join=True, name="", object=True, replaceOriginal=True,
-                trim=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def filletCurve(*args, bias=0.0, blendControl=False, caching=True, circular=True,
+                curveParameter1=0.0, curveParameter2=0.0, depth=0.5, freeformBlend=False,
+                nodeState=0, radius=1.0, constructionHistory=True, join=True, name="",
+                object=True, replaceOriginal=True, trim=True, q=True, query=True, e=True,
+                edit=True, **kwargs):
     """
     The curve fillet command creates a fillet curve between two curves  If no objects are
     specified in the command line, then the first two active curves are used  The fillet
@@ -58893,13 +58891,13 @@ def filletCurve(bias=0.0, blendControl=False, caching=True, circular=True, curve
     pass
 
 
-def referenceQuery(child=True, isExportEdits=True, isLoaded=True, liveEdits=True, dagPath=True,
-                   editAttrs=True, editNodes=True, editStrings=True, failedEdits=True,
-                   filename=True, isNodeReferenced=True, isPreviewOnly=True, namespace=True,
-                   nodes=True, parent=True, parentNamespace=True, referenceNode=True,
-                   shortName=True, showDagPath=True, showNamespace=True, successfulEdits=True,
-                   topReference=True, unresolvedName=True, withoutCopyNumber=True,
-                   editCommand="", onReferenceNode="", *args, **kwargs):
+def referenceQuery(*args, child=True, isExportEdits=True, isLoaded=True, liveEdits=True,
+                   dagPath=True, editAttrs=True, editNodes=True, editStrings=True,
+                   failedEdits=True, filename=True, isNodeReferenced=True, isPreviewOnly=True,
+                   namespace=True, nodes=True, parent=True, parentNamespace=True,
+                   referenceNode=True, shortName=True, showDagPath=True, showNamespace=True,
+                   successfulEdits=True, topReference=True, unresolvedName=True,
+                   withoutCopyNumber=True, editCommand="", onReferenceNode="", **kwargs):
     """
     Use this command to find out information about references and referenced nodes  A valid
     target is either a reference node, a reference file, or a referenced node  Some flags don't
@@ -58994,7 +58992,7 @@ def referenceQuery(child=True, isExportEdits=True, isLoaded=True, liveEdits=True
     pass
 
 
-def autoPlace(useMouse=True, *args, **kwargs):
+def autoPlace(*args, useMouse=True, **kwargs):
     """
     This command takes a point in the centre of the current modeling pane and projects it onto
     the live surface  This produces a point in 3 space which is returned  If the um/useMouse
@@ -59024,7 +59022,7 @@ def DeleteHairCache(*args, **kwargs):
     pass
 
 
-def truncateFluidCache(q=True, query=True, e=True, edit=True, *args, **kwargs):
+def truncateFluidCache(*args, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command sets the end time of a fluid cache to the current time  If the current time is
     less than the end time of the cache, the cache is truncated so that only the portion of the
@@ -59093,7 +59091,7 @@ def Help(*args, **kwargs):
     pass
 
 
-def listAnimatable(active=True, manip=True, manipHandle=True, shape=True, type=True, *args,
+def listAnimatable(*args, active=True, manip=True, manipHandle=True, shape=True, type=True,
                    **kwargs):
     """
     This command list the animatable attributes of a node  Command flags allow filtering by the
@@ -59126,9 +59124,9 @@ def ConnectComponents(*args, **kwargs):
     pass
 
 
-def blendTwoAttr(attribute="", attribute0=None, attribute1=None, blender=None,
+def blendTwoAttr(*args, attribute="", attribute0=None, attribute1=None, blender=None,
                  controlPoints=False, driver=0, name="", shape=True, time=None, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+                 query=True, e=True, edit=True, **kwargs):
     """
     A blendTwoAttr nodes takes two inputs, and blends the values of the inputs from one to the
     other, into an output value  The blending of the two inputs uses a blending function, and
@@ -59181,9 +59179,9 @@ def CreateHairCacheOptions(*args, **kwargs):
     pass
 
 
-def polyCreateFacetCtx(append=True, exists=True, image1="", image2="", image3="",
+def polyCreateFacetCtx(*args, append=True, exists=True, image1="", image2="", image3="",
                        maximumNumberOfPoints=0, planarConstraint=True, subdivision=1, texture=0,
-                       q=True, query=True, e=True, edit=True, *args, **kwargs):
+                       q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a new context to create polygonal objects
     
@@ -59220,9 +59218,9 @@ def polyCreateFacetCtx(append=True, exists=True, image1="", image2="", image3=""
     pass
 
 
-def getAttr(asString=True, caching=True, channelBox=True, expandEnvironmentVariables=True,
-            keyable=True, lock=True, multiIndices=True, settable=True, silent=True, size=True,
-            time=None, type=True, *args, **kwargs):
+def getAttr(*args, asString=True, caching=True, channelBox=True,
+            expandEnvironmentVariables=True, keyable=True, lock=True, multiIndices=True,
+            settable=True, silent=True, size=True, time=None, type=True, **kwargs):
     """
     This command returns the value of the named object's attribute  UI units are used where
     applicable  Currently, the types of attributes that can be displayed are:   numeric
@@ -59311,8 +59309,8 @@ def IKHandleToolOptions(*args, **kwargs):
     pass
 
 
-def unknownPlugin(dataTypes=True, list=True, nodeTypes=True, remove=True, version=True, q=True,
-                  query=True, *args, **kwargs):
+def unknownPlugin(*args, dataTypes=True, list=True, nodeTypes=True, remove=True, version=True,
+                  q=True, query=True, **kwargs):
     """
     Allows querying of the unknown plug-ins used by the scene, and provides a means to remove
     them
@@ -59365,7 +59363,7 @@ def MoveUp(*args, **kwargs):
     pass
 
 
-def optionMenu(alwaysCallChangeCommand=True, annotation="", backgroundColor=None,
+def optionMenu(*args, alwaysCallChangeCommand=True, annotation="", backgroundColor=None,
                beforeShowPopup=None, changeCommand=None, defineTemplate="", docTag="",
                dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
@@ -59373,7 +59371,7 @@ def optionMenu(alwaysCallChangeCommand=True, annotation="", backgroundColor=None
                label="", manage=True, maxVisibleItems=0, noBackground=True, numberOfItems=True,
                numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
                select=0, statusBarMessage="", useTemplate="", value="", visible=True,
-               visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+               visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     This command creates a popup menu control  The command creates the control and provides its
@@ -59493,7 +59491,7 @@ def ConformPolygon(*args, **kwargs):
     pass
 
 
-def polyOptions(activeObjects=True, allEdges=True, backCullVertex=True, backCulling=True,
+def polyOptions(*args, activeObjects=True, allEdges=True, backCullVertex=True, backCulling=True,
                 colorMaterialChannel="", colorShadedDisplay=True, displayAlphaAsGreyScale=True,
                 displayBorder=True, displayCenter=True, displayCreaseEdge=True,
                 displayCreaseVertex=True, displayGeometry=True, displayInvisibleFaces=True,
@@ -59505,7 +59503,7 @@ def polyOptions(activeObjects=True, allEdges=True, backCullVertex=True, backCull
                 newPolymesh=True, point=True, pointFacet=True, relative=True,
                 reuseTriangles=True, sizeBorder=0.0, sizeNormal=0.0, sizeUV=0.0, sizeVertex=0.0,
                 smoothDrawType=0, softEdge=True, vertexNormalMethod=0, wireBackCulling=True,
-                q=True, query=True, *args, **kwargs):
+                q=True, query=True, **kwargs):
     """
     Changes the global display polygonal attributes
     
@@ -59657,13 +59655,13 @@ def HIKLiveConnectionTool(*args, **kwargs):
     pass
 
 
-def draggerContext(anchorPoint=None, button=0, currentStep=0, cursor="", dragCommand=None,
-                   dragPoint=None, drawString="", exists=True, finalize=None, helpString="",
-                   history=True, holdCommand=None, image1="", image2="", image3="",
-                   initialize=None, modifier="", name="", plane=None, prePressCommand=None,
-                   pressCommand=None, projection="", releaseCommand=None, snapping=True,
-                   space="", stepsCount=0, undoMode="", q=True, query=True, e=True, edit=True,
-                   *args, **kwargs):
+def draggerContext(*args, anchorPoint=None, button=0, currentStep=0, cursor="",
+                   dragCommand=None, dragPoint=None, drawString="", exists=True, finalize=None,
+                   helpString="", history=True, holdCommand=None, image1="", image2="",
+                   image3="", initialize=None, modifier="", name="", plane=None,
+                   prePressCommand=None, pressCommand=None, projection="", releaseCommand=None,
+                   snapping=True, space="", stepsCount=0, undoMode="", q=True, query=True,
+                   e=True, edit=True, **kwargs):
     """
     The draggerContext allows the user to program the behavior of the mouse or an equivalent
     dragging device in MEL
@@ -59739,7 +59737,7 @@ def draggerContext(anchorPoint=None, button=0, currentStep=0, cursor="", dragCom
     pass
 
 
-def polyChipOff(attraction=0.0, caching=True, constructionHistory=True, duplicate=True,
+def polyChipOff(*args, attraction=0.0, caching=True, constructionHistory=True, duplicate=True,
                 gain=1.0, gravity=None, gravityX=0.0, gravityY=0.0, gravityZ=0.0,
                 keepFacesTogether=True, keepFacetTogether=True, localCenter=0,
                 localDirection=None, localDirectionX=0.0, localDirectionY=0.0,
@@ -59750,7 +59748,7 @@ def polyChipOff(attraction=0.0, caching=True, constructionHistory=True, duplicat
                 nodeState=0, offset=0.0, pivot=None, pivotX=0.0, pivotY=0.0, pivotZ=0.0,
                 random=0.0, scale=None, scaleX=0.0, scaleY=0.0, scaleZ=0.0, translate=None,
                 translateX=0.0, translateY=0.0, translateZ=0.0, weight=0.0, worldSpace=True,
-                q=True, query=True, e=True, edit=True, *args, **kwargs):
+                q=True, query=True, e=True, edit=True, **kwargs):
     """
     Extract facets  Faces can be extracted separately or together, and manipulations can be
     performed either in world or object space
@@ -59886,9 +59884,9 @@ def DisplayShadedAndTextured(*args, **kwargs):
     pass
 
 
-def keyframeRegionDirectKeyCtx(exists=True, history=True, image1="", image2="", image3="",
-                               name="", option="", q=True, query=True, e=True, edit=True, *args,
-                               **kwargs):
+def keyframeRegionDirectKeyCtx(*args, exists=True, history=True, image1="", image2="",
+                               image3="", name="", option="", q=True, query=True, e=True,
+                               edit=True, **kwargs):
     """
     This command creates a context which may be used to directly manipulate keyframes within
     the dope sheet editor
@@ -59927,9 +59925,9 @@ def ConvertSelectionToVertexPerimeter(*args, **kwargs):
     pass
 
 
-def polySubdivideEdge(caching=True, constructionHistory=True, divisions=1, name="", nodeState=0,
-                      size=0.0, worldSpace=True, q=True, query=True, e=True, edit=True, *args,
-                      **kwargs):
+def polySubdivideEdge(*args, caching=True, constructionHistory=True, divisions=1, name="",
+                      nodeState=0, size=0.0, worldSpace=True, q=True, query=True, e=True,
+                      edit=True, **kwargs):
     """
     Subdivides an edge into two or more subedges   Default : divide edge into two edges of
     equal length
@@ -59977,8 +59975,8 @@ def mouldMesh(*args, **kwargs):
     pass
 
 
-def createLayeredPsdFile(imageFileName=None, psdFileName="", xResolution=0, yResolution=0,
-                         *args, **kwargs):
+def createLayeredPsdFile(*args, imageFileName=None, psdFileName="", xResolution=0,
+                         yResolution=0, **kwargs):
     """
     Creates a layered PSD file with image names as input to individual layers
     
@@ -60020,15 +60018,16 @@ def hitTest(*args, **kwargs):
     pass
 
 
-def intScrollBar(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
-                 docTag="", dragCallback=None, dragCommand=None, dropCallback=None, enable=True,
-                 enableBackground=True, enableKeyboardFocus=True, exists=True,
-                 fullPathName=True, height=0, highlightColor=None, horizontal=True,
-                 isObscured=True, largeStep=0, manage=True, maxValue=0, minValue=0,
-                 noBackground=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
-                 preventOverride=True, statusBarMessage="", step=0, useTemplate="", value=0,
-                 visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+def intScrollBar(*args, annotation="", backgroundColor=None, changeCommand=None,
+                 defineTemplate="", docTag="", dragCallback=None, dragCommand=None,
+                 dropCallback=None, enable=True, enableBackground=True,
+                 enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                 highlightColor=None, horizontal=True, isObscured=True, largeStep=0,
+                 manage=True, maxValue=0, minValue=0, noBackground=True,
+                 numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
+                 statusBarMessage="", step=0, useTemplate="", value=0, visible=True,
+                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
+                 **kwargs):
     """
     Create a scroll bar control that accepts only integer values and is bound by a minimum and
     maximum value  The scroll bar displays a marker indicating the current value of the scroll
@@ -60143,8 +60142,8 @@ def setDynStartState(*args, **kwargs):
     pass
 
 
-def workspacePanel(defineTemplate="", exists=True, mainWindow=True, useTemplate="", q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+def workspacePanel(*args, defineTemplate="", exists=True, mainWindow=True, useTemplate="",
+                   q=True, query=True, e=True, edit=True, **kwargs):
     """
     Workspace panel
     
@@ -60202,9 +60201,9 @@ def UVEditorUnpinAll(*args, **kwargs):
     pass
 
 
-def subdiv(currentLevel=True, currentSubdLevel=True, deepestLevel=0, displayLoad=True,
+def subdiv(*args, currentLevel=True, currentSubdLevel=True, deepestLevel=0, displayLoad=True,
            edgeStats=True, faceStats=True, maxPossibleLevel=0, proxyMode=0, smallOffsets=True,
-           q=True, query=True, *args, **kwargs):
+           q=True, query=True, **kwargs):
     """
     Provides useful information about the selected subdiv or components, such as the deepest
     subdivided level, the children or parents of the currently selected components, etc
@@ -60241,11 +60240,11 @@ def subdiv(currentLevel=True, currentSubdLevel=True, deepestLevel=0, displayLoad
     pass
 
 
-def exportEdits(excludeHierarchy=True, excludeNode="", exportSelected=True, force=True,
+def exportEdits(*args, excludeHierarchy=True, excludeNode="", exportSelected=True, force=True,
                 includeAnimation=True, includeConstraints=True, includeDeformers=True,
                 includeNetwork=True, includeNode="", includeSetAttrs=True,
                 includeSetDrivenKeys=True, includeShaders=True, selected=True, type="",
-                editCommand="", onReferenceNode="", q=True, query=True, *args, **kwargs):
+                editCommand="", onReferenceNode="", q=True, query=True, **kwargs):
     """
     Use this command to export edits made in the scene to a file  The exported file can be
     subsequently imported to another scene  Edits may include: nodes, connections and reference
@@ -60323,7 +60322,7 @@ def AddMissingFBIKEffectors(*args, **kwargs):
     pass
 
 
-def addPP(attribute="", *args, **kwargs):
+def addPP(*args, attribute="", **kwargs):
     """
     Adds per-point (per-cv, per-vertex, or per-particle) attribute capability for an attribute
     of an emitter or field  The -atr flag identifies the attribute  If no attribute is named,
@@ -60391,11 +60390,12 @@ def HypershadeDisplayInterestingShapes(*args, **kwargs):
     pass
 
 
-def scriptedPanelType(addCallback="", copyStateCallback="", createCallback="", customView=True,
-                      defineTemplate="", deleteCallback="", exists=True, hotkeyCtxClient="",
-                      initCallback="", label="", obsolete=True, removeCallback="",
-                      retainOnFileOpen=True, saveStateCallback="", unique=True, useTemplate="",
-                      q=True, query=True, e=True, edit=True, *args, **kwargs):
+def scriptedPanelType(*args, addCallback="", copyStateCallback="", createCallback="",
+                      customView=True, defineTemplate="", deleteCallback="", exists=True,
+                      hotkeyCtxClient="", initCallback="", label="", obsolete=True,
+                      removeCallback="", retainOnFileOpen=True, saveStateCallback="",
+                      unique=True, useTemplate="", q=True, query=True, e=True, edit=True,
+                      **kwargs):
     """
     This command defines the callbacks for a type of scripted panel  The panel type created by
     this command is then used when creating a scripted panel  See also the 'scriptedPanel'
@@ -60514,7 +60514,7 @@ def FBXLoadMBExportPresetFile(*args, **kwargs):
     pass
 
 
-def grabColor(hsvValue=True, rgbValue=True, *args, **kwargs):
+def grabColor(*args, hsvValue=True, rgbValue=True, **kwargs):
     """
     This command changes the cursor and enters a modal state which will be exited by pressing a
     mouse button  The color component values of the pixel below the cursor at the time of the
@@ -60546,10 +60546,10 @@ def FBXExportColladaSingleMatrix(*args, **kwargs):
     pass
 
 
-def hotkey(altModifier=True, autoSave=True, commandModifier=True, ctrlModifier=True,
+def hotkey(*args, altModifier=True, autoSave=True, commandModifier=True, ctrlModifier=True,
            ctxClient="", dragPress=True, factorySettings=True, isModifier=True, keyShortcut="",
            name="", pressCommandRepeat=True, releaseCommandRepeat=True, releaseName="",
-           shiftModifier=True, sourceUserHotkeys=True, q=True, query=True, *args, **kwargs):
+           shiftModifier=True, sourceUserHotkeys=True, q=True, query=True, **kwargs):
     """
     This command sets the single-key hotkeys for the entire application
     
@@ -60601,7 +60601,7 @@ def hotkey(altModifier=True, autoSave=True, commandModifier=True, ctrlModifier=T
     pass
 
 
-def paintEffectsDisplay(meshDrawEnable=True, q=True, query=True, *args, **kwargs):
+def paintEffectsDisplay(*args, meshDrawEnable=True, q=True, query=True, **kwargs):
     """
     Command to set the global display methods for paint effects items
     
@@ -60677,8 +60677,8 @@ def ShowMeshMaskToolOptions(*args, **kwargs):
     pass
 
 
-def makeIdentity(apply=False, jointOrient=True, normal=0, preserveNormals=True, rotate=True,
-                 scale=True, translate=True, *args, **kwargs):
+def makeIdentity(*args, apply=False, jointOrient=True, normal=0, preserveNormals=True,
+                 rotate=True, scale=True, translate=True, **kwargs):
     """
     The makeIdentity command is a quick way to reset the selected transform and all of its
     children down to the shape level by the identity transformation  You can also specify which
@@ -60748,13 +60748,13 @@ def cMuscleSimulate(*args, **kwargs):
     pass
 
 
-def separator(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def separator(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
               dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
               enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
               highlightColor=None, horizontal=True, isObscured=True, manage=True,
               noBackground=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
               preventOverride=True, statusBarMessage="", style="", useTemplate="", visible=True,
-              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     This command creates a separator widget in a variety of drawing styles
@@ -60852,21 +60852,22 @@ def DisplaySmoothShaded(*args, **kwargs):
     pass
 
 
-def dynPaintEditor(activeOnly=True, autoSave=True, camera="", canvasMode=True, canvasUndo=True,
-                   changeCommand=None, clear=None, control=True, currentCanvasSize=True,
-                   defineTemplate="", displayAppearance="", displayFog=True, displayImage=0,
-                   displayLights="", displayStyle="", displayTextures=True, docTag="",
-                   doubleBuffer=True, drawAxis=True, drawContext=True, exists=True,
-                   fastUpdate=0, fileName="", filter="", forceMainConnection="",
-                   highlightConnection="", iconGrab=True, loadImage="", lockMainConnection=True,
-                   mainListConnection="", menu="", nbImages=True, newImage=None, paintAll=0.0,
-                   panel="", parent="", redrawLast=True, refresh=True, refreshMode=0,
-                   removeAllImages=True, removeImage=True, rollImage=None, saveAlpha=True,
-                   saveBumpmap="", saveImage=True, scaleBlue=0.0, scaleGreen=0.0, scaleRed=0.0,
-                   selectionConnection="", singleBuffer=True, snapShot=True, stateString=True,
-                   swap=0, tileSize=0, unParent=True, undoCache=True, unlockMainConnection=True,
+def dynPaintEditor(*args, activeOnly=True, autoSave=True, camera="", canvasMode=True,
+                   canvasUndo=True, changeCommand=None, clear=None, control=True,
+                   currentCanvasSize=True, defineTemplate="", displayAppearance="",
+                   displayFog=True, displayImage=0, displayLights="", displayStyle="",
+                   displayTextures=True, docTag="", doubleBuffer=True, drawAxis=True,
+                   drawContext=True, exists=True, fastUpdate=0, fileName="", filter="",
+                   forceMainConnection="", highlightConnection="", iconGrab=True, loadImage="",
+                   lockMainConnection=True, mainListConnection="", menu="", nbImages=True,
+                   newImage=None, paintAll=0.0, panel="", parent="", redrawLast=True,
+                   refresh=True, refreshMode=0, removeAllImages=True, removeImage=True,
+                   rollImage=None, saveAlpha=True, saveBumpmap="", saveImage=True,
+                   scaleBlue=0.0, scaleGreen=0.0, scaleRed=0.0, selectionConnection="",
+                   singleBuffer=True, snapShot=True, stateString=True, swap=0, tileSize=0,
+                   unParent=True, undoCache=True, unlockMainConnection=True,
                    updateMainConnection=True, useTemplate="", wrap=None, writeImage="",
-                   zoom=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   zoom=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a editor window that can be painted into
     
@@ -61070,8 +61071,8 @@ def AddBifrostKillField(*args, **kwargs):
     pass
 
 
-def currentUnit(angle="", fullName=True, linear="", time="", updateAnimation=True, q=True,
-                query=True, *args, **kwargs):
+def currentUnit(*args, angle="", fullName=True, linear="", time="", updateAnimation=True,
+                q=True, query=True, **kwargs):
     """
     This command allows you to change the units in which you will work in Maya  There are three
     types of units: linear, angular and time   The current unit affects how all commands in
@@ -61114,7 +61115,7 @@ def HypershadeSortByName(*args, **kwargs):
     pass
 
 
-def layoutDialog(backgroundColor=None, dismiss="", parent="", title="", uiScript=None, *args,
+def layoutDialog(*args, backgroundColor=None, dismiss="", parent="", title="", uiScript=None,
                  **kwargs):
     """
     The layoutDialog command creates a modal dialog containing a formLayout with 100 divisions 
@@ -61201,10 +61202,10 @@ def OneClickDispatch(*args, **kwargs):
     pass
 
 
-def rowColumnLayout(adjustableColumn=0, annotation="", backgroundColor=None, childArray=True,
-                    columnAlign=None, columnAttach=None, columnOffset=None, columnSpacing=None,
-                    columnWidth=None, defineTemplate="", docTag="", dragCallback=None,
-                    dropCallback=None, enable=True, enableBackground=True,
+def rowColumnLayout(*args, adjustableColumn=0, annotation="", backgroundColor=None,
+                    childArray=True, columnAlign=None, columnAttach=None, columnOffset=None,
+                    columnSpacing=None, columnWidth=None, defineTemplate="", docTag="",
+                    dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                     enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                     highlightColor=None, isObscured=True, manage=True, noBackground=True,
                     numberOfChildren=True, numberOfColumns=0, numberOfPopupMenus=True,
@@ -61212,7 +61213,7 @@ def rowColumnLayout(adjustableColumn=0, annotation="", backgroundColor=None, chi
                     rowAlign=None, rowAttach=None, rowHeight=None, rowOffset=None,
                     rowSpacing=None, statusBarMessage="", useTemplate="", visible=True,
                     visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                    *args, **kwargs):
+                    **kwargs):
     """
     This command creates a rowColumn layout  A rowColumn layout positions children in either a
     row or column format  A column layout, specified with the -nc/numberOfColumns flag, allows
@@ -61366,8 +61367,8 @@ def DistributeUVs(*args, **kwargs):
     pass
 
 
-def keyingGroup(activator=None, addElement=None, afterFilters=True, category="", clear=None,
-                color=0, copy=None, edges=True, editPoints=True, empty=True,
+def keyingGroup(*args, activator=None, addElement=None, afterFilters=True, category="",
+                clear=None, color=0, copy=None, edges=True, editPoints=True, empty=True,
                 excludeDynamic=True, excludeRotate=True, excludeScale=True,
                 excludeTranslate=True, excludeVisibility=True, facets=True, flatten=None,
                 forceElement=None, include=None, intersection=None, isIntersecting=None,
@@ -61375,7 +61376,7 @@ def keyingGroup(activator=None, addElement=None, afterFilters=True, category="",
                 noWarnings=True, nodesOnly=True, remove=None, removeActivator=None,
                 renderable=True, setActiveFilter="", size=True, split=None, subtract=None,
                 text="", union=None, vertices=True, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command is used to manage the membership of a keying group  Keying groups allow users
     to effectively manage related keyframe data, allowing keys on attributes in the keying
@@ -61533,7 +61534,7 @@ def ShowRiggingUI(*args, **kwargs):
     pass
 
 
-def deleteAttrPattern(allPatterns=True, patternName="", patternType="", *args, **kwargs):
+def deleteAttrPattern(*args, allPatterns=True, patternName="", patternType="", **kwargs):
     """
     After a while the list of attribute patterns could become cluttered  This command provides
     a way to remove patterns from memory so that only the ones of interest will show
@@ -61593,7 +61594,7 @@ def PolygonBooleanUnion(*args, **kwargs):
     pass
 
 
-def artAttrPaintVertexCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="",
+def artAttrPaintVertexCtx(*args, accopacity=False, activeListChangedProc="", afterStrokeCmd="",
                           alphaclamp="none", alphaclamplower=0.0, alphaclampupper=1.0,
                           attrSelected="", beforeStrokeCmd="", brushalignment=True,
                           brushfeedback=True, clamp="none", clamplower=0.0, clampupper=1.0,
@@ -61624,7 +61625,7 @@ def artAttrPaintVertexCtx(accopacity=False, activeListChangedProc="", afterStrok
                           useMaxMinColor=True, usepressure=False, value=0.0,
                           vertexColorRange=False, vertexColorRangeLower=0.0,
                           vertexColorRangeUpper=1.0, whichTool="", worldRadius=0.0, q=True,
-                          query=True, e=True, edit=True, *args, **kwargs):
+                          query=True, e=True, edit=True, **kwargs):
     """
     This is a context command to set the flags on the artAttrContext, which is the base context
     for attribute painting operations  All commands require the name of the context as the last
@@ -61928,7 +61929,7 @@ def GoToMaxFrame(*args, **kwargs):
     pass
 
 
-def requires(dataType="", nodeType="", *args, **kwargs):
+def requires(*args, dataType="", nodeType="", **kwargs):
     """
     This command is used during file I/O to specify the requirements needed to load the given
     file  It defines what file format version was used to write the file, or what plug-ins are
@@ -61962,14 +61963,14 @@ def ConvertSelectionToContainedEdges(*args, **kwargs):
     pass
 
 
-def polyMoveVertex(caching=True, constructionHistory=True, gain=1.0, localDirection=None,
+def polyMoveVertex(*args, caching=True, constructionHistory=True, gain=1.0, localDirection=None,
                    localDirectionX=0.0, localDirectionY=0.0, localDirectionZ=0.0,
                    localTranslate=None, localTranslateX=0.0, localTranslateY=0.0,
                    localTranslateZ=0.0, name="", nodeState=0, pivot=None, pivotX=0.0,
                    pivotY=0.0, pivotZ=0.0, random=0.0, rotate=None, rotateX=0.0, rotateY=0.0,
                    rotateZ=0.0, scale=None, scaleX=0.0, scaleY=0.0, scaleZ=0.0, translate=None,
                    translateX=0.0, translateY=0.0, translateZ=0.0, worldSpace=True, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     Modifies vertices of a polygonal object  Translate, rotate or scale vertices in local or
     world space
@@ -62072,8 +62073,8 @@ def OutTangentClamped(*args, **kwargs):
     pass
 
 
-def srtContext(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+def srtContext(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create a combined transform (translate/scale/rotate) context
     
@@ -62101,10 +62102,9 @@ def srtContext(exists=True, history=True, image1="", image2="", image3="", name=
     pass
 
 
-def orientConstraint(createCache=None, deleteCache=True, layer="", maintainOffset=True, name="",
-                     offset=None, remove=True, skip="", targetList=True, weight=0.0,
-                     weightAliasList=True, q=True, query=True, e=True, edit=True, *args,
-                     **kwargs):
+def orientConstraint(*args, createCache=None, deleteCache=True, layer="", maintainOffset=True,
+                     name="", offset=None, remove=True, skip="", targetList=True, weight=0.0,
+                     weightAliasList=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Constrain an object's orientation to match the orientation of the target or the average of
     a number of targets   An orientConstraint takes as input one or more "target" DAG transform
@@ -62202,14 +62202,14 @@ def viewHeadOn(*args, **kwargs):
     pass
 
 
-def ikHandle(autoPriority=True, connectEffector=True, createCurve=True, createRootAxis=True,
-             curve=None, disableHandles=True, enableHandles=True, endEffector="", exists="",
-             forceSolver=True, freezeJoints=True, jointList=True, name="", numSpans=0,
-             parentCurve=True, positionWeight=0.0, priority=0, rootOnCurve=True,
-             rootTwistMode=True, setupForRPsolver=True, simplifyCurve=True, snapCurve=True,
-             snapHandleFlagToggle=True, snapHandleToEffector=True, solver="", startJoint="",
-             sticky="", twistType="", weight=0.0, q=True, query=True, e=True, edit=True, *args,
-             **kwargs):
+def ikHandle(*args, autoPriority=True, connectEffector=True, createCurve=True,
+             createRootAxis=True, curve=None, disableHandles=True, enableHandles=True,
+             endEffector="", exists="", forceSolver=True, freezeJoints=True, jointList=True,
+             name="", numSpans=0, parentCurve=True, positionWeight=0.0, priority=0,
+             rootOnCurve=True, rootTwistMode=True, setupForRPsolver=True, simplifyCurve=True,
+             snapCurve=True, snapHandleFlagToggle=True, snapHandleToEffector=True, solver="",
+             startJoint="", sticky="", twistType="", weight=0.0, q=True, query=True, e=True,
+             edit=True, **kwargs):
     """
     The handle command is used to create, edit, and query a handle within Maya  The standard
     edit (-e) and query (-q) flags are used for edit and query functions   If there are 2
@@ -62340,8 +62340,8 @@ def SelectHullsMask(*args, **kwargs):
     pass
 
 
-def renderWindowSelectContext(exists=True, image1="", image2="", image3="", q=True, query=True,
-                              e=True, edit=True, *args, **kwargs):
+def renderWindowSelectContext(*args, exists=True, image1="", image2="", image3="", q=True,
+                              query=True, e=True, edit=True, **kwargs):
     """
     Set the selection context for the render view panel
     
@@ -62378,7 +62378,7 @@ def addDynamicAttribute(*args, **kwargs):
     pass
 
 
-def error(noContext=True, showLineNumber=True, *args, **kwargs):
+def error(*args, noContext=True, showLineNumber=True, **kwargs):
     """
     The error command is provided so that the user can issue error messages from his/her
     scripts and control execution in the event of runtime errors   The string argument is
@@ -62412,8 +62412,8 @@ def ShowHotbox(*args, **kwargs):
     pass
 
 
-def defineVirtualDevice(axis=0, channel="", clear=True, create=True, device="", parent="",
-                        undefine=True, usage="", q=True, query=True, *args, **kwargs):
+def defineVirtualDevice(*args, axis=0, channel="", clear=True, create=True, device="",
+                        parent="", undefine=True, usage="", q=True, query=True, **kwargs):
     """
     This command defines a virtual device  Virtual devices act like real devices and are useful
     to manipulate/playback data when an command device is not connected to the computer
@@ -62557,10 +62557,9 @@ def dR_modePoly(*args, **kwargs):
     pass
 
 
-def polyForceUV(cameraProjection=True, createNewMap=True, flipHorizontal=True,
+def polyForceUV(*args, cameraProjection=True, createNewMap=True, flipHorizontal=True,
                 flipVertical=True, g=True, local=True, normalize="", numItems=0,
-                preserveAspectRatio=True, unitize=True, unshare=True, uvSetName="", *args,
-                **kwargs):
+                preserveAspectRatio=True, unitize=True, unshare=True, uvSetName="", **kwargs):
     """
     A set of functionalities can be called through this command  The input for this command is
     a set of faces  Based on the arguments passed, the UVs for these selected faces can be
@@ -62612,13 +62611,13 @@ def PlaybackBackward(*args, **kwargs):
     pass
 
 
-def hardwareRenderPanel(camera="", control=True, copy="", createString=True, defineTemplate="",
-                        docTag="", editString=True, exists=True, glRenderEditor=True, init=True,
-                        isUnique=True, label="", menuBarRepeatLast=True, menuBarVisible=True,
-                        needsInit=True, parent="", popupMenuProcedure=None, replacePanel="",
-                        tearOff=True, tearOffCopy="", tearOffRestore=True, unParent=True,
-                        useTemplate="", q=True, query=True, e=True, edit=True, *args,
-                        **kwargs):
+def hardwareRenderPanel(*args, camera="", control=True, copy="", createString=True,
+                        defineTemplate="", docTag="", editString=True, exists=True,
+                        glRenderEditor=True, init=True, isUnique=True, label="",
+                        menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
+                        popupMenuProcedure=None, replacePanel="", tearOff=True, tearOffCopy="",
+                        tearOffRestore=True, unParent=True, useTemplate="", q=True, query=True,
+                        e=True, edit=True, **kwargs):
     """
     This command creates, edit and queries hardware render panels which contain only a hardware
     render editor
@@ -62706,10 +62705,10 @@ def ToggleBackfaceCulling(*args, **kwargs):
     pass
 
 
-def polyPyramid(axis=None, caching=True, constructionHistory=True, createUVs=2, name="",
+def polyPyramid(*args, axis=None, caching=True, constructionHistory=True, createUVs=2, name="",
                 nodeState=0, numberOfSides=4, numderOfSides=4, object=True, sideLength=1.0,
                 subdivisionsCaps=0, subdivisionsHeight=1, texture=True, q=True, query=True,
-                e=True, edit=True, *args, **kwargs):
+                e=True, edit=True, **kwargs):
     """
     The pyramid command creates a new polygonal pyramid
     
@@ -62760,9 +62759,9 @@ def PixelMoveRight(*args, **kwargs):
     pass
 
 
-def alignCtx(align=True, anchorFirstObject=False, distribute=True, exists=True, history=True,
-             image1="", image2="", image3="", name="", showAlignTouch=True, q=True, query=True,
-             e=True, edit=True, *args, **kwargs):
+def alignCtx(*args, align=True, anchorFirstObject=False, distribute=True, exists=True,
+             history=True, image1="", image2="", image3="", name="", showAlignTouch=True,
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     The alignCtx command creates a tool for aligning and distributing objects
     
@@ -62842,8 +62841,8 @@ def ToggleFocalLength(*args, **kwargs):
     pass
 
 
-def menuSetPref(exists=True, force=True, loadAll=True, removeAll=True, saveAll=True,
-                saveBackup=True, version=True, q=True, query=True, e=True, edit=True, *args,
+def menuSetPref(*args, exists=True, force=True, loadAll=True, removeAll=True, saveAll=True,
+                saveBackup=True, version=True, q=True, query=True, e=True, edit=True,
                 **kwargs):
     """
     Provides the functionality to save and load menuSets between sessions of Maya  For Internal
@@ -62882,10 +62881,10 @@ def greaseRenderPlane(*args, **kwargs):
     pass
 
 
-def polyCutUVCtx(loopSpeed=0, mapBordersColor=None, showCheckerMap=True,
+def polyCutUVCtx(*args, loopSpeed=0, mapBordersColor=None, showCheckerMap=True,
                  showTextureBorders=True, showUVShellColoring=True, steadyStroke=True,
                  steadyStrokeDistance=0.0, symmetry=0, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     Create a new context to cut UVs on polygonal objects
     
@@ -62919,12 +62918,12 @@ def HideLattices(*args, **kwargs):
     pass
 
 
-def extrude(caching=True, degreeAlongLength=1, direction=None, directionX=0, directionY=1,
-            directionZ=0, extrudeType=2, fixedPath=False, length=1, nodeState=0, pivot=None,
-            reverseSurfaceIfPathReversed=False, rotation=0.0, scale=1.0,
+def extrude(*args, caching=True, degreeAlongLength=1, direction=None, directionX=0,
+            directionY=1, directionZ=0, extrudeType=2, fixedPath=False, length=1, nodeState=0,
+            pivot=None, reverseSurfaceIfPathReversed=False, rotation=0.0, scale=1.0,
             subCurveSubSurface=False, useComponentPivot=0, useProfileNormal=False,
             constructionHistory=True, mergeItems=True, name="", object=True, polygon=0,
-            range=True, rebuild=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+            range=True, rebuild=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command computes a surface given a profile curve and possibly a path curve  There are
     three ways to extrude a profile curve  The most basic method is called a "distance" extrude
@@ -63024,7 +63023,7 @@ def CreatePolygonSoccerBall(*args, **kwargs):
     pass
 
 
-def convertUnit(fromUnit="", toUnit="", *args, **kwargs):
+def convertUnit(*args, fromUnit="", toUnit="", **kwargs):
     """
     This command converts values between different units of measure  The command takes a string,
     because a string can incorporate unit names as well as values (see examples)
@@ -63049,7 +63048,7 @@ def PaintOnPaintableObjects(*args, **kwargs):
     pass
 
 
-def camera(aspectRatio=0.0, cameraScale=0.0, centerOfInterest=0.0, clippingPlanes=True,
+def camera(*args, aspectRatio=0.0, cameraScale=0.0, centerOfInterest=0.0, clippingPlanes=True,
            depthOfField=True, displayFieldChart=True, displayFilmGate=True,
            displayFilmOrigin=True, displayFilmPivot=True, displayGateMask=True,
            displayResolution=True, displaySafeAction=True, displaySafeTitle=True, fStop=0.0,
@@ -63067,7 +63066,7 @@ def camera(aspectRatio=0.0, cameraScale=0.0, centerOfInterest=0.0, clippingPlane
            verticalFieldOfView=0.0, verticalFilmAperture=0.0, verticalFilmOffset=0.0,
            verticalLock=True, verticalPan=0.0, verticalRollPivot=0.0, verticalShake=0.0,
            worldCenterOfInterest=None, worldUp=None, zoom=0.0, q=True, query=True, e=True,
-           edit=True, *args, **kwargs):
+           edit=True, **kwargs):
     """
     Create, edit, or query a camera with the specified properties    The resulting camera can
     be repositioned using the viewPlace command  Many of the camera settings only affect the
@@ -63311,7 +63310,7 @@ def PickColorDeactivate(*args, **kwargs):
     pass
 
 
-def sampleImage(fastSample=True, resolution=None, *args, **kwargs):
+def sampleImage(*args, fastSample=True, resolution=None, **kwargs):
     """
     The sampleImage command is used to control parameters of sample images, such as swatches in
     the multilister  The fast option turns on or off some rendering cheats which speed up the
@@ -63342,14 +63341,14 @@ def ctxCompletion(*args, **kwargs):
     pass
 
 
-def intSlider(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
+def intSlider(*args, annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
               docTag="", dragCallback=None, dragCommand=None, dropCallback=None, enable=True,
               enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
               height=0, highlightColor=None, horizontal=True, isObscured=True, manage=True,
               maxValue=0, minValue=0, noBackground=True, numberOfPopupMenus=True, parent="",
               popupMenuArray=True, preventOverride=True, statusBarMessage="", step=0,
               useTemplate="", value=0, visible=True, visibleChangeCommand=None, width=0, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     Create a slider control that accepts only integer values and is bound by a minimum and
     maximum value  The slider displays a marker indicating the current value of the slider
@@ -63461,9 +63460,9 @@ def dR_increaseManipSize(*args, **kwargs):
     pass
 
 
-def iconTextRadioButton(align="", annotation="", backgroundColor=None, changeCommand=None,
-                        collection="", defineTemplate="", disabledImage="", docTag="",
-                        dragCallback=None, dropCallback=None, enable=True,
+def iconTextRadioButton(*args, align="", annotation="", backgroundColor=None,
+                        changeCommand=None, collection="", defineTemplate="", disabledImage="",
+                        docTag="", dragCallback=None, dropCallback=None, enable=True,
                         enableBackground=True, enableKeyboardFocus=True, exists=True, flat=True,
                         flipX=True, flipY=True, font="", fullPathName=True, height=0,
                         highlightColor=None, highlightImage="", image="", image1="", image2="",
@@ -63475,7 +63474,7 @@ def iconTextRadioButton(align="", annotation="", backgroundColor=None, changeCom
                         select=True, selectionHighlightImage="", selectionImage="",
                         statusBarMessage="", style="", useAlpha=True, useTemplate="",
                         version="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                        query=True, e=True, edit=True, *args, **kwargs):
+                        query=True, e=True, edit=True, **kwargs):
     """
     This control supports up to 3 icon images and 4 different display styles  The icon image
     displayed is the one that best fits the current size of the control given its current style
@@ -63660,7 +63659,7 @@ def TensionOptions(*args, **kwargs):
     pass
 
 
-def layerButton(annotation="", backgroundColor=None, changeCommand=None, color=None,
+def layerButton(*args, annotation="", backgroundColor=None, changeCommand=None, color=None,
                 command=None, current=True, defineTemplate="", docTag="",
                 doubleClickCommand=None, dragCallback=None, dropCallback=None, enable=True,
                 enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
@@ -63670,8 +63669,7 @@ def layerButton(annotation="", backgroundColor=None, changeCommand=None, color=N
                 numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
                 renameCommand="", select=True, statusBarMessage="", transparent=True,
                 typeCommand=None, useTemplate="", visible=True, visibleChangeCommand=None,
-                visibleCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
-                **kwargs):
+                visibleCommand=None, width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Creates a layer bar button widget  This widget contains both the name of the layer to which
     it refers and a color swatch indicating it's color assignment  It is used primarily in the
@@ -63810,7 +63808,7 @@ def SmoothingDisplayShowBoth(*args, **kwargs):
     pass
 
 
-def layeredShaderPort(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def layeredShaderPort(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                       dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                       enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                       highlightColor=None, isObscured=True, manage=True, noBackground=True,
@@ -63818,7 +63816,7 @@ def layeredShaderPort(annotation="", backgroundColor=None, defineTemplate="", do
                       preventOverride=True, selectedColorControl="",
                       selectedTransparencyControl="", statusBarMessage="", useTemplate="",
                       visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                      e=True, edit=True, *args, **kwargs):
+                      e=True, edit=True, **kwargs):
     """
     This command creates a 3dPort that displays an image representing the layered shader node
     specified
@@ -63932,14 +63930,14 @@ def UniversalManip(*args, **kwargs):
     pass
 
 
-def visor(addFolder=True, addNodes="", allowPanningInX=True, allowPanningInY=True,
+def visor(*args, addFolder=True, addNodes="", allowPanningInX=True, allowPanningInY=True,
           allowZooming=True, command="", deleteFolder="", editFolder="", folderList="", menu="",
           name="", nodeType="", openDirectories=True, openFolder=True, parent="", path="",
           popupMenuScript="", rebuild=True, refreshAllSwatches=True,
           refreshSelectedSwatches=True, refreshSwatch="", reset=True, restrictPanAndZoom=True,
           saveSwatches=True, scrollBar="", scrollPercent=0.0, selectedGadgets="",
           showDividers=True, showFiles=True, showFolders=True, showNodes=True, stateString=True,
-          style="", transform="", type="", q=True, query=True, *args, **kwargs):
+          style="", transform="", type="", q=True, query=True, **kwargs):
     """
     Command for the creation and manipulation of a Visor UI element  The Visor is used to
     display the contents of a scene (rendering related nodes in particular), as well as files
@@ -64050,7 +64048,7 @@ def mateCtx(*args, **kwargs):
     pass
 
 
-def soloMaterial(attr="", last=True, node="", unsolo=True, q=True, query=True, *args,
+def soloMaterial(*args, attr="", last=True, node="", unsolo=True, q=True, query=True,
                  **kwargs):
     """
     Shows a preview of a specified material node output attribute
@@ -64119,10 +64117,10 @@ def SubdivSmoothnessFine(*args, **kwargs):
     pass
 
 
-def softSelect(compressUndo=0, enableFalseColor=0, softSelectColorCurve="", softSelectCurve="",
-               softSelectDistance=0.0, softSelectEnabled=0, softSelectFalloff=0,
-               softSelectReset=True, softSelectUVDistance=0.0, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+def softSelect(*args, compressUndo=0, enableFalseColor=0, softSelectColorCurve="",
+               softSelectCurve="", softSelectDistance=0.0, softSelectEnabled=0,
+               softSelectFalloff=0, softSelectReset=True, softSelectUVDistance=0.0, q=True,
+               query=True, e=True, edit=True, **kwargs):
     """
     This command allows you to change the soft modelling options   Soft modelling is an option
     that allows for reflection of basic manipulator actions such as move, rotate, and scale
@@ -64184,10 +64182,10 @@ def TimeEditorCreatePoseClip(*args, **kwargs):
     pass
 
 
-def offsetCurveOnSurface(caching=True, checkPoints=3, connectBreaks=2, cutLoop=False,
+def offsetCurveOnSurface(*args, caching=True, checkPoints=3, connectBreaks=2, cutLoop=False,
                          distance=1.0, nodeState=0, stitch=True, subdivisionDensity=5,
                          tolerance=0.01, constructionHistory=True, name="", object=True,
-                         range=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                         range=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The offsetCurveOnSurface command offsets a curve on surface resulting in another curve on
     surface  The connecting type for breaks in offsets is off (no connection), circular
@@ -64273,7 +64271,7 @@ def WaveOptions(*args, **kwargs):
     pass
 
 
-def effector(hide=True, name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def effector(*args, hide=True, name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     The effector command is used to set the name or hidden flag for the effector  The standard
     edit (-e) and query (-q) flags are used for edit and query functions
@@ -64289,12 +64287,12 @@ def effector(hide=True, name="", q=True, query=True, e=True, edit=True, *args, *
     pass
 
 
-def devicePanel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def devicePanel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
                 editString=True, exists=True, init=True, isUnique=True, label="",
                 menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
                 popupMenuProcedure=None, replacePanel="", tearOff=True, tearOffCopy="",
                 tearOffRestore=True, unParent=True, useTemplate="", q=True, query=True, e=True,
-                edit=True, *args, **kwargs):
+                edit=True, **kwargs):
     """
     This command is now obsolete  It is included only for the purpose of file compatibility  It
     creates a blank panel
@@ -64412,7 +64410,7 @@ def nucleusGetEffectsAsset(*args, **kwargs):
     pass
 
 
-def timeControl(animCurveNames=True, animLayerFilterOptions="", animLayerShowWeight=True,
+def timeControl(*args, animCurveNames=True, animLayerFilterOptions="", animLayerShowWeight=True,
                 annotation="", backgroundColor=None, beginScrub=True, currentFrameColor=None,
                 defineTemplate="", displaySound=True, docTag="", dragCallback=None,
                 dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
@@ -64426,7 +64424,7 @@ def timeControl(animCurveNames=True, animLayerFilterOptions="", animLayerShowWei
                 showGreaseFrames="active", showKeys="active", showKeysCombined=True, snap=True,
                 sound="", statusBarMessage="", tickSize=0, tickSpan=0, useTemplate="",
                 visible=True, visibleChangeCommand=None, waveform="top", width=0, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+                query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control that can be used for changing current time,
     displaying/editing keys, and displaying/scrubbing sound.
@@ -64596,8 +64594,8 @@ def timeControl(animCurveNames=True, animLayerFilterOptions="", animLayerShowWei
     pass
 
 
-def polySelectCtx(exists=True, image1="", image2="", image3="", mode=0, q=True, query=True,
-                  e=True, edit=True, *args, **kwargs):
+def polySelectCtx(*args, exists=True, image1="", image2="", image3="", mode=0, q=True,
+                  query=True, e=True, edit=True, **kwargs):
     """
     Create a new context to select polygon components
     
@@ -64664,17 +64662,17 @@ def LatticeDeformKeysTool(*args, **kwargs):
     pass
 
 
-def timeEditorAnimSource(addSource="", apply=True, bakeToAnimSource="", calculateTiming=True,
-                         copyAnimation=True, drivenClips=True, export="", isUnique=True,
-                         removeSource="", targetIndex="", targets=True, addObjects="",
-                         addRelatedKG=True, addSelectedObjects=True, attribute="",
-                         exclusive=True, importAllFbxTakes=True, importFbx="",
+def timeEditorAnimSource(*args, addSource="", apply=True, bakeToAnimSource="",
+                         calculateTiming=True, copyAnimation=True, drivenClips=True, export="",
+                         isUnique=True, removeSource="", targetIndex="", targets=True,
+                         addObjects="", addRelatedKG=True, addSelectedObjects=True,
+                         attribute="", exclusive=True, importAllFbxTakes=True, importFbx="",
                          importFbxTakes="", importMayaFile="", importOption="",
                          importPopulateOption="", importedContainerNames="", includeRoot=True,
                          populateImportedAnimSources="", poseClip=True, recursively=True,
                          removeSceneAnimation=True, showAnimSourceRemapping=True, takeList="",
                          takesToImport="", type="", q=True, query=True, e=True, edit=True,
-                         *args, **kwargs):
+                         **kwargs):
     """
     Commands for managing animation sources
     
@@ -64793,8 +64791,8 @@ def CurveFilletOptions(*args, **kwargs):
     pass
 
 
-def particleRenderInfo(attrList=0, attrListAll=True, name=0, renderTypeCount=True, q=True,
-                       query=True, *args, **kwargs):
+def particleRenderInfo(*args, attrList=0, attrListAll=True, name=0, renderTypeCount=True,
+                       q=True, query=True, **kwargs):
     """
     This action provides information access to the particle render subclasses  These are
     derived from TdynRenderBase  This action is used primarily by the Attribute Editor to
@@ -64851,10 +64849,10 @@ def ChangeNormalSize(*args, **kwargs):
     pass
 
 
-def polyOutput(allValues=True, color=True, colorDesc=True, edge=True, edgeFace=True, face=True,
-               faceNorm=True, force=True, group=True, noOutput=True, normDesc=True,
+def polyOutput(*args, allValues=True, color=True, colorDesc=True, edge=True, edgeFace=True,
+               face=True, faceNorm=True, force=True, group=True, noOutput=True, normDesc=True,
                outputFile="", triangle=True, uvDesc=True, uvValue=True, vert=True,
-               vertEdge=True, vertNorm=True, *args, **kwargs):
+               vertEdge=True, vertNorm=True, **kwargs):
     """
     Dumps a description of internal memory representation of poly objects  If no objects are
     specified in the command line, then the objects from the active list are used  If
@@ -64936,7 +64934,7 @@ def TimeEditorGhostTrackToggle(*args, **kwargs):
     pass
 
 
-def format(stringArg="", *args, **kwargs):
+def format(*args, stringArg="", **kwargs):
     """
     This command takes a format string, where the format string contains format specifiers  The
     format specifiers have a number associated with them relating to which parameter they
@@ -64980,10 +64978,10 @@ def CreateSubdivCone(*args, **kwargs):
     pass
 
 
-def colorManagementFileRules(addRule="", colorSpace="", down="", evaluate="", extension="",
-                             listRules=True, load=True, moveUp="", pattern="", remove="",
-                             restoreDefaults=True, save=True, q=True, query=True, e=True,
-                             edit=True, *args, **kwargs):
+def colorManagementFileRules(*args, addRule="", colorSpace="", down="", evaluate="",
+                             extension="", listRules=True, load=True, moveUp="", pattern="",
+                             remove="", restoreDefaults=True, save=True, q=True, query=True,
+                             e=True, edit=True, **kwargs):
     """
     This non-undoable action manages the list of rules that Maya uses to assign an initial
     input color space to dependency graph nodes that read in color information from a file 
@@ -65028,7 +65026,7 @@ def colorManagementFileRules(addRule="", colorSpace="", down="", evaluate="", ex
     pass
 
 
-def attributeName(leaf=True, long=True, nice=True, short=True, *args, **kwargs):
+def attributeName(*args, leaf=True, long=True, nice=True, short=True, **kwargs):
     """
     This command takes one "node.attribute"-style specifier on the command line and returns
     either the attribute's long, short, or nice name  (The "nice" name, or UI name, is the name
@@ -65142,15 +65140,15 @@ def CreateNURBSTorusOptions(*args, **kwargs):
     pass
 
 
-def rotate(absolute=True, centerPivot=True, componentSpace=True, constrainAlongNormal=True,
-           deletePriorHistory=True, euler=True, forceOrderXYZ=True, objectCenterPivot=True,
-           objectSpace=True, orientAxes=None, pivot=None, preserveChildPosition=False,
-           preserveGeometryPosition=False, preserveUV=False, reflection=True,
-           reflectionAboutBBox=True, reflectionAboutOrigin=True, reflectionAboutX=True,
-           reflectionAboutY=True, reflectionAboutZ=True, reflectionTolerance=0.0, relative=True,
-           rotateX=True, rotateXY=True, rotateXYZ=True, rotateXZ=True, rotateY=True,
-           rotateYZ=True, rotateZ=True, symNegative=True, translate=True, worldSpace=True,
-           xformConstraint="", *args, **kwargs):
+def rotate(*args, absolute=True, centerPivot=True, componentSpace=True,
+           constrainAlongNormal=True, deletePriorHistory=True, euler=True, forceOrderXYZ=True,
+           objectCenterPivot=True, objectSpace=True, orientAxes=None, pivot=None,
+           preserveChildPosition=False, preserveGeometryPosition=False, preserveUV=False,
+           reflection=True, reflectionAboutBBox=True, reflectionAboutOrigin=True,
+           reflectionAboutX=True, reflectionAboutY=True, reflectionAboutZ=True,
+           reflectionTolerance=0.0, relative=True, rotateX=True, rotateXY=True, rotateXYZ=True,
+           rotateXZ=True, rotateY=True, rotateYZ=True, rotateZ=True, symNegative=True,
+           translate=True, worldSpace=True, xformConstraint="", **kwargs):
     """
     The rotate command is used to change the rotation of geometric objects  The rotation values
     are specified as Euler angles (rx, ry, rz)  The values are interpreted based on the current
@@ -65281,7 +65279,7 @@ def MergeUV(*args, **kwargs):
     pass
 
 
-def buildBookmarkMenu(editor="", type="", *args, **kwargs):
+def buildBookmarkMenu(*args, editor="", type="", **kwargs):
     """
     This command handles building the "dynamic" Bookmark menu, to show all bookmarks ("sets")
     of a specified type ("sets -text")  menuName is the string returned by the "menu" command
@@ -65367,8 +65365,8 @@ def createNurbsTorusCtx(*args, **kwargs):
     pass
 
 
-def dbpeek(allObjects=True, argument="", count=0, evaluationGraph=True, operation="",
-           outputFile="", q=True, query=True, *args, **kwargs):
+def dbpeek(*args, allObjects=True, argument="", count=0, evaluationGraph=True, operation="",
+           outputFile="", q=True, query=True, **kwargs):
     """
     The dbpeek command is used to analyze the Maya data for information of interest  See a
     description of the flags for details on what types of things can be analyzed
@@ -65434,11 +65432,11 @@ def PolyMergeEdges(*args, **kwargs):
     pass
 
 
-def propModCtx(animCurve="", animCurveFalloff=None, animCurveParam="", direction=None,
+def propModCtx(*args, animCurve="", animCurveFalloff=None, animCurveParam="", direction=None,
                exists=True, image1="", image2="", image3="", linear=0.0, linearParam=None,
                nurbsCurve="", powerCutoff=10.0, powerCutoffParam=None, powerDegree=3,
                powerDegreeParam=3, script="", scriptParam="", type=1, worldspace=True, q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     Controls the proportional move context
     
@@ -65507,7 +65505,7 @@ def propModCtx(animCurve="", animCurveFalloff=None, animCurveParam="", direction
     pass
 
 
-def displayAffected(q=True, query=True, *args, **kwargs):
+def displayAffected(*args, q=True, query=True, **kwargs):
     """
     Turns on/off the special coloring of objects that are affected by the objects that are
     currently in the selection list   If one of the curves in a loft were selected and this
@@ -65521,9 +65519,9 @@ def displayAffected(q=True, query=True, *args, **kwargs):
     pass
 
 
-def marker(attach=True, detach=True, frontTwist=0, orientationMarker=True, positionMarker=True,
-           sideTwist=0, time=None, upTwist=0, valueU=0.0, q=True, query=True, e=True, edit=True,
-           *args, **kwargs):
+def marker(*args, attach=True, detach=True, frontTwist=0, orientationMarker=True,
+           positionMarker=True, sideTwist=0, time=None, upTwist=0, valueU=0.0, q=True,
+           query=True, e=True, edit=True, **kwargs):
     """
     The marker command creates one or two markers, on a motion path curve, at the specified
     time and location  The optionnal string argument is the parent object name.
@@ -65597,9 +65595,9 @@ def NodeEditorGraphRemoveUnselected(*args, **kwargs):
     pass
 
 
-def polyEditUV(angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0, rotation=True,
-               scale=True, scaleU=0.0, scaleV=0.0, uValue=0.0, uvSetName="", vValue=0.0, q=True,
-               query=True, *args, **kwargs):
+def polyEditUV(*args, angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0,
+               rotation=True, scale=True, scaleU=0.0, scaleV=0.0, uValue=0.0, uvSetName="",
+               vValue=0.0, q=True, query=True, **kwargs):
     """
     Command edits uvs on polygonal objects  When used with the query flag, it returns the uv
     values associated with the specified components
@@ -65672,14 +65670,15 @@ def ToggleCameraNames(*args, **kwargs):
     pass
 
 
-def scale(absolute=True, centerPivot=True, componentSpace=True, constrainAlongNormal=True,
-          deletePriorHistory=True, distanceOnly=True, localSpace=True, objectCenterPivot=True,
-          objectSpace=True, orientAxes=None, pivot=None, preserveChildPosition=False,
-          preserveGeometryPosition=False, preserveUV=False, reflection=True,
-          reflectionAboutBBox=True, reflectionAboutOrigin=True, reflectionAboutX=True,
-          reflectionAboutY=True, reflectionAboutZ=True, reflectionTolerance=0.0, relative=True,
-          scaleX=True, scaleXY=True, scaleXYZ=True, scaleXZ=True, scaleY=True, scaleYZ=True,
-          scaleZ=True, symNegative=True, worldSpace=True, xformConstraint="", *args, **kwargs):
+def scale(*args, absolute=True, centerPivot=True, componentSpace=True,
+          constrainAlongNormal=True, deletePriorHistory=True, distanceOnly=True,
+          localSpace=True, objectCenterPivot=True, objectSpace=True, orientAxes=None,
+          pivot=None, preserveChildPosition=False, preserveGeometryPosition=False,
+          preserveUV=False, reflection=True, reflectionAboutBBox=True,
+          reflectionAboutOrigin=True, reflectionAboutX=True, reflectionAboutY=True,
+          reflectionAboutZ=True, reflectionTolerance=0.0, relative=True, scaleX=True,
+          scaleXY=True, scaleXYZ=True, scaleXZ=True, scaleY=True, scaleYZ=True, scaleZ=True,
+          symNegative=True, worldSpace=True, xformConstraint="", **kwargs):
     """
     The scale command is used to change the sizes of geometric objects   The default behaviour,
     when no objects or flags are passed, is to do a relative scale on each currently selected
@@ -65790,7 +65789,7 @@ def Fire(*args, **kwargs):
     pass
 
 
-def affects(type="", *args, **kwargs):
+def affects(*args, type="", **kwargs):
     """
     This command returns the list of attributes on a node or node type which affect the named
     attribute
@@ -65818,8 +65817,8 @@ def softModContext(*args, **kwargs):
     pass
 
 
-def graphDollyCtx(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def graphDollyCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create a dolly context for the graph editor
     
@@ -65861,7 +65860,7 @@ def dR_extrudeRelease(*args, **kwargs):
     pass
 
 
-def palettePort(actualTotal=0, annotation="", backgroundColor=None, changeCommand=None,
+def palettePort(*args, actualTotal=0, annotation="", backgroundColor=None, changeCommand=None,
                 colorEditable=True, colorEdited=None, defineTemplate="", dimensions=None,
                 docTag="", dragCallback=None, dropCallback=None, editable=True, enable=True,
                 enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
@@ -65870,7 +65869,7 @@ def palettePort(actualTotal=0, annotation="", backgroundColor=None, changeComman
                 preventOverride=True, redraw=True, rgbValue=None, setCurCell=0,
                 statusBarMessage="", topDown=True, transparent=0, useTemplate="", visible=True,
                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command creates an array of color cells  It could be used to to store an retrieve some
     colors you want to manage during your working session
@@ -65987,10 +65986,9 @@ def palettePort(actualTotal=0, annotation="", backgroundColor=None, changeComman
     pass
 
 
-def freeFormFillet(bias=0.5, caching=True, depth=0.5, nodeState=0, positionTolerance=0.1,
+def freeFormFillet(*args, bias=0.5, caching=True, depth=0.5, nodeState=0, positionTolerance=0.1,
                    tangentTolerance=0.1, constructionHistory=True, name="", object=True,
-                   polygon=0, range=True, q=True, query=True, e=True, edit=True, *args,
-                   **kwargs):
+                   polygon=0, range=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a free form surface fillet across two surface trim edges or isoparms
     or curve on surface  The fillet surface creation has blend controls in the form of bias and
@@ -66074,7 +66072,7 @@ def SetPreferredAngleOptions(*args, **kwargs):
     pass
 
 
-def evalDeferred(evaluateNext=True, list=True, lowPriority=True, lowestPriority=True, *args,
+def evalDeferred(*args, evaluateNext=True, list=True, lowPriority=True, lowestPriority=True,
                  **kwargs):
     """
     This command takes the string it is given and evaluates it during the next available idle
@@ -66099,13 +66097,13 @@ def evalDeferred(evaluateNext=True, list=True, lowPriority=True, lowestPriority=
     pass
 
 
-def messageLine(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def messageLine(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                 dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                 enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                 highlightColor=None, isObscured=True, manage=True, noBackground=True,
                 numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
                 statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-                width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a message line where tool feedback is shown
     
@@ -66189,8 +66187,9 @@ def messageLine(annotation="", backgroundColor=None, defineTemplate="", docTag="
     pass
 
 
-def nurbsSelect(borderSelection=True, bottomBorder=True, growSelection=0, leftBorder=True,
-                rightBorder=True, shrinkSelection=0, topBorder=True, *args, **kwargs):
+def nurbsSelect(*args, borderSelection=True, bottomBorder=True, growSelection=0,
+                leftBorder=True, rightBorder=True, shrinkSelection=0, topBorder=True,
+                **kwargs):
     """
     Performs selection operations on NURBS objects.
     
@@ -66243,9 +66242,9 @@ def polySelectEditCtxDataCmd(*args, **kwargs):
     pass
 
 
-def copyAttr(attribute="", containerParentChild=True, inConnections=True,
+def copyAttr(*args, attribute="", containerParentChild=True, inConnections=True,
              keepSourceConnections=True, outConnections=True, renameTargetContainer=True,
-             values=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+             values=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Given two nodes, transfer the connections and/or the values from the first node to the
     second for all attributes whose names and data types match  When values are transferred,
@@ -66330,9 +66329,9 @@ def WrinkleToolOptions(*args, **kwargs):
     pass
 
 
-def detachCurve(caching=True, keep=True, nodeState=0, parameter=0.0, constructionHistory=True,
-                curveOnSurface=True, name="", object=True, replaceOriginal=True, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+def detachCurve(*args, caching=True, keep=True, nodeState=0, parameter=0.0,
+                constructionHistory=True, curveOnSurface=True, name="", object=True,
+                replaceOriginal=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The detachCurve command detaches a curve into pieces, given a list of parameter values  You
     can also specify which pieces to keep and which to discard using the "-k" flag  The names
@@ -66368,10 +66367,10 @@ def detachCurve(caching=True, keep=True, nodeState=0, parameter=0.0, constructio
     pass
 
 
-def insertKnotSurface(addKnots=True, caching=True, direction=1, insertBetween=False,
+def insertKnotSurface(*args, addKnots=True, caching=True, direction=1, insertBetween=False,
                       nodeState=0, numberOfKnots=1, parameter=0.0, constructionHistory=True,
                       name="", object=True, replaceOriginal=True, q=True, query=True, e=True,
-                      edit=True, *args, **kwargs):
+                      edit=True, **kwargs):
     """
     The insertKnotSurface command inserts knots (aka isoparms) into a surface given a list of
     parameter values  The number of knots to add at each parameter value and whether the knots
@@ -66497,8 +66496,8 @@ def PickWalkStopAtTransform(*args, **kwargs):
     pass
 
 
-def polyPinUV(createHistory=True, operation=0, unpinned=True, uvSetName="", value=0.0, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+def polyPinUV(*args, createHistory=True, operation=0, unpinned=True, uvSetName="", value=0.0,
+              q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to pin and unpin UVs  A "pinned" UV is one which should not be
     modified   Each UV has an associated pin weight, that defaults to 0.0 meaning that the UV
@@ -66547,9 +66546,9 @@ def artSelect(*args, **kwargs):
     pass
 
 
-def progressWindow(endProgress=True, isCancelled=True, isInterruptable=True, maxValue=0,
+def progressWindow(*args, endProgress=True, isCancelled=True, isInterruptable=True, maxValue=0,
                    minValue=0, progress=0, status="", step=0, title="", q=True, query=True,
-                   e=True, edit=True, *args, **kwargs):
+                   e=True, edit=True, **kwargs):
     """
     The progressWindow command creates a window containing a status message, a graphical
     progress gauge, and optionally a "Hit ESC to Cancel" label for interruptable operations 
@@ -66604,8 +66603,8 @@ def AlignCurve(*args, **kwargs):
     pass
 
 
-def manipRotateLimitsCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                         q=True, query=True, e=True, edit=True, *args, **kwargs):
+def manipRotateLimitsCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                         name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a context for the rotate limits manipulator
     
@@ -66633,12 +66632,12 @@ def manipRotateLimitsCtx(exists=True, history=True, image1="", image2="", image3
     pass
 
 
-def ogsRender(activeMultisampleType="", activeRenderOverride="", activeRenderTargetFormat="",
-              availableFloatingPointTargetFormat=True, availableMultisampleType=True,
-              availableRenderOverrides=True, camera="", currentFrame=True, currentView=True,
-              enableFloatingPointRenderTarget=True, enableMultisample=True, frame=0.0, height=0,
-              layer=None, noRenderView=True, width=0, q=True, query=True, e=True, edit=True,
-              *args, **kwargs):
+def ogsRender(*args, activeMultisampleType="", activeRenderOverride="",
+              activeRenderTargetFormat="", availableFloatingPointTargetFormat=True,
+              availableMultisampleType=True, availableRenderOverrides=True, camera="",
+              currentFrame=True, currentView=True, enableFloatingPointRenderTarget=True,
+              enableMultisample=True, frame=0.0, height=0, layer=None, noRenderView=True,
+              width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Renders an image or a sequence using the OGS rendering engine
     
@@ -66702,8 +66701,8 @@ def PickWalkOut(*args, **kwargs):
     pass
 
 
-def polyTriangulate(caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+def polyTriangulate(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+                    query=True, e=True, edit=True, **kwargs):
     """
     Triangulation breaks polygons down into triangles, ensuring that all faces are planar and
     non-holed  Triangulation of models can be beneficial in many areas
@@ -66755,9 +66754,9 @@ def ProfilerToolHideSelected(*args, **kwargs):
     pass
 
 
-def shotTrack(insertTrack=0, lock=True, mute=True, numTracks=0, removeEmptyTracks=True,
+def shotTrack(*args, insertTrack=0, lock=True, mute=True, numTracks=0, removeEmptyTracks=True,
               removeTrack=0, selfmute=True, solo=True, swapTracks=None, title="", track=0,
-              unsolo=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+              unsolo=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used for inserting and removing tracks related to the shots displayed in
     the Sequencer  It can also be used to modify the track state, for example, to lock or mute
@@ -66798,10 +66797,10 @@ def shotTrack(insertTrack=0, lock=True, mute=True, numTracks=0, removeEmptyTrack
     pass
 
 
-def playbackOptions(animationEndTime=None, animationStartTime=None, blockingAnim=True, by=1.0,
-                    framesPerSecond=True, loop="", maxPlaybackSpeed=0.0, maxTime=None,
+def playbackOptions(*args, animationEndTime=None, animationStartTime=None, blockingAnim=True,
+                    by=1.0, framesPerSecond=True, loop="", maxPlaybackSpeed=0.0, maxTime=None,
                     minTime=None, playbackSpeed=0.0, view="", q=True, query=True, e=True,
-                    edit=True, *args, **kwargs):
+                    edit=True, **kwargs):
     """
     This command sets/queries certain values associated with playback: looping style, start/end
     times, etc  Only commands modifying the -minTime/maxTime, the
@@ -66857,7 +66856,7 @@ def ResetLattice(*args, **kwargs):
     pass
 
 
-def colorIndexSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def colorIndexSliderGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                         adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                         annotation="", backgroundColor=None, changeCommand=None,
                         columnAlign=None, columnAlign2=None, columnAlign3=None,
@@ -66876,7 +66875,7 @@ def colorIndexSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColum
                         numberOfPopupMenus=True, parent="", popupMenuArray=True,
                         preventOverride=True, rowAttach=None, statusBarMessage="",
                         useTemplate="", value=0, visible=True, visibleChangeCommand=None,
-                        width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                        width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -67091,8 +67090,8 @@ def SurfaceBooleanIntersectTool(*args, **kwargs):
     pass
 
 
-def curveAddPtCtx(exists=True, image1="", image2="", image3="", q=True, query=True, e=True,
-                  edit=True, *args, **kwargs):
+def curveAddPtCtx(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                  e=True, edit=True, **kwargs):
     """
     The curveAddPtCtx command creates a new curve add points context, which adds either control
     vertices (CVs) or edit points to an existing curve
@@ -67123,7 +67122,7 @@ def CloseFrontWindow(*args, **kwargs):
     pass
 
 
-def createDisplayLayer(empty=True, makeCurrent=True, name="", noRecurse=True, number=0, *args,
+def createDisplayLayer(*args, empty=True, makeCurrent=True, name="", noRecurse=True, number=0,
                        **kwargs):
     """
     Create a new display layer  The display layer number will be assigned based on the first
@@ -67199,7 +67198,7 @@ def ExpandSelectedComponents(*args, **kwargs):
     pass
 
 
-def querySubdiv(action=0, level=0, relative=True, *args, **kwargs):
+def querySubdiv(*args, action=0, level=0, relative=True, **kwargs):
     """
     Queries a subdivision surface based on a set of query parameters and updates the selection
     list with the results
@@ -67325,8 +67324,8 @@ def OneClickSetCallback(*args, **kwargs):
     pass
 
 
-def curveMoveEPCtx(exists=True, image1="", image2="", image3="", q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+def curveMoveEPCtx(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                   e=True, edit=True, **kwargs):
     """
     The curveMoveEPCtx command creates a new context for moving curve edit points using a
     manipulator  Edit points can only be moved one at a time
@@ -67357,15 +67356,14 @@ def artAttrSkinPaint(*args, **kwargs):
     pass
 
 
-def editorTemplate(addAdskAssetControls=True, addComponents=True, addControl=True,
+def editorTemplate(*args, addAdskAssetControls=True, addComponents=True, addControl=True,
                    addDynamicControl=True, addExtraControls=True, addSeparator=True,
                    annotateFieldOnly=True, annotation="", beginLayout="", beginNoOptimize=True,
                    beginScrollLayout=True, callCustom=True, collapse=True, debugMode=True,
                    dimControl=None, endLayout=True, endNoOptimize=True, endScrollLayout=True,
                    extraControlsLabel="", interruptOptimize=True, label="",
                    listExtraAttributes="", preventOverride=True, queryControl=None,
-                   queryLabel=None, queryName=None, removeControl=None, suppress="", *args,
-                   **kwargs):
+                   queryLabel=None, queryName=None, removeControl=None, suppress="", **kwargs):
     """
     The editorTemplate command allows the user to specify the conceptual layout of an attribute
     editor and leave the details of exactly which UI elements are used in the final result to
@@ -67466,11 +67464,11 @@ def editorTemplate(addAdskAssetControls=True, addComponents=True, addControl=Tru
     pass
 
 
-def turbulence(attenuation=0.0, frequency=0.0, magnitude=0.0, maxDistance=0.0, name="",
+def turbulence(*args, attenuation=0.0, frequency=0.0, magnitude=0.0, maxDistance=0.0, name="",
                noiseLevel=0, noiseRatio=0.0, perVertex=True, phase=0.0, phaseX=0.0, phaseY=0.0,
                phaseZ=0.0, position=None, torusSectionRadius=0.0, volumeExclusion=True,
                volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -67542,8 +67540,9 @@ def CreateCreaseSetOptions(*args, **kwargs):
     pass
 
 
-def flexor(atBones=True, atJoints=True, deformerCommand="", list=True, name="", noScale=True,
-           toSkeleton=True, type="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def flexor(*args, atBones=True, atJoints=True, deformerCommand="", list=True, name="",
+           noScale=True, toSkeleton=True, type="", q=True, query=True, e=True, edit=True,
+           **kwargs):
     """
     This command creates a flexor  A flexor a deformer plus a set of driving attributes  For
     example, a flexor might be a sculpt object that is driven by a joint's x rotation and a
@@ -67611,9 +67610,9 @@ def PolygonApplyColorOptions(*args, **kwargs):
     pass
 
 
-def texWinToolCtx(alternateContext=True, boxzoom=True, dolly=True, exists=True, history=True,
-                  image1="", image2="", image3="", name="", toolName="", track=True, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def texWinToolCtx(*args, alternateContext=True, boxzoom=True, dolly=True, exists=True,
+                  history=True, image1="", image2="", image3="", name="", toolName="",
+                  track=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This class creates a context for the View Tools "track", "dolly", and "box zoom" in the
     texture window
@@ -67673,10 +67672,10 @@ def ExtendFluidOptions(*args, **kwargs):
     pass
 
 
-def bevel(bevelShapeType=1, caching=True, cornerType=2, depth=0.5, extrudeDepth=1.0,
+def bevel(*args, bevelShapeType=1, caching=True, cornerType=2, depth=0.5, extrudeDepth=1.0,
           nodeState=0, tolerance=0.01, width=0.5, constructionHistory=True, joinSurfaces=True,
           name="", numberOfSides=4, object=True, polygon=0, range=True, q=True, query=True,
-          e=True, edit=True, *args, **kwargs):
+          e=True, edit=True, **kwargs):
     """
     The bevel command creates a new bevel surface for the specified curve  The curve can be any
     nurbs curves
@@ -67795,10 +67794,10 @@ def HypershadeRefreshSelectedSwatchesOnDisk(*args, **kwargs):
     pass
 
 
-def torus(axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, minorSweep=6.2831853,
-          nodeState=0, pivot=None, radius=1.0, sections=8, spans=1, startSweep=0,
-          tolerance=0.01, useTolerance=False, constructionHistory=True, name="", object=True,
-          polygon=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def torus(*args, axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0,
+          minorSweep=6.2831853, nodeState=0, pivot=None, radius=1.0, sections=8, spans=1,
+          startSweep=0, tolerance=0.01, useTolerance=False, constructionHistory=True, name="",
+          object=True, polygon=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The torus command creates a new torus and/or a dependency node that creates one, and
     returns their names
@@ -67858,12 +67857,12 @@ def torus(axis=None, caching=True, degree=3, endSweep=2, heightRatio=2.0, minorS
     pass
 
 
-def deviceEditor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def deviceEditor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                  forceMainConnection="", highlightConnection="", lockMainConnection=True,
                  mainListConnection="", panel="", parent="", selectionConnection="",
                  stateString=True, takePath="", unParent=True, unlockMainConnection=True,
                  updateMainConnection=True, useTemplate="", q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+                 edit=True, **kwargs):
     """
     This creates an editor for creating/modifying attachments to input devices
     
@@ -67973,7 +67972,7 @@ def RebuildSurfacesOptions(*args, **kwargs):
     pass
 
 
-def attrColorSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def attrColorSliderGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                        adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
                        annotation="", attrNavDecision=None, attribute="", backgroundColor=None,
                        columnAlign=None, columnAlign2=None, columnAlign3=None,
@@ -67991,7 +67990,7 @@ def attrColorSliderGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn
                        popupMenuArray=True, preventOverride=True, rgbValue=None, rowAttach=None,
                        showButton=True, statusBarMessage="", useTemplate="", visible=True,
                        visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                       edit=True, *args, **kwargs):
+                       edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -68195,9 +68194,9 @@ def cMuscleRelaxSetup(*args, **kwargs):
     pass
 
 
-def shadingGeometryRelCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                          offCommand="", onCommand="", shadingCentric=True, q=True, query=True,
-                          e=True, edit=True, *args, **kwargs):
+def shadingGeometryRelCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                          name="", offCommand="", onCommand="", shadingCentric=True, q=True,
+                          query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context that can be used for associating geometry to shading groups 
     You can put the context into shading-centric mode by using the -shadingCentric flag and
@@ -68235,7 +68234,7 @@ def shadingGeometryRelCtx(exists=True, history=True, image1="", image2="", image
     pass
 
 
-def warning(noContext=True, showLineNumber=True, *args, **kwargs):
+def warning(*args, noContext=True, showLineNumber=True, **kwargs):
     """
     The warning command is provided so that the user can issue warning messages from his/her
     scripts  The string argument is displayed in the command window (or stdout if running in
@@ -68282,7 +68281,7 @@ def FireworksOptions(*args, **kwargs):
     pass
 
 
-def componentEditor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def componentEditor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                     floatField="", floatSlider="", forceMainConnection="", hidePathName=True,
                     hideZeroColumns=True, highlightConnection="", lockInput=True,
                     lockMainConnection=True, mainListConnection="", newTab=None,
@@ -68291,7 +68290,7 @@ def componentEditor(control=True, defineTemplate="", docTag="", exists=True, fil
                     setOperationLabel=None, showObjects=True, showSelected=True, sortAlpha=True,
                     stateString=True, unParent=True, unlockMainConnection=True,
                     updateMainConnection=True, useTemplate="", q=True, query=True, e=True,
-                    edit=True, *args, **kwargs):
+                    edit=True, **kwargs):
     """
     This command creates a new component editor in the current layout
     
@@ -68410,7 +68409,7 @@ def RevolveOptions(*args, **kwargs):
     pass
 
 
-def rampColorPort(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def rampColorPort(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
                   dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                   enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                   highlightColor=None, isObscured=True, manage=True, noBackground=True,
@@ -68418,7 +68417,7 @@ def rampColorPort(annotation="", backgroundColor=None, defineTemplate="", docTag
                   preventOverride=True, selectedColorControl="", selectedInterpControl="",
                   selectedPositionControl="", statusBarMessage="", useTemplate="",
                   verticalLayout=True, visible=True, visibleChangeCommand=None, width=0, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+                  query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control that displays an image representing the ramp node specified,
     and supports editing of that node
@@ -68533,8 +68532,8 @@ def xgmPreview(*args, **kwargs):
     pass
 
 
-def clipEditorCurrentTimeCtx(exists=True, history=True, image1="", image2="", image3="",
-                             name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def clipEditorCurrentTimeCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                             name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to change current time within the track
     area of a clip editor
@@ -68584,7 +68583,7 @@ def DeleteChannelsOptions(*args, **kwargs):
     pass
 
 
-def textManip(visible=True, q=True, query=True, *args, **kwargs):
+def textManip(*args, visible=True, q=True, query=True, **kwargs):
     """
     Shows/hides the text manip
     
@@ -68639,7 +68638,7 @@ def MergeVertexTool(*args, **kwargs):
     pass
 
 
-def lsThroughFilter(item="", nodeArray=True, reverse=True, selection=True, sort="", *args,
+def lsThroughFilter(*args, item="", nodeArray=True, reverse=True, selection=True, sort="",
                     **kwargs):
     """
     List all objects in the world that pass a given filter
@@ -68666,8 +68665,8 @@ def lsThroughFilter(item="", nodeArray=True, reverse=True, selection=True, sort=
     pass
 
 
-def dolly(absolute=True, distance=0.0, dollyTowardsCenter=True, orthoScale=0.0, relative=True,
-          *args, **kwargs):
+def dolly(*args, absolute=True, distance=0.0, dollyTowardsCenter=True, orthoScale=0.0,
+          relative=True, **kwargs):
     """
     The dolly command moves a camera along the viewing direction in the world space  The
     viewing-direction and up-direction of the camera are not altered  There are two modes of
@@ -68702,8 +68701,8 @@ def ExportDeformerWeightsOptions(*args, **kwargs):
     pass
 
 
-def fitBspline(caching=True, nodeState=0, tolerance=0.1, constructionHistory=True, name="",
-               object=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def fitBspline(*args, caching=True, nodeState=0, tolerance=0.1, constructionHistory=True,
+               name="", object=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The fitBspline command fits the CVs from an input curve and and returns a 3D curve
     
@@ -68737,7 +68736,7 @@ def ReverseSurfaceDirection(*args, **kwargs):
     pass
 
 
-def suitePrefs(applyToSuite="", installedAsSuite=True, isCompleteSuite=True, *args, **kwargs):
+def suitePrefs(*args, applyToSuite="", installedAsSuite=True, isCompleteSuite=True, **kwargs):
     """
     This command sets the mouse and keyboard interaction mode for Maya and other Suites
     applications (if Maya is part of a Suites install)
@@ -68814,7 +68813,7 @@ def HIKBodyPartMode(*args, **kwargs):
     pass
 
 
-def keyframeStats(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def keyframeStats(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                   adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, animEditor="",
                   annotation="", backgroundColor=None, classicMode=True, columnAlign=None,
                   columnAlign2=None, columnAlign3=None, columnAlign4=None, columnAlign5=None,
@@ -68830,7 +68829,7 @@ def keyframeStats(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                   numberOfPopupMenus=True, parent="", popupMenuArray=True, precision=3,
                   preventOverride=True, rowAttach=None, statusBarMessage="", timeAnnotation="",
                   useTemplate="", valueAnnotation="", visible=True, visibleChangeCommand=None,
-                  width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -69024,9 +69023,9 @@ def keyframeStats(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
     pass
 
 
-def polyMergeUV(caching=True, constructionHistory=True, distance=0.0, name="", nodeState=0,
-                uvSetName="", worldSpace=True, q=True, query=True, e=True, edit=True, *args,
-                **kwargs):
+def polyMergeUV(*args, caching=True, constructionHistory=True, distance=0.0, name="",
+                nodeState=0, uvSetName="", worldSpace=True, q=True, query=True, e=True,
+                edit=True, **kwargs):
     """
     Merge UVs of an object based on their distance  UVs are merge only if they belong to the
     same 3D vertex
@@ -69073,9 +69072,9 @@ def AverageVertex(*args, **kwargs):
     pass
 
 
-def polyWedgeFace(axis=None, caching=True, center=None, constructionHistory=True, divisions=0,
-                  edge=0, name="", nodeState=0, wedgeAngle=0.0, worldSpace=True, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def polyWedgeFace(*args, axis=None, caching=True, center=None, constructionHistory=True,
+                  divisions=0, edge=0, name="", nodeState=0, wedgeAngle=0.0, worldSpace=True,
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     Extrude faces about an axis  The axis is the average of all the selected edges  If the
     edges are not aligned, the wedge may not look intuitive  To separately wedge faces about
@@ -69118,10 +69117,10 @@ def polyWedgeFace(axis=None, caching=True, center=None, constructionHistory=True
     pass
 
 
-def drag(attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0, magnitude=0.0,
+def drag(*args, attenuation=0.0, directionX=0.0, directionY=0.0, directionZ=0.0, magnitude=0.0,
          maxDistance=0.0, name="", perVertex=True, position=None, torusSectionRadius=0.0,
          useDirection=True, volumeExclusion=True, volumeOffset=None, volumeShape="",
-         volumeSweep=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+         volumeSweep=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -69181,8 +69180,8 @@ def HypershadeToggleZoomIn(*args, **kwargs):
     pass
 
 
-def currentTimeCtx(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+def currentTimeCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                   q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to change current time within the graph
     editor
@@ -69225,9 +69224,9 @@ def NodeEditorGraphRemoveUpstream(*args, **kwargs):
     pass
 
 
-def wrinkle(axis=None, branchCount=2, branchDepth=0, center=None, crease="",
+def wrinkle(*args, axis=None, branchCount=2, branchDepth=0, center=None, crease="",
             dropoffDistance=0.0, envelope=1.0, randomness=0.2, style="", thickness=1.0,
-            uvSpace=None, wrinkleCount=3, wrinkleIntensity=0.5, *args, **kwargs):
+            uvSpace=None, wrinkleCount=3, wrinkleIntensity=0.5, **kwargs):
     """
     The wrinkle command is used to create a network of wrinkles on a surface  It automatically
     creates a network of wrinkle curves that control a wire deformer  The wrinkle curves are
@@ -69312,10 +69311,10 @@ def ToggleStatusLine(*args, **kwargs):
     pass
 
 
-def hudButton(allowOverlap=True, block=0, blockAlignment="", blockSize="", buttonShape="",
-              buttonWidth=0, label="", labelFontSize="", padding=0, pressCommand=None,
-              releaseCommand=None, section=0, visible=True, q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+def hudButton(*args, allowOverlap=True, block=0, blockAlignment="", blockSize="",
+              buttonShape="", buttonWidth=0, label="", labelFontSize="", padding=0,
+              pressCommand=None, releaseCommand=None, section=0, visible=True, q=True,
+              query=True, e=True, edit=True, **kwargs):
     """
     This command creates a Heads-up Display (HUD) button control which is placed in a 2D
     inactive overlay plane on the 3D viewport  It is to be used to provide hands-on interaction
@@ -69386,7 +69385,7 @@ def xgmSetAttr(*args, **kwargs):
     pass
 
 
-def orbit(horizontalAngle=0.0, pivotPoint=None, rotationAngles=None, verticalAngle=0.0, *args,
+def orbit(*args, horizontalAngle=0.0, pivotPoint=None, rotationAngles=None, verticalAngle=0.0,
           **kwargs):
     """
     The orbit command revolves the camera(s) horizontally and/or vertically in the perspective
@@ -69416,7 +69415,7 @@ def renderSetupPostApply(*args, **kwargs):
     pass
 
 
-def defineDataServer(device="", server="", undefine=True, *args, **kwargs):
+def defineDataServer(*args, device="", server="", undefine=True, **kwargs):
     """
     Connects to the specified data servername, creating a named device which then can be
     attached to device handlers   When the device is defined, it queries queries the server for
@@ -69517,12 +69516,12 @@ def dgdebug(*args, **kwargs):
     pass
 
 
-def wire(after=True, afterReference=True, before=True, crossingEffect=0, deformerTools=True,
-         dropoffDistance=None, envelope=1.0, exclusive="", frontOfChain=True, geometry="",
-         geometryIndices=True, groupWithBase=False, holder=None, ignoreSelected=True,
-         includeHiddenSelections=False, localInfluence=0, name="", parallel=True, prune=True,
-         remove=True, split=True, wire="", wireCount=0, q=True, query=True, e=True, edit=True,
-         *args, **kwargs):
+def wire(*args, after=True, afterReference=True, before=True, crossingEffect=0,
+         deformerTools=True, dropoffDistance=None, envelope=1.0, exclusive="",
+         frontOfChain=True, geometry="", geometryIndices=True, groupWithBase=False, holder=None,
+         ignoreSelected=True, includeHiddenSelections=False, localInfluence=0, name="",
+         parallel=True, prune=True, remove=True, split=True, wire="", wireCount=0, q=True,
+         query=True, e=True, edit=True, **kwargs):
     """
     This command creates a wire deformer
     
@@ -69626,10 +69625,10 @@ def ShowPlanes(*args, **kwargs):
     pass
 
 
-def polyMergeFacetCtx(activeNodes=True, exists=True, image1="", image2="", image3="",
+def polyMergeFacetCtx(*args, activeNodes=True, exists=True, image1="", image2="", image3="",
                       immediate=True, name="", previous=True, reset=True, toolNode=True,
                       caching=True, constructionHistory=True, firstFacet=0, mergeMode=0,
-                      nodeState=0, secondFacet=0, q=True, query=True, e=True, edit=True, *args,
+                      nodeState=0, secondFacet=0, q=True, query=True, e=True, edit=True,
                       **kwargs):
     """
     The second face becomes a hole in the first face.
@@ -69696,13 +69695,13 @@ def stitchSurfaceCtx(*args, **kwargs):
     pass
 
 
-def toggle(above=True, below=True, boundary=True, boundingBox=True, controlVertex=True,
+def toggle(*args, above=True, below=True, boundary=True, boundingBox=True, controlVertex=True,
            doNotWrite=True, editPoint=True, extent=True, facet=True, geometry=True, gl=True,
            highPrecisionNurbs=True, hull=True, latticePoint=True, latticeShape=True,
            localAxis=True, newCurve=True, newPolymesh=True, newSurface=True, normal=True,
            origin=True, point=True, pointDisplay=True, pointFacet=True, rotatePivot=True,
            scalePivot=True, selectHandle=True, state=True, surfaceFace=True, template=True,
-           uvCoords=True, vertex=True, q=True, query=True, *args, **kwargs):
+           uvCoords=True, vertex=True, q=True, query=True, **kwargs):
     """
     The toggle command is used to toggle the display of various object features for objects
     which have these components  For example, CV and edit point display may be toggled for
@@ -69790,7 +69789,7 @@ def IntersectCurveOptions(*args, **kwargs):
     pass
 
 
-def menuEditor(annotation="", backgroundColor=None, cellHeight=0, cellWidth=0,
+def menuEditor(*args, annotation="", backgroundColor=None, cellHeight=0, cellWidth=0,
                cellWidthHeight=None, checkBoxPresent=None, checkBoxState=None, childArray=True,
                command=None, defineTemplate="", delete=None, docTag="", dragCallback=None,
                dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
@@ -69802,7 +69801,7 @@ def menuEditor(annotation="", backgroundColor=None, cellHeight=0, cellWidth=0,
                radioButtonState=None, separator=None, statusBarMessage="", style="",
                subMenuAt=None, subMenuEditorWindow="", subMenuEditorsOpen=True, subMenuOf=None,
                topLevelMenu="", useTemplate="", visible=True, visibleChangeCommand=None,
-               width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+               width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     A menuEditor displays the contents of a popup menu and allows the menu's items to be edited
      Menu items are represented by labelled icons which can be dragged around within the editor
@@ -69968,8 +69967,8 @@ def XgmSetNoiseBrushToolOption(*args, **kwargs):
     pass
 
 
-def autoKeyframe(addAttr=None, characterOption="standard", listAttr=True, noReset=True,
-                 state=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def autoKeyframe(*args, addAttr=None, characterOption="standard", listAttr=True, noReset=True,
+                 state=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     With no flags, this command will set keyframes on all attributes that have been modified
     since an "autoKeyframe -state on" command was issued  To stop keeping track of modified
@@ -70053,7 +70052,7 @@ def dR_quadDrawTool(*args, **kwargs):
     pass
 
 
-def dockControl(allowedArea="all", annotation="", area="", backgroundColor=None,
+def dockControl(*args, allowedArea="all", annotation="", area="", backgroundColor=None,
                 closeCommand=None, content="", defineTemplate="", docTag="", dockStation="",
                 dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                 enableKeyboardFocus=True, enablePopupOption=True, exists=True, fixedHeight=True,
@@ -70063,7 +70062,7 @@ def dockControl(allowedArea="all", annotation="", area="", backgroundColor=None,
                 popupMenuArray=True, preventOverride=True, r=True, retain=True, sizeable=True,
                 splitLayout="", state="", statusBarMessage="", useTemplate="", visible=True,
                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     Create a dockable control, also known as tool palette or utility window  Dock controls are
     secondary windows placed in the dock area around the central control in a main window  Dock
@@ -70212,15 +70211,15 @@ def PaintEffectsGlobalSettings(*args, **kwargs):
     pass
 
 
-def menuBarLayout(annotation="", backgroundColor=None, childArray=True, defineTemplate="",
-                  docTag="", dragCallback=None, dropCallback=None, enable=True,
-                  enableBackground=True, enableKeyboardFocus=True, exists=True,
+def menuBarLayout(*args, annotation="", backgroundColor=None, childArray=True,
+                  defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
+                  enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
                   fullPathName=True, height=0, highlightColor=None, isObscured=True,
                   manage=True, menuArray=True, menuBarVisible=True, menuIndex=None,
                   noBackground=True, numberOfChildren=True, numberOfMenus=True,
                   numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
                   statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-                  width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a layout containing a menu bar  The menu bar will appear and behave similar to any
     menu bar created with the 'window -menuBar true' command  Menus may be created with a
@@ -70351,7 +70350,7 @@ def PolygonClearClipboardOptions(*args, **kwargs):
     pass
 
 
-def getFileList(filespec="", folder="", *args, **kwargs):
+def getFileList(*args, filespec="", folder="", **kwargs):
     """
     Returns a list of files matching an optional wildcard pattern  Note that this command works
     directly on raw system files and does not go through standard Maya file path resolution
@@ -70402,8 +70401,8 @@ def RemoveSubdivProxyMirror(*args, **kwargs):
     pass
 
 
-def polySplitEdge(operation=0, caching=True, constructionHistory=True, name="", nodeState=0,
-                  q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polySplitEdge(*args, operation=0, caching=True, constructionHistory=True, name="",
+                  nodeState=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Split Edges.
     
@@ -70449,9 +70448,9 @@ def ToggleSoftEdges(*args, **kwargs):
     pass
 
 
-def regionSelectKeyCtx(bottomManip=0.0, exists=True, history=True, image1="", image2="",
+def regionSelectKeyCtx(*args, bottomManip=0.0, exists=True, history=True, image1="", image2="",
                        image3="", leftManip=0.0, name="", rightManip=0.0, topManip=0.0, q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context which may be used to scale keyframes within the graph editor
     using the region select tool
@@ -70506,15 +70505,16 @@ def DefaultQualityDisplay(*args, **kwargs):
     pass
 
 
-def attrEnumOptionMenu(annotation="", attribute=None, backgroundColor=None, changeCommand=None,
-                       defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
-                       enable=True, enableBackground=True, enableKeyboardFocus=True,
-                       enumeratedItem=None, exists=True, fullPathName=True, height=0,
-                       highlightColor=None, isObscured=True, label="", manage=True,
-                       noBackground=True, numberOfPopupMenus=True, parent="",
-                       popupMenuArray=True, preventOverride=True, statusBarMessage="",
-                       useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+def attrEnumOptionMenu(*args, annotation="", attribute=None, backgroundColor=None,
+                       changeCommand=None, defineTemplate="", docTag="", dragCallback=None,
+                       dropCallback=None, enable=True, enableBackground=True,
+                       enableKeyboardFocus=True, enumeratedItem=None, exists=True,
+                       fullPathName=True, height=0, highlightColor=None, isObscured=True,
+                       label="", manage=True, noBackground=True, numberOfPopupMenus=True,
+                       parent="", popupMenuArray=True, preventOverride=True,
+                       statusBarMessage="", useTemplate="", visible=True,
+                       visibleChangeCommand=None, width=0, q=True, query=True, e=True,
+                       edit=True, **kwargs):
     """
     This command creates an enumerated attribute control  It is usually an option menu
     
@@ -70643,9 +70643,9 @@ def OrientJoint(*args, **kwargs):
     pass
 
 
-def rollCtx(alternateContext=True, exists=True, history=True, image1="", image2="", image3="",
-            name="", rollScale=0.0, toolName="", q=True, query=True, e=True, edit=True, *args,
-            **kwargs):
+def rollCtx(*args, alternateContext=True, exists=True, history=True, image1="", image2="",
+            image3="", name="", rollScale=0.0, toolName="", q=True, query=True, e=True,
+            edit=True, **kwargs):
     """
     Create, edit, or query a roll context
     
@@ -70735,14 +70735,14 @@ def AimConstraintOptions(*args, **kwargs):
     pass
 
 
-def button(actOnPress=True, actionIsSubstitute=True, align="", annotation="",
+def button(*args, actOnPress=True, actionIsSubstitute=True, align="", annotation="",
            backgroundColor=None, command=None, defineTemplate="", docTag="", dragCallback=None,
            dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
            exists=True, fullPathName=True, height=0, highlightColor=None, isObscured=True,
            label="", manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
            popupMenuArray=True, preventOverride=True, recomputeSize=True, statusBarMessage="",
            useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-           e=True, edit=True, *args, **kwargs):
+           e=True, edit=True, **kwargs):
     """
     Create a button control capable of displaying a textual label and executing a command when
     selected by the user
@@ -70870,7 +70870,7 @@ def CoarseLevelComponentDisplay(*args, **kwargs):
     pass
 
 
-def nurbsCopyUVSet(q=True, query=True, e=True, edit=True, *args, **kwargs):
+def nurbsCopyUVSet(*args, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This is only a sample command for debugging purposes, which makes a copy of the implicit st
     parameterization on a nurbs surface to be the 1st explicit uvset
@@ -70903,15 +70903,16 @@ def webBrowserPrefs(*args, **kwargs):
     pass
 
 
-def webBrowser(annotation="", back=True, backgroundColor=None, defineTemplate="", docTag="",
-               dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
-               enableKeyboardFocus=True, exists=True, find="", forward=True, fullPathName=True,
-               height=0, highlightColor=None, home=True, isObscured=True, manage=True,
-               matchCase=True, matchWholeWorld=True, noBackground=True, numberOfPopupMenus=True,
-               openURL="", parent="", popupMenuArray=True, preventOverride=True, reload=True,
-               searchForward=True, statusBarMessage="", stop=True, urlChangedCb="",
-               useTemplate="", visible=True, visibleChangeCommand=None, width=0, wrap=True,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+def webBrowser(*args, annotation="", back=True, backgroundColor=None, defineTemplate="",
+               docTag="", dragCallback=None, dropCallback=None, enable=True,
+               enableBackground=True, enableKeyboardFocus=True, exists=True, find="",
+               forward=True, fullPathName=True, height=0, highlightColor=None, home=True,
+               isObscured=True, manage=True, matchCase=True, matchWholeWorld=True,
+               noBackground=True, numberOfPopupMenus=True, openURL="", parent="",
+               popupMenuArray=True, preventOverride=True, reload=True, searchForward=True,
+               statusBarMessage="", stop=True, urlChangedCb="", useTemplate="", visible=True,
+               visibleChangeCommand=None, width=0, wrap=True, q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     This command is obsolete and will be removed in next version of Maya  The internal web
     browser of Maya has been replaced by a plug-in which allows your own browser to connect
@@ -71057,8 +71058,8 @@ def GetOceanPondExample(*args, **kwargs):
     pass
 
 
-def attributeMenu(beginMenu=True, editor="", finishMenu=True, inputs=True, plug=None,
-                  regPulldownMenuCommand="", unregPulldownMenuCommand=0, *args, **kwargs):
+def attributeMenu(*args, beginMenu=True, editor="", finishMenu=True, inputs=True, plug=None,
+                  regPulldownMenuCommand="", unregPulldownMenuCommand=0, **kwargs):
     """
     Action to generate popup connection menus for Hypershade  This command is used internally
     by the Hypershade panel
@@ -71106,15 +71107,16 @@ def OutlinerUnhide(*args, **kwargs):
     pass
 
 
-def floatScrollBar(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
-                   docTag="", dragCallback=None, dragCommand=None, dropCallback=None,
-                   enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
-                   fullPathName=True, height=0, highlightColor=None, horizontal=True,
-                   isObscured=True, largeStep=0.0, manage=True, maxValue=0.0, minValue=0.0,
-                   noBackground=True, numberOfPopupMenus=True, parent="", popupMenuArray=True,
+def floatScrollBar(*args, annotation="", backgroundColor=None, changeCommand=None,
+                   defineTemplate="", docTag="", dragCallback=None, dragCommand=None,
+                   dropCallback=None, enable=True, enableBackground=True,
+                   enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                   highlightColor=None, horizontal=True, isObscured=True, largeStep=0.0,
+                   manage=True, maxValue=0.0, minValue=0.0, noBackground=True,
+                   numberOfPopupMenus=True, parent="", popupMenuArray=True,
                    preventOverride=True, statusBarMessage="", step=0.0, useTemplate="",
                    value=0.0, visible=True, visibleChangeCommand=None, width=0, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     Create a scroll bar control that accepts only float values and is bound by a minimum and
     maximum value  The scroll bar displays a marker indicating the current value of the scroll
@@ -71257,7 +71259,7 @@ def DeleteAllDynamicConstraints(*args, **kwargs):
     pass
 
 
-def createEditor(noCloseOnDelete=True, queueForDelete=True, *args, **kwargs):
+def createEditor(*args, noCloseOnDelete=True, queueForDelete=True, **kwargs):
     """
     This command creates a property sheet for any dependency node  The second argument is the
     name of the node, and the first is the name of a layout into which the property sheet
@@ -71284,8 +71286,8 @@ def ExportOfflineFile(*args, **kwargs):
     pass
 
 
-def surface(degreeU=0, degreeV=0, formU="", formV="", knotU=0.0, knotV=0.0, name="",
-            objectSpace=True, point=None, pointWeight=None, worldSpace=True, *args, **kwargs):
+def surface(*args, degreeU=0, degreeV=0, formU="", formV="", knotU=0.0, knotV=0.0, name="",
+            objectSpace=True, point=None, pointWeight=None, worldSpace=True, **kwargs):
     """
     The cmd creates a NURBS spline surface (rational or non rational)  The surface is created
     by specifying control vertices (CV's) and knot sequences in the U and V direction  You
@@ -71340,8 +71342,8 @@ def BrushPresetBlendShape(*args, **kwargs):
     pass
 
 
-def makeSingleSurface(caching=True, constructionHistory=True, name="", nodeState=0, object=True,
-                      stitchTolerance=0.1, q=True, query=True, e=True, edit=True, *args,
+def makeSingleSurface(*args, caching=True, constructionHistory=True, name="", nodeState=0,
+                      object=True, stitchTolerance=0.1, q=True, query=True, e=True, edit=True,
                       **kwargs):
     """
     This command performs a stitch and tessellate operation
@@ -71494,7 +71496,7 @@ def SelectAllFluids(*args, **kwargs):
     pass
 
 
-def rotationInterpolation(convert="", q=True, query=True, *args, **kwargs):
+def rotationInterpolation(*args, convert="", q=True, query=True, **kwargs):
     """
     The rotationInterpolation command converts the rotation curves to the desired rotation
     interpolation representation  For example, an Euler-angled representation can be converted
@@ -71537,9 +71539,9 @@ def CreateImagePlaneOptions(*args, **kwargs):
     pass
 
 
-def deviceManager(attachment=True, axisCoordChanges=True, axisIndex=0, axisName=True,
+def deviceManager(*args, attachment=True, axisCoordChanges=True, axisIndex=0, axisName=True,
                   axisOffset=True, axisScale=True, deviceIndex=0, deviceNameFromIndex=0,
-                  numAxis=True, numDevices=True, q=True, query=True, e=True, edit=True, *args,
+                  numAxis=True, numDevices=True, q=True, query=True, e=True, edit=True,
                   **kwargs):
     """
     This command queriers the internal device manager for information on attached devices
@@ -71600,12 +71602,12 @@ def dR_paintPress(*args, **kwargs):
     pass
 
 
-def poseEditor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def poseEditor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                forceMainConnection="", highlightConnection="", lockMainConnection=True,
                mainListConnection="", panel="", parent="", selectionConnection="",
                stateString=True, unParent=True, unlockMainConnection=True,
                updateMainConnection=True, useTemplate="", q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+               **kwargs):
     """
     This command creates an editor that derives from the base editor class that has controls
     for deformer and control nodes
@@ -71679,9 +71681,9 @@ def EnableGlobalStitch(*args, **kwargs):
     pass
 
 
-def polyExtrudeFacet(attraction=0.0, caching=True, constructionHistory=True, createCurve=True,
-                     divisions=1, gain=1.0, gravity=None, gravityX=0.0, gravityY=0.0,
-                     gravityZ=0.0, inputCurve=None, keepFacesTogether=True,
+def polyExtrudeFacet(*args, attraction=0.0, caching=True, constructionHistory=True,
+                     createCurve=True, divisions=1, gain=1.0, gravity=None, gravityX=0.0,
+                     gravityY=0.0, gravityZ=0.0, inputCurve=None, keepFacesTogether=True,
                      keepFacetTogether=True, localCenter=0, localDirection=None,
                      localDirectionX=0.0, localDirectionY=0.0, localDirectionZ=0.0,
                      localRotate=None, localRotateX=0.0, localRotateY=0.0, localRotateZ=0.0,
@@ -71694,7 +71696,7 @@ def polyExtrudeFacet(attraction=0.0, caching=True, constructionHistory=True, cre
                      smoothingAngle=0.0, taper=1.0, taperCurve_FloatValue=0.0,
                      taperCurve_Interp=0, taperCurve_Position=0.0, thickness=0.0,
                      translate=None, translateX=0.0, translateY=0.0, translateZ=0.0, twist=0.0,
-                     weight=0.0, worldSpace=True, q=True, query=True, e=True, edit=True, *args,
+                     weight=0.0, worldSpace=True, q=True, query=True, e=True, edit=True,
                      **kwargs):
     """
     Extrude faces  Faces can be extruded separately or together, and manipulations can be
@@ -71904,7 +71906,7 @@ def dR_selectModeMarquee(*args, **kwargs):
     pass
 
 
-def applyAttrPattern(nodeType="", patternName="", *args, **kwargs):
+def applyAttrPattern(*args, nodeType="", patternName="", **kwargs):
     """
     Take the attribute structure described by a pre-defined pattern and apply it either to a
     node (as dynamic attributes) or a node type (as extension attributes)  The same pattern can
@@ -71987,9 +71989,9 @@ def XgmSetCutBrushToolOption(*args, **kwargs):
     pass
 
 
-def polyEditUVShell(angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0,
+def polyEditUVShell(*args, angle=0.0, pivotU=0.0, pivotV=0.0, relative=True, rotateRatio=1.0,
                     rotation=True, scale=True, scaleU=0.0, scaleV=0.0, uValue=0.0, uvSetName="",
-                    vValue=0.0, q=True, query=True, *args, **kwargs):
+                    vValue=0.0, q=True, query=True, **kwargs):
     """
     Command edits uv shells on polygonal objects  When used with the query flag, it returns the
     transformation values associated with the specified components
@@ -72041,11 +72043,11 @@ def CreateConstructionPlaneOptions(*args, **kwargs):
     pass
 
 
-def menu(allowOptionBoxes=True, defineTemplate="", deleteAllItems=True, docTag="", enable=True,
-         exists=True, familyImage="", helpMenu=True, itemArray=True, label="", ltVersion="",
-         mnemonic="", numberOfItems=True, parent="", postMenuCommand=None,
+def menu(*args, allowOptionBoxes=True, defineTemplate="", deleteAllItems=True, docTag="",
+         enable=True, exists=True, familyImage="", helpMenu=True, itemArray=True, label="",
+         ltVersion="", mnemonic="", numberOfItems=True, parent="", postMenuCommand=None,
          postMenuCommandOnce=True, scrollable=True, tearOff=True, useTemplate="", version="",
-         visible=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+         visible=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new menu and adds it to the default window's menubar if no parent is
     specified  The menu can be enabled/disabled  Note that this command may also be used on
@@ -72113,14 +72115,14 @@ def menu(allowOptionBoxes=True, defineTemplate="", deleteAllItems=True, docTag="
     pass
 
 
-def timeField(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
+def timeField(*args, annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
               docTag="", dragCallback=None, dragCommand=None, dropCallback=None, editable=True,
               enable=True, enableBackground=True, enableKeyboardFocus=True, enterCommand=None,
               exists=True, fullPathName=True, height=0, highlightColor=None, isObscured=True,
               manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
               popupMenuArray=True, precision=0, preventOverride=True, receiveFocusCommand=None,
               statusBarMessage="", step=None, useTemplate="", value=None, visible=True,
-              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
               **kwargs):
     """
     Create a field control that accepts only time values  An invisible slider is attached to
@@ -72336,11 +72338,11 @@ def redo(*args, **kwargs):
     pass
 
 
-def nurbsToPolygonsPref(chordHeight=0.0, chordHeightRatio=0.0, delta3D=0.0, edgeSwap=True,
-                        format=0, fraction=0.0, matchRenderTessellation=0, merge=0,
-                        mergeTolerance=0.0, minEdgeLen=0.0, polyCount=0, polyType=0, uNumber=0,
-                        uType=0, useChordHeight=True, useChordHeightRatio=True, vNumber=0,
-                        vType=0, q=True, query=True, *args, **kwargs):
+def nurbsToPolygonsPref(*args, chordHeight=0.0, chordHeightRatio=0.0, delta3D=0.0,
+                        edgeSwap=True, format=0, fraction=0.0, matchRenderTessellation=0,
+                        merge=0, mergeTolerance=0.0, minEdgeLen=0.0, polyCount=0, polyType=0,
+                        uNumber=0, uType=0, useChordHeight=True, useChordHeightRatio=True,
+                        vNumber=0, vType=0, q=True, query=True, **kwargs):
     """
     This command sets the values used by the nurbs-to-polygons (or "tesselate") preference 
     This preference is used by Maya menu items and is saved between Maya sessions  To query any
@@ -72397,8 +72399,8 @@ def CreateNURBSTorus(*args, **kwargs):
     pass
 
 
-def nSoft(convert=True, duplicate=True, duplicateHistory=True, goal=0.0, hideOriginal=True,
-          q=True, query=True, *args, **kwargs):
+def nSoft(*args, convert=True, duplicate=True, duplicateHistory=True, goal=0.0,
+          hideOriginal=True, q=True, query=True, **kwargs):
     """
     Makes a nSoft body from the object(s) passed on the command line or in the selection list 
     The geometry can be a NURBS, polygonal, lattice object  The resulting nSoft body is made up
@@ -72442,11 +72444,11 @@ def OutlinerToggleAutoExpandLayers(*args, **kwargs):
     pass
 
 
-def fluidEmitter(cycleEmission="", cycleInterval=0, densityEmissionRate=0.0, fluidDropoff=0.0,
-                 fuelEmissionRate=0.0, heatEmissionRate=0.0, maxDistance=0.0, minDistance=0.0,
-                 name="", position=None, rate=0.0, torusSectionRadius=0.0, type="",
-                 volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True, query=True, e=True,
-                 edit=True, *args, **kwargs):
+def fluidEmitter(*args, cycleEmission="", cycleInterval=0, densityEmissionRate=0.0,
+                 fluidDropoff=0.0, fuelEmissionRate=0.0, heatEmissionRate=0.0, maxDistance=0.0,
+                 minDistance=0.0, name="", position=None, rate=0.0, torusSectionRadius=0.0,
+                 type="", volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True,
+                 query=True, e=True, edit=True, **kwargs):
     """
     Creates, edits or queries an auxiliary dynamics object (for example, a field or emitter) 
     Creates an emitter object  If object names are provided or if objects are selected, applies
@@ -72522,8 +72524,8 @@ def ToggleUVEditorUVStatisticsHUDOptions(*args, **kwargs):
     pass
 
 
-def writeTake(angle="", device="", linear="", noTime=True, precision=6, take="",
-              virtualDevice="", *args, **kwargs):
+def writeTake(*args, angle="", device="", linear="", noTime=True, precision=6, take="",
+              virtualDevice="", **kwargs):
     """
     This action writes a take from a device with recorded data to a take (.mov) file  The
     writeTake action can also write the virtual definition of a device   See also: recordDevice,
@@ -72557,9 +72559,9 @@ def writeTake(angle="", device="", linear="", noTime=True, precision=6, take="",
     pass
 
 
-def attachDeviceAttr(attribute="", axis="", camera=True, cameraRotate=True,
+def attachDeviceAttr(*args, attribute="", axis="", camera=True, cameraRotate=True,
                      cameraTranslate=True, clutch="", device="", selection=True, q=True,
-                     query=True, *args, **kwargs):
+                     query=True, **kwargs):
     """
     This command associates a device/axis pair with a node/attribute pair  When the device axis
     moves, the value of the attribute is set to the value of the axis  This value can be scaled
@@ -72633,11 +72635,10 @@ def saveToolSettings(*args, **kwargs):
     pass
 
 
-def pointOnSurface(caching=True, constructionHistory=True, nodeState=0, normal=True,
+def pointOnSurface(*args, caching=True, constructionHistory=True, nodeState=0, normal=True,
                    normalizedNormal=True, normalizedTangentU=True, normalizedTangentV=True,
                    parameterU=0.0, parameterV=0.0, position=True, tangentU=True, tangentV=True,
-                   turnOnPercentage=False, q=True, query=True, e=True, edit=True, *args,
-                   **kwargs):
+                   turnOnPercentage=False, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command returns information for a point on a surface  If no flag is specified, this
     command assumes p/position by default  If more than one flag is specifed, then a string
@@ -72698,7 +72699,7 @@ def ExtendCurve(*args, **kwargs):
     pass
 
 
-def getClassification(satisfies="", *args, **kwargs):
+def getClassification(*args, satisfies="", **kwargs):
     """
     Returns the classification string for a given node type   Classification strings look like
     file pathnames ("shader/reflective" or "texture/2D", for example)  Multiple classifications
@@ -72732,9 +72733,9 @@ def InsertKeyToolActivate(*args, **kwargs):
     pass
 
 
-def duplicateCurve(caching=True, constructionHistory=True, local=True, maxValue=1.0,
+def duplicateCurve(*args, caching=True, constructionHistory=True, local=True, maxValue=1.0,
                    mergeItems=True, minValue=1.0, name="", nodeState=0, range=True,
-                   relative=False, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                   relative=False, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The duplicateCurve command takes a curve on a surface and and returns the 3D curve  The
     curve on a surface could be isoparam component, trimmed edge or curve on surface object
@@ -72774,12 +72775,12 @@ def duplicateCurve(caching=True, constructionHistory=True, local=True, maxValue=
     pass
 
 
-def panel(control=True, copy="", createString=True, defineTemplate="", docTag="",
+def panel(*args, control=True, copy="", createString=True, defineTemplate="", docTag="",
           editString=True, exists=True, init=True, isUnique=True, label="",
           menuBarRepeatLast=True, menuBarVisible=True, needsInit=True, parent="",
           popupMenuProcedure=None, replacePanel="", tearOff=True, tearOffCopy="",
           tearOffRestore=True, unParent=True, useTemplate="", q=True, query=True, e=True,
-          edit=True, *args, **kwargs):
+          edit=True, **kwargs):
     """
     This command allows editing or querying properties of any panels  Not all of the common
     properites of panels can be used with this command  Flags such as -tearOff and
@@ -72885,10 +72886,10 @@ def CreatePlatonicSolidOptions(*args, **kwargs):
     pass
 
 
-def diskCache(append=True, cacheType="", close="", closeAll=True, delete="", deleteAll=True,
-              empty="", emptyAll=True, enabledCachesOnly=True, endTime=None, frameRangeType="",
-              overSample=True, samplingRate=0, startTime=None, tempDir=True, q=True, query=True,
-              *args, **kwargs):
+def diskCache(*args, append=True, cacheType="", close="", closeAll=True, delete="",
+              deleteAll=True, empty="", emptyAll=True, enabledCachesOnly=True, endTime=None,
+              frameRangeType="", overSample=True, samplingRate=0, startTime=None, tempDir=True,
+              q=True, query=True, **kwargs):
     """
     Command to create, clear, or close disk cache(s)
     
@@ -73008,8 +73009,8 @@ def mirrorShape(*args, **kwargs):
     pass
 
 
-def assignViewportFactories(materialFactory="", nodeType="", textureFactory="", q=True,
-                            query=True, e=True, edit=True, *args, **kwargs):
+def assignViewportFactories(*args, materialFactory="", nodeType="", textureFactory="", q=True,
+                            query=True, e=True, edit=True, **kwargs):
     """
     Sets viewport factories for displays as materials or textures
     
@@ -73061,18 +73062,18 @@ def PixelMoveLeft(*args, **kwargs):
     pass
 
 
-def attrNavigationControlGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
-                             adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0,
-                             annotation="", attrNavDecision=None, attribute=None,
-                             backgroundColor=None, columnAlign=None, columnAlign2=None,
-                             columnAlign3=None, columnAlign4=None, columnAlign5=None,
-                             columnAlign6=None, columnAttach=None, columnAttach2=None,
-                             columnAttach3=None, columnAttach4=None, columnAttach5=None,
-                             columnAttach6=None, columnOffset2=None, columnOffset3=None,
-                             columnOffset4=None, columnOffset5=None, columnOffset6=None,
-                             columnWidth=None, columnWidth1=0, columnWidth2=None,
-                             columnWidth3=None, columnWidth4=None, columnWidth5=None,
-                             columnWidth6=None, connectAttrToDropped=None,
+def attrNavigationControlGrp(*args, adjustableColumn=0, adjustableColumn2=0,
+                             adjustableColumn3=0, adjustableColumn4=0, adjustableColumn5=0,
+                             adjustableColumn6=0, annotation="", attrNavDecision=None,
+                             attribute=None, backgroundColor=None, columnAlign=None,
+                             columnAlign2=None, columnAlign3=None, columnAlign4=None,
+                             columnAlign5=None, columnAlign6=None, columnAttach=None,
+                             columnAttach2=None, columnAttach3=None, columnAttach4=None,
+                             columnAttach5=None, columnAttach6=None, columnOffset2=None,
+                             columnOffset3=None, columnOffset4=None, columnOffset5=None,
+                             columnOffset6=None, columnWidth=None, columnWidth1=0,
+                             columnWidth2=None, columnWidth3=None, columnWidth4=None,
+                             columnWidth5=None, columnWidth6=None, connectAttrToDropped=None,
                              connectNodeToDropped=None, connectToExisting=None, createNew=None,
                              defaultTraversal=None, defineTemplate="", delete="",
                              disconnect=None, docTag="", dragCallback=None, dropCallback=None,
@@ -73086,7 +73087,7 @@ def attrNavigationControlGrp(adjustableColumn=0, adjustableColumn2=0, adjustable
                              relatedNodes=None, rowAttach=None, statusBarMessage="",
                              unignore=None, useTemplate="", visible=True,
                              visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                             edit=True, *args, **kwargs):
+                             edit=True, **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -73325,7 +73326,7 @@ def ContentBrowserLayout(*args, **kwargs):
     pass
 
 
-def viewCamera(move=None, sideView=True, topView=True, *args, **kwargs):
+def viewCamera(*args, move=None, sideView=True, topView=True, **kwargs):
     """
     The viewCamera command is used to position a camera to look directly at the side or top of
     another camera  This is primarily useful for the user when he or she is setting
@@ -73394,7 +73395,7 @@ def CreateSet(*args, **kwargs):
     pass
 
 
-def polyCollapseTweaks(hasVertexTweaks=True, q=True, query=True, *args, **kwargs):
+def polyCollapseTweaks(*args, hasVertexTweaks=True, q=True, query=True, **kwargs):
     """
     A command that updates a mesh's vertex tweaks by applying its tweak data (stored on the
     mesh node) onto its respective vertex data   This command is only useful in cases where no
@@ -73424,11 +73425,11 @@ def dR_coordSpaceLocal(*args, **kwargs):
     pass
 
 
-def attachSurface(blendBias=0.5, blendKnotInsertion=False, caching=True, directionU=True,
+def attachSurface(*args, blendBias=0.5, blendKnotInsertion=False, caching=True, directionU=True,
                   keepMultipleKnots=True, method=0, nodeState=0, parameter=0.1, reverse1=False,
                   reverse2=False, swap1=False, swap2=False, twist=False,
                   constructionHistory=True, name="", object=True, replaceOriginal=True, q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+                  query=True, e=True, edit=True, **kwargs):
     """
     This attach command is used to attach surfaces  Once the surfaces are attached, there will
     be multiple knots at the joined point(s)  These can be kept or removed if the user wishes  
@@ -73490,9 +73491,9 @@ def attachSurface(blendBias=0.5, blendKnotInsertion=False, caching=True, directi
     pass
 
 
-def polySubdivideFacet(divisions=1, divisionsU=0, divisionsV=0, mode=0, subdMethod=0,
+def polySubdivideFacet(*args, divisions=1, divisionsU=0, divisionsV=0, mode=0, subdMethod=0,
                        caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     Subdivides a face into quads or triangles   In quad mode, a center point is introduced at
     the center of each face and midpoints are inserted on all the edges of each face  New faces
@@ -73533,8 +73534,8 @@ def polySubdivideFacet(divisions=1, divisionsU=0, divisionsV=0, mode=0, subdMeth
     pass
 
 
-def convertIffToPsd(iffFileName="", psdFileName="", xResolution=0, yResolution=0, q=True,
-                    query=True, *args, **kwargs):
+def convertIffToPsd(*args, iffFileName="", psdFileName="", xResolution=0, yResolution=0, q=True,
+                    query=True, **kwargs):
     """
     Converts iff file to PSD file of given size
     
@@ -73553,13 +73554,13 @@ def convertIffToPsd(iffFileName="", psdFileName="", xResolution=0, yResolution=0
     pass
 
 
-def control(annotation="", backgroundColor=None, defineTemplate="", docTag="",
+def control(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
             dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
             enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
             highlightColor=None, isObscured=True, manage=True, noBackground=True,
             numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
             statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-            width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+            width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command allows you to edit or query the properties of any control
     
@@ -73650,8 +73651,8 @@ def ShowJoints(*args, **kwargs):
     pass
 
 
-def uiTemplate(defineTemplate="", exists=True, useTemplate="", q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+def uiTemplate(*args, defineTemplate="", exists=True, useTemplate="", q=True, query=True,
+               e=True, edit=True, **kwargs):
     """
     This command creates a new command template object  Template objects can hold default flag
     arguments for multiple UI commands  The command arguments are specified with the individual
@@ -73779,12 +73780,12 @@ def NormalConstraint(*args, **kwargs):
     pass
 
 
-def boneLattice(after=True, afterReference=True, before=True, bicep=0.0, deformerTools=True,
-                exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
-                ignoreSelected=True, includeHiddenSelections=False, joint="", lengthIn=0.0,
-                lengthOut=0.0, name="", parallel=True, prune=True, remove=True, split=True,
-                transform="", tricep=0.0, widthLeft=0.0, widthRight=0.0, q=True, query=True,
-                e=True, edit=True, *args, **kwargs):
+def boneLattice(*args, after=True, afterReference=True, before=True, bicep=0.0,
+                deformerTools=True, exclusive="", frontOfChain=True, geometry="",
+                geometryIndices=True, ignoreSelected=True, includeHiddenSelections=False,
+                joint="", lengthIn=0.0, lengthOut=0.0, name="", parallel=True, prune=True,
+                remove=True, split=True, transform="", tricep=0.0, widthLeft=0.0,
+                widthRight=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a boneLattice deformer  The name of the created/edited
     object is returned  Usually you would make use of this functionality through the higher
@@ -73863,9 +73864,9 @@ def boneLattice(after=True, afterReference=True, before=True, bicep=0.0, deforme
     pass
 
 
-def smoothCurve(caching=True, nodeState=0, smoothness=10.0, constructionHistory=True, name="",
-                object=True, replaceOriginal=True, q=True, query=True, e=True, edit=True, *args,
-                **kwargs):
+def smoothCurve(*args, caching=True, nodeState=0, smoothness=10.0, constructionHistory=True,
+                name="", object=True, replaceOriginal=True, q=True, query=True, e=True,
+                edit=True, **kwargs):
     """
     The smooth command smooths the curve at the given control points
     
@@ -73900,8 +73901,8 @@ def dR_convertSelectionToEdge(*args, **kwargs):
     pass
 
 
-def radioMenuItemCollection(defineTemplate="", exists=True, gl=True, parent="", useTemplate="",
-                            q=True, query=True, e=True, edit=True, *args, **kwargs):
+def radioMenuItemCollection(*args, defineTemplate="", exists=True, gl=True, parent="",
+                            useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a radioMenuItemCollection  Attach radio menu items to radio menu item
     collection objects to get radio button behaviour  Radio menu item collections will be
@@ -73944,10 +73945,10 @@ def DecreaseManipulatorSize(*args, **kwargs):
     pass
 
 
-def nurbsToPoly(caching=True, constructionHistory=True, curvatureTolerance=2,
+def nurbsToPoly(*args, caching=True, constructionHistory=True, curvatureTolerance=2,
                 explicitTessellationAttributes=True, name="", nodeState=0, object=True,
                 smoothEdge=False, smoothEdgeRatio=0.99, uDivisionsFactor=1.5,
-                vDivisionsFactor=1.5, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                vDivisionsFactor=1.5, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command tesselates a NURBS surface and produces a polygonal surface  The name of the
     new polygonal surface is returned  If construction history is ON, then the name of the new
@@ -73992,10 +73993,10 @@ def nurbsToPoly(caching=True, constructionHistory=True, curvatureTolerance=2,
     pass
 
 
-def subdListComponentConversion(border=True, fromEdge=True, fromFace=True, fromUV=True,
+def subdListComponentConversion(*args, border=True, fromEdge=True, fromFace=True, fromUV=True,
                                 fromVertex=True, internal=True, toEdge=True, toFace=True,
                                 toUV=True, toVertex=True, uvShell=True, uvShellBorder=True,
-                                *args, **kwargs):
+                                **kwargs):
     """
     This command converts subdivision surface components from one or more types to another one
     or more types, and returns the list of the conversion  It does not change the currently
@@ -74043,12 +74044,12 @@ def HideDynamicConstraints(*args, **kwargs):
     pass
 
 
-def namespace(absoluteName=True, addNamespace="", collapseAncestors="",
+def namespace(*args, absoluteName=True, addNamespace="", collapseAncestors="",
               deleteNamespaceContent=True, exists="", force=True, isRootNamespace="",
               mergeNamespaceWithOther="", mergeNamespaceWithParent=True,
               mergeNamespaceWithRoot=True, moveNamespace=None, parent="", recurse=True,
               relativeNames=True, removeNamespace="", rename=None, setNamespace="",
-              validateName="", q=True, query=True, *args, **kwargs):
+              validateName="", q=True, query=True, **kwargs):
     """
     This command allows a namespace to be created, set or removed   A namespace is a simple
     grouping of objects under a given name  Namespaces are primarily used to resolve name-clash
@@ -74142,11 +74143,11 @@ def RenderGlobalsWindow(*args, **kwargs):
     pass
 
 
-def polyCylinder(axis=None, caching=True, constructionHistory=True, createUVs=2, height=2.0,
-                 name="", nodeState=0, object=True, radius=1.0, roundCap=False,
+def polyCylinder(*args, axis=None, caching=True, constructionHistory=True, createUVs=2,
+                 height=2.0, name="", nodeState=0, object=True, radius=1.0, roundCap=False,
                  subdivisionsAxis=20, subdivisionsCaps=0, subdivisionsHeight=1,
                  subdivisionsX=20, subdivisionsY=1, subdivisionsZ=1, texture=2, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+                 query=True, e=True, edit=True, **kwargs):
     """
     The cylinder command creates a new polygonal cylinder
     
@@ -74216,9 +74217,9 @@ def RelaxUVShellOptions(*args, **kwargs):
     pass
 
 
-def polyMergeVertex(alwaysMergeTwoVertices=False, caching=True, constructionHistory=True,
+def polyMergeVertex(*args, alwaysMergeTwoVertices=False, caching=True, constructionHistory=True,
                     distance=0.0, mergeToComponents="", name="", nodeState=0, texture=True,
-                    worldSpace=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                    worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Merge vertices within a given threshold.
     
@@ -74287,12 +74288,12 @@ def OneClickSetupMotionBuilderCharacterStream(*args, **kwargs):
     pass
 
 
-def tension(after=True, afterReference=True, before=True, deformerTools=True, envelope=1,
+def tension(*args, after=True, afterReference=True, before=True, deformerTools=True, envelope=1,
             exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
             ignoreSelected=True, includeHiddenSelections=False, inwardConstraint=0.0, name="",
             outwardConstraint=0.0, parallel=True, pinBorderVertices=True, prune=True,
             remove=True, smoothingIterations=10, smoothingStep=0.5, split=True, q=True,
-            query=True, e=True, edit=True, *args, **kwargs):
+            query=True, e=True, edit=True, **kwargs):
     """
     This command is used to create, edit and query tension nodes
     
@@ -74365,10 +74366,10 @@ def tension(after=True, afterReference=True, before=True, deformerTools=True, en
     pass
 
 
-def select(add=True, addFirst=True, all=True, allDagObjects=True, allDependencyNodes=True,
-           clear=True, containerCentric=True, deselect=True, hierarchy=True, noExpand=True,
-           replace=True, symmetry=True, symmetrySide=0, toggle=True, visible=True, *args,
-           **kwargs):
+def select(*args, add=True, addFirst=True, all=True, allDagObjects=True,
+           allDependencyNodes=True, clear=True, containerCentric=True, deselect=True,
+           hierarchy=True, noExpand=True, replace=True, symmetry=True, symmetrySide=0,
+           toggle=True, visible=True, **kwargs):
     """
     This command is used to put objects onto or off of the active list  If none of the five
     flags [-add, -af, -r, -d, -tgl] are specified, the default is to replace the objects on the
@@ -74441,8 +74442,8 @@ def CreateNSoftBodyOptions(*args, **kwargs):
     pass
 
 
-def displayColor(active=True, create=True, dormant=True, list=True, queryIndex=0,
-                 resetToFactory=True, resetToSaved=True, q=True, query=True, *args, **kwargs):
+def displayColor(*args, active=True, create=True, dormant=True, list=True, queryIndex=0,
+                 resetToFactory=True, resetToSaved=True, q=True, query=True, **kwargs):
     """
     This command changes or queries the display color for anything in the application that
     allows the user to set its color  The color is defined by a color index into either the
@@ -74474,9 +74475,9 @@ def displayColor(active=True, create=True, dormant=True, list=True, queryIndex=0
     pass
 
 
-def attributeInfo(allAttributes=True, bool=True, enumerated=True, hidden=True, inherited=True,
-                  internal=True, leaf=True, logicalAnd=True, multi=True, short=True,
-                  userInterface=True, writable=True, type="", *args, **kwargs):
+def attributeInfo(*args, allAttributes=True, bool=True, enumerated=True, hidden=True,
+                  inherited=True, internal=True, leaf=True, logicalAnd=True, multi=True,
+                  short=True, userInterface=True, writable=True, type="", **kwargs):
     """
     This command lists all of the attributes that are marked with certain flags  Combinations
     of flags may be specified and all will be considered  (The method of combination depends on
@@ -74534,11 +74535,11 @@ def ToggleUVEditorIsolateSelectHUD(*args, **kwargs):
     pass
 
 
-def offsetCurve(caching=True, connectBreaks=2, cutLoop=False, cutRadius=0.0, distance=1.0,
-                nodeState=0, normal=None, reparameterize=False, stitch=True,
+def offsetCurve(*args, caching=True, connectBreaks=2, cutLoop=False, cutRadius=0.0,
+                distance=1.0, nodeState=0, normal=None, reparameterize=False, stitch=True,
                 subdivisionDensity=5, tolerance=0.01, useGivenNormal=True,
                 constructionHistory=True, name="", object=True, range=True, q=True, query=True,
-                e=True, edit=True, *args, **kwargs):
+                e=True, edit=True, **kwargs):
     """
     The offset command creates new offset curves from the selected curves  The connecting type
     for breaks in offsets is off (no connection), circular (connect with an arc) or linear
@@ -74599,14 +74600,14 @@ def DetachSkeleton(*args, **kwargs):
     pass
 
 
-def prepareRender(defaultTraversalSet="", deregister="", invokePostRender=True,
+def prepareRender(*args, defaultTraversalSet="", deregister="", invokePostRender=True,
                   invokePostRenderFrame=True, invokePostRenderLayer=True, invokePreRender=True,
                   invokePreRenderFrame=True, invokePreRenderLayer=True, invokeSettingsUI=True,
                   label="", listTraversalSets=True, postRender=None, postRenderFrame=None,
                   postRenderLayer=None, preRender=None, preRenderFrame=None,
                   preRenderLayer=None, restore=True, saveAssemblyConfig=True, settingsUI=None,
                   setup=True, traversalSet="", traversalSetInit=None, q=True, query=True,
-                  e=True, edit=True, *args, **kwargs):
+                  e=True, edit=True, **kwargs):
     """
     This command is used to register, manage and invoke render traversals  Render traversals
     are used to configure a scene to prepare it for rendering  This command has special support
@@ -74707,7 +74708,7 @@ def ToggleAutoFrame(*args, **kwargs):
     pass
 
 
-def clipSchedule(allAbsolute=True, allRelative=True, blend=None, blendNode=None,
+def clipSchedule(*args, allAbsolute=True, allRelative=True, blend=None, blendNode=None,
                  blendUsingNode="", character=True, clipIndex=0, cycle=0.0,
                  defaultAbsolute=True, enable=True, group=True, groupIndex=0, groupName="",
                  hold=None, insertTrack=0, instance="", listCurves=True, listPairs=True,
@@ -74715,8 +74716,7 @@ def clipSchedule(allAbsolute=True, allRelative=True, blend=None, blendNode=None,
                  removeBlend=None, removeEmptyTracks=True, removeTrack=0,
                  rotationsAbsolute=True, scale=0.0, shift=0, shiftIndex=0, solo=True,
                  sourceClipName=True, sourceEnd=None, sourceStart=None, start=None, track=0,
-                 weight=0.0, weightStyle=0, q=True, query=True, e=True, edit=True, *args,
-                 **kwargs):
+                 weight=0.0, weightStyle=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to create, edit and query clips and blends in the Trax editor  It
     operates on the clipScheduler node attached to the character  In query mode, if no flags
@@ -74849,8 +74849,8 @@ def dR_selectModeRaycast(*args, **kwargs):
     pass
 
 
-def commandLogging(historySize=0, logCommands=True, logFile="", recordCommands=True,
-                   resetLogFile=True, q=True, query=True, *args, **kwargs):
+def commandLogging(*args, historySize=0, logCommands=True, logFile="", recordCommands=True,
+                   resetLogFile=True, q=True, query=True, **kwargs):
     """
     This command controls logging of Maya commands, in memory and on disk   Note that if
     commands are logged in memory, they will be available to the crash reporter and appear in
@@ -75021,7 +75021,7 @@ def UniformOptions(*args, **kwargs):
     pass
 
 
-def hikGlobals(releaseAllPinning=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def hikGlobals(*args, releaseAllPinning=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Sets global HumanIK flags for the application
     
@@ -75035,7 +75035,7 @@ def hikGlobals(releaseAllPinning=True, q=True, query=True, e=True, edit=True, *a
     pass
 
 
-def mute(disable=True, force=True, q=True, query=True, *args, **kwargs):
+def mute(*args, disable=True, force=True, q=True, query=True, **kwargs):
     """
     The mute command is used to disable and enable playback on a channel  When a channel is
     muted, it retains the value that it was at prior to being muted
@@ -75129,10 +75129,10 @@ def Ungroup(*args, **kwargs):
     pass
 
 
-def polyAppendFacetCtx(append=True, exists=True, image1="", image2="", image3="",
+def polyAppendFacetCtx(*args, append=True, exists=True, image1="", image2="", image3="",
                        isRotateAvailable=True, maximumNumberOfPoints=0, planarConstraint=True,
                        rotate=0.0, subdivision=1, texture=1, q=True, query=True, e=True,
-                       edit=True, *args, **kwargs):
+                       edit=True, **kwargs):
     """
     Create a new context to append facets on polygonal objects
     
@@ -75180,8 +75180,8 @@ def sbs_AffectedByAllInputs(*args, **kwargs):
     pass
 
 
-def setXformManip(showUnits=True, suppress=True, useRotatePivot=True, worldSpace=True, q=True,
-                  query=True, *args, **kwargs):
+def setXformManip(*args, showUnits=True, suppress=True, useRotatePivot=True, worldSpace=True,
+                  q=True, query=True, **kwargs):
     """
     This command changes some of the settings of the xform manip, to control its appearance
     
@@ -75232,11 +75232,11 @@ def MergeToCenter(*args, **kwargs):
     pass
 
 
-def polyUVSet(allUVSets=True, allUVSetsIndices=True, allUVSetsWithCount=True, copy=True,
+def polyUVSet(*args, allUVSets=True, allUVSetsIndices=True, allUVSetsWithCount=True, copy=True,
               create=True, currentLastUVSet=True, currentPerInstanceUVSet=True,
               currentUVSet=True, delete=True, genNewUVSet=True, newUVSet="", perInstance=True,
               projections=True, rename=True, reorder=True, shareInstances=True, unshared=True,
-              uvSet="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+              uvSet="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to do the following to uv sets: - delete an existing uv set  - rename an existing
     uv set  - create a new empty uv set  - copy the values from one uv set to a another
@@ -75329,7 +75329,7 @@ def ShowMeshSmoothToolOptions(*args, **kwargs):
     pass
 
 
-def setDefaultShadingGroup(q=True, query=True, *args, **kwargs):
+def setDefaultShadingGroup(*args, q=True, query=True, **kwargs):
     """
     The setDefaultShadingGroup command is used to change which shading group is considered the
     current default shading group  Subsequently created objects will be assigned to the new
@@ -75342,15 +75342,15 @@ def setDefaultShadingGroup(q=True, query=True, *args, **kwargs):
     pass
 
 
-def spotLightPreviewPort(annotation="", backgroundColor=None, defineTemplate="", docTag="",
-                         dragCallback=None, dropCallback=None, enable=True,
+def spotLightPreviewPort(*args, annotation="", backgroundColor=None, defineTemplate="",
+                         docTag="", dragCallback=None, dropCallback=None, enable=True,
                          enableBackground=True, enableKeyboardFocus=True, exists=True,
                          fullPathName=True, height=0, highlightColor=None, isObscured=True,
                          manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
                          popupMenuArray=True, preventOverride=True, spotLight=None,
                          statusBarMessage="", useTemplate="", visible=True,
                          visibleChangeCommand=None, width=0, widthHeight=None, q=True,
-                         query=True, e=True, edit=True, *args, **kwargs):
+                         query=True, e=True, edit=True, **kwargs):
     """
     This command creates a 3dPort that displays an image representing the illumination provided
     by the spotLight  It is a picture of a plane being illuminated by a light   The optional
@@ -75525,9 +75525,9 @@ def RebuildCurve(*args, **kwargs):
     pass
 
 
-def dagPose(addToPose=True, atPose=True, bindPose=True, g=True, members=True, name="",
+def dagPose(*args, addToPose=True, atPose=True, bindPose=True, g=True, members=True, name="",
             remove=True, reset=True, restore=True, save=True, selection=True, worldParent=True,
-            q=True, query=True, e=True, edit=True, *args, **kwargs):
+            q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command is used to save and restore the matrix information for a dag hierarchy 
     Specifically, the data stored will restore the translate, rotate, scale, scale pivot,
@@ -75625,7 +75625,7 @@ def ShowSubdivSurfaces(*args, **kwargs):
     pass
 
 
-def ikfkDisplayMethod(display="", q=True, query=True, *args, **kwargs):
+def ikfkDisplayMethod(*args, display="", q=True, query=True, **kwargs):
     """
     The ikfkDisplayMethod command is used to specify how ik/fk blending should be shown
     
@@ -75653,10 +75653,10 @@ def getProcArguments(*args, **kwargs):
     pass
 
 
-def bufferCurve(animation="keysOrObjects.", attribute="", controlPoints=False, exists=True,
-                float=None, hierarchy="", includeUpperBound=True, index=0, overwrite=True,
-                shape=True, swap=True, time=None, useReferencedCurve=True, q=True, query=True,
-                *args, **kwargs):
+def bufferCurve(*args, animation="keysOrObjects.", attribute="", controlPoints=False,
+                exists=True, float=None, hierarchy="", includeUpperBound=True, index=0,
+                overwrite=True, shape=True, swap=True, time=None, useReferencedCurve=True,
+                q=True, query=True, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -75709,7 +75709,7 @@ def bufferCurve(animation="keysOrObjects.", attribute="", controlPoints=False, e
     pass
 
 
-def transferAttributes(after=True, afterReference=True, before=True, colorBorders=0,
+def transferAttributes(*args, after=True, afterReference=True, before=True, colorBorders=0,
                        deformerTools=True, exclusive="", flipUVs=0, frontOfChain=True,
                        geometry="", geometryIndices=True, ignoreSelected=True,
                        includeHiddenSelections=False, matchChoice=0, name="", parallel=True,
@@ -75718,7 +75718,7 @@ def transferAttributes(after=True, afterReference=True, before=True, colorBorder
                        sourceUvSpace="", split=True, targetColorSet="", targetUvSet="",
                        targetUvSpace="", transferColors=0, transferNormals=0,
                        transferPositions=0, transferUVs=0, q=True, query=True, e=True,
-                       edit=True, *args, **kwargs):
+                       edit=True, **kwargs):
     """
     Samples the attributes of a source surface (first argument) and transfers them onto a
     target surface (second argument)
@@ -75836,13 +75836,13 @@ def SwapBufferCurve(*args, **kwargs):
     pass
 
 
-def iprEngine(copy="", defineTemplate="", diagnostics=True, estimatedMemory=True, exists=True,
-              iprImage="", motionVectorFile=True, object=None, region=None, relatedFiles=True,
-              releaseIprImage=True, resolution=True, scanlineIncrement="", showProgressBar=True,
-              startTuning=True, stopTuning=True, underPixel=None, update=True,
-              updateDepthOfField=True, updateLightGlow=True, updateMotionBlur=True,
+def iprEngine(*args, copy="", defineTemplate="", diagnostics=True, estimatedMemory=True,
+              exists=True, iprImage="", motionVectorFile=True, object=None, region=None,
+              relatedFiles=True, releaseIprImage=True, resolution=True, scanlineIncrement="",
+              showProgressBar=True, startTuning=True, stopTuning=True, underPixel=None,
+              update=True, updateDepthOfField=True, updateLightGlow=True, updateMotionBlur=True,
               updatePort="", updateShaderGlow=True, updateShading=True, updateShadowMaps=True,
-              useTemplate="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+              useTemplate="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to create or edit an iprEngine  A iprEngine is an object that watches for changes
     to shading networks and automatically reshades to generate an up-to-date image
@@ -75924,7 +75924,7 @@ def UnghostObject(*args, **kwargs):
     pass
 
 
-def pointPosition(local=True, world=True, *args, **kwargs):
+def pointPosition(*args, local=True, world=True, **kwargs):
     """
     This command returns the world or local space position for any type of point object  Valid
     selection items are: - curve and surface CVs - poly vertices - lattice points - particles -
@@ -75956,7 +75956,7 @@ def KeyframeTangentMarkingMenu(*args, **kwargs):
     pass
 
 
-def annotate(point=None, text="", *args, **kwargs):
+def annotate(*args, point=None, text="", **kwargs):
     """
     This command is used to create an annotation to be attached to the specified objects at the
     specified point
@@ -76056,9 +76056,9 @@ def CreateOceanWake(*args, **kwargs):
     pass
 
 
-def scriptNode(afterScript="", beforeScript="", executeAfter=True, executeBefore=True,
+def scriptNode(*args, afterScript="", beforeScript="", executeAfter=True, executeBefore=True,
                ignoreReferenceEdits=True, name="", scriptType=0, sourceType="", q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     scriptNodes contain scripts that are executed when a file is loaded or when the script node
     is deleted  If a script modifies a referenced node, the changes will be tracked as
@@ -76117,10 +76117,10 @@ def OpenCloseSurfacesOptions(*args, **kwargs):
     pass
 
 
-def wireContext(crossingEffect=0, deformationOrder="", dropoffDistance=0.0, envelope=1.0,
+def wireContext(*args, crossingEffect=0, deformationOrder="", dropoffDistance=0.0, envelope=1.0,
                 exclusive=True, exclusivePartition="", exists=True, groupWithBase=False,
                 history=True, holder=False, image1="", image2="", image3="", localInfluence=0,
-                name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a tool that can be used to create a wire deformer
     
@@ -76185,23 +76185,23 @@ def PerspTextureLayout(*args, **kwargs):
     pass
 
 
-def rowLayout(adjustableColumn=0, adjustableColumn1=0, adjustableColumn2=0, adjustableColumn3=0,
-              adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
-              backgroundColor=None, childArray=True, columnAlign=None, columnAlign1="",
-              columnAlign2=None, columnAlign3=None, columnAlign4=None, columnAlign5=None,
-              columnAlign6=None, columnAttach=None, columnAttach1="", columnAttach2=None,
-              columnAttach3=None, columnAttach4=None, columnAttach5=None, columnAttach6=None,
-              columnOffset1=0, columnOffset2=None, columnOffset3=None, columnOffset4=None,
-              columnOffset5=None, columnOffset6=None, columnWidth=None, columnWidth1=0,
-              columnWidth2=None, columnWidth3=None, columnWidth4=None, columnWidth5=None,
-              columnWidth6=None, defineTemplate="", docTag="", dragCallback=None,
-              dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
-              exists=True, fullPathName=True, height=0, highlightColor=None, isObscured=True,
-              manage=True, noBackground=True, numberOfChildren=True, numberOfColumns=0,
-              numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
-              rowAttach=None, statusBarMessage="", useTemplate="", visible=True,
-              visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
-              **kwargs):
+def rowLayout(*args, adjustableColumn=0, adjustableColumn1=0, adjustableColumn2=0,
+              adjustableColumn3=0, adjustableColumn4=0, adjustableColumn5=0,
+              adjustableColumn6=0, annotation="", backgroundColor=None, childArray=True,
+              columnAlign=None, columnAlign1="", columnAlign2=None, columnAlign3=None,
+              columnAlign4=None, columnAlign5=None, columnAlign6=None, columnAttach=None,
+              columnAttach1="", columnAttach2=None, columnAttach3=None, columnAttach4=None,
+              columnAttach5=None, columnAttach6=None, columnOffset1=0, columnOffset2=None,
+              columnOffset3=None, columnOffset4=None, columnOffset5=None, columnOffset6=None,
+              columnWidth=None, columnWidth1=0, columnWidth2=None, columnWidth3=None,
+              columnWidth4=None, columnWidth5=None, columnWidth6=None, defineTemplate="",
+              docTag="", dragCallback=None, dropCallback=None, enable=True,
+              enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
+              height=0, highlightColor=None, isObscured=True, manage=True, noBackground=True,
+              numberOfChildren=True, numberOfColumns=0, numberOfPopupMenus=True, parent="",
+              popupMenuArray=True, preventOverride=True, rowAttach=None, statusBarMessage="",
+              useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
+              query=True, e=True, edit=True, **kwargs):
     """
     This command creates a layout capable of positioning children into a single horizontal row
     
@@ -76408,8 +76408,8 @@ def ProfilerToolHideSelectedRepetition(*args, **kwargs):
     pass
 
 
-def aaf2fcp(deleteFile=True, dstPath="", getFileName=0, progress=0, srcFile="", terminate=0,
-            waitCompletion=0, *args, **kwargs):
+def aaf2fcp(*args, deleteFile=True, dstPath="", getFileName=0, progress=0, srcFile="",
+            terminate=0, waitCompletion=0, **kwargs):
     """
     This command is used to convert an aff file to a Final Cut Pro (fcp) xml file The
     conversion process can take several seconds to complete and the command is meant to be run
@@ -76443,14 +76443,14 @@ def SetDrivenKey(*args, **kwargs):
     pass
 
 
-def spreadSheetEditor(allAttr=True, attrRegExp="", control=True, defineTemplate="", docTag="",
-                      execute="", exists=True, filter="", fixedAttrList=None,
+def spreadSheetEditor(*args, allAttr=True, attrRegExp="", control=True, defineTemplate="",
+                      docTag="", execute="", exists=True, filter="", fixedAttrList=None,
                       forceMainConnection="", highlightConnection="", keyableOnly=True,
                       lockMainConnection=True, longNames=True, mainListConnection="",
                       niceNames=True, panel="", parent="", precision=0, selectedAttr=True,
                       selectionConnection="", showShapes=True, stateString=True, unParent=True,
                       unlockMainConnection=True, updateMainConnection=True, useTemplate="",
-                      q=True, query=True, e=True, edit=True, *args, **kwargs):
+                      q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a new spread sheet editor in the current layout
     
@@ -76581,11 +76581,10 @@ def ShowFluids(*args, **kwargs):
     pass
 
 
-def selectKey(addTo=True, animation="keysOrObjects.", attribute="", clear=True,
+def selectKey(*args, addTo=True, animation="keysOrObjects.", attribute="", clear=True,
               controlPoints=False, float=None, hierarchy="", inTangent=True,
               includeUpperBound=True, index=0, keyframe=True, outTangent=True, remove=True,
-              replace=True, shape=True, time=None, toggle=True, unsnappedKeys=0.0, *args,
-              **kwargs):
+              replace=True, shape=True, time=None, toggle=True, unsnappedKeys=0.0, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -76645,11 +76644,11 @@ def selectKey(addTo=True, animation="keysOrObjects.", attribute="", clear=True,
     pass
 
 
-def displayPref(activeObjectPivots=True, displayAffected=True, displayGradient=True,
+def displayPref(*args, activeObjectPivots=True, displayAffected=True, displayGradient=True,
                 ghostFrames=None, materialLoadingMode="", maxHardwareTextureResolution=True,
                 maxTextureResolution=0, purgeExistingTextures=True, regionOfEffect=True,
                 shadeTemplates=True, textureDrawPixel=True, wireframeOnShadedActive="", q=True,
-                query=True, *args, **kwargs):
+                query=True, **kwargs):
     """
     This command sets/queries the state of global display parameters
     
@@ -76701,12 +76700,12 @@ def displayPref(activeObjectPivots=True, displayAffected=True, displayGradient=T
     pass
 
 
-def fileDialog2(buttonBoxOrientation=0, cancelCaption="", caption="", dialogStyle=0,
+def fileDialog2(*args, buttonBoxOrientation=0, cancelCaption="", caption="", dialogStyle=0,
                 fileFilter="", fileMode=0, fileTypeChanged=None, hideNameEdit=True,
                 okCaption="", optionsUICancel=None, optionsUICommit=None, optionsUICommit2=None,
                 optionsUICreate=None, optionsUIInit=None, returnFilter=True,
                 selectFileFilter="", selectionChanged=None, setProjectBtnEnabled=True,
-                startingDirectory="", *args, **kwargs):
+                startingDirectory="", **kwargs):
     """
     This command provides a dialog that allows users to select files or directories
     
@@ -76792,9 +76791,9 @@ def GraphPasteOptions(*args, **kwargs):
     pass
 
 
-def license(borrow=True, info=True, isBorrowed=True, isExported=True, isTrial=True,
+def license(*args, borrow=True, info=True, isBorrowed=True, isExported=True, isTrial=True,
             licenseMethod=True, productChoice=True, r=True, showBorrowInfo=True,
-            showProductInfoDialog=True, status=True, usage=True, *args, **kwargs):
+            showProductInfoDialog=True, status=True, usage=True, **kwargs):
     """
     This command displays version information about the application if it is executed without
     flags  If one of the above flags is specified then the specified version information is
@@ -76887,7 +76886,7 @@ def FreezeTransformations(*args, **kwargs):
     pass
 
 
-def skinCluster(addInfluence="", addToSelection=True, after=True, afterReference=True,
+def skinCluster(*args, addInfluence="", addToSelection=True, after=True, afterReference=True,
                 baseShape="", before=True, bindMethod=0, deformerTools=True, dropoffRate=0.0,
                 exclusive="", forceNormalizeWeights=True, frontOfChain=True, geometry="",
                 geometryIndices=True, heatmapFalloff=0.0, ignoreBindPose=True,
@@ -76901,7 +76900,7 @@ def skinCluster(addInfluence="", addToSelection=True, after=True, afterReference
                 toSelectedBones=True, toSkeletonAndTransforms=True, unbind=True,
                 unbindKeepHistory=True, useGeometry=True, volumeBind=0.0, volumeType=0,
                 weight=0.0, weightDistribution=1, weightedInfluence=True, q=True, query=True,
-                e=True, edit=True, *args, **kwargs):
+                e=True, edit=True, **kwargs):
     """
     The skinCluster command is used for smooth skinning in maya  It binds the selected geometry
     to the selected joints or skeleton by means of a skinCluster node  Each point of the bound
@@ -77088,10 +77087,9 @@ def SeparatePolygon(*args, **kwargs):
     pass
 
 
-def walkCtx(alternateContext=True, crouchCount=0.0, exists=True, history=True, image1="",
+def walkCtx(*args, alternateContext=True, crouchCount=0.0, exists=True, history=True, image1="",
             image2="", image3="", name="", toolName="", walkHeight=0.0, walkSensitivity=0.0,
-            walkSpeed=0.0, walkToolHud=True, q=True, query=True, e=True, edit=True, *args,
-            **kwargs):
+            walkSpeed=0.0, walkToolHud=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a walk context
     
@@ -77140,10 +77138,10 @@ def FBXExportGenerateLog(*args, **kwargs):
     pass
 
 
-def showMetadata(auto=True, dataType="", interpolation=True, isActivated=True,
+def showMetadata(*args, auto=True, dataType="", interpolation=True, isActivated=True,
                  listAllStreams=True, listMembers=True, listValidMethods=True,
                  listVisibleStreams=True, member="", method="", range=None, rayScale=0.0,
-                 stream="", q=True, query=True, *args, **kwargs):
+                 stream="", q=True, query=True, **kwargs):
     """
     This command is used to show metadata values which is in the specified channels "vertex",
     "edge", "face", and "vertexFace" in the viewport  You can view the data by three ways: 
@@ -77197,8 +77195,8 @@ def showMetadata(auto=True, dataType="", interpolation=True, isActivated=True,
     pass
 
 
-def hardware(brdType=True, cpuType=True, graphicsType=True, megaHertz=True, numProcessors=True,
-             *args, **kwargs):
+def hardware(*args, brdType=True, cpuType=True, graphicsType=True, megaHertz=True,
+             numProcessors=True, **kwargs):
     """
     Return description of the hardware available in the machine
     
@@ -77226,7 +77224,7 @@ def SmoothSkinWeights(*args, **kwargs):
     pass
 
 
-def displayLevelOfDetail(levelOfDetail=True, q=True, query=True, *args, **kwargs):
+def displayLevelOfDetail(*args, levelOfDetail=True, q=True, query=True, **kwargs):
     """
     This command is responsible for setting the display level-of-detail for edit refreshes  If
     enabled, objects will draw with lower detail based on their distance from the camera  When
@@ -77305,8 +77303,9 @@ def PruneWire(*args, **kwargs):
     pass
 
 
-def cacheFileTrack(insertTrack=0, lock=True, mute=True, removeEmptyTracks=True, removeTrack=0,
-                   solo=True, track=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def cacheFileTrack(*args, insertTrack=0, lock=True, mute=True, removeEmptyTracks=True,
+                   removeTrack=0, solo=True, track=0, q=True, query=True, e=True, edit=True,
+                   **kwargs):
     """
     This command is used for inserting and removing tracks related to the caches displayed in
     the trax editor  It can also be used to modify the track state, for example, to lock or
@@ -77378,10 +77377,10 @@ def FloatSelectedPondObjectsOptions(*args, **kwargs):
     pass
 
 
-def insertKnotCurve(addKnots=True, caching=True, insertBetween=False, nodeState=0,
+def insertKnotCurve(*args, addKnots=True, caching=True, insertBetween=False, nodeState=0,
                     numberOfKnots=1, parameter=0.0, constructionHistory=True,
                     curveOnSurface=True, name="", object=True, replaceOriginal=True, q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+                    query=True, e=True, edit=True, **kwargs):
     """
     The insertKnotCurve command inserts knots into a curve given a list of parameter values 
     The number of knots to add at each parameter value and whether the knots are added or
@@ -77458,7 +77457,7 @@ def CreateGhostOptions(*args, **kwargs):
     pass
 
 
-def listAttrPatterns(patternType=True, verbose=True, *args, **kwargs):
+def listAttrPatterns(*args, patternType=True, verbose=True, **kwargs):
     """
     Attribute patterns are plain text descriptions of an entire Maya attribute forest 
     ("forest" because there could be an arbitrary number of root level attributes, it's not
@@ -77479,7 +77478,7 @@ def listAttrPatterns(patternType=True, verbose=True, *args, **kwargs):
     pass
 
 
-def cmdFileOutput(close=0, closeAll=True, open="", status=0, q=True, query=True, *args,
+def cmdFileOutput(*args, close=0, closeAll=True, open="", status=0, q=True, query=True,
                   **kwargs):
     """
     This command will open a text file to receive all of the commands and results that normally
@@ -77557,7 +77556,7 @@ def nexMultiCutContext(*args, **kwargs):
     pass
 
 
-def connectAttr(force=True, lock=True, nextAvailable=True, referenceDest="", *args, **kwargs):
+def connectAttr(*args, force=True, lock=True, nextAvailable=True, referenceDest="", **kwargs):
     """
     Connect the attributes of two dependency nodes and return the names of the two connected
     attributes  The connected attributes must be be of compatible types  First argument is the
@@ -77582,7 +77581,7 @@ def connectAttr(force=True, lock=True, nextAvailable=True, referenceDest="", *ar
     pass
 
 
-def treeLister(addFavorite="", addItem=None, addVnnItem=None, annotation="",
+def treeLister(*args, addFavorite="", addItem=None, addVnnItem=None, annotation="",
                backgroundColor=None, clearContents=True, collapsePath="", defineTemplate="",
                docTag="", dragCallback=None, dropCallback=None, enable=True,
                enableBackground=True, enableKeyboardFocus=True, executeItem="", exists=True,
@@ -77592,8 +77591,7 @@ def treeLister(addFavorite="", addItem=None, addVnnItem=None, annotation="",
                popupMenuArray=True, preventOverride=True, refreshCommand=None,
                removeFavorite="", removeItem="", resultsPathUnderCursor=True, selectPath="",
                statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None,
-               vnnString=True, width=0, q=True, query=True, e=True, edit=True, *args,
-               **kwargs):
+               vnnString=True, width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries the tree lister control  The optional argument is the
     name of the control
@@ -77723,7 +77721,7 @@ def treeLister(addFavorite="", addItem=None, addVnnItem=None, annotation="",
     pass
 
 
-def timer(endTimer=True, lapTime=True, name="", startTimer=True, *args, **kwargs):
+def timer(*args, endTimer=True, lapTime=True, name="", startTimer=True, **kwargs):
     """
     Allow simple timing of scripts and commands  The resolution of this timer is at the level
     of your OS's gettimeofday() function   Note:This command does not handle stacked calls  For
@@ -77762,7 +77760,7 @@ def dR_loadRecentFile2(*args, **kwargs):
     pass
 
 
-def getInputDeviceRange(maxValue=True, minValue=True, *args, **kwargs):
+def getInputDeviceRange(*args, maxValue=True, minValue=True, **kwargs):
     """
     This command lists the minimum and maximum values the device axis can return  This value is
     the raw device values before any mapping is applied  If you don't specify an axis the
@@ -77786,7 +77784,7 @@ def createNurbsCubeCtx(*args, **kwargs):
     pass
 
 
-def glRender(accumBufferPasses=0, alphaSource="", antiAliasMethod="", cameraIcons=True,
+def glRender(*args, accumBufferPasses=0, alphaSource="", antiAliasMethod="", cameraIcons=True,
              clearClr=None, collisionIcons=True, crossingEffect=True, currentFrame=True,
              drawStyle="", edgeSmoothness=0.0, emitterIcons=True, fieldIcons=True,
              flipbookCallback="", frameEnd=0, frameIncrement=0, frameStart=0,
@@ -77794,7 +77792,7 @@ def glRender(accumBufferPasses=0, alphaSource="", antiAliasMethod="", cameraIcon
              lightIcons=True, lightingMode="", lineSmoothing=True, offScreen=True,
              renderFrame="", renderSequence="", sharpness=0.0, shutterAngle=0.0,
              textureDisplay=True, transformIcons=True, useAccumBuffer=True, viewport=None,
-             writeDepthMap=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+             writeDepthMap=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command provides access to the Hardware Render Manager (HRM)  There is
     one-and-only-one HRM in maya  The HRM controls the rendering performed in the hardware
@@ -77889,14 +77887,14 @@ def glRender(accumBufferPasses=0, alphaSource="", antiAliasMethod="", cameraIcon
     pass
 
 
-def bakeSimulation(animation="keysOrObjects.", attribute="", bakeOnOverrideLayer=True,
+def bakeSimulation(*args, animation="keysOrObjects.", attribute="", bakeOnOverrideLayer=True,
                    controlPoints=False, destinationLayer="", disableImplicitControl=True,
                    float=None, hierarchy="", includeUpperBound=True, index=0,
                    minimizeRotation=True, preserveOutsideKeys=False,
                    removeBakedAnimFromLayer=True, removeBakedAttributeFromLayer=True,
                    resolveWithoutLayer="", sampleBy=None, shape=True, simulation=True,
                    smart=None, sparseAnimCurveBake=False, time=None, q=True, query=True, e=True,
-                   edit=True, *args, **kwargs):
+                   edit=True, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -77988,9 +77986,9 @@ def prependListItem(*args, **kwargs):
     pass
 
 
-def cameraSet(active=True, appendTo=True, camera="", clearDepth=True, deleteAll=True,
+def cameraSet(*args, active=True, appendTo=True, camera="", clearDepth=True, deleteAll=True,
               deleteLayer=True, insertAt=True, layer=0, name="", numLayers=True, objectSet="",
-              order=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+              order=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command manages camera set nodes  Camera sets allow the users to break a single camera
     shot into layers  Instead of drawing all objects with a single camera, you can isolate the
@@ -78057,7 +78055,7 @@ def EnableRigidBodies(*args, **kwargs):
     pass
 
 
-def pickWalk(direction="", recurse=True, type="", *args, **kwargs):
+def pickWalk(*args, direction="", recurse=True, type="", **kwargs):
     """
     The pickWalk command allows you to quickly change the selection list relative to the nodes
     that are currently selected  It is called pickWalk, because it walks from one selection
@@ -78149,10 +78147,11 @@ def PrevSkinPaintMode(*args, **kwargs):
     pass
 
 
-def deformer(after=True, afterReference=True, before=True, deformerTools=True, exclusive="",
-             frontOfChain=True, geometry="", geometryIndices=True, ignoreSelected=True,
-             includeHiddenSelections=False, name="", parallel=True, prune=True, remove=True,
-             split=True, type="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def deformer(*args, after=True, afterReference=True, before=True, deformerTools=True,
+             exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
+             ignoreSelected=True, includeHiddenSelections=False, name="", parallel=True,
+             prune=True, remove=True, split=True, type="", q=True, query=True, e=True,
+             edit=True, **kwargs):
     """
     This command creates a deformer of the specified type  The deformer will deform the
     selected objects
@@ -78210,9 +78209,9 @@ def deformer(after=True, afterReference=True, before=True, deformerTools=True, e
     pass
 
 
-def polyExtrudeVertex(caching=True, constructionHistory=True, divisions=1, length=0, name="",
-                      nodeState=0, width=0, worldSpace=True, q=True, query=True, e=True,
-                      edit=True, *args, **kwargs):
+def polyExtrudeVertex(*args, caching=True, constructionHistory=True, divisions=1, length=0,
+                      name="", nodeState=0, width=0, worldSpace=True, q=True, query=True,
+                      e=True, edit=True, **kwargs):
     """
     Command that extrudes selected vertices outwards
     
@@ -78262,8 +78261,8 @@ def PerspGraphHypergraphLayout(*args, **kwargs):
     pass
 
 
-def scrollField(annotation="", backgroundColor=None, changeCommand=None, clear=True, command="",
-                defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
+def scrollField(*args, annotation="", backgroundColor=None, changeCommand=None, clear=True,
+                command="", defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
                 editable=True, enable=True, enableBackground=True, enableKeyboardFocus=True,
                 enterCommand=None, exists=True, font="", fontPointSize=0, fullPathName=True,
                 height=0, highlightColor=None, insertText="", insertionPosition=0,
@@ -78271,7 +78270,7 @@ def scrollField(annotation="", backgroundColor=None, changeCommand=None, clear=T
                 numberOfLines=0, numberOfPopupMenus=True, parent="", popupMenuArray=True,
                 preventOverride=True, qtFont="", selection=True, statusBarMessage="", text="",
                 useTemplate="", visible=True, visibleChangeCommand=None, width=0, wordWrap=True,
-                q=True, query=True, e=True, edit=True, *args, **kwargs):
+                q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a scrolling field that handles multiple lines of text
     
@@ -78395,13 +78394,13 @@ def scrollField(annotation="", backgroundColor=None, changeCommand=None, clear=T
     pass
 
 
-def shapeEditor(clearSelection=True, control=True, defineTemplate="", docTag="", exists=True,
-                filter="", forceMainConnection="", highlightConnection="",
+def shapeEditor(*args, clearSelection=True, control=True, defineTemplate="", docTag="",
+                exists=True, filter="", forceMainConnection="", highlightConnection="",
                 lockMainConnection=True, lowestSelection=True, mainListConnection="", panel="",
                 parent="", selectionConnection="", stateString=True, targetControlList=True,
                 targetList=True, unParent=True, unlockMainConnection=True,
                 updateMainConnection=True, useTemplate="", verticalSliders=True, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+                query=True, e=True, edit=True, **kwargs):
     """
     This command creates an editor that derives from the base editor class that has controls
     for deformer, control nodes
@@ -78492,12 +78491,12 @@ def gameExporter(*args, **kwargs):
     pass
 
 
-def ogs(deviceInformation=True, disposeReleasableTextures=True, dumpTexture="",
+def ogs(*args, deviceInformation=True, disposeReleasableTextures=True, dumpTexture="",
         enableHardwareInstancing=True, fragmentEditor="", fragmentXML="", gpuMemoryTotal=0,
         gpuMemoryUsed=True, isLegacyViewportEnabled=True, isWinRemoteSession=True, pause=True,
         rebakeTextures=True, regenerateUVTilePreview="", reloadTextures=True, reset=True,
         shaderSource="", toggleTexturePaging=True, traceRenderPipeline=True, q=True, query=True,
-        *args, **kwargs):
+        **kwargs):
     """
     OGS is one of the viewport renderers  As there is a lot of effort involved in migrating
     functionality it will evolve over several releases  As it evolves it is prudent to provide
@@ -78583,8 +78582,8 @@ def AssignOfflineFileFromRefEdOptions(*args, **kwargs):
     pass
 
 
-def colorEditor(alpha=0.0, hsvValue=None, mini=True, parent="", position=None, result=True,
-                rgbValue=None, q=True, query=True, *args, **kwargs):
+def colorEditor(*args, alpha=0.0, hsvValue=None, mini=True, parent="", position=None,
+                result=True, rgbValue=None, q=True, query=True, **kwargs):
     """
     The colorEditor command displays a modal dialog that may be used to specify colors in RGB
     or HSV  The default behaviour when no arguments are specified is to provide an initial
@@ -78644,9 +78643,9 @@ def SelectObjectsIlluminatedByLight(*args, **kwargs):
     pass
 
 
-def containerPublish(bindNode=None, bindTemplateStandins=True, inConnections=True,
+def containerPublish(*args, bindNode=None, bindTemplateStandins=True, inConnections=True,
                      mergeShared=True, outConnections=True, publishNode=None, unbindNode="",
-                     unpublishNode="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+                     unpublishNode="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This is an accessory command to the container command which is used for some advanced
     publishing operations on the container  For example, the "publishConnections" flag on the
@@ -78775,14 +78774,14 @@ def STRSTweakModeOff(*args, **kwargs):
     pass
 
 
-def rigidSolver(autoTolerances=True, bounciness=True, cacheData=True, collide=True,
+def rigidSolver(*args, autoTolerances=True, bounciness=True, cacheData=True, collide=True,
                 collisionTolerance=0.02, contactData=True, create=True, current=True,
                 deleteCache=True, displayCenterOfMass=True, displayConstraint=True,
                 displayVelocity=True, dynamics=True, friction=True, interpenetrate=True,
                 interpenetrationCheck=True, name="", rigidBodies=True, rigidBodyCount=True,
                 showCollision=True, showInterpenetration=True, solverMethod=2, startTime=0.0,
                 state=True, statistics=True, stepSize=0.0333, velocityVectorScale=0.0, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+                query=True, e=True, edit=True, **kwargs):
     """
     This command sets the attributes for the rigid solver
     
@@ -78875,10 +78874,10 @@ def PokePolygon(*args, **kwargs):
     pass
 
 
-def closeSurface(blendBias=0.5, blendKnotInsertion=False, caching=True, direction=0,
+def closeSurface(*args, blendBias=0.5, blendKnotInsertion=False, caching=True, direction=0,
                  nodeState=0, parameter=0.1, preserveShape=1, constructionHistory=True, name="",
                  object=True, replaceOriginal=True, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     The closeSurface command closes a surface in the U, V, or both directions, making it
     periodic  The close direction is controlled by the direction flag  If a surface is not
@@ -78972,8 +78971,8 @@ def GoToNextDrivenKey(*args, **kwargs):
     pass
 
 
-def manipScaleLimitsCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                        q=True, query=True, e=True, edit=True, *args, **kwargs):
+def manipScaleLimitsCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                        name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a context for the scale limits manipulator
     
@@ -79001,11 +79000,11 @@ def manipScaleLimitsCtx(exists=True, history=True, image1="", image2="", image3=
     pass
 
 
-def polyMoveUV(axisLen=None, axisLenX=0.0, axisLenY=0.0, caching=True, constructionHistory=True,
-               name="", nodeState=0, pivot=None, pivotU=0.0, pivotV=0.0, random=0.0,
-               rotationAngle=0.0, scale=None, scaleU=0.0, scaleV=0.0, translate=None,
-               translateU=0.0, translateV=0.0, q=True, query=True, e=True, edit=True, *args,
-               **kwargs):
+def polyMoveUV(*args, axisLen=None, axisLenX=0.0, axisLenY=0.0, caching=True,
+               constructionHistory=True, name="", nodeState=0, pivot=None, pivotU=0.0,
+               pivotV=0.0, random=0.0, rotationAngle=0.0, scale=None, scaleU=0.0, scaleV=0.0,
+               translate=None, translateU=0.0, translateV=0.0, q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     Moves selected UV coordinates in 2D space  As the selected UVs are adjusted, the way the
     image is mapped onto the object changes accordingly  This command manipulates the UV values
@@ -79086,8 +79085,8 @@ def SmokeOptions(*args, **kwargs):
     pass
 
 
-def dynGlobals(active=True, listAll=True, overSampling=0, q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+def dynGlobals(*args, active=True, listAll=True, overSampling=0, q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     This node edits and queries the attributes of the active dynGlobals node in the scene 
     There can be only one active node of this type  The active dynGlobals node is the first one
@@ -79109,7 +79108,7 @@ def dynGlobals(active=True, listAll=True, overSampling=0, q=True, query=True, e=
     pass
 
 
-def threadCount(numberOfThreads=0, q=True, query=True, *args, **kwargs):
+def threadCount(*args, numberOfThreads=0, q=True, query=True, **kwargs):
     """
     This command sets the number of threads to be used by Maya in regions of code that are
     multithreaded  By default the number of threads is equal to the number of logical CPUs, not
@@ -79174,10 +79173,10 @@ def SelectSharedUVInstances(*args, **kwargs):
     pass
 
 
-def snapMode(curve=True, distanceIncrement=0.0, edgeMagnet=0, edgeMagnetTolerance=0.0,
+def snapMode(*args, curve=True, distanceIncrement=0.0, edgeMagnet=0, edgeMagnetTolerance=0.0,
              grid=True, liveFaceCenter=True, livePoint=True, meshCenter=True, pixelCenter=True,
              pixelSnap=True, point=True, tolerance=0, useTolerance=True, uvTolerance=0,
-             viewPlane=True, q=True, query=True, *args, **kwargs):
+             viewPlane=True, q=True, query=True, **kwargs):
     """
     The snapMode command is used to control snapping  It toggles the snapping modes in effect
     and sets information used for snapping
@@ -79240,7 +79239,7 @@ def ObjectCentricLightLinkingEditor(*args, **kwargs):
     pass
 
 
-def textFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
+def textFieldGrp(*args, adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  adjustableColumn4=0, adjustableColumn5=0, adjustableColumn6=0, annotation="",
                  backgroundColor=None, changeCommand=None, columnAlign=None, columnAlign2=None,
                  columnAlign3=None, columnAlign4=None, columnAlign5=None, columnAlign6=None,
@@ -79257,7 +79256,7 @@ def textFieldGrp(adjustableColumn=0, adjustableColumn2=0, adjustableColumn3=0,
                  popupMenuArray=True, preventOverride=True, rowAttach=None, statusBarMessage="",
                  text="", textChangedCommand=None, useTemplate="", visible=True,
                  visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                 *args, **kwargs):
+                 **kwargs):
     """
     All of the group commands position their individual controls in columns starting at column
     1  The layout of each control (ie  column) can be customized using the -cw/columnWidth,
@@ -79474,14 +79473,14 @@ def SculptReferenceVectorMarkingMenuPress(*args, **kwargs):
     pass
 
 
-def clip(absolute=True, absoluteRotations=True, active="", addTrack=True, allAbsolute=True,
-         allClips=True, allRelative=True, allSourceClips=True, animCurveRange=True,
-         character=True, constraint=True, copy=True, defaultAbsolute=True, duplicate=True,
-         endTime=None, expression=True, ignoreSubcharacters=True, isolate=True,
+def clip(*args, absolute=True, absoluteRotations=True, active="", addTrack=True,
+         allAbsolute=True, allClips=True, allRelative=True, allSourceClips=True,
+         animCurveRange=True, character=True, constraint=True, copy=True, defaultAbsolute=True,
+         duplicate=True, endTime=None, expression=True, ignoreSubcharacters=True, isolate=True,
          leaveOriginal=True, mapMethod="", name="", newName="", paste=True, pasteInstance=True,
          remove=True, removeTrack=True, rotationOffset=None, rotationsAbsolute=True,
          scheduleClip=True, sourceClipName=True, split=None, startTime=None,
-         translationOffset=None, useChannel="", q=True, query=True, e=True, edit=True, *args,
+         translationOffset=None, useChannel="", q=True, query=True, e=True, edit=True,
          **kwargs):
     """
     This command is used to create, edit and query character clips
@@ -79602,8 +79601,8 @@ def DecreaseExposureFine(*args, **kwargs):
     pass
 
 
-def curveSketchCtx(degree=0, exists=True, history=True, image1="", image2="", image3="",
-                   name="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def curveSketchCtx(*args, degree=0, exists=True, history=True, image1="", image2="", image3="",
+                   name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     The curveSketchCtx command creates a new curve sketch context, also known as the "pencil
     context"
@@ -79683,8 +79682,8 @@ def saveMenu(*args, **kwargs):
     pass
 
 
-def listDeviceAttachments(attribute="", axis="", clutch="", device="", file="", selection=True,
-                          write=True, *args, **kwargs):
+def listDeviceAttachments(*args, attribute="", axis="", clutch="", device="", file="",
+                          selection=True, write=True, **kwargs):
     """
     This command lists the current set of device attachments  The listing is in the form of the
     commands required to recreate them  This includes both attachments and device mappings
@@ -79711,8 +79710,8 @@ def listDeviceAttachments(attribute="", axis="", clutch="", device="", file="", 
     pass
 
 
-def panZoom(absolute=True, downDistance=0.0, leftDistance=0.0, relative=True, rightDistance=0.0,
-            upDistance=0.0, zoomRatio=0.0, *args, **kwargs):
+def panZoom(*args, absolute=True, downDistance=0.0, leftDistance=0.0, relative=True,
+            rightDistance=0.0, upDistance=0.0, zoomRatio=0.0, **kwargs):
     """
     The panZoom command pans/zooms the 2D film   The panZoom command can be applied to either a
     perspective or an orthographic camera   When no camera name is supplied, this command is
@@ -79741,7 +79740,7 @@ def panZoom(absolute=True, downDistance=0.0, leftDistance=0.0, relative=True, ri
     pass
 
 
-def webView(urlAddress="", windowHeight=0, windowWidth=0, *args, **kwargs):
+def webView(*args, urlAddress="", windowHeight=0, windowWidth=0, **kwargs):
     """
     This command allows the user to bring up a web page view
     
@@ -79800,14 +79799,14 @@ def HIKUiControl(*args, **kwargs):
     pass
 
 
-def jointCtx(autoJointOrient="xyz", autoPriorityH=True, createIKHandle=True,
+def jointCtx(*args, autoJointOrient="xyz", autoPriorityH=True, createIKHandle=True,
              degreeOfFreedomJ="xyz", exists=True, forceSolverH=True, image1="", image2="",
              image3="", jointAutoLimits=True, jointOrientationJ=None, largeBoneLength=0.0,
              largeBoneRadius=0.0, poWeightH=1, priorityH=0, scaleCompensateJ=True, scaleJ=None,
              scaleOrientationJ=None, secondaryAxisOrient="", smallBoneLength=0.0,
              smallBoneRadius=0.0, snapHandleH=True, solverTypeH="", stickyH="off",
              symmetry=True, symmetryAxis="", variableBoneSize=True, weightH=1, q=True,
-             query=True, e=True, edit=True, *args, **kwargs):
+             query=True, e=True, edit=True, **kwargs):
     """
     The joint context command (jointCtx) updates the parameters of the joint tool  The options
     for the tool will be set by the flags the user specifies
@@ -79922,7 +79921,7 @@ def CreatePolygonType(*args, **kwargs):
     pass
 
 
-def instance(leaf=True, name="", smartTransform=True, *args, **kwargs):
+def instance(*args, leaf=True, name="", smartTransform=True, **kwargs):
     """
     Instancing is a way of making the same object appear twice in the scene  This is
     accomplished by creation of a new transform node that points to an exisiting object 
@@ -79958,9 +79957,9 @@ def editImportedStatus(*args, **kwargs):
     pass
 
 
-def nurbsPlane(axis=None, caching=True, degree=3, lengthRatio=1.0, nodeState=0, patchesU=1,
-               patchesV=1, pivot=None, width=1.0, constructionHistory=True, name="",
-               object=True, polygon=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def nurbsPlane(*args, axis=None, caching=True, degree=3, lengthRatio=1.0, nodeState=0,
+               patchesU=1, patchesV=1, pivot=None, width=1.0, constructionHistory=True, name="",
+               object=True, polygon=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The nurbsPlane command creates a new NURBS Plane and return the name of the new surface  It
     creates an unit plane with center at origin by default
@@ -80059,7 +80058,7 @@ def SetMeshFlattenTool(*args, **kwargs):
     pass
 
 
-def unloadPlugin(addCallback=None, force=True, removeCallback=None, *args, **kwargs):
+def unloadPlugin(*args, addCallback=None, force=True, removeCallback=None, **kwargs):
     """
     Unload plug-ins from Maya  After the successful execution of this command, plug-in services
     will no longer be available
@@ -80079,9 +80078,9 @@ def unloadPlugin(addCallback=None, force=True, removeCallback=None, *args, **kwa
     pass
 
 
-def snapKey(animation="keysOrObjects.", attribute="", controlPoints=False, float=None,
+def snapKey(*args, animation="keysOrObjects.", attribute="", controlPoints=False, float=None,
             hierarchy="", includeUpperBound=True, index=0, shape=True, time=None,
-            timeMultiple=0.0, valueMultiple=0.0, *args, **kwargs):
+            timeMultiple=0.0, valueMultiple=0.0, **kwargs):
     """
     This command operates on a keyset  A keyset is defined as a group of keys within a
     specified time range on one or more animation curves   The animation curves comprising a
@@ -80137,9 +80136,9 @@ def SculptSurfacesTool(*args, **kwargs):
     pass
 
 
-def controller(allControllers=True, children=True, group=True, index=0, isController="",
+def controller(*args, allControllers=True, children=True, group=True, index=0, isController="",
                parent=True, pickWalkDown=True, pickWalkLeft=True, pickWalkRight=True,
-               pickWalkUp=True, unparent=True, q=True, query=True, e=True, edit=True, *args,
+               pickWalkUp=True, unparent=True, q=True, query=True, e=True, edit=True,
                **kwargs):
     """
     Commands for managing animation sources
@@ -80191,8 +80190,8 @@ def UniversalManipOptions(*args, **kwargs):
     pass
 
 
-def dagObjectCompare(attribute=True, bail="", connection=True, namespace="", relative=True,
-                     short=True, type=True, *args, **kwargs):
+def dagObjectCompare(*args, attribute=True, bail="", connection=True, namespace="",
+                     relative=True, short=True, type=True, **kwargs):
     """
     dagObjectCompare can be used to compare to compare objects based on:  type - Currently
     supports transform nodes and shape nodes relatives - Compares DAG objects' children and
@@ -80221,7 +80220,7 @@ def dagObjectCompare(attribute=True, bail="", connection=True, namespace="", rel
     pass
 
 
-def pluginInfo(activeFile=True, animCurveInterp="", apiVersion=True, autoload=True,
+def pluginInfo(*args, activeFile=True, animCurveInterp="", apiVersion=True, autoload=True,
                cacheFormat=True, changedCommand=None, command="", constraintCommand=True,
                controlCommand=True, data=None, dependNode=True, dependNodeByType="",
                dependNodeId="", device=True, dragAndDropBehavior=True, iksolver=True,
@@ -80230,7 +80229,7 @@ def pluginInfo(activeFile=True, animCurveInterp="", apiVersion=True, autoload=Tr
                referenceTranslators=True, registered=True, remove=True, renderer=True,
                savePluginPrefs=True, serviceDescriptions=True, settings=True, tool="",
                translator=True, unloadOk=True, userNamed=True, vendor="", version=True,
-               writeRequires=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+               writeRequires=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command provides access to the plug-in registry of the application  It is used mainly
     to query the characteristics of registered plug-ins  Plugins automatically become
@@ -80377,9 +80376,9 @@ def CreateSubdivSurface(*args, **kwargs):
     pass
 
 
-def subdMirror(caching=True, nodeState=0, xMirror=False, yMirror=False, zMirror=False,
+def subdMirror(*args, caching=True, nodeState=0, xMirror=False, yMirror=False, zMirror=False,
                constructionHistory=True, name="", object=True, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     This command takes a subdivision surface, passed as the argument, and produces a
     subdivision surface that is a mirror  Returns the name of the subdivision surface created
@@ -80432,33 +80431,34 @@ def dR_wireframeSmoothTGL(*args, **kwargs):
     pass
 
 
-def modelEditor(activeComponentsXray=True, activeCustomEnvironment="", activeCustomGeometry="",
-                activeCustomLighSet="", activeCustomOverrideGeometry="",
-                activeCustomRenderer="", activeOnly=True, activeShadingGraph="",
-                activeView=True, addObjects="", addSelected=True, addSelectedObjects=True,
-                allObjects=True, backfaceCulling=True, bufferMode="", bumpResolution=None,
-                camera="", cameraName="", cameraSet="", cameraSetup=True, cameras=True,
-                capture="", captureSequenceNumber=0, clipGhosts=True, cmEnabled=True,
-                colorMap=True, colorResolution=None, control=True, controlVertices=True,
-                cullingOverride="", default=True, defineTemplate="", deformers=True,
-                dimensions=True, displayAppearance="", displayLights="", displayTextures=True,
-                docTag="", dynamicConstraints=True, dynamics=True, editorChanged=None,
-                exists=True, exposure=0.0, filter="", filteredObjectList=True, fluids=True,
-                fogColor=None, fogDensity=0.0, fogEnd=0.0, fogMode="", fogSource="",
-                fogStart=0.0, fogging=True, follicles=True, forceMainConnection="", gamma=0.0,
-                greasePencils=True, grid=True, hairSystems=True, handles=True,
-                headsUpDisplay=True, height=True, highlightConnection="", hulls=True,
-                ignorePanZoom=True, ikHandles=True, imagePlane=True, interactive=True,
-                interactiveBackFaceCull=True, interactiveDisableShadows=True, isFiltered=True,
-                jointXray=True, joints=True, lights=True, lineWidth=0.0, locators=True,
-                lockMainConnection=True, lowQualityLighting=True, mainListConnection="",
-                manipulators=True, maxConstantTransparency=0.0, maximumNumHardwareLights=True,
-                modelPanel="", motionTrails=True, nCloths=True, nParticles=True, nRigids=True,
-                noUndo=True, nurbsCurves=True, nurbsSurfaces=True, objectFilter=None,
-                objectFilterList=None, objectFilterListUI=None, objectFilterShowInHUD=True,
-                objectFilterUI=None, occlusionCulling=True, panel="", parent="",
-                particleInstancers=True, pivots=True, planes=True, pluginObjects=None,
-                pluginShapes=True, polymeshes=True, queryPluginObjects="", removeSelected=True,
+def modelEditor(*args, activeComponentsXray=True, activeCustomEnvironment="",
+                activeCustomGeometry="", activeCustomLighSet="",
+                activeCustomOverrideGeometry="", activeCustomRenderer="", activeOnly=True,
+                activeShadingGraph="", activeView=True, addObjects="", addSelected=True,
+                addSelectedObjects=True, allObjects=True, backfaceCulling=True, bufferMode="",
+                bumpResolution=None, camera="", cameraName="", cameraSet="", cameraSetup=True,
+                cameras=True, capture="", captureSequenceNumber=0, clipGhosts=True,
+                cmEnabled=True, colorMap=True, colorResolution=None, control=True,
+                controlVertices=True, cullingOverride="", default=True, defineTemplate="",
+                deformers=True, dimensions=True, displayAppearance="", displayLights="",
+                displayTextures=True, docTag="", dynamicConstraints=True, dynamics=True,
+                editorChanged=None, exists=True, exposure=0.0, filter="",
+                filteredObjectList=True, fluids=True, fogColor=None, fogDensity=0.0, fogEnd=0.0,
+                fogMode="", fogSource="", fogStart=0.0, fogging=True, follicles=True,
+                forceMainConnection="", gamma=0.0, greasePencils=True, grid=True,
+                hairSystems=True, handles=True, headsUpDisplay=True, height=True,
+                highlightConnection="", hulls=True, ignorePanZoom=True, ikHandles=True,
+                imagePlane=True, interactive=True, interactiveBackFaceCull=True,
+                interactiveDisableShadows=True, isFiltered=True, jointXray=True, joints=True,
+                lights=True, lineWidth=0.0, locators=True, lockMainConnection=True,
+                lowQualityLighting=True, mainListConnection="", manipulators=True,
+                maxConstantTransparency=0.0, maximumNumHardwareLights=True, modelPanel="",
+                motionTrails=True, nCloths=True, nParticles=True, nRigids=True, noUndo=True,
+                nurbsCurves=True, nurbsSurfaces=True, objectFilter=None, objectFilterList=None,
+                objectFilterListUI=None, objectFilterShowInHUD=True, objectFilterUI=None,
+                occlusionCulling=True, panel="", parent="", particleInstancers=True,
+                pivots=True, planes=True, pluginObjects=None, pluginShapes=True,
+                polymeshes=True, queryPluginObjects="", removeSelected=True,
                 rendererDeviceName=True, rendererList=True, rendererListUI=True,
                 rendererName="", rendererOverrideList=True, rendererOverrideListUI=True,
                 rendererOverrideName="", resetCustomCamera=True, sceneRenderFilter="",
@@ -80476,7 +80476,7 @@ def modelEditor(activeComponentsXray=True, activeCustomEnvironment="", activeCus
                 useReducedRenderer=True, useTemplate="", userNode="", viewObjects=True,
                 viewSelected=True, viewTransformName="", viewType=True, width=True,
                 wireframeBackingStore=True, wireframeOnShaded=True, xray=True, q=True,
-                query=True, e=True, edit=True, *args, **kwargs):
+                query=True, e=True, edit=True, **kwargs):
     """
     Create, edit or query a model editor   Note that some of the flags of this command may have
     different settings for normal mode and for interactive/playback mode  For example, a
@@ -80968,7 +80968,7 @@ def ModifyUpperRadiusRelease(*args, **kwargs):
     pass
 
 
-def roll(absolute=True, degree=0.0, relative=True, *args, **kwargs):
+def roll(*args, absolute=True, degree=0.0, relative=True, **kwargs):
     """
     The roll command rotates a camera about its viewing direction, a positive angle produces
     clockwise camera rotation, while a negative angle produces counter-clockwise camera
@@ -81045,10 +81045,10 @@ def SelectBrushNames(*args, **kwargs):
     pass
 
 
-def constrain(barrier=True, damping=0.0, directionalHinge=True, hinge=True, interpenetrate=True,
-              nail=True, name="", orientation=None, pinConstraint=True, position=None,
-              restLength=0.0, spring=True, stiffness=0.0, q=True, query=True, e=True, edit=True,
-              *args, **kwargs):
+def constrain(*args, barrier=True, damping=0.0, directionalHinge=True, hinge=True,
+              interpenetrate=True, nail=True, name="", orientation=None, pinConstraint=True,
+              position=None, restLength=0.0, spring=True, stiffness=0.0, q=True, query=True,
+              e=True, edit=True, **kwargs):
     """
     This command constrains rigid bodies to the world or other rigid bodies
     
@@ -81101,13 +81101,13 @@ def nexConnectContext(*args, **kwargs):
     pass
 
 
-def cmdScrollFieldReporter(annotation="", backgroundColor=None, clear=True, copySelection=True,
-                           cutSelection=True, defineTemplate="", docTag="", dragCallback=None,
-                           dropCallback=None, echoAllCommands=True, enable=True,
-                           enableBackground=True, enableKeyboardFocus=True, exists=True,
-                           filterSourceType="", fullPathName=True, hasFocus=True, height=0,
-                           highlightColor=None, isObscured=True, lineNumbers=True, manage=True,
-                           noBackground=True, numberOfPopupMenus=True, parent="",
+def cmdScrollFieldReporter(*args, annotation="", backgroundColor=None, clear=True,
+                           copySelection=True, cutSelection=True, defineTemplate="", docTag="",
+                           dragCallback=None, dropCallback=None, echoAllCommands=True,
+                           enable=True, enableBackground=True, enableKeyboardFocus=True,
+                           exists=True, filterSourceType="", fullPathName=True, hasFocus=True,
+                           height=0, highlightColor=None, isObscured=True, lineNumbers=True,
+                           manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
                            pasteSelection=True, popupMenuArray=True, preventOverride=True,
                            receiveFocusCommand=None, saveSelection="",
                            saveSelectionToShelf=True, select=None, selectAll=True,
@@ -81115,7 +81115,7 @@ def cmdScrollFieldReporter(annotation="", backgroundColor=None, clear=True, copy
                            suppressInfo=True, suppressResults=True, suppressStackTrace=True,
                            suppressWarnings=True, text="", textLength=True, useTemplate="",
                            visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                           e=True, edit=True, *args, **kwargs):
+                           e=True, edit=True, **kwargs):
     """
     A script editor reporter control used to receive and display the history of processed
     commmands
@@ -81249,9 +81249,8 @@ def cmdScrollFieldReporter(annotation="", backgroundColor=None, clear=True, copy
     pass
 
 
-def cameraView(addBookmark=True, animate=True, bookmarkType=0, camera=None, name="",
-               removeBookmark=True, setCamera=True, setView=True, e=True, edit=True, *args,
-               **kwargs):
+def cameraView(*args, addBookmark=True, animate=True, bookmarkType=0, camera=None, name="",
+               removeBookmark=True, setCamera=True, setView=True, e=True, edit=True, **kwargs):
     """
     This command creates a preset view for a camera which is then independent of the camera 
     The view stores a camera's eye point, center of interest point, up vector, tumble pivot,
@@ -81294,9 +81293,9 @@ def TimeEditorPasteClips(*args, **kwargs):
     pass
 
 
-def orbitCtx(alternateContext=True, exists=True, history=True, image1="", image2="", image3="",
-             localOrbit=True, name="", orbitScale=0.0, toolName="", q=True, query=True, e=True,
-             edit=True, *args, **kwargs):
+def orbitCtx(*args, alternateContext=True, exists=True, history=True, image1="", image2="",
+             image3="", localOrbit=True, name="", orbitScale=0.0, toolName="", q=True,
+             query=True, e=True, edit=True, **kwargs):
     """
     Create, edit, or query an orbit context
     
@@ -81339,7 +81338,7 @@ def DeleteMemoryCaching(*args, **kwargs):
     pass
 
 
-def profilerTool(categoryView=True, collapseSelectedEvents=True,
+def profilerTool(*args, categoryView=True, collapseSelectedEvents=True,
                  collapseSelectedEventsRepetition=True, cpuView=True, destroy=True,
                  eventTypes=True, exists=True, expandSelectedEvents=True,
                  expandSelectedEventsRepetition=True, findNext=True, findPrevious=True,
@@ -81347,7 +81346,7 @@ def profilerTool(categoryView=True, collapseSelectedEvents=True,
                  matchWholeWord=True, searchEvent="", segmentCount=True, showAllEvent=True,
                  showCriticalPath=True, showSelectedEvents=True,
                  showSelectedEventsRepetition=True, threadView=True, unisolateSegment=True,
-                 q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     This script is intended to be used by the profilerPanel to interact with the profiler
     tool's view (draw region)  It can be used to control some behaviors about the profiler Tool
@@ -81441,9 +81440,9 @@ def Goal(*args, **kwargs):
     pass
 
 
-def substituteGeometry(disableNonSkinDeformers=True, newGeometryToLayer=True,
+def substituteGeometry(*args, disableNonSkinDeformers=True, newGeometryToLayer=True,
                        oldGeometryToLayer=True, reWeightDistTolerance=0.0,
-                       retainOldGeometry=True, *args, **kwargs):
+                       retainOldGeometry=True, **kwargs):
     """
     This command can be used to replace the geometry which is already connected to deformers
     with a new geometry  The weights on the old geometry will be retargeted to the new geometry
@@ -81518,7 +81517,7 @@ def AddTargetShape(*args, **kwargs):
     pass
 
 
-def listNodeTypes(exclude="", *args, **kwargs):
+def listNodeTypes(*args, exclude="", **kwargs):
     """
     Lists dependency node types satisfying a specified classification string   See the
     'getClassification' command for a list of the standard classification strings
@@ -81548,7 +81547,7 @@ def MergeMultipleEdges(*args, **kwargs):
     pass
 
 
-def manipRotateContext(activeHandle=0, alignAlong=None, centerTrackball=True,
+def manipRotateContext(*args, activeHandle=0, alignAlong=None, centerTrackball=True,
                        constrainAlongNormal=True, currentActiveHandle=0, editPivotMode=True,
                        editPivotPosition=True, exists=True, image1="", image2="", image3="",
                        lastMode=0, manipVisible=True, mode=1, modifyTranslation=False,
@@ -81560,7 +81559,7 @@ def manipRotateContext(activeHandle=0, alignAlong=None, centerTrackball=True,
                        rotate=None, snap=True, snapPivotOri=True, snapPivotPos=True,
                        snapRelative=True, snapValue=0.0, tweakMode=True, useCenterPivot=True,
                        useManipPivot=True, useObjectPivot=True, xformConstraint="", q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a rotate manip context
     
@@ -81707,14 +81706,14 @@ def adskRepresentation(*args, **kwargs):
     pass
 
 
-def polyColorMod(alphaScale_FloatValue=0.0, alphaScale_Interp=0, alphaScale_Position=0.0,
+def polyColorMod(*args, alphaScale_FloatValue=0.0, alphaScale_Interp=0, alphaScale_Position=0.0,
                  baseColorName="", blueScale_FloatValue=0.0, blueScale_Interp=0,
                  blueScale_Position=0.0, caching=True, constructionHistory=True,
                  greenScale_FloatValue=0.0, greenScale_Interp=0, greenScale_Position=0.0,
                  huev=0.0, intensityScale_FloatValue=0.0, intensityScale_Interp=0,
                  intensityScale_Position=0.0, name="", nodeState=0, redScale_FloatValue=0.0,
                  redScale_Interp=0, redScale_Position=0.0, satv=1.0, value=1.0, q=True,
-                 query=True, e=True, edit=True, *args, **kwargs):
+                 query=True, e=True, edit=True, **kwargs):
     """
     Modifies the attributes of a poly color set
     
@@ -81775,15 +81774,15 @@ def polyColorMod(alphaScale_FloatValue=0.0, alphaScale_Interp=0, alphaScale_Posi
     pass
 
 
-def subdPlanarProjection(caching=True, nodeState=0, constructionHistory=True, createNewMap=True,
-                         imageCenter=None, imageCenterX=0.5, imageCenterY=0.5, imageScale=None,
-                         imageScaleU=1.0, imageScaleV=1.0, insertBeforeDeformers=True,
-                         keepImageRatio=True, mapDirection="", name="", projectionCenter=None,
-                         projectionCenterX=0.0, projectionCenterY=0.0, projectionCenterZ=0.0,
-                         projectionHeight=1.0, projectionScale=None, projectionWidth=1.0,
-                         rotate=None, rotateX=0.0, rotateY=0.0, rotateZ=0.0, rotationAngle=10.0,
-                         smartFit=True, worldSpace=True, q=True, query=True, e=True, edit=True,
-                         *args, **kwargs):
+def subdPlanarProjection(*args, caching=True, nodeState=0, constructionHistory=True,
+                         createNewMap=True, imageCenter=None, imageCenterX=0.5,
+                         imageCenterY=0.5, imageScale=None, imageScaleU=1.0, imageScaleV=1.0,
+                         insertBeforeDeformers=True, keepImageRatio=True, mapDirection="",
+                         name="", projectionCenter=None, projectionCenterX=0.0,
+                         projectionCenterY=0.0, projectionCenterZ=0.0, projectionHeight=1.0,
+                         projectionScale=None, projectionWidth=1.0, rotate=None, rotateX=0.0,
+                         rotateY=0.0, rotateZ=0.0, rotationAngle=10.0, smartFit=True,
+                         worldSpace=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     TsubProjCmdBase is a base class for the command to create a mapping on the selected
     subdivision faces  Projects a map onto an object, using an orthogonal projection  The piece
@@ -81929,11 +81928,11 @@ def ShowDynamicConstraints(*args, **kwargs):
     pass
 
 
-def greasePencilCtx(autoCreateFrames=True, canDraw=True, createOrEditFrame=0, exists=True,
-                    exportArchive=None, fileTextureSize=0, greasePencilType=0, image1="",
-                    image2="", image3="", importArchive="", makeStroke=0, removeFrame=0,
-                    resetBrushes=True, rgbcolor=None, sequenceNodeName="", q=True, query=True,
-                    e=True, edit=True, *args, **kwargs):
+def greasePencilCtx(*args, autoCreateFrames=True, canDraw=True, createOrEditFrame=0,
+                    exists=True, exportArchive=None, fileTextureSize=0, greasePencilType=0,
+                    image1="", image2="", image3="", importArchive="", makeStroke=0,
+                    removeFrame=0, resetBrushes=True, rgbcolor=None, sequenceNodeName="",
+                    q=True, query=True, e=True, edit=True, **kwargs):
     """
     This is a tool context command for the grease pencil tool
     
@@ -81989,8 +81988,8 @@ def BendOptions(*args, **kwargs):
     pass
 
 
-def sculptMeshCacheChangeCloneSource(blendShape="", target="", q=True, query=True, e=True,
-                                     edit=True, *args, **kwargs):
+def sculptMeshCacheChangeCloneSource(*args, blendShape="", target="", q=True, query=True,
+                                     e=True, edit=True, **kwargs):
     """
     This command changes the source blend shape and target for the clone target tool  Used
     internally for undo/redo, and should not be called directly
@@ -82022,7 +82021,7 @@ def NURBSSmoothnessRoughOptions(*args, **kwargs):
     pass
 
 
-def hotBox(PaneOnlyMenus=True, PaneToggleMenus=True, animationOnlyMenus=True,
+def hotBox(*args, PaneOnlyMenus=True, PaneToggleMenus=True, animationOnlyMenus=True,
            animationToggleMenus=True, clothOnlyMenus=True, clothToggleMenus=True,
            commonOnlyMenus=True, commonToggleMenus=True, customMenuSetsToggleMenus=True,
            displayCenterOnly=True, displayHotbox=True, displayStyle=True, displayZonesOnly=True,
@@ -82034,7 +82033,7 @@ def hotBox(PaneOnlyMenus=True, PaneToggleMenus=True, animationOnlyMenus=True,
            renderingToggleMenus=True, riggingOnlyMenus=True, riggingToggleMenus=True,
            rmbPopups=True, showAllToggleMenus=True, surfacesOnlyMenus=True,
            surfacesToggleMenus=True, transparenyLevel=0, updateMenus=True, q=True, query=True,
-           *args, **kwargs):
+           **kwargs):
     """
     This command controls parameters related to the hotBox menubar palette  When the command is
     invoked with no flags, the hotBox is popped up
@@ -82178,9 +82177,9 @@ def DeleteVertex(*args, **kwargs):
     pass
 
 
-def polyInstallAction(commandName=True, convertSelection=True, installConstraint=True,
+def polyInstallAction(*args, commandName=True, convertSelection=True, installConstraint=True,
                       installDisplay=True, keepInstances=True, uninstallConstraint=True,
-                      uninstallDisplay=True, q=True, query=True, *args, **kwargs):
+                      uninstallDisplay=True, q=True, query=True, **kwargs):
     """
     Installs/uninstalls several things to help the user to perform the specified action : 
     Pickmask Internal selection constraints Display attributes
@@ -82241,7 +82240,7 @@ def FBXImportConvertDeformingNullsToJoint(*args, **kwargs):
     pass
 
 
-def createNode(name="", parent="", shared=True, skipSelect=True, *args, **kwargs):
+def createNode(*args, name="", parent="", shared=True, skipSelect=True, **kwargs):
     """
     This command creates a new node in the dependency graph of the specified type
     
@@ -82270,8 +82269,8 @@ def evalEcho(*args, **kwargs):
     pass
 
 
-def dynExport(allObjects=True, attribute="", format="", maxFrame=None, minFrame=None,
-              onlyUpdateParticles=True, overSampling=0, path="", *args, **kwargs):
+def dynExport(*args, allObjects=True, attribute="", format="", maxFrame=None, minFrame=None,
+              onlyUpdateParticles=True, overSampling=0, path="", **kwargs):
     """
     Export particle data to disk files   For cache export (-format cache), dynExport also sets
     three attributes of the current dynGlobals node  It sets the useParticleRenderCache
@@ -82313,15 +82312,15 @@ def SetMeshSmoothTargetTool(*args, **kwargs):
     pass
 
 
-def move(absolute=True, componentOffset=True, componentSpace=True, constrainAlongNormal=True,
-         deletePriorHistory=True, localSpace=True, moveX=True, moveXY=True, moveXYZ=True,
-         moveXZ=True, moveY=True, moveYZ=True, moveZ=True, objectSpace=True, orientJoint="",
-         parameter=True, preserveChildPosition=False, preserveGeometryPosition=False,
-         preserveUV=False, reflection=True, reflectionAboutBBox=True,
-         reflectionAboutOrigin=True, reflectionAboutX=True, reflectionAboutY=True,
-         reflectionAboutZ=True, reflectionTolerance=0.0, relative=True,
+def move(*args, absolute=True, componentOffset=True, componentSpace=True,
+         constrainAlongNormal=True, deletePriorHistory=True, localSpace=True, moveX=True,
+         moveXY=True, moveXYZ=True, moveXZ=True, moveY=True, moveYZ=True, moveZ=True,
+         objectSpace=True, orientJoint="", parameter=True, preserveChildPosition=False,
+         preserveGeometryPosition=False, preserveUV=False, reflection=True,
+         reflectionAboutBBox=True, reflectionAboutOrigin=True, reflectionAboutX=True,
+         reflectionAboutY=True, reflectionAboutZ=True, reflectionTolerance=0.0, relative=True,
          rotatePivotRelative=True, scalePivotRelative=True, secondaryAxisOrient="",
-         symNegative=True, worldSpace=True, worldSpaceDistance=True, xformConstraint="", *args,
+         symNegative=True, worldSpace=True, worldSpaceDistance=True, xformConstraint="",
          **kwargs):
     """
     The move command is used to change the positions of geometric objects   The default
@@ -82428,7 +82427,7 @@ def toolDropped(*args, **kwargs):
     pass
 
 
-def soundControl(annotation="", backgroundColor=None, beginScrub=True, defineTemplate="",
+def soundControl(*args, annotation="", backgroundColor=None, beginScrub=True, defineTemplate="",
                  displaySound=True, docTag="", dragCallback=None, dropCallback=None,
                  enable=True, enableBackground=True, enableKeyboardFocus=True, endScrub=True,
                  exists=True, fullPathName=True, height=0, highlightColor=None, isObscured=True,
@@ -82437,7 +82436,7 @@ def soundControl(annotation="", backgroundColor=None, beginScrub=True, defineTem
                  preventOverride=True, releaseCommand="", repeatChunkSize=1.0,
                  repeatOnHold=True, resample=True, sound="", statusBarMessage="",
                  useTemplate="", visible=True, visibleChangeCommand=None, waveform="top",
-                 width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                 width=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a control used for changing current time and scratching/scrubbing
     through sound files
@@ -82553,8 +82552,8 @@ def soundControl(annotation="", backgroundColor=None, beginScrub=True, defineTem
     pass
 
 
-def createRenderLayer(empty=True, g=True, makeCurrent=True, name="", noRecurse=True, number=0,
-                      *args, **kwargs):
+def createRenderLayer(*args, empty=True, g=True, makeCurrent=True, name="", noRecurse=True,
+                      number=0, **kwargs):
     """
     Create a new render layer  The render layer number will be assigned based on the first
     unassigned number not less than the base index number found in the render layer global
@@ -82604,14 +82603,14 @@ def clearShear(*args, **kwargs):
     pass
 
 
-def joint(absolute=True, angleX=0.0, angleY=0.0, angleZ=0.0, assumePreferredAngles=True,
+def joint(*args, absolute=True, angleX=0.0, angleY=0.0, angleZ=0.0, assumePreferredAngles=True,
           automaticLimits=True, children=True, component=True, degreeOfFreedom="", exists="",
           limitSwitchX=True, limitSwitchY=True, limitSwitchZ=True, limitX=None, limitY=None,
           limitZ=None, name="", orientJoint="", orientation=None, position=None, radius=0.0,
           relative=True, rotationOrder="", scale=None, scaleCompensate=True,
           scaleOrientation=None, secondaryAxisOrient="", setPreferredAngles=True,
           stiffnessX=0.0, stiffnessY=0.0, stiffnessZ=0.0, symmetry=True, symmetryAxis="",
-          zeroScaleOrient=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+          zeroScaleOrient=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The joint command is used to create, edit, and query, joints within Maya  (The standard
     edit(-e) and query(-q) flags are used for edit and query functions)  If the object is not
@@ -82720,12 +82719,12 @@ def joint(absolute=True, angleX=0.0, angleY=0.0, angleZ=0.0, assumePreferredAngl
     pass
 
 
-def revolve(autoCorrectNormal=False, axis=None, axisChoice=0, axisX=1, axisY=0, axisZ=0,
+def revolve(*args, autoCorrectNormal=False, axis=None, axisChoice=0, axisX=1, axisY=0, axisZ=0,
             bridge=False, caching=True, computePivotAndAxis=0, degree=3, endSweep=6.2831853,
             nodeState=0, pivot=None, pivotX=0, pivotY=0, pivotZ=0, radius=1, radiusAnchor=1,
             sections=8, startSweep=0, tolerance=0.01, useTolerance=False,
             constructionHistory=True, name="", object=True, polygon=0, range=True, rebuild=True,
-            useLocalPivot=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+            useLocalPivot=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a revolved surface by revolving the given profile curve about an axis 
     The profile curve can be a curve, curve-on-surface, surface isoparm, or trim edge
@@ -82828,10 +82827,10 @@ def CopyKeysOptions(*args, **kwargs):
     pass
 
 
-def texCutContext(adjustSize=True, displayShellBorders=True, edgeSelectSensitive=0.0,
+def texCutContext(*args, adjustSize=True, displayShellBorders=True, edgeSelectSensitive=0.0,
                   exists=True, history=True, image1="", image2="", image3="", mode="",
                   moveRatio=0.0, name="", size=0.0, steadyStroke=True, steadyStrokeDistance=0.0,
-                  touchToSew=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+                  touchToSew=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a context for cut uv tool  This context only works in the UV editor
     
@@ -82885,12 +82884,12 @@ def ToggleVertMetadata(*args, **kwargs):
     pass
 
 
-def spotLight(barnDoors=True, bottomBarnDoorAngle=0.0, coneAngle=0.0, decayRate=0,
+def spotLight(*args, barnDoors=True, bottomBarnDoorAngle=0.0, coneAngle=0.0, decayRate=0,
               discRadius=0.0, dropOff=0.0, exclusive=True, intensity=0.0, leftBarnDoorAngle=0.0,
               name="", penumbra=0.0, position=None, rgb=None, rightBarnDoorAngle=0.0,
               rotation=None, shadowColor=None, shadowDither=0.0, shadowSamples=0,
               softShadow=True, topBarnDoorAngle=0.0, useRayTraceShadows=True, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     TlightCmd is the base class for other light commands  TnonAmbientLightCmd is a class that
     looks like a command but is not  It is a base class for the extended/nonExtended lights 
@@ -82968,9 +82967,9 @@ def subdTransferUVsToCache(*args, **kwargs):
     pass
 
 
-def untrim(caching=True, nodeState=0, constructionHistory=True, curveOnSurface=True, name="",
-           noChanges=True, object=True, replaceOriginal=True, untrimAll=True, q=True,
-           query=True, e=True, edit=True, *args, **kwargs):
+def untrim(*args, caching=True, nodeState=0, constructionHistory=True, curveOnSurface=True,
+           name="", noChanges=True, object=True, replaceOriginal=True, untrimAll=True, q=True,
+           query=True, e=True, edit=True, **kwargs):
     """
     Untrim the surface
     
@@ -83130,11 +83129,11 @@ def InsertJointTool(*args, **kwargs):
     pass
 
 
-def deformerWeights(attribute="", defaultValue=0.0, deformer="", export=True, format="",
+def deformerWeights(*args, attribute="", defaultValue=0.0, deformer="", export=True, format="",
                     ignoreName=True, im=True, method="", path="", positionTolerance=0.0,
                     remap="", shape="", skip="", vertexConnections=True, weightPrecision=0,
                     weightTolerance=0.0, worldSpace=True, q=True, query=True, e=True, edit=True,
-                    *args, **kwargs):
+                    **kwargs):
     """
     Command to import and export deformer weights to and from a simple XML file  The weight
     data is stored in a per-vertex fashion along with a "point cloud" corresponding to the
@@ -83221,7 +83220,7 @@ def ParameterTool(*args, **kwargs):
     pass
 
 
-def nodeIconButton(align="", annotation="", backgroundColor=None, command=None,
+def nodeIconButton(*args, align="", annotation="", backgroundColor=None, command=None,
                    defineTemplate="", disabledImage="", docTag="", dragCallback=None,
                    dropCallback=None, enable=True, enableBackground=True,
                    enableKeyboardFocus=True, exists=True, flipX=True, flipY=True, font="",
@@ -83232,7 +83231,7 @@ def nodeIconButton(align="", annotation="", backgroundColor=None, command=None,
                    overlayLabelColor=None, parent="", popupMenuArray=True, preventOverride=True,
                    rotation=0.0, statusBarMessage="", style="", useAlpha=True, useTemplate="",
                    version="", visible=True, visibleChangeCommand=None, width=0, q=True,
-                   query=True, e=True, edit=True, *args, **kwargs):
+                   query=True, e=True, edit=True, **kwargs):
     """
     This control supports up to 3 icon images and 4 different display styles  The icon image
     displayed is the one that best fits the current size of the control given its current style
@@ -83402,7 +83401,7 @@ def PasteSelected(*args, **kwargs):
     pass
 
 
-def movIn(file="", startTime=None, *args, **kwargs):
+def movIn(*args, file="", startTime=None, **kwargs):
     """
     Imports a .mov file into animation curves connected to the listed attributes  The attribute
     must be writable, since an animation curve will be created and connected to the attribute 
@@ -83449,7 +83448,7 @@ def CenterPivot(*args, **kwargs):
     pass
 
 
-def polyCheck(edge=True, face=True, faceOffset=True, openFile="", *args, **kwargs):
+def polyCheck(*args, edge=True, face=True, faceOffset=True, openFile="", **kwargs):
     """
     Dumps a description of internal memory representation of poly objects
     
@@ -83512,8 +83511,8 @@ def CreateParticleDiskCache(*args, **kwargs):
     pass
 
 
-def polyCreateFacet(constructionHistory=True, hole=True, name="", point=None, subdivision=1,
-                    texture=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyCreateFacet(*args, constructionHistory=True, hole=True, name="", point=None,
+                    subdivision=1, texture=0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a new polygonal object with the specified face, which will be closed  List of
     arguments must have at least 3 points
@@ -83579,8 +83578,8 @@ def AddPointsTool(*args, **kwargs):
     pass
 
 
-def graphTrackCtx(exists=True, history=True, image1="", image2="", image3="", name="", q=True,
-                  query=True, e=True, edit=True, *args, **kwargs):
+def graphTrackCtx(*args, exists=True, history=True, image1="", image2="", image3="", name="",
+                  q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create a track context for the graph editor
     
@@ -83650,14 +83649,14 @@ def NodeEditorExplodeCompound(*args, **kwargs):
     pass
 
 
-def intField(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
+def intField(*args, annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
              docTag="", dragCallback=None, dragCommand=None, dropCallback=None, editable=True,
              enable=True, enableBackground=True, enableKeyboardFocus=True, enterCommand=None,
              exists=True, fullPathName=True, height=0, highlightColor=None, isObscured=True,
              manage=True, maxValue=0, minValue=0, noBackground=True, numberOfPopupMenus=True,
              parent="", popupMenuArray=True, preventOverride=True, receiveFocusCommand=None,
              statusBarMessage="", step=0, useTemplate="", value=0, visible=True,
-             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
+             visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
              **kwargs):
     """
     Create a field control that accepts only integer values and is bound by a minimum and
@@ -83852,7 +83851,7 @@ def sbs_GetAllInputsFromSubstanceNode(*args, **kwargs):
     pass
 
 
-def unassignInputDevice(clutch="", device="", q=True, query=True, *args, **kwargs):
+def unassignInputDevice(*args, clutch="", device="", q=True, query=True, **kwargs):
     """
     This command deletes all command strings associated with this device
     
@@ -83902,8 +83901,8 @@ def removeListItem(*args, **kwargs):
     pass
 
 
-def loadFluid(currentTime=True, frame=0.0, initialConditions=True, q=True, query=True, e=True,
-              edit=True, *args, **kwargs):
+def loadFluid(*args, currentTime=True, frame=0.0, initialConditions=True, q=True, query=True,
+              e=True, edit=True, **kwargs):
     """
     A command to set builtin fluid attributes such as Density, Velocity, etc for all cells in
     the grid from the initial state cache
@@ -83986,7 +83985,7 @@ def trimCtx(*args, **kwargs):
     pass
 
 
-def polyUVCoverage(uvRange=None, *args, **kwargs):
+def polyUVCoverage(*args, uvRange=None, **kwargs):
     """
     Return the UV space coverage of the specified components
     
@@ -84042,7 +84041,7 @@ def AddCombinationTargetOptions(*args, **kwargs):
     pass
 
 
-def artAttrSkinPaintCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="",
+def artAttrSkinPaintCtx(*args, accopacity=False, activeListChangedProc="", afterStrokeCmd="",
                         alphaclamp="none", alphaclamplower=0.0, alphaclampupper=1.0,
                         attrSelected="", beforeStrokeCmd="", brushalignment=True,
                         brushfeedback=True, clamp="none", clamplower=0.0, clampupper=1.0,
@@ -84071,7 +84070,7 @@ def artAttrSkinPaintCtx(accopacity=False, activeListChangedProc="", afterStrokeC
                         tablet=True, tangentOutline=True, toolOffProc="", toolOnProc="",
                         useColorRamp=True, useMaxMinColor=True, usepressure=False, value=0.0,
                         whichTool="", worldRadius=0.0, xrayJoints=True, q=True, query=True,
-                        e=True, edit=True, *args, **kwargs):
+                        e=True, edit=True, **kwargs):
     """
     This is a context command to set the flags on the artAttrContext, which is the base context
     for attribute painting operations  All commands require the name of the context as the last
@@ -84392,10 +84391,10 @@ def RemoveConstraintTarget(*args, **kwargs):
     pass
 
 
-def iconTextRadioCollection(collectionItemArray=True, defineTemplate="", disableCommands=True,
-                            exists=True, gl=True, numberOfCollectionItems=True, parent="",
-                            select="", useTemplate="", q=True, query=True, e=True, edit=True,
-                            *args, **kwargs):
+def iconTextRadioCollection(*args, collectionItemArray=True, defineTemplate="",
+                            disableCommands=True, exists=True, gl=True,
+                            numberOfCollectionItems=True, parent="", select="", useTemplate="",
+                            q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a cluster for iconTextRadioButtons  Clusters will be parented to the
     current default layout if no parent is specified with the -p/parent flag  As children of
@@ -84484,15 +84483,15 @@ def DetachCurve(*args, **kwargs):
     pass
 
 
-def commandLine(annotation="", backgroundColor=None, command=None, defineTemplate="", docTag="",
-                dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
-                enableKeyboardFocus=True, enterCommand=None, exists=True, fullPathName=True,
-                height=0, highlightColor=None, holdFocus=True, inputAnnotation="",
-                isObscured=True, manage=True, noBackground=True, numberOfHistoryLines=0,
-                numberOfPopupMenus=True, outputAnnotation="", parent="", popupMenuArray=True,
-                preventOverride=True, sourceType="", statusBarMessage="", useTemplate="",
-                visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-                edit=True, *args, **kwargs):
+def commandLine(*args, annotation="", backgroundColor=None, command=None, defineTemplate="",
+                docTag="", dragCallback=None, dropCallback=None, enable=True,
+                enableBackground=True, enableKeyboardFocus=True, enterCommand=None, exists=True,
+                fullPathName=True, height=0, highlightColor=None, holdFocus=True,
+                inputAnnotation="", isObscured=True, manage=True, noBackground=True,
+                numberOfHistoryLines=0, numberOfPopupMenus=True, outputAnnotation="", parent="",
+                popupMenuArray=True, preventOverride=True, sourceType="", statusBarMessage="",
+                useTemplate="", visible=True, visibleChangeCommand=None, width=0, q=True,
+                query=True, e=True, edit=True, **kwargs):
     """
     This command creates a single line for command input/output.
     
@@ -84657,8 +84656,8 @@ def AddPondBoatLocator(*args, **kwargs):
     pass
 
 
-def texTweakUVContext(exists=True, image1="", image2="", image3="", position=True,
-                      tolerance=0.0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def texTweakUVContext(*args, exists=True, image1="", image2="", image3="", position=True,
+                      tolerance=0.0, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a texture editor move manip context 
     Note that the above flags control the global behaviour of all texture editor move manip
@@ -84716,10 +84715,10 @@ def UVIsolateLoadSet(*args, **kwargs):
     pass
 
 
-def polyStraightenUVBorder(blendOriginal=0.0, caching=True, constructionHistory=True,
+def polyStraightenUVBorder(*args, blendOriginal=0.0, caching=True, constructionHistory=True,
                            curvature=0.0, gapTolerance=0, name="", nodeState=0,
                            preserveLength=0.0, uvSetName="", worldSpace=True, q=True,
-                           query=True, e=True, edit=True, *args, **kwargs):
+                           query=True, e=True, edit=True, **kwargs):
     """
     Move border UVs along a simple curve
     
@@ -84872,12 +84871,12 @@ def GraphSnap(*args, **kwargs):
     pass
 
 
-def deltaMush(after=True, afterReference=True, before=True, deformerTools=True, envelope=1,
-              exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
+def deltaMush(*args, after=True, afterReference=True, before=True, deformerTools=True,
+              envelope=1, exclusive="", frontOfChain=True, geometry="", geometryIndices=True,
               ignoreSelected=True, includeHiddenSelections=False, inwardConstraint=0.0, name="",
               outwardConstraint=0.0, parallel=True, pinBorderVertices=True, prune=True,
               remove=True, smoothingIterations=10, smoothingStep=0.5, split=True, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     This command is used to create, edit and query deltaMush nodes
     
@@ -85042,7 +85041,7 @@ def PickWalkUpSelect(*args, **kwargs):
     pass
 
 
-def checkDefaultRenderGlobals(q=True, query=True, e=True, edit=True, *args, **kwargs):
+def checkDefaultRenderGlobals(*args, q=True, query=True, e=True, edit=True, **kwargs):
     """
     To query whether or not the defaultRenderGlobals node has been modified since the last file
     save, use `ls -modified`  To force the scene to be dirty/clean use `file -modified`
@@ -85096,8 +85095,8 @@ def TimeEditorToggleSnapToClipRelease(*args, **kwargs):
     pass
 
 
-def arclen(caching=True, constructionHistory=True, nodeState=0, q=True, query=True, e=True,
-           edit=True, *args, **kwargs):
+def arclen(*args, caching=True, constructionHistory=True, nodeState=0, q=True, query=True,
+           e=True, edit=True, **kwargs):
     """
     This command returns the arclength of a curve if the history flag is not set (the default) 
     If the history flag is set, a node is created that can produce the arclength, and is
@@ -85119,7 +85118,7 @@ def arclen(caching=True, constructionHistory=True, nodeState=0, q=True, query=Tr
     pass
 
 
-def dimWhen(clear=True, false=True, true=True, *args, **kwargs):
+def dimWhen(*args, clear=True, false=True, true=True, **kwargs):
     """
     This method attaches the named UI object (first argument) to the named condition (second
     argument) so that the object will be dimmed when the condition is in a particular state  
@@ -85146,8 +85145,8 @@ def DeleteMotionPaths(*args, **kwargs):
     pass
 
 
-def polyUniteSkinned(centerPivot=True, constructionHistory=True, mergeUVSets=1,
-                     objectPivot=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyUniteSkinned(*args, centerPivot=True, constructionHistory=True, mergeUVSets=1,
+                     objectPivot=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to combine poly mesh objects (as polyUnite) while retaining the smooth skinning
     setup on the combined object
@@ -85170,8 +85169,8 @@ def polyUniteSkinned(centerPivot=True, constructionHistory=True, mergeUVSets=1,
     pass
 
 
-def polyMapDel(caching=True, constructionHistory=True, name="", nodeState=0, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+def polyMapDel(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+               query=True, e=True, edit=True, **kwargs):
     """
     Deletes texture coordinates (UVs) from selected faces
     
@@ -85194,16 +85193,16 @@ def polyMapDel(caching=True, constructionHistory=True, name="", nodeState=0, q=T
     pass
 
 
-def swatchDisplayPort(annotation="", backgroundColor=None, borderColor=None, borderWidth=0,
-                      defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
-                      enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
-                      fullPathName=True, height=0, highlightColor=None, isObscured=True,
-                      manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
-                      popupMenuArray=True, pressCommand=None, preventOverride=True,
-                      renderPriority=0, renderSize=0, shadingNode=None, statusBarMessage="",
-                      useTemplate="", visible=True, visibleChangeCommand=None, width=0,
-                      widthHeight=None, q=True, query=True, e=True, edit=True, *args,
-                      **kwargs):
+def swatchDisplayPort(*args, annotation="", backgroundColor=None, borderColor=None,
+                      borderWidth=0, defineTemplate="", docTag="", dragCallback=None,
+                      dropCallback=None, enable=True, enableBackground=True,
+                      enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                      highlightColor=None, isObscured=True, manage=True, noBackground=True,
+                      numberOfPopupMenus=True, parent="", popupMenuArray=True,
+                      pressCommand=None, preventOverride=True, renderPriority=0, renderSize=0,
+                      shadingNode=None, statusBarMessage="", useTemplate="", visible=True,
+                      visibleChangeCommand=None, width=0, widthHeight=None, q=True, query=True,
+                      e=True, edit=True, **kwargs):
     """
     This command creates a 3dPort that displays a swatch representing the shading node   The
     optional argument is the name of the 3dPort
@@ -85305,8 +85304,8 @@ def swatchDisplayPort(annotation="", backgroundColor=None, borderColor=None, bor
     pass
 
 
-def particleFill(closePacking=True, doubleWalled=True, maxX=0.0, maxY=0.0, maxZ=0.0, minX=0.0,
-                 minY=0.0, minZ=0.0, particleDensity=0.0, resolution=0, *args, **kwargs):
+def particleFill(*args, closePacking=True, doubleWalled=True, maxX=0.0, maxY=0.0, maxZ=0.0,
+                 minX=0.0, minY=0.0, minZ=0.0, particleDensity=0.0, resolution=0, **kwargs):
     """
     This command generates an nParticle system that fills the selected object with a grid of
     particles
@@ -85355,11 +85354,11 @@ def SnapKeys(*args, **kwargs):
     pass
 
 
-def polyOptUvs(applyToShell=True, areaWeight=0.0, caching=True, constructionHistory=True,
+def polyOptUvs(*args, applyToShell=True, areaWeight=0.0, caching=True, constructionHistory=True,
                globalBlend=0.0, globalMethodBlend=0.0, iterations=0, name="", nodeState=0,
                optimizeAxis=0, pinSelected=True, pinUvBorder=True, scale=0.0,
                stoppingThreshold=0.0, useScale=True, uvSetName="", worldSpace=True, q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     Optimizes selected UVs
     
@@ -85487,8 +85486,8 @@ def UVEditorInvertPin(*args, **kwargs):
     pass
 
 
-def polyUVRectangle(caching=True, constructionHistory=True, name="", nodeState=0, q=True,
-                    query=True, e=True, edit=True, *args, **kwargs):
+def polyUVRectangle(*args, caching=True, constructionHistory=True, name="", nodeState=0, q=True,
+                    query=True, e=True, edit=True, **kwargs):
     """
     Given two vertices, does one of the following: 1) If the vertices define opposite corners
     of a rectangular area of quads, assigns a grid of UVs spanning the 0-1 area to that
@@ -85514,8 +85513,8 @@ def polyUVRectangle(caching=True, constructionHistory=True, name="", nodeState=0
     pass
 
 
-def keyframeRegionTrackCtx(exists=True, history=True, image1="", image2="", image3="", name="",
-                           q=True, query=True, e=True, edit=True, *args, **kwargs):
+def keyframeRegionTrackCtx(*args, exists=True, history=True, image1="", image2="", image3="",
+                           name="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create a track context for the dope sheet editor
     
@@ -85592,7 +85591,7 @@ def nexOpt(*args, **kwargs):
     pass
 
 
-def polyCacheMonitor(cacheValue=True, nodeName="", *args, **kwargs):
+def polyCacheMonitor(*args, cacheValue=True, nodeName="", **kwargs):
     """
     When the cacheInput attribute has a positive value the midModifier node caches the output
     mesh improving performance in computations of downstream nodes  When the counter has a zero
@@ -85736,15 +85735,15 @@ def DeletePolyElements(*args, **kwargs):
     pass
 
 
-def exclusiveLightCheckBox(annotation="", backgroundColor=None, defineTemplate="", docTag="",
-                           dragCallback=None, dropCallback=None, enable=True,
+def exclusiveLightCheckBox(*args, annotation="", backgroundColor=None, defineTemplate="",
+                           docTag="", dragCallback=None, dropCallback=None, enable=True,
                            enableBackground=True, enableKeyboardFocus=True, exists=True,
                            fullPathName=True, height=0, highlightColor=None, isObscured=True,
                            label="", light=None, manage=True, noBackground=True,
                            numberOfPopupMenus=True, parent="", popupMenuArray=True,
                            preventOverride=True, statusBarMessage="", useTemplate="",
                            visible=True, visibleChangeCommand=None, width=0, q=True, query=True,
-                           e=True, edit=True, *args, **kwargs):
+                           e=True, edit=True, **kwargs):
     """
     This command creates a checkBox that controls a light's exclusive non-exclusive status  An
     exclusive light is one that is not hooked up to the default-light-list, thus it does not
@@ -85988,10 +85987,10 @@ def PickWalkDownSelect(*args, **kwargs):
     pass
 
 
-def normalConstraint(aimVector=None, layer="", name="", remove=True, targetList=True,
+def normalConstraint(*args, aimVector=None, layer="", name="", remove=True, targetList=True,
                      upVector=None, weight=0.0, weightAliasList=True, worldUpObject=None,
                      worldUpType="", worldUpVector=None, q=True, query=True, e=True, edit=True,
-                     *args, **kwargs):
+                     **kwargs):
     """
     Constrain an object's orientation based on the normal of the target surface(s) at the
     closest point(s) to the object   A normalConstraint takes as input one or more surface
@@ -86052,8 +86051,8 @@ def DeleteAllHistory(*args, **kwargs):
     pass
 
 
-def baseTemplate(exists=True, fileName="", force=True, load=True, matchFile="", silent=True,
-                 unload=True, viewList="", q=True, query=True, e=True, edit=True, *args,
+def baseTemplate(*args, exists=True, fileName="", force=True, load=True, matchFile="",
+                 silent=True, unload=True, viewList="", q=True, query=True, e=True, edit=True,
                  **kwargs):
     """
     This is the class for the commands that edit and/or query templates
@@ -86110,12 +86109,12 @@ def ToggleSymmetryDisplay(*args, **kwargs):
     pass
 
 
-def setKeyframe(animLayer="", animated=False, attribute="", breakdown=False, clip="",
+def setKeyframe(*args, animLayer="", animated=False, attribute="", breakdown=False, clip="",
                 controlPoints=False, dirtyDG=True, float=0.0, hierarchy="", identity=True,
                 inTangentType="", insert=True, insertBlend=True, minimizeRotation=False,
                 noResolve=True, outTangentType="", respectKeyable=True, shape=True, time=None,
                 useCurrentLockedWeights=False, value=0.0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command creates keyframes for the specified objects, or the active objects if none are
     specified on the command line   The default time for the new keyframes is the current time 
@@ -86222,9 +86221,9 @@ def PolyRemoveCrease(*args, **kwargs):
     pass
 
 
-def hardenPointCurve(caching=True, multiplicity=1, nodeState=0, constructionHistory=True,
+def hardenPointCurve(*args, caching=True, multiplicity=1, nodeState=0, constructionHistory=True,
                      name="", object=True, replaceOriginal=True, q=True, query=True, e=True,
-                     edit=True, *args, **kwargs):
+                     edit=True, **kwargs):
     """
     The hardenPointCurve command changes the knots of a curve given a list of control point
     indices so that the knot corresponding to that control point gets the specified
@@ -86284,10 +86283,10 @@ def LODGenerateMeshesOptions(*args, **kwargs):
     pass
 
 
-def selLoadSettings(activeProxy="", deferReference=True, fileName="", numSettings=0,
+def selLoadSettings(*args, activeProxy="", deferReference=True, fileName="", numSettings=0,
                     proxyManager="", proxySetFiles="", proxySetTags="", proxyTag="",
                     referenceNode="", shortName=True, unresolvedName=True, q=True, query=True,
-                    e=True, edit=True, *args, **kwargs):
+                    e=True, edit=True, **kwargs):
     """
     This command is used to edit and query information about the implicit load settings 
     Currently this is primarily intended for internal use within the Preload Reference Editor 
@@ -86362,7 +86361,7 @@ def BevelPolygonOptions(*args, **kwargs):
     pass
 
 
-def isDirty(connection=True, datablock=True, *args, **kwargs):
+def isDirty(*args, connection=True, datablock=True, **kwargs):
     """
     The isDirty command is used to check if a plug is dirty  The return value is 0 if it is not
     and 1 if it is  If more than one plug is specified then the result is the logical "or" of
@@ -86409,13 +86408,13 @@ def ToggleCharacterControls(*args, **kwargs):
     pass
 
 
-def lattice(after=True, afterReference=True, before=True, commonParent=True, deformerTools=True,
-            divisions=None, dualBase=True, exclusive="", freezeMapping=True, frontOfChain=True,
-            geometry="", geometryIndices=True, ignoreSelected=True,
+def lattice(*args, after=True, afterReference=True, before=True, commonParent=True,
+            deformerTools=True, divisions=None, dualBase=True, exclusive="", freezeMapping=True,
+            frontOfChain=True, geometry="", geometryIndices=True, ignoreSelected=True,
             includeHiddenSelections=False, latticeReset=True, ldivisions=None, name="",
             objectCentered=True, outsideFalloffDistance=0.0, outsideLattice=0, parallel=True,
             position=None, prune=True, remove=True, removeTweaks=True, rotation=None,
-            scale=None, split=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+            scale=None, split=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a lattice deformer that will deform the selected objects  If the
     object centered flag is used, the initial lattice will fit around the selected objects  The
@@ -86509,10 +86508,10 @@ def lattice(after=True, afterReference=True, before=True, commonParent=True, def
     pass
 
 
-def pointCurveConstraint(caching=True, nodeState=0, pointConstraintUVW=None, pointWeight=1.0,
-                         position=None, weight=0.0, constructionHistory=True, name="",
-                         object=True, replaceOriginal=True, q=True, query=True, e=True,
-                         edit=True, *args, **kwargs):
+def pointCurveConstraint(*args, caching=True, nodeState=0, pointConstraintUVW=None,
+                         pointWeight=1.0, position=None, weight=0.0, constructionHistory=True,
+                         name="", object=True, replaceOriginal=True, q=True, query=True, e=True,
+                         edit=True, **kwargs):
     """
     The command enables direct manipulation of a NURBS curve  It does so by apply a position
     constraint at the specified parameter location on the NURBS curve   If construction history
@@ -86566,8 +86565,8 @@ def createSubdivRegion(*args, **kwargs):
     pass
 
 
-def hotkeyCheck(altModifier=True, commandModifier=True, ctrlModifier=True, isRepeatable=True,
-                keyString="", keyUp=True, optionModifier=True, *args, **kwargs):
+def hotkeyCheck(*args, altModifier=True, commandModifier=True, ctrlModifier=True,
+                isRepeatable=True, keyString="", keyUp=True, optionModifier=True, **kwargs):
     """
     This command checks if the given hotkey is mapped to a nameCommand object  If so, the
     annotation of the nameCommand object is returned  Otherwise an empty string is returned
@@ -86595,7 +86594,7 @@ def hotkeyCheck(altModifier=True, commandModifier=True, ctrlModifier=True, isRep
     pass
 
 
-def moduleInfo(definition=True, listModules=True, moduleName="", path=True, version=True, *args,
+def moduleInfo(*args, definition=True, listModules=True, moduleName="", path=True, version=True,
                **kwargs):
     """
     Returns information on modules found by Maya
@@ -86622,8 +86621,8 @@ def moduleInfo(definition=True, listModules=True, moduleName="", path=True, vers
     pass
 
 
-def whatsNewHighlight(highlightColor=None, highlightOn=True, showStartupDialog=True, q=True,
-                      query=True, *args, **kwargs):
+def whatsNewHighlight(*args, highlightColor=None, highlightOn=True, showStartupDialog=True,
+                      q=True, query=True, **kwargs):
     """
     This command is used to toggle the What's New highlighting feature, and the display of the
     settings dialog for the feature that appears on startup
@@ -86666,7 +86665,7 @@ def ToggleCommandLine(*args, **kwargs):
     pass
 
 
-def polyFlipEdge(q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyFlipEdge(*args, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to flip the edges shared by 2 adjacent triangles  When used with the edit flag, new
     edges can be added to the same node, instead of creating a separate node in the chain
@@ -86699,12 +86698,12 @@ def UVStraighten(*args, **kwargs):
     pass
 
 
-def filePathEditor(attributeOnly=True, attributeType="", byType="", copyAndRepath=None,
+def filePathEditor(*args, attributeOnly=True, attributeType="", byType="", copyAndRepath=None,
                    deregisterType="", force=True, listDirectories="", listFiles="",
                    listRegisteredTypes=True, preview=True, recursive=True, refresh=True,
                    registerType="", relativeNames=True, repath="", replaceAll=True,
                    replaceField="", replaceString=None, status=True, temporary=True,
-                   typeLabel="", unresolved=True, withAttribute=True, q=True, query=True, *args,
+                   typeLabel="", unresolved=True, withAttribute=True, q=True, query=True,
                    **kwargs):
     """
     Maya can reference and use external files, such as textures or other Maya scenes  This
@@ -86797,9 +86796,9 @@ def DisableExpressions(*args, **kwargs):
     pass
 
 
-def shadingNode(asLight=True, asPostProcess=True, asRendering=True, asShader=True,
+def shadingNode(*args, asLight=True, asPostProcess=True, asRendering=True, asShader=True,
                 asTexture=True, asUtility=True, isColorManaged=True, name="", parent="",
-                shared=True, skipSelect=True, *args, **kwargs):
+                shared=True, skipSelect=True, **kwargs):
     """
     This command creates a new node in the dependency graph of the specified type   The
     shadingNode command classifies any DG node as a shader, texture light, post process, or
@@ -86866,10 +86865,10 @@ def DeleteCurrentUVSet(*args, **kwargs):
     pass
 
 
-def polyPlane(axis=None, createUVs=1, height=1.0, subdivisionsHeight=0, subdivisionsWidth=10,
-              subdivisionsX=5, subdivisionsY=5, texture=1, width=1.0, caching=True,
-              constructionHistory=True, name="", nodeState=0, object=True, q=True, query=True,
-              e=True, edit=True, *args, **kwargs):
+def polyPlane(*args, axis=None, createUVs=1, height=1.0, subdivisionsHeight=0,
+              subdivisionsWidth=10, subdivisionsX=5, subdivisionsY=5, texture=1, width=1.0,
+              caching=True, constructionHistory=True, name="", nodeState=0, object=True, q=True,
+              query=True, e=True, edit=True, **kwargs):
     """
     Create a new polygonal plane
     
@@ -86924,9 +86923,9 @@ def xgmDensityBrushContext(*args, **kwargs):
     pass
 
 
-def texturePlacementContext(exists=True, history=True, image1="", image2="", image3="",
+def texturePlacementContext(*args, exists=True, history=True, image1="", image2="", image3="",
                             labelMapping=True, name="", q=True, query=True, e=True, edit=True,
-                            *args, **kwargs):
+                            **kwargs):
     """
     Create a command for creating new texture placement contexts  By default label mapping is
     on when the context is created
@@ -86957,16 +86956,16 @@ def texturePlacementContext(exists=True, history=True, image1="", image2="", ima
     pass
 
 
-def floatField(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
-               docTag="", dragCallback=None, dragCommand=None, dropCallback=None, editable=True,
-               enable=True, enableBackground=True, enableKeyboardFocus=True, enterCommand=None,
-               exists=True, fullPathName=True, height=0, highlightColor=None, isObscured=True,
-               manage=True, maxValue=0.0, minValue=0.0, noBackground=True,
-               numberOfPopupMenus=True, parent="", popupMenuArray=True, precision=0,
-               preventOverride=True, receiveFocusCommand=None, showTrailingZeros=True,
-               statusBarMessage="", step=0.0, useTemplate="", value=0.0, visible=True,
-               visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True, *args,
-               **kwargs):
+def floatField(*args, annotation="", backgroundColor=None, changeCommand=None,
+               defineTemplate="", docTag="", dragCallback=None, dragCommand=None,
+               dropCallback=None, editable=True, enable=True, enableBackground=True,
+               enableKeyboardFocus=True, enterCommand=None, exists=True, fullPathName=True,
+               height=0, highlightColor=None, isObscured=True, manage=True, maxValue=0.0,
+               minValue=0.0, noBackground=True, numberOfPopupMenus=True, parent="",
+               popupMenuArray=True, precision=0, preventOverride=True, receiveFocusCommand=None,
+               showTrailingZeros=True, statusBarMessage="", step=0.0, useTemplate="", value=0.0,
+               visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     Create a field control that accepts only float values and is bound by a minimum and maximum
     value  An invisible slider is attached to the field and accessed by holding down the Ctrl
@@ -87141,9 +87140,9 @@ def FrontPerspViewLayout(*args, **kwargs):
     pass
 
 
-def polySewEdge(caching=True, constructionHistory=True, name="", nodeState=0, texture=True,
-                tolerance=0.0, worldSpace=True, q=True, query=True, e=True, edit=True, *args,
-                **kwargs):
+def polySewEdge(*args, caching=True, constructionHistory=True, name="", nodeState=0,
+                texture=True, tolerance=0.0, worldSpace=True, q=True, query=True, e=True,
+                edit=True, **kwargs):
     """
     Merge border edges within a given threshold.
     
@@ -87183,7 +87182,7 @@ def EnableNRigids(*args, **kwargs):
     pass
 
 
-def renderLayerPostProcess(keepImages=True, sceneName="", q=True, query=True, *args, **kwargs):
+def renderLayerPostProcess(*args, keepImages=True, sceneName="", q=True, query=True, **kwargs):
     """
     Post process the results when rendering is done with  Presently this generates a layered
     PSD file using individual iff files
@@ -87200,9 +87199,9 @@ def renderLayerPostProcess(keepImages=True, sceneName="", q=True, query=True, *a
     pass
 
 
-def polyPrimitive(axis=None, createUVs=0, polyType=0, radius=1.0, sideLength=1.0, texture=0,
-                  caching=True, constructionHistory=True, name="", nodeState=0, object=True,
-                  q=True, query=True, e=True, edit=True, *args, **kwargs):
+def polyPrimitive(*args, axis=None, createUVs=0, polyType=0, radius=1.0, sideLength=1.0,
+                  texture=0, caching=True, constructionHistory=True, name="", nodeState=0,
+                  object=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     Create a polygon primative
     
@@ -87253,8 +87252,8 @@ def HypershadeDisplayAsList(*args, **kwargs):
     pass
 
 
-def textCurves(font="", name="", object=True, text="", q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+def textCurves(*args, font="", name="", object=True, text="", q=True, query=True, e=True,
+               edit=True, **kwargs):
     """
     The textCurves command creates NURBS curves from a text string using the specified font   A
     single letter can be made up of more than one NURBS curve  The number of curves per letter
@@ -87283,10 +87282,10 @@ def textureLassoContext(*args, **kwargs):
     pass
 
 
-def vortex(attenuation=0.0, axisX=0.0, axisY=0.0, axisZ=0.0, magnitude=0.0, maxDistance=0.0,
-           name="", perVertex=True, position=None, torusSectionRadius=0.0, volumeExclusion=True,
-           volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True, query=True, e=True,
-           edit=True, *args, **kwargs):
+def vortex(*args, attenuation=0.0, axisX=0.0, axisY=0.0, axisZ=0.0, magnitude=0.0,
+           maxDistance=0.0, name="", perVertex=True, position=None, torusSectionRadius=0.0,
+           volumeExclusion=True, volumeOffset=None, volumeShape="", volumeSweep=0.0, q=True,
+           query=True, e=True, edit=True, **kwargs):
     """
     For each listed object, the command creates a new field  The field has a shape which lives
     in the DAG and it has an associated dependency node  The field is added to the list of
@@ -87350,8 +87349,8 @@ def HypershadeGraphRemoveDownstream(*args, **kwargs):
     pass
 
 
-def ikSolver(epsilon=0.0, maxIterations=0, name="", solverType="", q=True, query=True, e=True,
-             edit=True, *args, **kwargs):
+def ikSolver(*args, epsilon=0.0, maxIterations=0, name="", solverType="", q=True, query=True,
+             e=True, edit=True, **kwargs):
     """
     The ikSolver command is used to set the attributes for an IK Solver or create a new one 
     The standard edit (-e) and query (-q) flags are used for edit and query functions
@@ -87379,9 +87378,9 @@ def CreateDirectionalLight(*args, **kwargs):
     pass
 
 
-def fluidCacheInfo(attribute="", cacheTime=None, endFrame=True, hasCache=True, hasData=True,
-                   initialConditions=True, playback=True, resolution=True, startFrame=True,
-                   q=True, query=True, e=True, edit=True, *args, **kwargs):
+def fluidCacheInfo(*args, attribute="", cacheTime=None, endFrame=True, hasCache=True,
+                   hasData=True, initialConditions=True, playback=True, resolution=True,
+                   startFrame=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     A command to get information about the fluids cache  Get the startFrame and resolution for
     InitialConditions  Get the endFrame as well for a playback cache  Note that for the
@@ -87417,8 +87416,8 @@ def fluidCacheInfo(attribute="", cacheTime=None, endFrame=True, hasCache=True, h
     pass
 
 
-def soft(convert=True, duplicate=True, duplicateHistory=True, goal=0.0, hideOriginal=True,
-         name="", q=True, query=True, *args, **kwargs):
+def soft(*args, convert=True, duplicate=True, duplicateHistory=True, goal=0.0,
+         hideOriginal=True, name="", q=True, query=True, **kwargs):
     """
     Makes a soft body from the object(s) passed on the command line or in the selection list 
     The geometry can be a NURBS, polygonal, lattice object  The resulting soft body is made up
@@ -87492,8 +87491,8 @@ def CreateSubdivCube(*args, **kwargs):
     pass
 
 
-def transferShadingSets(sampleSpace=0, searchMethod=0, q=True, query=True, e=True, edit=True,
-                        *args, **kwargs):
+def transferShadingSets(*args, sampleSpace=0, searchMethod=0, q=True, query=True, e=True,
+                        edit=True, **kwargs):
     """
     Command to transfer shading set assignments between meshes  The last mesh in the list
     receives the shading assignments from the other meshes
@@ -87511,8 +87510,8 @@ def transferShadingSets(sampleSpace=0, searchMethod=0, q=True, query=True, e=Tru
     pass
 
 
-def tumble(azimuthAngle=0.0, elevationAngle=0.0, localTumble=0, pivotPoint=None,
-           rotationAngles=None, *args, **kwargs):
+def tumble(*args, azimuthAngle=0.0, elevationAngle=0.0, localTumble=0, pivotPoint=None,
+           rotationAngles=None, **kwargs):
     """
     The tumble command revolves the camera(s) by varying the azimuth and elevation angles in
     the perspective window  When both the azimuth and the elevation angles are supplied on the
@@ -87545,10 +87544,10 @@ def dispatchGenericCommand(*args, **kwargs):
     pass
 
 
-def workspaceControlState(defaultTopLeftCorner=None, defaultWidthHeight=None, exists=True,
-                          height=0, leftEdge=0, maximized=True, remove=True, topEdge=0,
-                          topLeftCorner=None, width=0, widthHeight=None, q=True, query=True,
-                          e=True, edit=True, *args, **kwargs):
+def workspaceControlState(*args, defaultTopLeftCorner=None, defaultWidthHeight=None,
+                          exists=True, height=0, leftEdge=0, maximized=True, remove=True,
+                          topEdge=0, topLeftCorner=None, width=0, widthHeight=None, q=True,
+                          query=True, e=True, edit=True, **kwargs):
     """
     Create or modify preferred window attributes for workspace controls  The size and position
     of a workspace control is retained during application sessions (although position only
@@ -87589,7 +87588,7 @@ def workspaceControlState(defaultTopLeftCorner=None, defaultWidthHeight=None, ex
     pass
 
 
-def bezierAnchorPreset(preset=0, *args, **kwargs):
+def bezierAnchorPreset(*args, preset=0, **kwargs):
     """
     This command provides a queryable interface for Bezier curve shapes
     
@@ -87638,8 +87637,9 @@ def AlembicOpen(*args, **kwargs):
     pass
 
 
-def bezierInfo(anchorFromCV=0, cvFromAnchor=0, isAnchorSelected=True, isTangentSelected=True,
-               onlyAnchorsSelected=True, onlyTangentsSelected=True, *args, **kwargs):
+def bezierInfo(*args, anchorFromCV=0, cvFromAnchor=0, isAnchorSelected=True,
+               isTangentSelected=True, onlyAnchorsSelected=True, onlyTangentsSelected=True,
+               **kwargs):
     """
     This command provides a queryable interface for Bezier curve shapes
     
@@ -87693,14 +87693,14 @@ def CreateNURBSCone(*args, **kwargs):
     pass
 
 
-def sceneEditor(control=True, defineTemplate="", docTag="", exists=True, filter="",
+def sceneEditor(*args, control=True, defineTemplate="", docTag="", exists=True, filter="",
                 forceMainConnection="", highlightConnection="", lockMainConnection=True,
                 mainListConnection="", onlyParents=True, panel="", parent="",
                 refreshReferences=True, selectCommand=None, selectItem=0, selectReference="",
                 selectionConnection="", shortName=True, stateString=True, unParent=True,
                 unlockMainConnection=True, unresolvedName=True, updateMainConnection=True,
                 useTemplate="", withoutCopyNumber=True, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This creates an editor for managing the files in a scene
     
@@ -87844,9 +87844,9 @@ def NodeEditorAddIterationStatePorts(*args, **kwargs):
     pass
 
 
-def attrCompatibility(addAttr=True, clear=True, dumpTable=True, enable=True, nodeRename="",
-                      pluginNode="", removeAttr=True, renameAttr="", type="", version="", *args,
-                      **kwargs):
+def attrCompatibility(*args, addAttr=True, clear=True, dumpTable=True, enable=True,
+                      nodeRename="", pluginNode="", removeAttr=True, renameAttr="", type="",
+                      version="", **kwargs):
     """
     This command is used by Maya to handle compatibility issues between file format versions by
     providing a mechanism to describe differences between two versions  Plug-in writers can
@@ -87885,9 +87885,9 @@ def attrCompatibility(addAttr=True, clear=True, dumpTable=True, enable=True, nod
     pass
 
 
-def timeEditor(allClips="", clipId=0, commonParentTrack=True, composition="",
+def timeEditor(*args, allClips="", clipId=0, commonParentTrack=True, composition="",
                drivingClipsForAttr="", drivingClipsForObj=None, includeParent=True, mute=True,
-               selectedClips="", topLevelClips="", q=True, query=True, *args, **kwargs):
+               selectedClips="", topLevelClips="", q=True, query=True, **kwargs):
     """
     General Time Editor commands
     
@@ -87941,9 +87941,10 @@ def PerformanceSettingsWindow(*args, **kwargs):
     pass
 
 
-def smoothTangentSurface(caching=True, direction=1, nodeState=0, parameter=0.0, smoothness=1,
-                         constructionHistory=True, name="", object=True, replaceOriginal=True,
-                         q=True, query=True, e=True, edit=True, *args, **kwargs):
+def smoothTangentSurface(*args, caching=True, direction=1, nodeState=0, parameter=0.0,
+                         smoothness=1, constructionHistory=True, name="", object=True,
+                         replaceOriginal=True, q=True, query=True, e=True, edit=True,
+                         **kwargs):
     """
     The smoothTangentSurface command smooths the surface along an isoparm at each parameter
     value  The name of the surface is returned and if history is on, the name of the resulting
@@ -88036,8 +88037,8 @@ def PolyBrushMarkingMenu(*args, **kwargs):
     pass
 
 
-def baseView(itemInfo="", itemList=True, viewDescription=True, viewLabel=True, viewList=True,
-             viewName="", q=True, query=True, e=True, edit=True, *args, **kwargs):
+def baseView(*args, itemInfo="", itemList=True, viewDescription=True, viewLabel=True,
+             viewList=True, viewName="", q=True, query=True, e=True, edit=True, **kwargs):
     """
     A view defines the layout information for the attributes of a particular node type or
     container  Views can be selected from a set of built-in views or may be defined on an
@@ -88098,11 +88099,11 @@ def PolygonPaste(*args, **kwargs):
     pass
 
 
-def nurbsToSubdivPref(bridge=0, capType=0, collapsePoles=True, matchPeriodic=True,
+def nurbsToSubdivPref(*args, bridge=0, capType=0, collapsePoles=True, matchPeriodic=True,
                       maxPolyCount=0, offset=0.0, reverseNormal=True, solidType=0, trans00=0.0,
                       trans01=0.0, trans02=0.0, trans10=0.0, trans11=0.0, trans12=0.0,
                       trans20=0.0, trans21=0.0, trans22=0.0, trans30=0.0, trans31=0.0,
-                      trans32=0.0, q=True, query=True, *args, **kwargs):
+                      trans32=0.0, q=True, query=True, **kwargs):
     """
     This command sets the values used by the nurbs-to-subdivision surface preference  This
     preference is used by the nurbs creation commands and is saved between Maya sessions   To
@@ -88156,9 +88157,9 @@ def nurbsToSubdivPref(bridge=0, capType=0, collapsePoles=True, matchPeriodic=Tru
     pass
 
 
-def audioTrack(insertTrack=0, lock=True, mute=True, numTracks=0, removeEmptyTracks=True,
+def audioTrack(*args, insertTrack=0, lock=True, mute=True, numTracks=0, removeEmptyTracks=True,
                removeTrack=0, solo=True, swapTracks=None, title="", track=0, q=True, query=True,
-               e=True, edit=True, *args, **kwargs):
+               e=True, edit=True, **kwargs):
     """
     This command is used for inserting and removing tracks related to the audio clips displayed
     in the sequencer  It can also be used to modify the track state, for example, to lock or
@@ -88198,8 +88199,8 @@ def audioTrack(insertTrack=0, lock=True, mute=True, numTracks=0, removeEmptyTrac
     pass
 
 
-def imfPlugins(extension="", keyword="", multiFrameSupport="", pluginName="", readSupport="",
-               writeSupport="", q=True, query=True, *args, **kwargs):
+def imfPlugins(*args, extension="", keyword="", multiFrameSupport="", pluginName="",
+               readSupport="", writeSupport="", q=True, query=True, **kwargs):
     """
     This command queries all the available imf plugins for its name, keyword or image file
     extension  Only one of the attributes (name, keyword or extension) can be queried at a time
@@ -88231,14 +88232,14 @@ def UnitizeUVsOptions(*args, **kwargs):
     pass
 
 
-def polySmooth(caching=True, constructionHistory=True, name="", nodeState=0, continuity=1.0,
-               degree=0, divisions=1, divisionsPerEdge=0, keepBorder=True, keepHardEdge=False,
-               keepMapBorders=0, keepSelectionBorder=False, keepTesselation=True,
-               keepTessellation=True, method=0, osdCreaseMethod=0, osdFvarBoundary=0,
-               osdFvarPropagateCorners=True, osdSmoothTriangles=True, osdVertBoundary=0,
-               propagateEdgeHardness=False, pushStrength=0.0, roundness=0.0, smoothUVs=True,
-               subdivisionLevels=0, subdivisionType=0, q=True, query=True, e=True, edit=True,
-               *args, **kwargs):
+def polySmooth(*args, caching=True, constructionHistory=True, name="", nodeState=0,
+               continuity=1.0, degree=0, divisions=1, divisionsPerEdge=0, keepBorder=True,
+               keepHardEdge=False, keepMapBorders=0, keepSelectionBorder=False,
+               keepTesselation=True, keepTessellation=True, method=0, osdCreaseMethod=0,
+               osdFvarBoundary=0, osdFvarPropagateCorners=True, osdSmoothTriangles=True,
+               osdVertBoundary=0, propagateEdgeHardness=False, pushStrength=0.0, roundness=0.0,
+               smoothUVs=True, subdivisionLevels=0, subdivisionType=0, q=True, query=True,
+               e=True, edit=True, **kwargs):
     """
     Smooth a polygonal object  This command works on polygonal objects or faces
     
@@ -88319,8 +88320,8 @@ def polySmooth(caching=True, constructionHistory=True, name="", nodeState=0, con
     pass
 
 
-def progressBar(annotation="", backgroundColor=None, beginProgress=True, defineTemplate="",
-                docTag="", dragCallback=None, dropCallback=None, enable=True,
+def progressBar(*args, annotation="", backgroundColor=None, beginProgress=True,
+                defineTemplate="", docTag="", dragCallback=None, dropCallback=None, enable=True,
                 enableBackground=True, enableKeyboardFocus=True, endProgress=True, exists=True,
                 fullPathName=True, height=0, highlightColor=None, isCancelled=True,
                 isInterruptable=True, isMainProgressBar=True, isObscured=True, manage=True,
@@ -88328,7 +88329,7 @@ def progressBar(annotation="", backgroundColor=None, beginProgress=True, defineT
                 popupMenuArray=True, preventOverride=True, progress=0, status="",
                 statusBarMessage="", step=0, useTemplate="", visible=True,
                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     Creates a progress bar control that graphically fills in as its progress value increases.
     
@@ -88464,9 +88465,9 @@ def getModifiers(*args, **kwargs):
     pass
 
 
-def texRotateContext(editPivotMode=True, exists=True, image1="", image2="", image3="",
+def texRotateContext(*args, editPivotMode=True, exists=True, image1="", image2="", image3="",
                      position=True, snap=True, snapRelative=True, snapValue=0.0, tweakMode=True,
-                     q=True, query=True, e=True, edit=True, *args, **kwargs):
+                     q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command can be used to create, edit, or query a rotate context for the UV Editor  Note
     that the above flag controls the global behaviour of all texture editor rotate contexts 
@@ -88533,7 +88534,7 @@ def XgmSetFreezeBrushToolOption(*args, **kwargs):
     pass
 
 
-def viewLookAt(position=None, *args, **kwargs):
+def viewLookAt(*args, position=None, **kwargs):
     """
     The viewLookAt command positions the specified camera so it is looking at the centroid of
     all selected objects  If no objects are specified the camera will look at the ground plane
@@ -88547,7 +88548,7 @@ def viewLookAt(position=None, *args, **kwargs):
     pass
 
 
-def scriptTable(afterCellChangedCmd=None, annotation="", backgroundColor=None,
+def scriptTable(*args, afterCellChangedCmd=None, annotation="", backgroundColor=None,
                 cellBackgroundColorCommand=None, cellChangedCmd=None,
                 cellForegroundColorCommand=None, cellIndex=None, cellValue="", clearRow=0,
                 clearTable=True, columnFilter=None, columnWidth=None, columns=0,
@@ -88563,7 +88564,7 @@ def scriptTable(afterCellChangedCmd=None, annotation="", backgroundColor=None,
                 statusBarMessage="", underPointerColumn=True, underPointerRow=True,
                 useDoubleClickEdit=True, useTemplate="", visible=True,
                 visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                *args, **kwargs):
+                **kwargs):
     """
     This command creates/edits/queries the script table control
     
@@ -88771,18 +88772,18 @@ def ChamferVertex(*args, **kwargs):
     pass
 
 
-def about(apiVersion=True, application=True, batch=True, buildDirectory=True, buildVariant=True,
-          codeset=True, compositingManager=True, connected=True, ctime=True, currentDate=True,
-          currentTime=True, cutIdentifier=True, date=True, environmentFile=True,
-          evalVersion=True, file=True, fontInfo=True, helpDataDirectory=True,
-          installedVersion=True, ioVersion=True, irix=True, is64=True, languageResources=True,
-          linux=True, linux64=True, liveUpdate=True, localizedResourceLocation=True,
-          ltVersion=True, macOS=True, macOSppc=True, macOSx86=True, majorVersion=True,
-          minorVersion=True, ntOS=True, operatingSystem=True, operatingSystemVersion=True,
-          patchVersion=True, preferences=True, product=True, qtVersion=True, tablet=True,
-          tabletMode=True, uiLanguage=True, uiLanguageForStartup=True,
-          uiLanguageIsLocalized=True, uiLocaleLanguage=True, version=True, win64=True,
-          windowManager=True, windows=True, *args, **kwargs):
+def about(*args, apiVersion=True, application=True, batch=True, buildDirectory=True,
+          buildVariant=True, codeset=True, compositingManager=True, connected=True, ctime=True,
+          currentDate=True, currentTime=True, cutIdentifier=True, date=True,
+          environmentFile=True, evalVersion=True, file=True, fontInfo=True,
+          helpDataDirectory=True, installedVersion=True, ioVersion=True, irix=True, is64=True,
+          languageResources=True, linux=True, linux64=True, liveUpdate=True,
+          localizedResourceLocation=True, ltVersion=True, macOS=True, macOSppc=True,
+          macOSx86=True, majorVersion=True, minorVersion=True, ntOS=True, operatingSystem=True,
+          operatingSystemVersion=True, patchVersion=True, preferences=True, product=True,
+          qtVersion=True, tablet=True, tabletMode=True, uiLanguage=True,
+          uiLanguageForStartup=True, uiLanguageIsLocalized=True, uiLocaleLanguage=True,
+          version=True, win64=True, windowManager=True, windows=True, **kwargs):
     """
     This command displays version information about the application if it is executed without
     flags  If one of the above flags is specified then the specified version information is
@@ -88911,9 +88912,9 @@ def about(apiVersion=True, application=True, batch=True, buildDirectory=True, bu
     pass
 
 
-def curveEPCtx(bezier=True, degree=0, exists=True, history=True, image1="", image2="",
+def curveEPCtx(*args, bezier=True, degree=0, exists=True, history=True, image1="", image2="",
                image3="", name="", preserveShape=True, preserveShapeFraction=0.0, refit=True,
-               uniform=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+               uniform=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     The curveEPCtx command creates a new context for creating curves by placing edit points
     
@@ -88953,7 +88954,7 @@ def curveEPCtx(bezier=True, degree=0, exists=True, history=True, image1="", imag
     pass
 
 
-def selectType(allComponents=True, allObjects=True, animBreakdown=True, animCurve=True,
+def selectType(*args, allComponents=True, allObjects=True, animBreakdown=True, animCurve=True,
                animInTangent=True, animKeyframe=True, animOutTangent=True, byName=None,
                camera=True, cluster=True, collisionModel=True, controlVertex=True, curve=True,
                curveKnot=True, curveOnSurface=True, curveParameterPoint=True, dimension=True,
@@ -88974,7 +88975,7 @@ def selectType(allComponents=True, allObjects=True, animBreakdown=True, animCurv
                subdivMeshFace=True, subdivMeshPoint=True, subdivMeshUV=True, surfaceEdge=True,
                surfaceFace=True, surfaceKnot=True, surfaceParameterPoint=True,
                surfaceRange=True, surfaceUV=True, texture=True, vertex=True, q=True, query=True,
-               *args, **kwargs):
+               **kwargs):
     """
     The selectType command is used to change the set of allowable types of objects that can be
     selected when using the select tool  It accepts no other arguments besides the flags  
@@ -89258,8 +89259,8 @@ def FBXGetTakeLocalTimeSpan(*args, **kwargs):
     pass
 
 
-def colorIndex(hueSaturationValue=True, resetToFactory=True, resetToSaved=True, q=True,
-               query=True, *args, **kwargs):
+def colorIndex(*args, hueSaturationValue=True, resetToFactory=True, resetToSaved=True, q=True,
+               query=True, **kwargs):
     """
     The index specifies a color index in the color palette  The r, g, and b values (between
     0-1) specify the RGB values (or the HSV values if the -hsv flag is used) for the color
@@ -89335,19 +89336,19 @@ def createNurbsConeCtx(*args, **kwargs):
     pass
 
 
-def iconTextScrollList(allowMultiSelection=True, annotation="", append="", backgroundColor=None,
-                       changeCommand=None, defineTemplate="", deselectAll=True, docTag="",
-                       doubleClickCommand=None, dragCallback=None, dragFeedbackVisible=True,
-                       dropCallback=None, dropRectCallback=None, editIndexed=0, editable=True,
-                       enable=True, enableBackground=True, enableKeyboardFocus=True,
-                       exists=True, fullPathName=True, height=0, highlightColor=None,
-                       isObscured=True, itemAt=None, itemTextColor=None, manage=True,
-                       noBackground=True, numberOfIcons=0, numberOfPopupMenus=True,
+def iconTextScrollList(*args, allowMultiSelection=True, annotation="", append="",
+                       backgroundColor=None, changeCommand=None, defineTemplate="",
+                       deselectAll=True, docTag="", doubleClickCommand=None, dragCallback=None,
+                       dragFeedbackVisible=True, dropCallback=None, dropRectCallback=None,
+                       editIndexed=0, editable=True, enable=True, enableBackground=True,
+                       enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                       highlightColor=None, isObscured=True, itemAt=None, itemTextColor=None,
+                       manage=True, noBackground=True, numberOfIcons=0, numberOfPopupMenus=True,
                        numberOfRows=True, parent="", popupMenuArray=True, preventOverride=True,
                        removeAll=True, selectCommand=None, selectIndexedItem=0, selectItem="",
                        statusBarMessage="", useTemplate="", visible=True,
                        visibleChangeCommand=None, visualRectAt=None, width=0, q=True,
-                       query=True, e=True, edit=True, *args, **kwargs):
+                       query=True, e=True, edit=True, **kwargs):
     """
     This command creates/edits/queries a text scrolling list  The list can be in single select
     mode where only one item at at time is selected, or in multi-select mode where many items
@@ -89474,7 +89475,7 @@ def iconTextScrollList(allowMultiSelection=True, annotation="", append="", backg
     pass
 
 
-def renderer(addGlobalsNode="", addGlobalsTab=None, batchRenderOptionsProcedure="",
+def renderer(*args, addGlobalsNode="", addGlobalsTab=None, batchRenderOptionsProcedure="",
              batchRenderOptionsStringProcedure="", batchRenderProcedure="",
              cancelBatchRenderProcedure="", changeIprRegionProcedure="",
              commandRenderProcedure="", exists=True, globalsNodes=True,
@@ -89491,7 +89492,7 @@ def renderer(addGlobalsNode="", addGlobalsTab=None, batchRenderOptionsProcedure=
              showBatchRenderLogProcedure="", showBatchRenderProcedure="",
              showRenderLogProcedure="", startIprRenderProcedure="", stopIprRenderProcedure="",
              supportColorManagement=True, textureBakingProcedure="", unregisterRenderer=True,
-             q=True, query=True, e=True, edit=True, *args, **kwargs):
+             q=True, query=True, e=True, edit=True, **kwargs):
     """
     Command to register renders  This command allows you to specify the UI name and procedure
     names for renderers  The command also allow you to query the UI name and the procedure
@@ -89728,7 +89729,7 @@ def SetWorkingFrame(*args, **kwargs):
     pass
 
 
-def artFluidAttrCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="",
+def artFluidAttrCtx(*args, accopacity=False, activeListChangedProc="", afterStrokeCmd="",
                     alphaclamp="none", alphaclamplower=0.0, alphaclampupper=1.0,
                     attrSelected="", autoSave="", beforeStrokeCmd="", brushalignment=True,
                     brushfeedback=True, clamp="none", clamplower=0.0, clampupper=1.0,
@@ -89756,7 +89757,7 @@ def artFluidAttrCtx(accopacity=False, activeListChangedProc="", afterStrokeCmd="
                     surfaceConformedBrushVertices=True, tablet=True, tangentOutline=True,
                     toolOffProc="", toolOnProc="", useColorRamp=True, useMaxMinColor=True,
                     useStrokeDirection=True, usepressure=False, value=0.0, velocity=None,
-                    whichTool="", worldRadius=0.0, q=True, query=True, e=True, edit=True, *args,
+                    whichTool="", worldRadius=0.0, q=True, query=True, e=True, edit=True,
                     **kwargs):
     """
     This is a context command to set the flags on the artAttrContext, which is the base context
@@ -90127,7 +90128,7 @@ def GetSettingsFromSelectedStroke(*args, **kwargs):
     pass
 
 
-def setNodeTypeFlag(display=True, threadSafe=True, q=True, query=True, *args, **kwargs):
+def setNodeTypeFlag(*args, display=True, threadSafe=True, q=True, query=True, **kwargs):
     """
     This command sets static data on the specified node type  This will affect the class of
     node type as a whole  The argument passed may be the name of the node type or the node type
@@ -90208,7 +90209,7 @@ def TesselateSubdivSurface(*args, **kwargs):
     pass
 
 
-def arrayMapper(destAttr="", inputU="", inputV="", mapTo="", target="", type="", *args,
+def arrayMapper(*args, destAttr="", inputU="", inputV="", mapTo="", target="", type="",
                 **kwargs):
     """
     Create an arrayMapper node and connect it to a target object  If the -type flag is used,
@@ -90247,11 +90248,11 @@ def printStudio(*args, **kwargs):
     pass
 
 
-def imagePlane(camera="", counter=True, detach=True, dropFrame=True, fileName="",
+def imagePlane(*args, camera="", counter=True, detach=True, dropFrame=True, fileName="",
                frameDuration=0, height=0.0, imageSize=None, lookThrough="", maintainRatio=True,
                name="", negTimesOK=True, numFrames=0, quickTime=True, showInAllViews=True,
                timeCode=0, timeCodeTrack=True, timeScale=0, twentyFourHourMax=True, width=0.0,
-               q=True, query=True, e=True, edit=True, *args, **kwargs):
+               q=True, query=True, e=True, edit=True, **kwargs):
     """
     The imagePlane command allows querying of various properties of an image plane and any
     movie in use by the image plane  It also supports creating and edit  The object passed to
@@ -90350,13 +90351,13 @@ def FBXExportHardEdges(*args, **kwargs):
     pass
 
 
-def alignCurve(caching=True, curvatureContinuity=False, curvatureScale1=0.0,
+def alignCurve(*args, caching=True, curvatureContinuity=False, curvatureScale1=0.0,
                curvatureScale2=0.0, joinParameter=123456.0, nodeState=0,
                positionalContinuity=True, positionalContinuityType=1, reverse1=False,
                reverse2=False, tangentContinuity=True, tangentContinuityType=1,
                tangentScale1=1.0, tangentScale2=1.0, attach=True, constructionHistory=True,
                keepMultipleKnots=True, name="", object=True, replaceOriginal=True, q=True,
-               query=True, e=True, edit=True, *args, **kwargs):
+               query=True, e=True, edit=True, **kwargs):
     """
     The curve align command is used to align curves in maya  The main alignment options are
     positional, tangent and curvature continuity  Curvature continuity implies tangent
@@ -90427,8 +90428,8 @@ def alignCurve(caching=True, curvatureContinuity=False, curvatureScale1=0.0,
     pass
 
 
-def editRenderLayerGlobals(baseId=0, currentRenderLayer=None, enableAutoAdjustments=True,
-                           mergeType=0, useCurrent=True, q=True, query=True, *args, **kwargs):
+def editRenderLayerGlobals(*args, baseId=0, currentRenderLayer=None, enableAutoAdjustments=True,
+                           mergeType=0, useCurrent=True, q=True, query=True, **kwargs):
     """
     Edit the parameter values common to all render layers  Some of these paremeters, eg  baseId
     and mergeType, are stored as preferences and some, eg  currentRenderLayer, are stored in
@@ -90633,14 +90634,14 @@ def TimeEditorExportSelection(*args, **kwargs):
     pass
 
 
-def manipOptions(enableSmartDuplicate=True, enableSmartExtrude=True, forceRefresh=True,
+def manipOptions(*args, enableSmartDuplicate=True, enableSmartExtrude=True, forceRefresh=True,
                  handleSize=0.0, hideManipOnCtrl=True, hideManipOnShift=True,
                  hideManipOnShiftCtrl=True, linePick=0.0, lineSize=0.0,
                  middleMouseRepositioning=True, pivotRotateHandleOffset=0, planeHandleOffset=0,
                  pointSize=0.0, preselectHighlight=True, refreshMode=0, relative=True,
                  rememberActiveHandle=True, rememberActiveHandleAfterToolSwitch=True, scale=0.0,
                  showExtrudeSliders=True, showPivotRotateHandle=True, showPlaneHandles=True,
-                 smartDuplicateType=0, q=True, query=True, *args, **kwargs):
+                 smartDuplicateType=0, q=True, query=True, **kwargs):
     """
     Changes the global manipulator parameters
     
@@ -90704,10 +90705,10 @@ def manipOptions(enableSmartDuplicate=True, enableSmartExtrude=True, forceRefres
     pass
 
 
-def polyPrism(axis=None, caching=True, constructionHistory=True, createUVs=2, length=2.0,
+def polyPrism(*args, axis=None, caching=True, constructionHistory=True, createUVs=2, length=2.0,
               name="", nodeState=0, numberOfSides=3, numderOfSides=3, object=True,
               sideLength=2.0, subdivisionsCaps=2, subdivisionsHeight=1, texture=0, q=True,
-              query=True, e=True, edit=True, *args, **kwargs):
+              query=True, e=True, edit=True, **kwargs):
     """
     The prism command creates a new polygonal prism
     
@@ -90781,15 +90782,16 @@ def DisplayViewport(*args, **kwargs):
     pass
 
 
-def floatSlider2(annotation="", backgroundColor=None, changeCommand1="", changeCommand2="",
-                 defineTemplate="", docTag="", dragCallback=None, dropCallback=None,
-                 enable=True, enableBackground=True, enableKeyboardFocus=True, exists=True,
-                 fullPathName=True, height=0, highlightColor=None, isObscured=True, manage=True,
-                 maximum=0.0, minimum=0.0, noBackground=True, numberOfPopupMenus=True,
-                 parent="", polarity=0, popupMenuArray=True, positionControl1="",
-                 positionControl2="", preventOverride=True, statusBarMessage="", useTemplate="",
-                 value1=0.0, value2=0.0, values=None, visible=True, visibleChangeCommand=None,
-                 width=0, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def floatSlider2(*args, annotation="", backgroundColor=None, changeCommand1="",
+                 changeCommand2="", defineTemplate="", docTag="", dragCallback=None,
+                 dropCallback=None, enable=True, enableBackground=True,
+                 enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+                 highlightColor=None, isObscured=True, manage=True, maximum=0.0, minimum=0.0,
+                 noBackground=True, numberOfPopupMenus=True, parent="", polarity=0,
+                 popupMenuArray=True, positionControl1="", positionControl2="",
+                 preventOverride=True, statusBarMessage="", useTemplate="", value1=0.0,
+                 value2=0.0, values=None, visible=True, visibleChangeCommand=None, width=0,
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a float slider containing two handles  The two handles are arranged
     such that they cannot pass one another, thus handle 1 will always have a value less than or
@@ -90922,7 +90924,7 @@ def SetMeshSprayTool(*args, **kwargs):
     pass
 
 
-def paneLayout(activeFrameThickness=0, activePane="", activePaneIndex=0, annotation="",
+def paneLayout(*args, activeFrameThickness=0, activePane="", activePaneIndex=0, annotation="",
                backgroundColor=None, childArray=True, configuration="", defineTemplate="",
                docTag="", dragCallback=None, dropCallback=None, enable=True,
                enableBackground=True, enableKeyboardFocus=True, exists=True, fullPathName=True,
@@ -90933,7 +90935,7 @@ def paneLayout(activeFrameThickness=0, activePane="", activePaneIndex=0, annotat
                separatorMovedCommand=None, separatorThickness=0, setPane=None,
                staticHeightPane=0, staticWidthPane=0, statusBarMessage="", useTemplate="",
                visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-               edit=True, *args, **kwargs):
+               edit=True, **kwargs):
     """
     This command creates a pane layout  A pane layout may have any number of children but at
     any one time only certain children may be visible, as determined by the current layout
@@ -91084,9 +91086,9 @@ def getLastError(*args, **kwargs):
     pass
 
 
-def polyTransfer(alternateObject="", caching=True, constructionHistory=True, name="",
+def polyTransfer(*args, alternateObject="", caching=True, constructionHistory=True, name="",
                  nodeState=0, uvSets=True, vertexColor=True, vertices=True, q=True, query=True,
-                 e=True, edit=True, *args, **kwargs):
+                 e=True, edit=True, **kwargs):
     """
     Transfer information from one polygonal object to another one  Both objects must have
     identical topology, that is same vertex, edge, and face numbering  The flags specify which
@@ -91122,9 +91124,9 @@ def polyTransfer(alternateObject="", caching=True, constructionHistory=True, nam
     pass
 
 
-def percent(addPercent=True, dropoffAxis=None, dropoffCurve="", dropoffDistance=0.0,
+def percent(*args, addPercent=True, dropoffAxis=None, dropoffCurve="", dropoffDistance=0.0,
             dropoffPosition=None, dropoffType="", multiplyPercent=True, value=1, q=True,
-            query=True, *args, **kwargs):
+            query=True, **kwargs):
     """
     This command sets percent values on members of a weighted node such as a cluster or a
     jointCluster  With no flags specified the command sets the percent value for selected
@@ -91175,8 +91177,8 @@ def xgmPartBrushContext(*args, **kwargs):
     pass
 
 
-def selectMode(component=True, hierarchical=True, leaf=True, object=True, preset=True,
-               root=True, template=True, q=True, query=True, *args, **kwargs):
+def selectMode(*args, component=True, hierarchical=True, leaf=True, object=True, preset=True,
+               root=True, template=True, q=True, query=True, **kwargs):
     """
     The selectMode command is used to change the selection mode  Object, component, root, leaf
     and template modes are mutually exclusive
@@ -91210,8 +91212,8 @@ def selectMode(component=True, hierarchical=True, leaf=True, object=True, preset
     pass
 
 
-def contextInfo(c=True, escapeContext=True, exists=True, image1=True, image2=True, image3=True,
-                title=True, q=True, query=True, e=True, edit=True, *args, **kwargs):
+def contextInfo(*args, c=True, escapeContext=True, exists=True, image1=True, image2=True,
+                image3=True, title=True, q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command allows you to get information on named contexts
     
@@ -91294,10 +91296,10 @@ def CircularFillet(*args, **kwargs):
     pass
 
 
-def optionVar(arraySize="", clearArray="", exists="", floatValue=None, floatValueAppend=None,
-              intValue=None, intValueAppend=None, list=True, remove="", removeFromArray=None,
-              stringValue=None, stringValueAppend=None, version=0, q=True, query=True, *args,
-              **kwargs):
+def optionVar(*args, arraySize="", clearArray="", exists="", floatValue=None,
+              floatValueAppend=None, intValue=None, intValueAppend=None, list=True, remove="",
+              removeFromArray=None, stringValue=None, stringValueAppend=None, version=0, q=True,
+              query=True, **kwargs):
     """
     This command allows you to set and query variables which are persistent between different
     invocations of Maya  These variables are stored as part of the preferences
@@ -91348,10 +91350,10 @@ def optionVar(arraySize="", clearArray="", exists="", floatValue=None, floatValu
     pass
 
 
-def ambientLight(ambientShade=0.0, discRadius=0.0, exclusive=True, intensity=0.0, name="",
-                 position=None, rgb=None, rotation=None, shadowColor=None, shadowDither=0.0,
-                 shadowSamples=0, softShadow=True, useRayTraceShadows=True, q=True, query=True,
-                 e=True, edit=True, *args, **kwargs):
+def ambientLight(*args, ambientShade=0.0, discRadius=0.0, exclusive=True, intensity=0.0,
+                 name="", position=None, rgb=None, rotation=None, shadowColor=None,
+                 shadowDither=0.0, shadowSamples=0, softShadow=True, useRayTraceShadows=True,
+                 q=True, query=True, e=True, edit=True, **kwargs):
     """
     TlightCmd is the base class for other light commands  The ambientLight command is used to
     edit the parameters of existing ambientLights, or to create new ones  The default behaviour
@@ -91406,9 +91408,9 @@ def OutlinerDoHide(*args, **kwargs):
     pass
 
 
-def bakeDeformer(colorizeSkeleton=True, customRangeOfMotion=None, dstMeshName="",
+def bakeDeformer(*args, colorizeSkeleton=True, customRangeOfMotion=None, dstMeshName="",
                  dstSkeletonName="", hierarchy=True, influences=None, maxInfluences=0,
-                 pruneWeights=0.0, smoothWeights=0, srcMeshName="", srcSkeletonName="", *args,
+                 pruneWeights=0.0, smoothWeights=0, srcMeshName="", srcSkeletonName="",
                  **kwargs):
     """
     Given a rigged character, whose mesh shape is determined by a set of deformers,
@@ -91453,8 +91455,8 @@ def bakeDeformer(colorizeSkeleton=True, customRangeOfMotion=None, dstMeshName=""
     pass
 
 
-def texSelectContext(exists=True, image1="", image2="", image3="", q=True, query=True, e=True,
-                     edit=True, *args, **kwargs):
+def texSelectContext(*args, exists=True, image1="", image2="", image3="", q=True, query=True,
+                     e=True, edit=True, **kwargs):
     """
     Command used to register the texSelectCtx tool
     
@@ -91498,10 +91500,10 @@ def PolyExtrude(*args, **kwargs):
     pass
 
 
-def listHistory(allConnections=True, allFuture=True, allGraphs=True, breadthFirst=True,
+def listHistory(*args, allConnections=True, allFuture=True, allGraphs=True, breadthFirst=True,
                 future=True, futureLocalAttr=True, futureWorldAttr=True, groupLevels=True,
                 historyAttr=True, interestLevel=0, leaf=True, levels=0, pruneDagObjects=True,
-                q=True, query=True, *args, **kwargs):
+                q=True, query=True, **kwargs):
     """
     This command traverses backwards or forwards in the graph from the specified node and
     returns all of the nodes whose construction history it passes through  The construction
@@ -91593,12 +91595,12 @@ def SewUVs3D(*args, **kwargs):
     pass
 
 
-def workspaceLayoutManager(collapseMainWindowControls=None, current=True, delete="", i="",
-                           listLayouts=True, listModuleLayouts=True, listUserLayouts=True,
+def workspaceLayoutManager(*args, collapseMainWindowControls=None, current=True, delete="",
+                           i="", listLayouts=True, listModuleLayouts=True, listUserLayouts=True,
                            modified="", parentWorkspaceControl="", reset=True,
                            restoreMainWindowControls=True, save=True, saveAs="", setCurrent="",
                            setCurrentCallback="", setModifiedCallback="", type="", q=True,
-                           query=True, e=True, edit=True, *args, **kwargs):
+                           query=True, e=True, edit=True, **kwargs):
     """
     The Workspace Layout Manager loads and saves the layout of the various toolbars and windows
     in the user interface  This command allows listing and managing their properties
@@ -91664,7 +91666,7 @@ def PolygonApplyColor(*args, **kwargs):
     pass
 
 
-def dopeSheetEditor(autoFit="", autoFitTime="", control=True, defineTemplate="",
+def dopeSheetEditor(*args, autoFit="", autoFitTime="", control=True, defineTemplate="",
                     displayActiveKeyTangents="", displayActiveKeys="", displayInfinities="",
                     displayKeys="", displayTangents="", displayValues="", docTag="",
                     exists=True, filter="", forceMainConnection="", hierarchyBelow=True,
@@ -91674,7 +91676,7 @@ def dopeSheetEditor(autoFit="", autoFitTime="", control=True, defineTemplate="",
                     showSummary=True, showTicks=True, snapTime="", snapValue="",
                     stateString=True, unParent=True, unlockMainConnection=True,
                     updateMainConnection=True, useTemplate="", q=True, query=True, e=True,
-                    edit=True, *args, **kwargs):
+                    edit=True, **kwargs):
     """
     Edit a characteristic of a dope sheet editor
     
@@ -91784,8 +91786,8 @@ def AutobindContainer(*args, **kwargs):
     pass
 
 
-def keyframeRegionSelectKeyCtx(exists=True, history=True, image1="", image2="", image3="",
-                               name="", q=True, query=True, e=True, edit=True, *args,
+def keyframeRegionSelectKeyCtx(*args, exists=True, history=True, image1="", image2="",
+                               image3="", name="", q=True, query=True, e=True, edit=True,
                                **kwargs):
     """
     This command creates a context which may be used to select keyframes within the keyframe
@@ -91815,10 +91817,10 @@ def keyframeRegionSelectKeyCtx(exists=True, history=True, image1="", image2="", 
     pass
 
 
-def nurbsToSubdiv(addUnderTransform=True, caching=True, collapsePoles=False,
+def nurbsToSubdiv(*args, addUnderTransform=True, caching=True, collapsePoles=False,
                   constructionHistory=True, matchPeriodic=False, maxPolyCount=1000, name="",
                   nodeState=0, object=True, reverseNormal=True, q=True, query=True, e=True,
-                  edit=True, *args, **kwargs):
+                  edit=True, **kwargs):
     """
     This command converts a NURBS surface and produces a subd surface  The name of the new
     subdivision surface is returned  If construction history is ON, then the name of the new
@@ -91886,13 +91888,13 @@ def sbs_GetEnumName(*args, **kwargs):
     pass
 
 
-def image(annotation="", backgroundColor=None, defineTemplate="", docTag="", dragCallback=None,
-          dropCallback=None, enable=True, enableBackground=True, enableKeyboardFocus=True,
-          exists=True, fullPathName=True, height=0, highlightColor=None, image="",
-          isObscured=True, manage=True, noBackground=True, numberOfPopupMenus=True, parent="",
-          popupMenuArray=True, preventOverride=True, statusBarMessage="", useTemplate="",
-          visible=True, visibleChangeCommand=None, width=0, q=True, query=True, e=True,
-          edit=True, *args, **kwargs):
+def image(*args, annotation="", backgroundColor=None, defineTemplate="", docTag="",
+          dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
+          enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
+          highlightColor=None, image="", isObscured=True, manage=True, noBackground=True,
+          numberOfPopupMenus=True, parent="", popupMenuArray=True, preventOverride=True,
+          statusBarMessage="", useTemplate="", visible=True, visibleChangeCommand=None, width=0,
+          q=True, query=True, e=True, edit=True, **kwargs):
     """
     This command creates a static image for non-xpm files  Any image file format supported by
     the file texture node is supported by this command
@@ -91979,9 +91981,9 @@ def image(annotation="", backgroundColor=None, defineTemplate="", docTag="", dra
     pass
 
 
-def symbolCheckBox(annotation="", backgroundColor=None, changeCommand=None, defineTemplate="",
-                   disableOffImage="", disableOnImage="", docTag="", dragCallback=None,
-                   dropCallback=None, enable=True, enableBackground=True,
+def symbolCheckBox(*args, annotation="", backgroundColor=None, changeCommand=None,
+                   defineTemplate="", disableOffImage="", disableOnImage="", docTag="",
+                   dragCallback=None, dropCallback=None, enable=True, enableBackground=True,
                    enableKeyboardFocus=True, exists=True, fullPathName=True, height=0,
                    highlightColor=None, image="", innerMargin=True, isObscured=True,
                    ltVersion="", manage=True, noBackground=True, numberOfPopupMenus=True,
@@ -91989,7 +91991,7 @@ def symbolCheckBox(annotation="", backgroundColor=None, changeCommand=None, defi
                    popupMenuArray=True, preventOverride=True, statusBarMessage="",
                    useTemplate="", value=True, version="", visible=True,
                    visibleChangeCommand=None, width=0, q=True, query=True, e=True, edit=True,
-                   *args, **kwargs):
+                   **kwargs):
     """
     This command creates a symbol check box  A symbol check box is a simple control containing
     a pixmap and a state of either on or off  Commands can be attached to any or all of the

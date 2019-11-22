@@ -82,8 +82,6 @@ export class Args {
             if (this.type ==='string' && ((value.indexOf('"') === 0))) {
                 if (value.lastIndexOf('"') === value.length-1) {
                     if (value.indexOf(' ') === -1){
-                        console.log("***************************************************");
-                        console.log(value);
                         return value;
                     }
                 }

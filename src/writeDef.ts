@@ -189,7 +189,8 @@ export function getDocstringType(): string[] {
 }
 
 function _pyDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : string {
-    let def = `def ${cmd.name}(`;
+    let def = `def ${cmd.name}(*args, `;
+    // let def = `def ${cmd.name}(`;
 
     let x = 0;
     for(let arg of cmd.args){
@@ -216,7 +217,8 @@ function _pyDefinitionInterface(cmd: core.ICmdInfo, shortKwargs: boolean) : stri
         def += 'e=True, edit=True, ';
     }
 
-    def += "*args, **kwargs):";
+    def += "**kwargs):";
+    //def += "*args, **kwargs):";
     return def;
 }
 
